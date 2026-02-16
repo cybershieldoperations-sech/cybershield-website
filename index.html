@@ -1,31 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberShield Security</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; color: #fff; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Hero Section */
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/cyber-bg.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    header h1 { font-size: 4rem; margin-bottom: 20px; color: #00e5ff; }
+    header p { font-size: 1.5rem; max-width: 700px; }
+
+    /* Buttons */
+    .btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #00e5ff;
+      color: #000;
+      font-weight: bold;
+      border-radius: 50px;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #00bcd4; color: #fff; }
+
+    /* Services Section */
+    section.services {
+      background: #111;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    section.services h2 { font-size: 3rem; margin-bottom: 50px; color: #00e5ff; }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+    .card {
+      background: #222;
+      padding: 30px;
+      border-radius: 20px;
+      width: 300px;
+      transition: 0.3s;
+    }
+    .card:hover { transform: translateY(-10px); background: #00bcd4; color: #fff; }
+    .card h3 { margin-bottom: 20px; color: #00e5ff; }
+    .card p { font-size: 1rem; }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      header h1 { font-size: 3rem; }
+      section.services h2 { font-size: 2.2rem; }
+      .cards { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Hero Section -->
   <header>
-    <h1>Welcome to CyberShield Security</h1>
-    <p>Your cybersecurity partner 🚀</p>
+    <h1>CyberShield Security</h1>
+    <p>Protecting your digital assets with top-tier network and cloud security solutions. We secure your business so you can focus on growth.</p>
+    <a href="#services" class="btn">Our Services</a>
   </header>
 
-  <main>
-    <section>
-      <h2>Our Services</h2>
-      <ul>
-        <li>Network Security</li>
-        <li>Cloud Security</li>
-        <li>Penetration Testing</li>
-      </ul>
-    </section>
-  </main>
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Network Security</h3>
+        <p>Firewalls, VPNs, intrusion detection and advanced monitoring for complete protection.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud Security</h3>
+        <p>Secure cloud infrastructure and SaaS applications with zero-trust principles and monitoring.</p>
+      </div>
+      <div class="card">
+        <h3>Penetration Testing</h3>
+        <p>Proactive testing of your systems to identify vulnerabilities before attackers do.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2026 CyberShield Security. All rights reserved.</p>
+    © 2026 CyberShield Security. All rights reserved.
   </footer>
 
-  <script src="js/script.js"></script>
 </body>
 </html>
