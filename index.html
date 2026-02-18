@@ -1,115 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberShield Security</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Global */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; color: #fff; overflow-x: hidden; }
-    a { text-decoration: none; color: inherit; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybershield Security | Veteran-Led MSME Audits</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
 
-    /* Hero Section */
-    header {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/cyber-bg.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    header h1 { font-size: 4rem; margin-bottom: 20px; color: #00e5ff; }
-    header p { font-size: 1.5rem; max-width: 700px; }
+        :root {
 
-    /* Buttons */
-    .btn {
-      margin-top: 30px;
-      padding: 15px 30px;
-      background: #00e5ff;
-      color: #000;
-      font-weight: bold;
-      border-radius: 50px;
-      transition: 0.3s;
-    }
-    .btn:hover { background: #00bcd4; color: #fff; }
+            --primary-blue: #0a192f;
 
-    /* Services Section */
-    section.services {
-      background: #111;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    section.services h2 { font-size: 3rem; margin-bottom: 50px; color: #00e5ff; }
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
-    .card {
-      background: #222;
-      padding: 30px;
-      border-radius: 20px;
-      width: 300px;
-      transition: 0.3s;
-    }
-    .card:hover { transform: translateY(-10px); background: #00bcd4; color: #fff; }
-    .card h3 { margin-bottom: 20px; color: #00e5ff; }
-    .card p { font-size: 1rem; }
+            --accent-gold: #c5a059;
 
-    /* Footer */
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-      color: #999;
-    }
+            --text-light: #e6f1ff;
 
-    /* Responsive */
-    @media(max-width:768px){
-      header h1 { font-size: 3rem; }
-      section.services h2 { font-size: 2.2rem; }
-      .cards { flex-direction: column; align-items: center; }
-    }
-  </style>
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
+
+        .hero-section {
+
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), 
+
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80');
+
+            background-size: cover;
+
+            color: var(--text-light);
+
+            padding: 100px 0;
+
+            border-bottom: 5px solid var(--accent-gold);
+
+        }
+
+        .section-title { color: var(--primary-blue); font-weight: 800; text-transform: uppercase; margin-bottom: 40px; }
+
+        .feature-card {
+
+            border: none;
+
+            border-bottom: 4px solid var(--accent-gold);
+
+            transition: transform 0.3s;
+
+            height: 100%;
+
+        }
+
+        .feature-card:hover { transform: translateY(-10px); }
+
+        .experience-badge {
+
+            background-color: var(--accent-gold);
+
+            color: var(--primary-blue);
+
+            padding: 10px 20px;
+
+            font-weight: bold;
+
+            border-radius: 50px;
+
+            display: inline-block;
+
+        }
+
+        .audit-table thead { background-color: var(--primary-blue); color: white; }
+</style>
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <header>
-    <h1>CyberShield Security</h1>
-    <p>Protecting your digital assets with top-tier network and cloud security solutions. We secure your business so you can focus on growth.</p>
-    <a href="#services" class="btn">Our Services</a>
-  </header>
-
-  <!-- Services Section -->
-  <section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Network Security</h3>
-        <p>Firewalls, VPNs, intrusion detection and advanced monitoring for complete protection.</p>
-      </div>
-      <div class="card">
-        <h3>Cloud Security</h3>
-        <p>Secure cloud infrastructure and SaaS applications with zero-trust principles and monitoring.</p>
-      </div>
-      <div class="card">
-        <h3>Penetration Testing</h3>
-        <p>Proactive testing of your systems to identify vulnerabilities before attackers do.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    © 2026 CyberShield Security. All rights reserved.
-  </footer>
-
+<header class="hero-section text-center">
+<div class="container">
+<h1 class="display-3 fw-bold">CYBERSHIELD SECURITY</h1>
+<div class="experience-badge mb-4">19 YEARS OF NETWORK SECURITY EXPERTISE</div>
+<p class="lead mb-5">Enterprise-Grade Security Audits for MSMEs & Small Businesses.</p>
+<a href="#contact" class="btn btn-lg btn-outline-warning">Book Your Audit Consultation</a>
+</div>
+</header>
+<section class="container py-5">
+<h2 class="text-center section-title">Our Specialized Services</h2>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="card feature-card shadow-sm p-4">
+<h3 class="h5 fw-bold">On-Premise Network Audit</h3>
+<p class="text-muted">Comprehensive review of physical firewalls, router configurations, and cabling security. We stop leaks where they start.</p>
+<ul class="small">
+<li>Firewall Rule Optimization</li>
+<li>VLAN & Guest Network Segmentation</li>
+<li>Wi-Fi Penetration Testing</li>
+</ul>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="card feature-card shadow-sm p-4">
+<h3 class="h5 fw-bold">Server-Level Hardening</h3>
+<p class="text-muted">Deep dive into your OS environment. We ensure your servers are patched, encrypted, and resilient against ransomware.</p>
+<ul class="small">
+<li>OS Vulnerability Scanning</li>
+<li>Privileged Access Audit</li>
+<li>BitLocker/Disk Encryption Check</li>
+</ul>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="card feature-card shadow-sm p-4">
+<h3 class="h5 fw-bold">Hybrid & Azure Security</h3>
+<p class="text-muted">Bridging the gap between on-prem and cloud. We secure your Azure migration using veteran-led best practices.</p>
+<ul class="small">
+<li>MFA & Entra ID Governance</li>
+<li>NSG & Private Link Setup</li>
+<li>Defender for Cloud Implementation</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-white py-5">
+<div class="container">
+<h2 class="text-center section-title">Our Audit Deliverable</h2>
+<p class="text-center mb-5">We provide a clear, prioritized Action Report that MSME owners can understand.</p>
+<div class="table-responsive">
+<table class="table audit-table border">
+<thead>
+<tr>
+<th>Severity</th>
+<th>Critical Finding</th>
+<th>Business Impact</th>
+<th>Our Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="badge bg-danger">CRITICAL</span></td>
+<td>Exposed RDP/SSH Ports</td>
+<td>Ransomware Risk</td>
+<td>Bastion Deployment / Port Closure</td>
+</tr>
+<tr>
+<td><span class="badge bg-warning text-dark">HIGH</span></td>
+<td>No Admin MFA</td>
+<td>Full Data Breach</td>
+<td>Entra ID Security Defaults</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<footer id="contact" class="py-5 bg-dark text-white">
+<div class="container text-center">
+<h2 class="mb-4">Secure Your Foundation Today</h2>
+<p>Ready to harden your business? Contact Cybershield Security for a professional assessment.</p>
+<p class="mt-4">
+<strong>Email:</strong> contact@cybershieldsecurity.com<br>
+<strong>Based in:</strong> [Your City/Region]
+</p>
+<hr class="my-4 bg-secondary">
+<p class="small text-secondary">&copy; 2026 Cybershield Security. All Rights Reserved.</p>
+</div>
+</footer>
 </body>
 </html>
+ 
