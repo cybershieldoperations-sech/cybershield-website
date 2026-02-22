@@ -2,193 +2,248 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CyberShield Security | Network & Firewall Experts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CyberShield Security provides enterprise-grade firewall, Zscaler, Cisco ISE, and network security consulting services for SMB and enterprise clients.">
-
+    <title>Cybershield Security | Business IT & Network Defense</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #0b1c2d;
-            color: #ffffff;
+        :root {
+            --primary-blue: #0a192f;
+            --accent-gold: #c5a059;
+            --text-light: #e6f1ff;
         }
-
-        header {
-            background: #081421;
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            color: #00e0ff;
-            margin: 0;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-        }
-
-        .hero {
-            padding: 80px 10%;
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; scroll-behavior: smooth; overflow-x: hidden; }
+        
+        .brand-header {
+            background-color: var(--primary-blue);
+            padding: 20px 0;
+            border-bottom: 3px solid var(--accent-gold);
             text-align: center;
-            background: linear-gradient(135deg, #0b1c2d, #122c44);
         }
 
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+        .logo-icon { 
+            width: 70px; height: 70px; margin-bottom: 8px; 
+            filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); 
+        }
+        
+        .brand-name {
+            color: var(--accent-gold);
+            letter-spacing: 5px; font-weight: 700; font-size: 1.4rem; text-transform: uppercase;
         }
 
-        .hero p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.6;
+        .hero-section {
+            background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(10, 25, 47, 0.92)), 
+                        url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 100px 0;
+            position: relative;
         }
 
-        .btn {
-            margin-top: 30px;
-            padding: 12px 25px;
-            background-color: #00e0ff;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            display: inline-block;
+        .stats-bar { background: #0d1d36; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding: 40px 0; }
+        .stat-circle {
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%; width: 90px; height: 90px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            margin: 0 auto 15px; box-shadow: 0 0 20px rgba(197, 160, 89, 0.1);
+            transition: 0.4s;
+        }
+        .counter-num { font-size: 1.4rem; font-weight: bold; color: var(--accent-gold); }
+
+        .btn-checkup {
+            background-color: transparent; color: var(--accent-gold);
+            border: 2px solid var(--accent-gold); font-weight: bold;
+            padding: 16px 45px; border-radius: 50px; text-transform: uppercase;
+            animation: pulse-gold 2s infinite; display: inline-block;
+            text-decoration: none; transition: 0.3s;
+        }
+        .btn-checkup:hover { background-color: var(--accent-gold); color: var(--primary-blue); transform: scale(1.05); }
+
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
         }
 
-        section {
-            padding: 60px 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 28px;
-            color: #00e0ff;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: #122c44;
-            padding: 25px;
-            border-radius: 8px;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: #00e0ff;
-        }
-
-        .about {
-            background: #081421;
-            border-radius: 8px;
-            padding: 30px;
-        }
-
-        footer {
-            background: #050d16;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        @media(max-width: 768px){
-            .hero h2 {
-                font-size: 26px;
-            }
-        }
+        .feature-card { border: none; border-top: 5px solid var(--accent-gold); height: 100%; transition: 0.3s; background: white; border-radius: 8px;}
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        
+        .hidden-field { display: none; }
     </style>
 </head>
-
 <body>
 
-<header>
-    <h1>CyberShield Security</h1>
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<div class="brand-header">
+    <div class="container">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="#c5a059"/>
+            <path d="M9 11L11 13L15 9" stroke="#0a192f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-name">Cybershield</div>
+    </div>
+</div>
+
+<header class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">Secure IT Infrastructure & Defense</h1>
+        <p class="lead mb-5 mx-auto" style="max-width: 800px; opacity: 0.9;">
+            Specializing in Firewall Policy Optimization, Secure WAN (Branch Connectivity), and End-to-End Network Hardening for SMBs.
+        </p>
+        <a href="#audit-intake" class="btn btn-checkup">
+            Free Infrastructure Check-up <i class="fas fa-hand-pointer ms-2"></i>
+        </a>
+    </div>
 </header>
 
-<section class="hero">
-    <h2>Secure. Optimize. Defend.</h2>
-    <p>
-        Enterprise-grade Network Security Consulting with 17+ years of experience in 
-        Firewall Migration, Zscaler Deployment, Cisco ISE Implementation, and Infrastructure Hardening.
-    </p>
-    <a href="#contact" class="btn">Book Free 30-Min Consultation</a>
-</section>
-
-<section id="services">
-    <h2 class="section-title">Our Services</h2>
-    <div class="services">
-
-        <div class="card">
-            <h3>Firewall Migration & Optimization</h3>
-            <p>Cisco ASA to Palo Alto migration, rule optimization, performance tuning, and security hardening.</p>
+<section class="stats-bar text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-4">
+                <div class="stat-circle"><div class="counter-num">100%</div></div>
+                <p class="small text-uppercase fw-bold" style="color: #888;">Secure WAN</p>
+            </div>
+            <div class="col-4">
+                <div class="stat-circle"><div class="counter-num">24/7</div></div>
+                <p class="small text-uppercase fw-bold" style="color: #888;">Monitoring</p>
+            </div>
+            <div class="col-4">
+                <div class="stat-circle"><div class="counter-num">0</div></div>
+                <p class="small text-uppercase fw-bold" style="color: #888;">Breaches</p>
+            </div>
         </div>
-
-        <div class="card">
-            <h3>Zscaler Implementation</h3>
-            <p>ZIA deployment, policy tuning, SSL inspection configuration, and troubleshooting.</p>
-        </div>
-
-        <div class="card">
-            <h3>Cisco ISE Deployment</h3>
-            <p>Distributed architecture setup, AD integration, policy sets, VPN authentication, and health checks.</p>
-        </div>
-
-        <div class="card">
-            <h3>SMB Network Security</h3>
-            <p>Secure office network setup, WiFi protection, firewall installation, and endpoint security advisory.</p>
-        </div>
-
     </div>
 </section>
 
-<section id="about">
-    <h2 class="section-title">About CyberShield</h2>
-    <div class="about">
-        <p>
-            CyberShield Security is founded by a Network Security Specialist with over 17 years of 
-            experience in enterprise infrastructure security projects. 
-        </p>
-        <p>
-            We specialize in firewall transformation, cloud security integration, 
-            Zscaler deployments, Cisco ISE solutions, and VAPT remediation support.
-        </p>
-        <p>
-            Our mission is to provide enterprise-level protection to small and medium businesses 
-            at affordable cost.
-        </p>
+<section class="container py-5 text-dark">
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="card feature-card shadow-sm p-4">
+                <i class="fas fa-user-shield fa-3x mb-3" style="color: var(--accent-gold);"></i>
+                <h3 class="h5 fw-bold">Firewall Optimization</h3>
+                <p class="text-muted small">Tuning security policies and firewall rules to block high-level threats while maintaining speed.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card feature-card shadow-sm p-4">
+                <i class="fas fa-network-wired fa-3x mb-3" style="color: var(--accent-gold);"></i>
+                <h3 class="h5 fw-bold">Secure WAN / Branch</h3>
+                <p class="text-muted small">Private, encrypted tunnels linking your headquarters to remote factories and offices.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card feature-card shadow-sm p-4">
+                <i class="fas fa-tools fa-3x mb-3" style="color: var(--accent-gold);"></i>
+                <h3 class="h5 fw-bold">Infra Hardening</h3>
+                <p class="text-muted small">Closing network gaps in schools and factories to prevent data leaks and unauthorized access.</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<section id="contact">
-    <h2 class="section-title">Get In Touch</h2>
-    <p style="text-align:center;">
-        📧 Email: info@cybershieldsecurity.in <br>
-        📞 Phone: +91-XXXXXXXXXX <br><br>
-        Serving Chennai & Remote Clients Across India
-    </p>
+<section id="audit-intake" class="py-5 bg-white border-top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header text-center py-4" style="background: var(--primary-blue); color: white; border-bottom: 3px solid var(--accent-gold);">
+                        <h2 class="h5 mb-0">Speak with an IT Specialist</h2>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="auditForm">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-dark">Authorized Manager Name</label>
+                                <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="e.g. IT Manager / Factory Head" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-dark">Direct Mobile Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control form-control-lg" placeholder="For instant call back" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small text-dark">Primary Requirement</label>
+                                <select id="goal" name="goal" class="form-select form-select-lg" onchange="checkOthers(this)" required>
+                                    <option value="" disabled selected>Choose your service...</option>
+                                    <option value="Firewall Optimization">Firewall Rule Optimization / Policy Tightening</option>
+                                    <option value="WAN Connection">Secure Multi-Branch WAN Connection</option>
+                                    <option value="New Setup">New School/Factory IT Infrastructure</option>
+                                    <option value="Maintenance">Ongoing Infra Support & Defense</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3 hidden-field" id="otherBox">
+                                <label class="form-label fw-bold small text-dark">Please describe your requirement</label>
+                                <textarea id="other_detail" name="other_detail" class="form-control" rows="2" placeholder="Briefly describe what you need..."></textarea>
+                            </div>
+
+                            <button type="submit" id="submitBtn" class="btn w-100 py-3 mt-3" style="background: var(--primary-blue); color: var(--accent-gold); font-weight: bold; border: 2px solid var(--accent-gold); font-size: 1.1rem;">
+                                REQUEST CALL BACK
+                            </button>
+                        </form>
+                        <div id="successBox" class="mt-4 text-center d-none">
+                            <div class="alert alert-warning border-2" style="background: #fffdf5; border-color: var(--accent-gold);">
+                                <h6 class="fw-bold" style="color: var(--primary-blue);">Consultation Logged!</h6>
+                                <p class="small mb-0 text-dark">Ref: <strong id="ticketId"></strong></p>
+                                <hr><p class="small mt-2 text-dark">An engineer will contact you shortly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<footer>
-    © 2026 CyberShield Security | All Rights Reserved
+<footer class="py-4 bg-dark text-white text-center">
+    <p class="small mb-1">Email: info@cybershieldsecurity.in</p>
+    <p class="x-small text-secondary mb-0">&copy; 2026 Cybershield Security | Veteran-Led Infrastructure Defense</p>
 </footer>
+
+<script>
+    function checkOthers(select) {
+        const otherBox = document.getElementById('otherBox');
+        if (select.value === 'Others') {
+            otherBox.style.display = 'block';
+        } else {
+            otherBox.style.display = 'none';
+        }
+    }
+
+    // Replace the URL below with your actual Cloudflare Worker URL
+    const FORM_URL = "https://your-worker.your-subdomain.workers.dev";
+
+    document.getElementById('auditForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = "PROCESSING...";
+        btn.disabled = true;
+
+        const formData = new FormData(this);
+        
+        try {
+            const response = await fetch(FORM_URL, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const id = Math.floor(1000 + Math.random() * 9000);
+                document.getElementById('ticketId').innerText = 'INFRA-' + id;
+                this.classList.add('d-none');
+                document.getElementById('successBox').classList.remove('d-none');
+            } else {
+                alert("Redirection Error. Check your Worker URL.");
+                btn.innerText = "REQUEST CALL BACK";
+                btn.disabled = false;
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Connection error. Please check your internet.");
+            btn.innerText = "REQUEST CALL BACK";
+            btn.disabled = false;
+        }
+    });
+</script>
 
 </body>
 </html>
