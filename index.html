@@ -11,7 +11,12 @@
             --accent-gold: #c5a059;
             --text-light: #e6f1ff;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f8f9fa; 
+            scroll-behavior: smooth; 
+        }
+        /* Hero Section */
         .hero-section {
             background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), 
                         url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80');
@@ -21,6 +26,8 @@
             border-bottom: 5px solid var(--accent-gold);
         }
         .section-title { color: var(--primary-blue); font-weight: 800; text-transform: uppercase; margin-bottom: 40px; }
+        
+        /* Cards */
         .feature-card {
             border: none;
             border-bottom: 4px solid var(--accent-gold);
@@ -28,6 +35,7 @@
             height: 100%;
         }
         .feature-card:hover { transform: translateY(-10px); }
+        
         .experience-badge {
             background-color: var(--accent-gold);
             color: var(--primary-blue);
@@ -36,46 +44,149 @@
             border-radius: 50px;
             display: inline-block;
         }
-        .audit-table thead { background-color: var(--primary-blue); color: white; }
+
+        /* Queue Form Styling */
+        #contact-section { background-color: #fff; }
+        .card-header-custom {
+            background-color: var(--primary-blue);
+            border-bottom: 4px solid var(--accent-gold);
+            color: white;
+        }
+        .btn-generate {
+            background-color: var(--primary-blue);
+            color: white;
+            border: 2px solid var(--accent-gold);
+            transition: 0.3s;
+        }
+        .btn-generate:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+        }
     </style>
 </head>
 <body>
 
-<header class="hero-section text-center">
-    <div class="container">
-        <h1 class="display-3 fw-bold">CYBERSHIELD SECURITY</h1>
-        <div class="experience-badge mb-4">Network Security Expertise for Businesses of All Sizes</div>
-        <p class="lead mb-5">Enterprise-Grade Security Audits for MSMEs & Small Businesses.</p>
-        <a href="#contact" class="btn btn-lg btn-outline-warning">Book Your Audit Consultation</a>
-    </div>
-</header>
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold">CYBERSHIELD SECURITY</h1>
+            <div class="experience-badge mb-4">Network Security Expertise for Businesses of All Sizes</div>
+            <p class="lead mb-5">Enterprise-Grade Security Audits for MSMEs & Small Businesses.</p>
+            <a href="#contact-section" class="btn btn-lg btn-outline-warning">Book Your Audit Consultation</a>
+        </div>
+    </header>
 
-<section class="container py-5">
-    <h2 class="text-center section-title">Our Specialized Services</h2>
-    <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-            <div class="card feature-card shadow-sm p-4">
-                <h3 class="h5 fw-bold">On-Premise Network Audit</h3>
-                <p class="text-muted">Comprehensive review of physical firewalls, router configurations, and cabling security. We stop leaks where they start.</p>
-                <ul class="small">
-                    <li>Firewall Rule Optimization</li>
-                    <li>VLAN & Guest Network Segmentation</li>
-                    <li>Wi-Fi Penetration Testing</li>
-                </ul>
+    <section class="container py-5">
+        <h2 class="text-center section-title">Our Specialized Services</h2>
+        <div class="row g-4 text-dark">
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card shadow-sm p-4">
+                    <h3 class="h5 fw-bold">On-Premise Network Audit</h3>
+                    <p class="text-muted small">Comprehensive review of physical firewalls and router configurations.</p>
+                    <ul class="small">
+                        <li>Firewall Rule Optimization</li>
+                        <li>VLAN Segmentation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card shadow-sm p-4">
+                    <h3 class="h5 fw-bold">Server-Level Hardening</h3>
+                    <p class="text-muted small">Deep dive into OS environment to prevent ransomware.</p>
+                    <ul class="small">
+                        <li>Vulnerability Scanning</li>
+                        <li>Privileged Access Audit</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card shadow-sm p-4">
+                    <h3 class="h5 fw-bold">Hybrid & Azure Security</h3>
+                    <p class="text-muted small">Securing your Azure migration with veteran-led practices.</p>
+                    <ul class="small">
+                        <li>MFA Governance</li>
+                        <li>Private Link Setup</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-            <div class="card feature-card shadow-sm p-4">
-                <h3 class="h5 fw-bold">Server-Level Hardening</h3>
-                <p class="text-muted">Deep dive into your OS environment. We ensure your servers are patched, encrypted, and resilient against ransomware.</p>
-                <ul class="small">
-                    <li>OS Vulnerability Scanning</li>
-                    <li>Privileged Access Audit</li>
-                    <li>BitLocker/Disk Encryption Check</li>
-                </ul>
+    </section>
+
+    <section id="contact-section" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-header card-header-custom text-center py-4">
+                            <h2 class="h4 mb-0">Request Your Security Audit</h2>
+                            <p class="small mb-0 mt-2">Join our assessment queue</p>
+                        </div>
+                        <div class="card-body p-4 p-md-5">
+                            <form id="auditForm">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="+91 XXXX XXX XXX" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Business Purpose / Goal</label>
+                                    <select class="form-select" required>
+                                        <option value="" selected disabled>Select your primary goal...</option>
+                                        <option>Regulatory Compliance (ISO/GDPR)</option>
+                                        <option>Recent Security Incident / Breach</option>
+                                        <option>Preventative Hardening</option>
+                                        <option>Cyber Insurance Requirement</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Service(s) Required</label>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="s1"><label class="form-check-label small" for="s1">Network Audit</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="s2"><label class="form-check-label small" for="s2">Server Hardening</label></div>
+                                </div>
+                                <button type="submit" class="btn btn-generate w-100 fw-bold py-3">
+                                    GENERATE MY QUEUE NUMBER
+                                </button>
+                            </form>
+
+                            <div id="queueStatus" class="mt-4 text-center d-none">
+                                <div class="alert alert-success border-2">
+                                    <h4 class="alert-heading fw-bold">Application Submitted!</h4>
+                                    <hr>
+                                    <p class="mb-0">Your current queue position is:</p>
+                                    <span id="displayNum" class="display-4 d-block fw-bold my-2 text-dark">#04</span>
+                                    <p class="small text-muted">A veteran auditor will contact you shortly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-            <div class="card feature-card shadow-sm p-4">
-                <h3 class="h5 fw-bold">Hybrid & Azure Security</h3>
-                <p class="text-muted">Bridging the gap between on
+    </section>
+
+    <footer class="py-5 bg-dark text-white text-center">
+        <div class="container">
+            <p><strong>Email:</strong> info@cybershieldsecurity.com</p>
+            <p class="small text-secondary mb-0">&copy; 2026 Cybershield Security. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('auditForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop page reload
+            
+            // Randomly pick a number between 01 and 08 for the "queue"
+            const queueNum = Math.floor(Math.random() * 8) + 1;
+            const formattedNum = queueNum < 10 ? '#0' + queueNum : '#' + queueNum;
+            
+            // Display the number and hide the form
+            document.getElementById('displayNum').innerText = formattedNum;
+            this.classList.add('d-none');
+            document.getElementById('queueStatus').classList.remove('d-none');
+        });
+    </script>
+
+</body>
+</html>
