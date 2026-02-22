@@ -15,7 +15,6 @@
         }
         body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; scroll-behavior: smooth; overflow-x: hidden; }
         
-        /* Premium Header */
         .brand-header {
             background-color: var(--primary-blue);
             padding: 20px 0;
@@ -33,7 +32,6 @@
             letter-spacing: 5px; font-weight: 700; font-size: 1.4rem; text-transform: uppercase;
         }
 
-        /* GIMMICK: Data Grid Hero */
         .hero-section {
             background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(10, 25, 47, 0.92)), 
                         url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
@@ -43,7 +41,6 @@
             position: relative;
         }
 
-        /* GIMMICK: Interactive Stat Circles */
         .stats-bar { background: #0d1d36; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding: 40px 0; }
         .stat-circle {
             border: 2px solid var(--accent-gold);
@@ -154,8 +151,8 @@
                     <div class="card-body p-4">
                         <form id="auditForm">
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">Authorized Personnel Name</label>
-                                <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="e.g. Director / Owner" required>
+                                <label class="form-label fw-bold small text-dark">Authorized Manager Name</label>
+                                <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="e.g. IT Manager / Factory Head" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-bold small text-dark">Direct Mobile Number</label>
@@ -169,6 +166,7 @@
                                     <option>Multi-Branch WAN Connection</option>
                                     <option>New School/Factory IT Setup</option>
                                     <option>Ongoing Infra Maintenance</option>
+                                    <option>Others</option>
                                 </select>
                             </div>
                             <button type="submit" id="submitBtn" class="btn w-100 py-3 mt-3" style="background: var(--primary-blue); color: var(--accent-gold); font-weight: bold; border: 2px solid var(--accent-gold); font-size: 1.1rem;">
@@ -195,7 +193,7 @@
 </footer>
 
 <script>
-    // Replace with your actual Cloudflare Worker URL
+    // Replace the URL below with your actual Cloudflare Worker URL once it is ready
     const FORM_URL = "https://your-worker.your-subdomain.workers.dev";
 
     document.getElementById('auditForm').addEventListener('submit', async function(e) {
