@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybershield Security | SMB Network & CCTV Defense</title>
+    <title>Cybershield Security | Business IT Infrastructure & Network Defense</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -24,7 +24,7 @@
 
         .hero-section {
             background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), 
-                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=1350&q=80');
+                        url('https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             color: var(--text-light);
             padding: 80px 0;
@@ -37,13 +37,13 @@
             border: 2px solid var(--accent-gold);
             font-weight: bold;
             padding: 15px 40px;
-            font-size: 1.2rem;
-            position: relative;
-            transition: all 0.3s ease;
-            overflow: hidden;
+            font-size: 1.1rem;
             border-radius: 50px;
             text-transform: uppercase;
-            animation: pulse-border 2s infinite; /* Makes the button "glow" */
+            animation: pulse-border 2s infinite;
+            display: inline-block;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
         .btn-checkup:hover {
@@ -52,23 +52,14 @@
             transform: scale(1.05);
         }
 
-        /* The Hand Icon Animation */
-        .hand-icon {
-            margin-left: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .btn-checkup:hover .hand-icon {
-            transform: translateX(5px); /* Moves hand when hovered */
-        }
-
         @keyframes pulse-border {
             0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); }
             70% { box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
             100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
         }
 
-        .feature-card { border: none; border-top: 5px solid var(--accent-gold); height: 100%; background: white; border-radius: 8px; }
+        .feature-card { border: none; border-top: 5px solid var(--accent-gold); height: 100%; background: white; border-radius: 8px; transition: 0.3s; }
+        .feature-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .card-header-security { background-color: var(--primary-blue); color: white; border-bottom: 3px solid var(--accent-gold); }
     </style>
 </head>
@@ -76,21 +67,20 @@
 
 <div class="brand-header">
     <div class="container">
-        <div style="color: var(--accent-gold); font-weight: bold; letter-spacing: 3px;">CYBERSHIELD SECURITY</div>
+        <div style="color: var(--accent-gold); font-weight: bold; letter-spacing: 3px; font-size: 1.2rem;">CYBERSHIELD SECURITY</div>
     </div>
 </div>
 
 <header class="hero-section text-center">
     <div class="container">
-        <h1 class="display-5 fw-bold mb-3">Is Your Business Internet Safe?</h1>
-        <p class="lead mb-5 mx-auto" style="max-width: 700px;">
-            We protect Schools, Factories, and Offices from hackers. 
-            Secure your Wi-Fi, CCTV, and Staff Data today.
+        <h1 class="display-5 fw-bold mb-3">Strong IT Infrastructure for Your Business</h1>
+        <p class="lead mb-5 mx-auto" style="max-width: 800px;">
+            We build and secure the technology that runs your business. From **Firewalls** and **Branch-to-Branch Connections** to complete **Network Setup**, we ensure your office, school, or factory stays connected and protected.
         </p>
         
         <a href="#audit-intake" class="btn btn-checkup">
-            Get a Free Security Check-up 
-            <i class="fas fa-hand-pointer hand-icon"></i>
+            Get a Free Infrastructure Check-up 
+            <i class="fas fa-hand-pointer ms-2"></i>
         </a>
     </div>
 </header>
@@ -99,23 +89,23 @@
     <div class="row g-4">
         <div class="col-md-4">
             <div class="card feature-card shadow-sm p-4">
-                <i class="fas fa-shield-halved fa-2x mb-3" style="color: var(--accent-gold);"></i>
-                <h3>Firewall Defense</h3>
-                <p class="text-muted">We install a 'Digital Guard' that blocks hackers from entering your office network.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card feature-card shadow-sm p-4">
-                <i class="fas fa-video-slash fa-2x mb-3" style="color: var(--accent-gold);"></i>
-                <h3>CCTV Protection</h3>
-                <p class="text-muted">Stop outsiders from spying on your cameras. We lock your CCTV behind private security walls.</p>
+                <i class="fas fa-server fa-2x mb-3" style="color: var(--accent-gold);"></i>
+                <h3 class="h5 fw-bold">Firewall & Internet Security</h3>
+                <p class="text-muted small">We set up a 'Digital Shield' to keep your company data safe from hackers and block dangerous websites on your network.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card feature-card shadow-sm p-4">
                 <i class="fas fa-network-wired fa-2x mb-3" style="color: var(--accent-gold);"></i>
-                <h3>School & Factory Wi-Fi</h3>
-                <p class="text-muted">Full end-to-end internet setup that is fast for you, but impossible for intruders to join.</p>
+                <h3 class="h5 fw-bold">Multi-Branch Connectivity (WAN)</h3>
+                <p class="text-muted small">Linking your factory, warehouse, and office? We create secure, private connections so your branches can work together seamlessly.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card feature-card shadow-sm p-4">
+                <i class="fas fa-tools fa-2x mb-3" style="color: var(--accent-gold);"></i>
+                <h3 class="h5 fw-bold">End-to-End Infra Support</h3>
+                <p class="text-muted small">From server setup to secure Wi-Fi and CCTV integration, we manage your entire IT foundation so you can focus on your business.</p>
             </div>
         </div>
     </div>
@@ -127,38 +117,38 @@
             <div class="col-md-6">
                 <div class="card shadow border-0">
                     <div class="card-header card-header-security text-center py-3">
-                        <h2 class="h5 mb-0">Speak to a Security Expert</h2>
+                        <h2 class="h5 mb-0">Infrastructure & Security Request</h2>
                     </div>
                     <div class="card-body p-4">
                         <form id="auditForm" action="REPLACE_WITH_WORKER_URL" method="POST">
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">Your Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Manager/Owner Name" required>
+                                <label class="form-label fw-bold small text-dark">Authorized Contact Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Owner / IT Manager Name" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">Mobile Number</label>
-                                <input type="tel" name="phone" class="form-control" placeholder="For call back" required>
+                                <label class="form-label fw-bold small text-dark">Direct Phone Number</label>
+                                <input type="tel" name="phone" class="form-control" placeholder="Mobile Number" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">Business Type</label>
+                                <label class="form-label fw-bold small text-dark">How can we help you today?</label>
                                 <select name="goal" class="form-select" required>
-                                    <option value="" disabled selected>Select...</option>
-                                    <option>School / Education</option>
-                                    <option>Factory / Industrial</option>
-                                    <option>Small Office / Retail</option>
-                                    <option>CCTV Security Only</option>
+                                    <option value="" disabled selected>Select an IT requirement...</option>
+                                    <option>Firewall / Network Security</option>
+                                    <option>Connecting Multiple Branches (WAN)</option>
+                                    <option>New Office / Factory IT Setup</option>
+                                    <option>Ongoing Infra Support & Security</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn w-100 py-3 mt-2" style="background: var(--primary-blue); color: white; font-weight: bold; border: 1px solid var(--accent-gold);">
-                                SUBMIT FOR CALL BACK
+                                REQUEST EXPERT CONSULTATION
                             </button>
                         </form>
                         
                         <div id="successBox" class="mt-4 text-center d-none">
                             <div class="alert alert-success">
-                                <h6 class="fw-bold">Request Sent Successfully!</h6>
-                                <p class="small mb-0 text-dark">Ref ID: <strong id="ticketId"></strong></p>
-                                <p class="small mt-2 text-dark">We will call you on the provided number.</p>
+                                <h6 class="fw-bold">Request Logged Successfully!</h6>
+                                <p class="small mb-0 text-dark">Consultation ID: <strong id="ticketId"></strong></p>
+                                <p class="small mt-2 text-dark">Our specialist will contact you to discuss your IT needs.</p>
                             </div>
                         </div>
                     </div>
@@ -169,13 +159,14 @@
 </section>
 
 <footer class="py-4 bg-dark text-white text-center">
-    <p class="small">&copy; 2026 Cybershield Security | info@cybershieldsecurity.in</p>
+    <p class="small mb-1">Email: info@cybershieldsecurity.in</p>
+    <p class="x-small text-secondary mb-0">&copy; 2026 Cybershield Security | Expert IT Infrastructure & Network Defense</p>
 </footer>
 
 <script>
     document.getElementById('auditForm').addEventListener('submit', function(e) {
         const id = Math.floor(1000 + Math.random() * 9000);
-        document.getElementById('ticketId').innerText = 'CS-' + id;
+        document.getElementById('ticketId').innerText = 'INFRA-' + id;
         this.classList.add('d-none');
         document.getElementById('successBox').classList.remove('d-none');
     });
