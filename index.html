@@ -3,83 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybershield Security | Business IT Infrastructure & Network Defense</title>
+    <title>Cybershield Security | Business IT & Network Defense</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
             --primary-blue: #0a192f;
+            --electric-blue: #00d2ff; /* Your new Icon Color */
             --accent-gold: #c5a059;
             --text-light: #e6f1ff;
         }
         body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; scroll-behavior: smooth; }
         
+        /* Premium Blue Header */
         .brand-header {
             background-color: var(--primary-blue);
-            padding: 20px 0;
-            border-bottom: 3px solid var(--accent-gold);
+            padding: 25px 0;
+            border-bottom: 3px solid var(--electric-blue);
             text-align: center;
         }
 
+        /* THE NEW BLUE ICON */
+        .logo-icon { width: 70px; height: 70px; margin-bottom: 10px; filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.5)); }
+        
+        .brand-name {
+            color: var(--electric-blue);
+            letter-spacing: 5px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+
         .hero-section {
-            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), 
+            background: linear-gradient(rgba(10, 25, 47, 0.88), rgba(10, 25, 47, 0.88)), 
                         url('https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             color: var(--text-light);
             padding: 80px 0;
         }
 
-        /* --- THE ANIMATED BUTTON --- */
+        /* Interactive Hand Button */
         .btn-checkup {
             background-color: transparent;
-            color: var(--accent-gold);
-            border: 2px solid var(--accent-gold);
+            color: var(--electric-blue);
+            border: 2px solid var(--electric-blue);
             font-weight: bold;
             padding: 15px 40px;
-            font-size: 1.1rem;
             border-radius: 50px;
             text-transform: uppercase;
-            animation: pulse-border 2s infinite;
+            animation: pulse-blue 2s infinite;
             display: inline-block;
             text-decoration: none;
             transition: 0.3s;
         }
-
         .btn-checkup:hover {
-            background-color: var(--accent-gold);
+            background-color: var(--electric-blue);
             color: var(--primary-blue);
             transform: scale(1.05);
         }
 
-        @keyframes pulse-border {
-            0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 210, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
         }
 
-        .feature-card { border: none; border-top: 5px solid var(--accent-gold); height: 100%; background: white; border-radius: 8px; transition: 0.3s; }
-        .feature-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .card-header-security { background-color: var(--primary-blue); color: white; border-bottom: 3px solid var(--accent-gold); }
+        .feature-card { border: none; border-top: 5px solid var(--electric-blue); height: 100%; transition: 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,210,255,0.1); }
+        .card-header-security { background-color: var(--primary-blue); color: white; border-bottom: 3px solid var(--electric-blue); }
     </style>
 </head>
 <body>
 
 <div class="brand-header">
     <div class="container">
-        <div style="color: var(--accent-gold); font-weight: bold; letter-spacing: 3px; font-size: 1.2rem;">CYBERSHIELD SECURITY</div>
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#00d2ff;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#3a7bd5;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="url(#blueGrad)"/>
+            <path d="M9 11L11 13L15 9" stroke="#0a192f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5V19M5 12H19" stroke="white" stroke-opacity="0.2" stroke-width="0.5"/>
+        </svg>
+        <div class="brand-name">Cybershield</div>
     </div>
 </div>
 
 <header class="hero-section text-center">
     <div class="container">
-        <h1 class="display-5 fw-bold mb-3">Strong IT Infrastructure for Your Business</h1>
+        <h1 class="display-5 fw-bold mb-3">Professional IT Infrastructure</h1>
         <p class="lead mb-5 mx-auto" style="max-width: 800px;">
-            We build and secure the technology that runs your business. From **Firewalls** and **Branch-to-Branch Connections** to complete **Network Setup**, we ensure your office, school, or factory stays connected and protected.
+            We build and secure the IT systems that run your business. From **Firewalls** and **Multi-Branch Connections** to complete **Network Support**.
         </p>
         
         <a href="#audit-intake" class="btn btn-checkup">
-            Get a Free Infrastructure Check-up 
+            Free Infrastructure Check-up 
             <i class="fas fa-hand-pointer ms-2"></i>
         </a>
     </div>
@@ -89,66 +111,66 @@
     <div class="row g-4">
         <div class="col-md-4">
             <div class="card feature-card shadow-sm p-4">
-                <i class="fas fa-server fa-2x mb-3" style="color: var(--accent-gold);"></i>
-                <h3 class="h5 fw-bold">Firewall & Internet Security</h3>
-                <p class="text-muted small">We set up a 'Digital Shield' to keep your company data safe from hackers and block dangerous websites on your network.</p>
+                <i class="fas fa-user-shield fa-2x mb-3" style="color: var(--electric-blue);"></i>
+                <h3 class="h5 fw-bold">Firewall Security</h3>
+                <p class="text-muted small">We set up a digital barrier to keep hackers out of your factory or office computers.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card feature-card shadow-sm p-4">
-                <i class="fas fa-network-wired fa-2x mb-3" style="color: var(--accent-gold);"></i>
-                <h3 class="h5 fw-bold">Multi-Branch Connectivity (WAN)</h3>
-                <p class="text-muted small">Linking your factory, warehouse, and office? We create secure, private connections so your branches can work together seamlessly.</p>
+                <i class="fas fa-project-diagram fa-2x mb-3" style="color: var(--electric-blue);"></i>
+                <h3 class="h5 fw-bold">Branch Connectivity</h3>
+                <p class="text-muted small">Securely connect your warehouse, factory, and office so your staff can share data safely.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card feature-card shadow-sm p-4">
-                <i class="fas fa-tools fa-2x mb-3" style="color: var(--accent-gold);"></i>
-                <h3 class="h5 fw-bold">End-to-End Infra Support</h3>
-                <p class="text-muted small">From server setup to secure Wi-Fi and CCTV integration, we manage your entire IT foundation so you can focus on your business.</p>
+                <i class="fas fa-microchip fa-2x mb-3" style="color: var(--electric-blue);"></i>
+                <h3 class="h5 fw-bold">Infra Management</h3>
+                <p class="text-muted small">Full setup of Wi-Fi, Servers, and WAN. We handle the tech so you can handle the business.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="audit-intake" class="py-5 bg-light">
+<section id="audit-intake" class="py-5 bg-white border-top">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card shadow border-0">
+                <div class="card shadow-lg border-0">
                     <div class="card-header card-header-security text-center py-3">
-                        <h2 class="h5 mb-0">Infrastructure & Security Request</h2>
+                        <h2 class="h5 mb-0">Speak to an IT Specialist</h2>
                     </div>
                     <div class="card-body p-4">
                         <form id="auditForm" action="REPLACE_WITH_WORKER_URL" method="POST">
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">Authorized Contact Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Owner / IT Manager Name" required>
+                                <label class="form-label fw-bold small text-dark">Contact Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Owner/Manager Name" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">Direct Phone Number</label>
+                                <label class="form-label fw-bold small text-dark">Phone Number</label>
                                 <input type="tel" name="phone" class="form-control" placeholder="Mobile Number" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">How can we help you today?</label>
+                                <label class="form-label fw-bold small text-dark">Requirements</label>
                                 <select name="goal" class="form-select" required>
-                                    <option value="" disabled selected>Select an IT requirement...</option>
-                                    <option>Firewall / Network Security</option>
-                                    <option>Connecting Multiple Branches (WAN)</option>
-                                    <option>New Office / Factory IT Setup</option>
-                                    <option>Ongoing Infra Support & Security</option>
+                                    <option value="" disabled selected>What can we help with?</option>
+                                    <option>Firewall / Hacker Protection</option>
+                                    <option>Connecting Branches (WAN)</option>
+                                    <option>New Office IT Setup</option>
+                                    <option>CCTV / Security Integration</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn w-100 py-3 mt-2" style="background: var(--primary-blue); color: white; font-weight: bold; border: 1px solid var(--accent-gold);">
-                                REQUEST EXPERT CONSULTATION
+                            <button type="submit" class="btn w-100 py-3 mt-2" style="background: var(--primary-blue); color: var(--electric-blue); font-weight: bold; border: 2px solid var(--electric-blue);">
+                                REQUEST CALL BACK
                             </button>
                         </form>
-                        
                         <div id="successBox" class="mt-4 text-center d-none">
-                            <div class="alert alert-success">
-                                <h6 class="fw-bold">Request Logged Successfully!</h6>
-                                <p class="small mb-0 text-dark">Consultation ID: <strong id="ticketId"></strong></p>
-                                <p class="small mt-2 text-dark">Our specialist will contact you to discuss your IT needs.</p>
+                            <div class="alert alert-info border-2" style="background: #e0f7ff;">
+                                <h6 class="fw-bold">Request Logged!</h6>
+                                <p class="small mb-0">Ref ID: <strong id="ticketId"></strong></p>
+                                <hr>
+                                <p class="small mt-2">A specialist will call you shortly.</p>
                             </div>
                         </div>
                     </div>
@@ -160,13 +182,13 @@
 
 <footer class="py-4 bg-dark text-white text-center">
     <p class="small mb-1">Email: info@cybershieldsecurity.in</p>
-    <p class="x-small text-secondary mb-0">&copy; 2026 Cybershield Security | Expert IT Infrastructure & Network Defense</p>
+    <p class="x-small text-secondary mb-0">&copy; 2026 Cybershield Security | Expert Infrastructure & Defense</p>
 </footer>
 
 <script>
     document.getElementById('auditForm').addEventListener('submit', function(e) {
         const id = Math.floor(1000 + Math.random() * 9000);
-        document.getElementById('ticketId').innerText = 'INFRA-' + id;
+        document.getElementById('ticketId').innerText = 'CS-' + id;
         this.classList.add('d-none');
         document.getElementById('successBox').classList.remove('d-none');
     });
