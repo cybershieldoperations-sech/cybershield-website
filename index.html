@@ -13,59 +13,56 @@
             --accent-gold: #c5a059;
             --text-light: #e6f1ff;
         }
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; scroll-behavior: smooth; overflow-x: hidden; }
         
-        /* Premium Navy & Gold Header */
+        /* Premium Header */
         .brand-header {
             background-color: var(--primary-blue);
-            padding: 25px 0;
+            padding: 20px 0;
             border-bottom: 3px solid var(--accent-gold);
             text-align: center;
         }
 
-        /* THE RESTORED GOLD ICON */
         .logo-icon { 
-            width: 75px; 
-            height: 75px; 
-            margin-bottom: 10px; 
+            width: 70px; height: 70px; margin-bottom: 8px; 
             filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); 
         }
         
         .brand-name {
             color: var(--accent-gold);
-            letter-spacing: 5px;
-            font-weight: 700;
-            font-size: 1.4rem;
-            text-transform: uppercase;
+            letter-spacing: 5px; font-weight: 700; font-size: 1.4rem; text-transform: uppercase;
         }
 
+        /* GIMMICK: Data Grid Hero */
         .hero-section {
-            background: linear-gradient(rgba(10, 25, 47, 0.88), rgba(10, 25, 47, 0.88)), 
-                        url('https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
+            background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(10, 25, 47, 0.92)), 
+                        url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            background-color: var(--primary-blue);
             color: var(--text-light);
-            padding: 80px 0;
+            padding: 100px 0;
+            position: relative;
         }
 
-        /* Gold Pulse Button */
-        .btn-checkup {
-            background-color: transparent;
-            color: var(--accent-gold);
+        /* GIMMICK: Interactive Stat Circles */
+        .stats-bar { background: #0d1d36; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding: 40px 0; }
+        .stat-circle {
             border: 2px solid var(--accent-gold);
-            font-weight: bold;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            animation: pulse-gold 2s infinite;
-            display: inline-block;
-            text-decoration: none;
-            transition: 0.3s;
+            border-radius: 50%; width: 90px; height: 90px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            margin: 0 auto 15px; box-shadow: 0 0 20px rgba(197, 160, 89, 0.1);
+            transition: 0.4s;
         }
-        .btn-checkup:hover {
-            background-color: var(--accent-gold);
-            color: var(--primary-blue);
-            transform: scale(1.05);
+        .stat-circle:hover { transform: rotateY(180deg); border-color: white; }
+        .counter-num { font-size: 1.4rem; font-weight: bold; color: var(--accent-gold); }
+
+        .btn-checkup {
+            background-color: transparent; color: var(--accent-gold);
+            border: 2px solid var(--accent-gold); font-weight: bold;
+            padding: 16px 45px; border-radius: 50px; text-transform: uppercase;
+            animation: pulse-gold 2s infinite; display: inline-block;
+            text-decoration: none; transition: 0.3s;
         }
+        .btn-checkup:hover { background-color: var(--accent-gold); color: var(--primary-blue); transform: scale(1.05); }
 
         @keyframes pulse-gold {
             0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); }
@@ -73,9 +70,8 @@
             100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
         }
 
-        .feature-card { border: none; border-top: 5px solid var(--accent-gold); height: 100%; transition: 0.3s; }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.1); }
-        .card-header-security { background-color: var(--primary-blue); color: white; border-bottom: 3px solid var(--accent-gold); }
+        .feature-card { border: none; border-top: 5px solid var(--accent-gold); height: 100%; transition: 0.3s; background: white; border-radius: 8px;}
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
     </style>
 </head>
 <body>
@@ -92,39 +88,56 @@
 
 <header class="hero-section text-center">
     <div class="container">
-        <h1 class="display-5 fw-bold mb-3">Professional IT Infrastructure</h1>
-        <p class="lead mb-5 mx-auto" style="max-width: 800px;">
-            We build and secure the IT systems that run your business. From **Firewalls** and **Multi-Branch Connections** to complete **Network Support**.
+        <h1 class="display-4 fw-bold mb-3">Secure IT Infrastructure & Defense</h1>
+        <p class="lead mb-5 mx-auto" style="max-width: 800px; opacity: 0.9;">
+            Expert Firewall Setup, Secure WAN (Branch-to-Branch), and End-to-End Network Infrastructure for Schools, Factories, and SMBs.
         </p>
-        
         <a href="#audit-intake" class="btn btn-checkup">
-            Free Infrastructure Check-up 
-            <i class="fas fa-hand-pointer ms-2"></i>
+            Free Infrastructure Check-up <i class="fas fa-hand-pointer ms-2"></i>
         </a>
     </div>
 </header>
 
+<section class="stats-bar text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-4">
+                <div class="stat-circle"><div class="counter-num">100%</div></div>
+                <p class="small text-uppercase fw-bold" style="color: #888;">Secure WAN</p>
+            </div>
+            <div class="col-4">
+                <div class="stat-circle"><div class="counter-num">24/7</div></div>
+                <p class="small text-uppercase fw-bold" style="color: #888;">Monitoring</p>
+            </div>
+            <div class="col-4">
+                <div class="stat-circle"><div class="counter-num">0</div></div>
+                <p class="small text-uppercase fw-bold" style="color: #888;">Breaches</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="container py-5 text-dark">
-    <div class="row g-4">
+    <div class="row g-4 text-center">
         <div class="col-md-4">
-            <div class="card feature-card shadow-sm p-4 text-center">
-                <i class="fas fa-user-shield fa-2x mb-3" style="color: var(--accent-gold);"></i>
+            <div class="card feature-card shadow-sm p-4">
+                <i class="fas fa-user-shield fa-3x mb-3" style="color: var(--accent-gold);"></i>
                 <h3 class="h5 fw-bold">Firewall Security</h3>
-                <p class="text-muted small">Professional setup to block intruders and keep your factory or office data private.</p>
+                <p class="text-muted small">Military-grade protection to block intruders and keep your factory/office data private.</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card feature-card shadow-sm p-4 text-center">
-                <i class="fas fa-network-wired fa-2x mb-3" style="color: var(--accent-gold);"></i>
+            <div class="card feature-card shadow-sm p-4">
+                <i class="fas fa-network-wired fa-3x mb-3" style="color: var(--accent-gold);"></i>
                 <h3 class="h5 fw-bold">Branch Connectivity</h3>
-                <p class="text-muted small">Securely connect your multiple locations (WAN) so your team can work together safely.</p>
+                <p class="text-muted small">Secure private connections linking your headquarters to factories and warehouses.</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card feature-card shadow-sm p-4 text-center">
-                <i class="fas fa-server fa-2x mb-3" style="color: var(--accent-gold);"></i>
+            <div class="card feature-card shadow-sm p-4">
+                <i class="fas fa-tools fa-3x mb-3" style="color: var(--accent-gold);"></i>
                 <h3 class="h5 fw-bold">Infra Management</h3>
-                <p class="text-muted small">Complete IT Foundation: From secure Wi-Fi to Server setup and ongoing defense.</p>
+                <p class="text-muted small">Complete design and 24/7 support for high-performance business IT foundations.</p>
             </div>
         </div>
     </div>
@@ -135,39 +148,38 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow-lg border-0">
-                    <div class="card-header card-header-security text-center py-3">
-                        <h2 class="h5 mb-0">Speak to an IT Specialist</h2>
+                    <div class="card-header text-center py-4" style="background: var(--primary-blue); color: white; border-bottom: 3px solid var(--accent-gold);">
+                        <h2 class="h5 mb-0">Consult with an IT Specialist</h2>
                     </div>
                     <div class="card-body p-4">
-                        <form id="auditForm" action="REPLACE_WITH_WORKER_URL" method="POST">
+                        <form id="auditForm">
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">Contact Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Owner/Manager Name" required>
+                                <label class="form-label fw-bold small text-dark">Authorized Personnel Name</label>
+                                <input type="text" id="name" name="name" class="form-control form-control-lg" placeholder="e.g. Director / Owner" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">Phone Number</label>
-                                <input type="tel" name="phone" class="form-control" placeholder="Mobile Number" required>
+                                <label class="form-label fw-bold small text-dark">Direct Mobile Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control form-control-lg" placeholder="For instant call back" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-dark">IT Requirements</label>
-                                <select name="goal" class="form-select" required>
-                                    <option value="" disabled selected>What can we help with?</option>
+                                <label class="form-label fw-bold small text-dark">Primary Requirement</label>
+                                <select id="goal" name="goal" class="form-select form-select-lg" required>
+                                    <option value="" disabled selected>Choose your service...</option>
                                     <option>Firewall / Hacker Protection</option>
-                                    <option>Connecting Branches (WAN)</option>
-                                    <option>New Office / Factory IT Setup</option>
-                                    <option>Complete Infrastructure Support</option>
+                                    <option>Multi-Branch WAN Connection</option>
+                                    <option>New School/Factory IT Setup</option>
+                                    <option>Ongoing Infra Maintenance</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn w-100 py-3 mt-2" style="background: var(--primary-blue); color: var(--accent-gold); font-weight: bold; border: 2px solid var(--accent-gold);">
+                            <button type="submit" id="submitBtn" class="btn w-100 py-3 mt-3" style="background: var(--primary-blue); color: var(--accent-gold); font-weight: bold; border: 2px solid var(--accent-gold); font-size: 1.1rem;">
                                 REQUEST CALL BACK
                             </button>
                         </form>
                         <div id="successBox" class="mt-4 text-center d-none">
                             <div class="alert alert-warning border-2" style="background: #fffdf5; border-color: var(--accent-gold);">
-                                <h6 class="fw-bold" style="color: var(--primary-blue);">Request Logged!</h6>
-                                <p class="small mb-0 text-dark">Ref ID: <strong id="ticketId"></strong></p>
-                                <hr>
-                                <p class="small mt-2 text-dark">Our specialist will call you shortly.</p>
+                                <h6 class="fw-bold" style="color: var(--primary-blue);">Request Received Successfully!</h6>
+                                <p class="small mb-0 text-dark">Consultation Ref: <strong id="ticketId"></strong></p>
+                                <hr><p class="small mt-2 text-dark">Our specialist team will call you within 24 hours.</p>
                             </div>
                         </div>
                     </div>
@@ -179,15 +191,43 @@
 
 <footer class="py-4 bg-dark text-white text-center">
     <p class="small mb-1">Email: info@cybershieldsecurity.in</p>
-    <p class="x-small text-secondary mb-0">&copy; 2026 Cybershield Security | Expert Infrastructure & Defense</p>
+    <p class="x-small text-secondary mb-0">&copy; 2026 Cybershield Security | Veteran-Led Infrastructure Defense</p>
 </footer>
 
 <script>
-    document.getElementById('auditForm').addEventListener('submit', function(e) {
-        const id = Math.floor(1000 + Math.random() * 9000);
-        document.getElementById('ticketId').innerText = 'INFRA-' + id;
-        this.classList.add('d-none');
-        document.getElementById('successBox').classList.remove('d-none');
+    // Replace with your actual Cloudflare Worker URL
+    const FORM_URL = "https://your-worker.your-subdomain.workers.dev";
+
+    document.getElementById('auditForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = "SENDING SECURELY...";
+        btn.disabled = true;
+
+        const formData = new FormData(this);
+        
+        try {
+            const response = await fetch(FORM_URL, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const id = Math.floor(1000 + Math.random() * 9000);
+                document.getElementById('ticketId').innerText = 'INFRA-' + id;
+                this.classList.add('d-none');
+                document.getElementById('successBox').classList.remove('d-none');
+            } else {
+                alert("Redirection Error. Check your Worker URL.");
+                btn.innerText = "REQUEST CALL BACK";
+                btn.disabled = false;
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Connection error. Please check your internet.");
+            btn.innerText = "REQUEST CALL BACK";
+            btn.disabled = false;
+        }
     });
 </script>
 
