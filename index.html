@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybershield Security | Protecting Your Business Infrastructure</title>
+    <title>Cybershield Security | SMB Network & CCTV Defense</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
             --primary-blue: #0a192f;
@@ -15,84 +17,105 @@
         
         .brand-header {
             background-color: var(--primary-blue);
-            padding: 25px 0;
+            padding: 20px 0;
             border-bottom: 3px solid var(--accent-gold);
             text-align: center;
         }
-        .logo-icon { width: 60px; height: 60px; margin-bottom: 8px; }
-        .brand-name {
-            color: var(--accent-gold);
-            letter-spacing: 4px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-        }
 
         .hero-section {
-            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), 
                         url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             color: var(--text-light);
-            padding: 60px 0;
-        }
-        .trust-badge {
-            background-color: var(--accent-gold);
-            color: var(--primary-blue);
-            padding: 6px 20px;
-            font-weight: bold;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
+            padding: 80px 0;
         }
 
-        .feature-card { border: none; border-top: 5px solid var(--accent-gold); transition: 0.3s; height: 100%; background: white; border-radius: 8px; }
-        .feature-card h3 { color: var(--primary-blue); font-size: 1.25rem; margin-top: 10px; }
+        /* --- THE ANIMATED BUTTON --- */
+        .btn-checkup {
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+            font-weight: bold;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-radius: 50px;
+            text-transform: uppercase;
+            animation: pulse-border 2s infinite; /* Makes the button "glow" */
+        }
+
+        .btn-checkup:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            transform: scale(1.05);
+        }
+
+        /* The Hand Icon Animation */
+        .hand-icon {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-checkup:hover .hand-icon {
+            transform: translateX(5px); /* Moves hand when hovered */
+        }
+
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(197, 160, 89, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+        }
+
+        .feature-card { border: none; border-top: 5px solid var(--accent-gold); height: 100%; background: white; border-radius: 8px; }
         .card-header-security { background-color: var(--primary-blue); color: white; border-bottom: 3px solid var(--accent-gold); }
-        .btn-gold { background-color: var(--primary-blue); color: white; border: 2px solid var(--accent-gold); font-weight: bold; padding: 12px; }
-        .btn-gold:hover { background-color: var(--accent-gold); color: var(--primary-blue); }
     </style>
 </head>
 <body>
 
 <div class="brand-header">
     <div class="container">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="#c5a059"/>
-            <path d="M9 11L11 13L15 9" stroke="#0a192f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div class="brand-name">Cybershield Security</div>
+        <div style="color: var(--accent-gold); font-weight: bold; letter-spacing: 3px;">CYBERSHIELD SECURITY</div>
     </div>
 </div>
 
 <header class="hero-section text-center">
     <div class="container">
-        <div class="trust-badge">Professional Security for Small & Medium Businesses</div>
-        <h1 class="display-5 fw-bold mb-3">Is Your Office Network Secure?</h1>
-        <p class="lead mb-4 mx-auto" style="max-width: 700px;">We help Factories, Schools, and Small Offices set up "Military-Grade" protection to keep your internet, data, and CCTV safe from intruders.</p>
-        <a href="#audit-intake" class="btn btn-lg btn-outline-warning px-4">Get a Free Security Check-up</a>
+        <h1 class="display-5 fw-bold mb-3">Is Your Business Internet Safe?</h1>
+        <p class="lead mb-5 mx-auto" style="max-width: 700px;">
+            We protect Schools, Factories, and Offices from hackers. 
+            Secure your Wi-Fi, CCTV, and Staff Data today.
+        </p>
+        
+        <a href="#audit-intake" class="btn btn-checkup">
+            Get a Free Security Check-up 
+            <i class="fas fa-hand-pointer hand-icon"></i>
+        </a>
     </div>
 </header>
 
-<section class="container py-5">
-    <h2 class="text-center mb-5 fw-bold" style="color: var(--primary-blue);">Our Security Solutions</h2>
-    <div class="row g-4 text-dark">
+<section class="container py-5 text-dark">
+    <div class="row g-4">
         <div class="col-md-4">
             <div class="card feature-card shadow-sm p-4">
-                <h3 class="fw-bold">Firewall Protection</h3>
-                <p class="text-muted">Like a digital gatekeeper for your office. We block hackers and unauthorized users before they even reach your computers.</p>
+                <i class="fas fa-shield-halved fa-2x mb-3" style="color: var(--accent-gold);"></i>
+                <h3>Firewall Defense</h3>
+                <p class="text-muted">We install a 'Digital Guard' that blocks hackers from entering your office network.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card feature-card shadow-sm p-4">
-                <h3 class="fw-bold">End-to-End Network</h3>
-                <p class="text-muted">Setting up safe Wi-Fi and cables for your entire factory or school. Fast internet that is also 100% secure.</p>
+                <i class="fas fa-video-slash fa-2x mb-3" style="color: var(--accent-gold);"></i>
+                <h3>CCTV Protection</h3>
+                <p class="text-muted">Stop outsiders from spying on your cameras. We lock your CCTV behind private security walls.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card feature-card shadow-sm p-4">
-                <h3 class="fw-bold">Expert Consulting</h3>
-                <p class="text-muted">Not sure what you need? We audit your current setup and give you a simple plan to fix any security gaps.</p>
+                <i class="fas fa-network-wired fa-2x mb-3" style="color: var(--accent-gold);"></i>
+                <h3>School & Factory Wi-Fi</h3>
+                <p class="text-muted">Full end-to-end internet setup that is fast for you, but impossible for intruders to join.</p>
             </div>
         </div>
     </div>
@@ -104,37 +127,38 @@
             <div class="col-md-6">
                 <div class="card shadow border-0">
                     <div class="card-header card-header-security text-center py-3">
-                        <h2 class="h5 mb-0">Request a Security Consultation</h2>
+                        <h2 class="h5 mb-0">Speak to a Security Expert</h2>
                     </div>
                     <div class="card-body p-4">
                         <form id="auditForm" action="REPLACE_WITH_WORKER_URL" method="POST">
                             <div class="mb-3">
-                                <label class="form-label fw-bold small">Contact Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Owner/Manager Name" required>
+                                <label class="form-label fw-bold small text-dark">Your Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Manager/Owner Name" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-bold small">Phone Number</label>
-                                <input type="tel" name="phone" class="form-control" placeholder="Mobile Number" required>
+                                <label class="form-label fw-bold small text-dark">Mobile Number</label>
+                                <input type="tel" name="phone" class="form-control" placeholder="For call back" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label fw-bold small">I am looking for:</label>
+                                <label class="form-label fw-bold small text-dark">Business Type</label>
                                 <select name="goal" class="form-select" required>
-                                    <option value="" disabled selected>Select an option...</option>
-                                    <option>Firewall / Hacker Protection</option>
-                                    <option>New Office/School Network Setup</option>
-                                    <option>Secure CCTV / Wi-Fi</option>
-                                    <option>General Security Audit</option>
+                                    <option value="" disabled selected>Select...</option>
+                                    <option>School / Education</option>
+                                    <option>Factory / Industrial</option>
+                                    <option>Small Office / Retail</option>
+                                    <option>CCTV Security Only</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-gold w-100 mt-2">REQUEST CALL BACK</button>
+                            <button type="submit" class="btn w-100 py-3 mt-2" style="background: var(--primary-blue); color: white; font-weight: bold; border: 1px solid var(--accent-gold);">
+                                SUBMIT FOR CALL BACK
+                            </button>
                         </form>
+                        
                         <div id="successBox" class="mt-4 text-center d-none">
-                            <div class="alert alert-success border-2">
-                                <h6 class="fw-bold">Request Received</h6>
-                                <p class="small mb-2">Your Security Reference ID:</p>
-                                <span id="ticketId" class="h4 d-block fw-bold text-dark mb-3">CS-LEVEL-####</span>
-                                <hr>
-                                <p class="small mb-0">Our team will call you shortly to discuss your requirements.</p>
+                            <div class="alert alert-success">
+                                <h6 class="fw-bold">Request Sent Successfully!</h6>
+                                <p class="small mb-0 text-dark">Ref ID: <strong id="ticketId"></strong></p>
+                                <p class="small mt-2 text-dark">We will call you on the provided number.</p>
                             </div>
                         </div>
                     </div>
@@ -145,14 +169,13 @@
 </section>
 
 <footer class="py-4 bg-dark text-white text-center">
-    <p class="small mb-2">Email: info@cybershieldsecurity.in</p>
-    <p class="x-small text-secondary mb-0">&copy; 2026 Cybershield Security | Expert Network Defense for Small Businesses</p>
+    <p class="small">&copy; 2026 Cybershield Security | info@cybershieldsecurity.in</p>
 </footer>
 
 <script>
     document.getElementById('auditForm').addEventListener('submit', function(e) {
         const id = Math.floor(1000 + Math.random() * 9000);
-        document.getElementById('ticketId').innerText = 'CS-REF-' + id;
+        document.getElementById('ticketId').innerText = 'CS-' + id;
         this.classList.add('d-none');
         document.getElementById('successBox').classList.remove('d-none');
     });
