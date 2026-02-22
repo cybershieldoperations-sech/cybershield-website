@@ -1,171 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybershield Security | Veteran-Led MSME Audits</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #0a192f;
-            --accent-gold: #c5a059;
-            --text-light: #e6f1ff;
-        }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #f8f9fa; 
-            scroll-behavior: smooth; 
-        }
-        .hero-section {
-            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), 
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            color: var(--text-light);
-            padding: 100px 0;
-            border-bottom: 5px solid var(--accent-gold);
-        }
-        .section-title { color: var(--primary-blue); font-weight: 800; text-transform: uppercase; margin-bottom: 40px; }
-        .feature-card {
-            border: none;
-            border-bottom: 4px solid var(--accent-gold);
-            transition: transform 0.3s;
-            height: 100%;
-        }
-        .feature-card:hover { transform: translateY(-10px); }
-        .experience-badge {
-            background-color: var(--accent-gold);
-            color: var(--primary-blue);
-            padding: 10px 20px;
-            font-weight: bold;
-            border-radius: 50px;
-            display: inline-block;
-        }
-        /* Form Styling */
-        .card-header-security {
-            background-color: var(--primary-blue);
-            border-bottom: 4px solid var(--accent-gold);
-            color: white;
-        }
-        .btn-gold {
-            background-color: var(--primary-blue);
-            color: white;
-            border: 2px solid var(--accent-gold);
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-gold:hover {
-            background-color: var(--accent-gold);
-            color: var(--primary-blue);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberShield Security | Professional Intake</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles from your original code */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; color: #fff; overflow-x: hidden; background: #111; scroll-behavior: smooth; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Hero Section */
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/cyber-bg.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    header h1 { font-size: 4rem; margin-bottom: 20px; color: #00e5ff; }
+    header p { font-size: 1.5rem; max-width: 700px; }
+
+    /* Buttons */
+    .btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #00e5ff;
+      color: #000;
+      font-weight: bold;
+      border-radius: 50px;
+      transition: 0.3s;
+      cursor: pointer;
+      border: none;
+      display: inline-block;
+    }
+    .btn:hover { background: #00bcd4; color: #fff; }
+
+    /* Services Section */
+    section.services {
+      background: #111;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    section.services h2 { font-size: 3rem; margin-bottom: 50px; color: #00e5ff; }
+    .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+    .card { background: #222; padding: 30px; border-radius: 20px; width: 300px; transition: 0.3s; }
+    .card:hover { transform: translateY(-10px); background: #00bcd4; color: #fff; }
+    .card h3 { margin-bottom: 20px; color: #00e5ff; }
+
+    /* Form Section (New) */
+    .intake-section { background: #0a0a0a; padding: 80px 20px; text-align: center; border-top: 2px solid #222; }
+    .form-container { max-width: 600px; margin: 0 auto; background: #1a1a1a; padding: 40px; border-radius: 20px; border: 1px solid #333; }
+    .form-group { margin-bottom: 20px; text-align: left; }
+    .form-group label { display: block; margin-bottom: 8px; color: #00e5ff; font-weight: bold; }
+    .form-control { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #444; background: #000; color: #fff; font-size: 1rem; }
+    
+    /* Result Display */
+    #statusBox { display: none; margin-top: 20px; padding: 30px; border: 2px solid #00e5ff; border-radius: 20px; background: #001a1a; }
+    #ticketId { font-size: 2rem; color: #00e5ff; font-weight: bold; display: block; margin-top: 10px; }
+
+    /* Footer */
+    footer { background: #000; text-align: center; padding: 40px 20px; font-size: 0.9rem; color: #999; border-top: 1px solid #222; }
+
+    @media(max-width:768px){
+      header h1 { font-size: 3rem; }
+      .form-container { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<header class="hero-section text-center">
-    <div class="container">
-        <h1 class="display-3 fw-bold">CYBERSHIELD SECURITY</h1>
-        <div class="experience-badge mb-4">Network Security Expertise for Businesses of All Sizes</div>
-        <p class="lead mb-5">Enterprise-Grade Security Audits for MSMEs & Small Businesses.</p>
-        <a href="#audit-intake" class="btn btn-lg btn-outline-warning">Book Your Audit Consultation</a>
+  <header>
+    <h1>CyberShield Security</h1>
+    <p>Protecting your digital assets with top-tier network and cloud security solutions.</p>
+    <a href="#intake" class="btn">Initialize Audit</a>
+  </header>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Network Security</h3>
+        <p>Firewalls, VPNs, and advanced monitoring for complete protection.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud Security</h3>
+        <p>Secure cloud infrastructure with zero-trust principles.</p>
+      </div>
+      <div class="card">
+        <h3>Penetration Testing</h3>
+        <p>Proactive testing to identify vulnerabilities before attackers do.</p>
+      </div>
     </div>
-</header>
+  </section>
 
-<section class="container py-5">
-    <h2 class="text-center section-title">Our Specialized Services</h2>
-    <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-            <div class="card feature-card shadow-sm p-4 text-dark">
-                <h3 class="h5 fw-bold">On-Premise Network Audit</h3>
-                <p class="text-muted">Comprehensive review of physical firewalls, router configurations, and cabling security.</p>
-            </div>
+  <section class="intake-section" id="intake">
+    <div class="form-container">
+      <h2 style="color: #00e5ff; margin-bottom: 30px;">Security Assessment Intake</h2>
+      <form id="auditForm" action="REPLACE_WITH_WORKER_URL" method="POST">
+        <div class="form-group">
+          <label>Personnel Name</label>
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
         </div>
-        <div class="col-md-6 col-lg-4">
-            <div class="card feature-card shadow-sm p-4 text-dark">
-                <h3 class="h5 fw-bold">Server-Level Hardening</h3>
-                <p class="text-muted">Deep dive into your OS environment. We ensure your servers are patched and encrypted.</p>
-            </div>
+        <div class="form-group">
+          <label>Contact Number</label>
+          <input type="tel" name="phone" class="form-control" placeholder="+91..." required>
         </div>
-        <div class="col-md-6 col-lg-4">
-            <div class="card feature-card shadow-sm p-4 text-dark">
-                <h3 class="h5 fw-bold">Hybrid & Azure Security</h3>
-                <p class="text-muted">Bridging the gap between on-prem and cloud using veteran-led best practices.</p>
-            </div>
+        <div class="form-group">
+          <label>Primary Business Goal</label>
+          <select name="goal" class="form-control" required>
+            <option value="" disabled selected>Select goal...</option>
+            <option>Regulatory Compliance</option>
+            <option>Preventative Hardening</option>
+            <option>Incident Response</option>
+          </select>
         </div>
+        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">GENERATE ASSESSMENT TICKET</button>
+      </form>
+
+      <div id="statusBox">
+        <h3 style="color: #00e5ff;">Application Submitted!</h3>
+        <p style="margin-top: 10px;">Cybersecurity Assessment Level:</p>
+        <span id="ticketId">CS-LEVEL-####</span>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #00bcd4;">A veteran auditor will contact you shortly.</p>
+        <p style="font-size: 0.8rem; color: #666;">Verification sent to: info@cybershieldsecurity.in</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="audit-intake" class="py-5 bg-white">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card shadow-lg border-0">
-                    <div class="card-header card-header-security text-center py-4">
-                        <h2 class="h4 mb-0">Request Your Security Audit</h2>
-                        <p class="small mb-0 mt-2">Professional Intake Protocol</p>
-                    </div>
-                    <div class="card-body p-4">
-                        <form id="auditForm" action="https://formspree.io/f/your_form_id" method="POST">
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Full Name</label>
-                                <input type="text" name="name" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Phone Number</label>
-                                <input type="tel" name="phone" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Business Goal</label>
-                                <select name="goal" class="form-select" required>
-                                    <option value="" selected disabled>Select primary goal...</option>
-                                    <option>Regulatory Compliance</option>
-                                    <option>Incident Response</option>
-                                    <option>Preventative Hardening</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-gold w-100 py-3">
-                                GENERATE ASSESSMENT TICKET
-                            </button>
-                        </form>
+  <footer>
+    © 2026 CyberShield Security. All rights reserved.
+    <br><br>
+    Contact: info@cybershieldsecurity.in | Chennai, India
+  </footer>
 
-                        <div id="successBox" class="mt-4 text-center d-none">
-                            <div class="alert alert-success border-2">
-                                <h4 class="alert-heading">Application Logged!</h4>
-                                <p class="mb-0">Cybersecurity Assessment Level: <strong id="ticketId">CS-2026-####</strong></p>
-                                <hr>
-                                <small>Verification sent to: <strong>info@cybershieldsecurity.in</strong></small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer id="contact" class="py-5 bg-dark text-white">
-    <div class="container text-center">
-        <h2 class="mb-4">Secure Your Foundation Today</h2>
-        <p>Ready to harden your business? Contact Cybershield Security for a professional assessment.</p>
-        <p class="mt-4">
-            <strong>Email:</strong> info@cybershieldsecurity.in<br>
-            <strong>Based in:</strong> [Chennai/India]
-        </p>
-        <hr class="my-4 bg-secondary">
-        <p class="small text-secondary">&copy; 2026 Cybershield Security. All Rights Reserved.</p>
-    </div>
-</footer>
-
-<script>
+  <script>
     document.getElementById('auditForm').addEventListener('submit', function(e) {
-        // Generate a simple ID
-        const id = Math.floor(1000 + Math.random() * 9000);
-        document.getElementById('ticketId').innerText = 'CS-LEVEL-' + id;
-        
-        // Hide form and show success
-        this.classList.add('d-none');
-        document.getElementById('successBox').classList.remove('d-none');
+      // Logic for the visual "Ticket" generation
+      const randomId = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('ticketId').innerText = 'CS-LEVEL-' + randomId;
+      
+      // Toggle visibility
+      this.style.display = 'none';
+      document.getElementById('statusBox').style.display = 'block';
+      
+      // Note: The form will still submit to the Cloudflare Worker URL 
+      // specified in the 'action' attribute.
     });
-</script>
+  </script>
 
 </body>
 </html>
