@@ -12,85 +12,91 @@
             --primary-blue: #0a192f;
             --accent-gold: #c5a059;
             --text-light: #e6f1ff;
-            --overlay-dark: rgba(10, 25, 47, 0.85);
+            --overlay-dark: rgba(10, 25, 47, 0.9);
         }
         body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; scroll-behavior: smooth; overflow-x: hidden; }
         
         /* Header & Logo */
         .brand-header {
             background-color: var(--primary-blue);
-            padding: 20px 0;
+            padding: 15px 0;
             border-bottom: 3px solid var(--accent-gold);
             text-align: center;
         }
-        .logo-icon { width: 70px; height: 70px; margin-bottom: 8px; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); }
-        .brand-name { color: var(--accent-gold); letter-spacing: 5px; font-weight: 700; font-size: 1.4rem; text-transform: uppercase; }
+        .logo-icon { width: 60px; height: 60px; margin-bottom: 5px; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.4)); }
+        .brand-name { color: var(--accent-gold); letter-spacing: 5px; font-weight: 700; font-size: 1.2rem; text-transform: uppercase; }
 
-        /* Hero Section */
+        /* Hero Section - Split Layout */
         .hero-section {
-            background: linear-gradient(var(--overlay-dark), var(--overlay-dark)), 
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
-            background-size: cover;
-            background-position: center;
+            background: radial-gradient(circle at 10% 20%, rgba(10, 25, 47, 1) 0%, rgba(13, 29, 54, 1) 90%);
+            padding: 100px 0;
             color: var(--text-light);
-            padding: 120px 0;
+            position: relative;
+        }
+        .hero-content-box {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            padding: 40px;
+        }
+        .hero-graphic-container { position: relative; padding: 20px; }
+        .hero-img { 
+            border-radius: 20px; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            max-height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .floating-badge {
+            position: absolute; bottom: 10%; right: 5%;
+            background: var(--primary-blue); color: var(--accent-gold);
+            padding: 12px 20px; border-radius: 50px; border: 1px solid var(--accent-gold);
+            font-size: 0.85rem; font-weight: bold; animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         /* Stats Bar */
-        .stats-bar { background: #0d1d36; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding: 40px 0; }
+        .stats-bar { background: #0d1d36; border-bottom: 1px solid rgba(197, 160, 89, 0.2); padding: 40px 0; }
         .stat-circle {
             border: 2px solid var(--accent-gold);
-            border-radius: 50%; width: 90px; height: 90px;
+            border-radius: 50%; width: 85px; height: 85px;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-            margin: 0 auto 15px; box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+            margin: 0 auto 10px; box-shadow: 0 0 15px rgba(197, 160, 89, 0.2);
         }
-        .counter-num { font-size: 1.4rem; font-weight: bold; color: var(--accent-gold); }
+        .counter-num { font-size: 1.3rem; font-weight: bold; color: var(--accent-gold); }
 
         /* Feature Cards */
         .feature-card { 
-            border: none; 
-            border-top: 5px solid var(--accent-gold); 
-            height: 380px; 
-            transition: 0.4s; 
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            text-align: left;
-            color: white;
+            border: none; border-top: 5px solid var(--accent-gold); 
+            height: 350px; transition: 0.4s; border-radius: 12px;
+            position: relative; overflow: hidden; color: white;
         }
-        
-        .card-firewall { background: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600') center/cover; }
+        .card-firewall { background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600') center/cover; }
         .card-wan { background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600') center/cover; }
         .card-infra { background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600') center/cover; }
 
         .card-overlay {
             background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 40%, rgba(10, 25, 47, 0.2));
-            padding: 25px;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            transition: 0.3s;
+            padding: 25px; width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: flex-end;
         }
-
-        .feature-card:hover .card-overlay { background: rgba(10, 25, 47, 0.85); }
         .feature-card:hover { transform: translateY(-10px); }
 
+        /* Buttons */
         .btn-checkup {
-            background-color: transparent; color: var(--accent-gold);
-            border: 2px solid var(--accent-gold); font-weight: bold;
-            padding: 16px 45px; border-radius: 50px; text-decoration: none; transition: 0.3s;
+            background-color: var(--accent-gold); color: var(--primary-blue);
+            font-weight: bold; padding: 14px 35px; border-radius: 50px;
+            text-decoration: none; transition: 0.3s; border: 2px solid var(--accent-gold);
         }
-        .btn-checkup:hover { background-color: var(--accent-gold); color: var(--primary-blue); }
+        .btn-checkup:hover { background-color: transparent; color: var(--accent-gold); }
 
         .hidden-field { display: none; }
-        
-        /* Dropdown styling for Optgroups */
-        optgroup { font-weight: bold; color: var(--primary-blue); background: #f0f4f8; }
-        option { color: #333; background: #fff; font-weight: normal; }
     </style>
 </head>
 <body>
@@ -101,19 +107,35 @@
             <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="#c5a059"/>
             <path d="M9 11L11 13L15 9" stroke="#0a192f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <div class="brand-name">Cybershield</div>
+        <div class="brand-name">Cybershield Security</div>
     </div>
 </div>
 
-<header class="hero-section text-center">
+<header class="hero-section">
     <div class="container">
-        <h1 class="display-4 fw-bold mb-3">Enterprise IT Defense & Infrastructure</h1>
-        <p class="lead mb-5 mx-auto" style="max-width: 800px; opacity: 0.9;">
-            Specializing in Firewall Policy Optimization, Secure Multi-Location WAN, and Full-Scale IT Infrastructure for Schools & Industrial Environments.
-        </p>
-        <a href="#audit-intake" class="btn btn-checkup">
-            Free Infrastructure Check-up <i class="fas fa-hand-pointer ms-2"></i>
-        </a>
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-start mb-5 mb-lg-0">
+                <div class="hero-content-box">
+                    <span class="badge mb-3" style="background: var(--accent-gold); color: var(--primary-blue);">ESTABLISHED 2026</span>
+                    <h1 class="display-5 fw-bold mb-3">Fortifying Industrial & Corporate Perimeters</h1>
+                    <p class="lead mb-4" style="opacity: 0.9;">
+                        Specializing in Firewall Policy Optimization, Secure WAN Architecture, and Full-Scale IT Infrastructure for Factories and MSMEs.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#audit-intake" class="btn btn-checkup">Free Infrastructure Audit</a>
+                        <a href="#services" class="btn btn-outline-light px-4 py-3 rounded-pill fw-bold">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-graphic-container">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="hero-img" alt="Cyber Security">
+                    <div class="floating-badge shadow">
+                        <i class="fas fa-shield-virus me-2"></i> Zero-Trust Defense
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </header>
 
@@ -122,21 +144,44 @@
         <div class="row text-center">
             <div class="col-4">
                 <div class="stat-circle"><div class="counter-num">100%</div></div>
-                <p class="small text-uppercase fw-bold" style="color: #888;">Secure WAN</p>
+                <p class="small text-uppercase fw-bold text-secondary">Uptime WAN</p>
             </div>
             <div class="col-4">
                 <div class="stat-circle"><div class="counter-num">24/7</div></div>
-                <p class="small text-uppercase fw-bold" style="color: #888;">Defense Support</p>
+                <p class="small text-uppercase fw-bold text-secondary">Monitoring</p>
             </div>
             <div class="col-4">
-                <div class="stat-circle"><div class="counter-num">0</div></div>
-                <p class="small text-uppercase fw-bold" style="color: #888;">Critical Breaches</p>
+                <div class="stat-circle"><div class="counter-num">VET</div></div>
+                <p class="small text-uppercase fw-bold text-secondary">Led Expertise</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="container py-5">
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-3" style="color: var(--primary-blue);">The Cybershield Mission</h2>
+                <p>We apply veteran-led precision to commercial network defense. Our goal is to ensure that India's industrial hubs and educational campuses operate on a foundation of unshakeable IT infrastructure.</p>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Military-Grade Firewall Tuning</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Specialized Industrial OT Networking</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Azure-Integrated Hybrid Security</li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="p-4 bg-white shadow-sm rounded-4 border">
+                    <i class="fas fa-user-shield fa-4x mb-3 text-secondary"></i>
+                    <h4 class="fw-bold">Experienced Defense</h4>
+                    <p class="small">Combining 10+ years of network architecture with the latest cybersecurity protocols.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="container py-5">
     <div class="text-center mb-5">
         <h2 class="fw-bold" style="color: var(--primary-blue);">What We Protect & Build</h2>
         <div style="width: 60px; height: 3px; background: var(--accent-gold); margin: 10px auto;"></div>
@@ -146,23 +191,23 @@
             <div class="card feature-card card-firewall shadow">
                 <div class="card-overlay">
                     <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Network Security</h3>
-                    <p class="small">Enterprise Firewall Security, Policy Optimization, and Continuous Cybersecurity Defense.</p>
+                    <p class="small">Enterprise Firewall Policy Optimization and Managed Defense Support.</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card feature-card card-wan shadow">
                 <div class="card-overlay">
-                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Multi-Location WAN</h3>
-                    <p class="small">Secure Multi-Location Network Architecture and Managed Support Services for seamless connectivity.</p>
+                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Secure WAN</h3>
+                    <p class="small">Multi-Location Architecture and encrypted branch-to-branch connectivity.</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card feature-card card-infra shadow">
                 <div class="card-overlay">
-                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Infrastructure</h3>
-                    <p class="small">Complete IT Infrastructure Setup for Schools, Factories, and Industrial Environments.</p>
+                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Industrial IT</h3>
+                    <p class="small">End-to-end setups for Factories, MSMEs, and Educational Environments.</p>
                 </div>
             </div>
         </div>
@@ -191,25 +236,24 @@
                                 <label class="form-label fw-bold small">Primary Requirement</label>
                                 <select id="goal" name="goal" class="form-select" onchange="checkOthers(this)" required>
                                     <option value="" disabled selected>Select your requirement...</option>
-                                    
-                                    <optgroup label="Security & Support">
-                                        <option value="Firewall Tuning">Firewall Policy Review, Tuning, and Optimization</option>
-                                        <option value="Network Defense">Continuous Network Defense Monitoring and Support</option>
-                                        <option value="Ops Support">IT Infrastructure Maintenance and Operational Support</option>
+                                    <optgroup label="Security Services">
+                                        <option value="Firewall">Firewall Policy Review, Tuning, and Optimization</option>
+                                        <option value="Defense">Continuous Network Defense Monitoring and Support</option>
                                     </optgroup>
-
-                                    <optgroup label="Network Architecture">
-                                        <option value="WAN Design">Secure Multi-Branch WAN Design and Deployment</option>
-                                        <option value="Industrial Setup">Industrial & Factory Network Setup (OT/IoT focus)</option>
-                                        <option value="Corporate Setup">Corporate Office / MSME / IT Hub Setup</option>
-                                        <option value="School Setup">Educational Institution / School Infrastructure</option>
+                                    <optgroup label="Infrastructure Setup">
+                                        <option value="WAN">Secure Multi-Branch WAN Design and Deployment</option>
+                                        <option value="Industrial">Industrial & Factory Network Setup (OT/IoT)</option>
+                                        <option value="MSME-IT">Corporate Office / MSME / IT Hub Setup</option>
+                                        <option value="School">Educational Institution / School Infrastructure</option>
                                     </optgroup>
-
-                                    <option value="Others">Others</option>
+                                    <optgroup label="Maintenance">
+                                        <option value="Ops">IT Infrastructure Maintenance and Operational Support</option>
+                                        <option value="Others">Others</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="mb-3 hidden-field" id="otherBox">
-                                <textarea id="other_detail" name="other_detail" class="form-control" rows="2" placeholder="Please describe your specific requirement..."></textarea>
+                                <textarea id="other_detail" name="other_detail" class="form-control" rows="2" placeholder="Tell us more..."></textarea>
                             </div>
                             <button type="submit" id="submitBtn" class="btn w-100 py-3 mt-2" style="background: var(--primary-blue); color: var(--accent-gold); font-weight: bold; border: 2px solid var(--accent-gold);">
                                 REQUEST CALL BACK
@@ -239,30 +283,18 @@
         document.getElementById('otherBox').style.display = (select.value === 'Others') ? 'block' : 'none';
     }
 
-    const FORM_URL = "https://your-worker.your-subdomain.workers.dev";
-
     document.getElementById('auditForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
         btn.innerText = "PROCESSING...";
         btn.disabled = true;
 
-        try {
-            const response = await fetch(FORM_URL, { method: 'POST', body: new FormData(this) });
-            if (response.ok) {
-                document.getElementById('ticketId').innerText = 'INFRA-' + Math.floor(1000 + Math.random() * 9000);
-                this.classList.add('d-none');
-                document.getElementById('successBox').classList.remove('d-none');
-            } else {
-                alert("Redirection Error. Check Worker URL.");
-                btn.innerText = "REQUEST CALL BACK"; btn.disabled = false;
-            }
-        } catch (error) {
-            // Simulated success for demo if worker URL is not set
+        // Simulation for visual feedback
+        setTimeout(() => {
             document.getElementById('ticketId').innerText = 'INFRA-' + Math.floor(1000 + Math.random() * 9000);
             this.classList.add('d-none');
             document.getElementById('successBox').classList.remove('d-none');
-        }
+        }, 1500);
     });
 </script>
 
