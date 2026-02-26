@@ -14,149 +14,224 @@
             --accent-gold: #c5a059;
             --text-light: #e6f1ff;
         }
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; scroll-behavior: smooth; margin: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; color: #333; scroll-behavior: smooth; }
 
-        /* Navigation Header */
-        .brand-header { background-color: var(--primary-blue); padding: 15px 0; border-bottom: 2px solid var(--accent-gold); }
-        .logo-text { color: var(--accent-gold); font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; text-decoration: none; }
-        .logo-icon { width: 35px; height: 35px; margin-right: 12px; }
+        /* Header Navigation */
+        .brand-header {
+            background-color: var(--primary-blue);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        .logo-text { color: var(--accent-gold); font-weight: 700; font-size: 1.5rem; letter-spacing: 1px; }
 
         /* Hero Section */
-        .hero-section { background-color: var(--primary-blue); padding: 80px 0 120px; color: white; overflow: hidden; }
-        .hero-image-box img { 
-            border: 2px solid var(--accent-gold); 
-            border-radius: 15px; 
-            box-shadow: 0 0 35px rgba(197, 160, 89, 0.4); 
-            width: 100%; 
-            max-width: 520px; 
-        }
-        
-        .btn-gold { 
-            background-color: var(--accent-gold); 
-            color: var(--primary-blue); 
-            font-weight: 700; 
-            padding: 12px 28px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            display: inline-block; 
-            transition: 0.3s; 
-            border: 2px solid var(--accent-gold); 
-            cursor: pointer; 
-        }
-        .btn-gold:hover { background-color: transparent; color: var(--accent-gold); transform: translateY(-3px); }
-
-        /* Our Process Section */
-        .process-section { padding: 90px 0; background-color: white; }
-        .process-step { text-align: center; position: relative; padding: 20px; }
-        .step-icon-wrap {
-            width: 85px; height: 85px; background-color: var(--primary-blue); border: 3px solid var(--accent-gold);
-            color: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; margin: 0 auto 20px; transition: 0.4s; position: relative; z-index: 2;
-        }
-        
-        @media (min-width: 992px) {
-            .process-step::after {
-                content: ''; position: absolute; top: 62px; left: 60%; width: 80%; height: 2px;
-                background: dashed var(--accent-gold); z-index: 1; opacity: 0.3;
-            }
-            .process-step:last-child::after { display: none; }
-        }
-
-        /* Consultation Form */
-        .consultation-section { background-color: #f0f2f5; padding: 100px 0; }
-        .form-card { border-radius: 20px; border: none; box-shadow: 0 15px 40px rgba(0,0,0,0.1); background: white; overflow: hidden; }
-        .form-header { background-color: var(--primary-blue); color: var(--accent-gold); padding: 25px; text-align: center; }
-
-        /* Thank You State */
-        #thankYouState { 
-            display: none; 
-            background-color: var(--primary-blue); 
-            min-height: 100vh; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center;
+        .hero-section {
+            background-color: var(--primary-blue);
+            padding: 60px 0 80px;
             color: white;
-            padding: 20px;
         }
-        .ty-box { 
-            background: var(--secondary-blue); 
-            padding: 60px 40px; 
-            border-radius: 25px; 
-            border: 1px solid var(--accent-gold); 
-            max-width: 550px; 
+        .hero-image-box img {
+            border: 2px solid var(--accent-gold);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.2);
             width: 100%;
+            max-width: 500px;
+        }
+        .btn-consult {
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            font-weight: 700;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            border: none;
+        }
+        .btn-consult:hover { background-color: white; color: var(--primary-blue); transform: scale(1.05); }
+
+        /* Stats Bar */
+        .stats-bar {
+            background-color: #1b2735;
+            color: white;
+            padding: 30px 0;
+            position: relative;
+            z-index: 5;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+        }
+
+        /* Feature Cards Section */
+        .feature-container { 
+            margin-top: -40px; 
+            position: relative; 
+            z-index: 10;
+            padding-bottom: 60px;
+        }
+        
+        .feature-card {
+            background-color: var(--secondary-blue);
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            height: 100%;
+            min-height: 400px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .feature-card:hover .card-img-top { filter: brightness(1.2); }
+
+        .card-body {
+            padding: 25px;
+            color: white;
+            background: linear-gradient(to bottom, #112240, #0a192f);
+        }
+
+        .card-title-gold { color: var(--accent-gold); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px; }
+        .card-subtitle { font-weight: 600; font-size: 1rem; margin-bottom: 10px; color: #fff; }
+        
+        /* Consultation Form Section */
+        .consultation-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+        .form-card { border-radius: 20px; border: none; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .form-control, .form-select { border-radius: 8px; padding: 12px; border: 1px solid #ddd; background-color: #f9f9f9; }
+        .form-control:focus, .form-select:focus { border-color: var(--accent-gold); box-shadow: none; background-color: #fff; }
+
+        .hidden-field { display: none; }
+
+        /* Thank You State Styling */
+        #thankYouState {
+            display: none;
+            padding: 100px 20px;
+            text-align: center;
+            background-color: var(--primary-blue);
+            color: white;
+            min-height: 80vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .ty-box {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--secondary-blue);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+        .ty-icon {
+            font-size: 4rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            border: none;
+            padding: 12px 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn-gold:hover {
+            background-color: white;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-<div id="mainSite">
-    <nav class="brand-header">
-        <div class="container">
+<div id="mainContent">
+    <div class="brand-header">
+        <div class="container text-center text-md-start">
             <div class="logo-text">
-                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="#c5a059"/>
-                    <path d="M9 11L11 13L15 9" stroke="#0a192f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Cybershield Security
+                <i class="fas fa-shield-check me-2"></i>Cybershield Security
             </div>
         </div>
-    </nav>
+    </div>
 
     <header class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-3">Enterprise IT Defense <br>& Infrastructure</h1>
-                    <p class="lead mb-4 opacity-75">Expert network deployment and firewall fine-tuning for Schools, Factories, and MSMEs.</p>
-                    <a href="#free-consult" class="btn-gold text-uppercase">Book Free Audit &rarr;</a>
+                    <span class="badge bg-warning text-dark mb-3 px-3 py-2">NEW BUSINESS LAUNCH</span>
+                    <h1 class="display-5 fw-bold mb-3">Smart IT Infrastructure <br>for Your Business</h1>
+                    <p class="lead mb-4 opacity-75">Tailored network deployment and firewall protection for Schools, Factories, and MSMEs.</p>
+                    <a href="#free-consult" class="btn-consult">Claim Free Consultation &rarr;</a>
                 </div>
-                <div class="col-lg-6 text-lg-end mt-5 mt-lg-0">
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center">
                     <div class="hero-image-box">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800" alt="Cybershield Infrastructure">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800" alt="Server Infrastructure">
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="process-section">
+    <div class="stats-bar">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Our Engineering Process</h2>
-                <div class="mx-auto bg-gold mb-3" style="width: 60px; height: 3px; background-color: var(--accent-gold);"></div>
-                <p class="text-muted">Methodical infrastructure security in 4 steps</p>
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-3 mb-md-0">
+                    <div class="h4 mb-0 fw-bold">EXPERT</div>
+                    <div class="small opacity-50 text-uppercase">Led Engineering</div>
+                </div>
+                <div class="col-md-3 col-6 mb-3 mb-md-0">
+                    <div class="h4 mb-0 fw-bold">99.9%</div>
+                    <div class="small opacity-50 text-uppercase">Uptime Focus</div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="h4 mb-0 fw-bold">24/7</div>
+                    <div class="small opacity-50 text-uppercase">Support Ready</div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="h4 mb-0 fw-bold">SECURE</div>
+                    <div class="small opacity-50 text-uppercase">By Design</div>
+                </div>
             </div>
-            
-            
-            
-            <div class="row g-4 text-center mt-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-step">
-                        <div class="step-icon-wrap"><i class="fas fa-search"></i></div>
-                        <h5 class="fw-bold">1. Discovery</h5>
-                        <p class="small text-muted">Comprehensive on-site audit of hardware and security vulnerabilities.</p>
+        </div>
+    </div>
+
+    <section class="container feature-container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="Network Security">
+                    <div class="card-body">
+                        <div class="card-title-gold">Netwall</div>
+                        <div class="card-subtitle">Network Security</div>
+                        <p class="card-text small opacity-75">Professional firewall tuning to shield your corporate data and industrial assets.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-step">
-                        <div class="step-icon-wrap"><i class="fas fa-drafting-compass"></i></div>
-                        <h5 class="fw-bold">2. Design</h5>
-                        <p class="small text-muted">Custom technical blueprint for Firewall policies and WAN architecture.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="Business WAN">
+                    <div class="card-body">
+                        <div class="card-title-gold">Wan</div>
+                        <div class="card-subtitle">Business WAN</div>
+                        <p class="card-text small opacity-75">Reliable branch-to-branch connectivity via encrypted high-speed tunnels.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-step">
-                        <div class="step-icon-wrap"><i class="fas fa-tools"></i></div>
-                        <h5 class="fw-bold">3. Deployment</h5>
-                        <p class="small text-muted">Hardware installation and granular policy tuning for zero-downtime.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-step">
-                        <div class="step-icon-wrap"><i class="fas fa-satellite-dish"></i></div>
-                        <h5 class="fw-bold">4. Monitoring</h5>
-                        <p class="small text-muted">24/7 proactive threat detection and branch connectivity support.</p>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="IT Infrastructure">
+                    <div class="card-body">
+                        <div class="card-title-gold">Infara</div>
+                        <div class="card-subtitle">IT Infrastructure</div>
+                        <p class="card-text small opacity-75">End-to-end setup for campuses and factories, from cabling to cloud integration.</p>
                     </div>
                 </div>
             </div>
@@ -166,75 +241,95 @@
     <section id="free-consult" class="consultation-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-7">
-                    <div class="card form-card">
-                        <div class="form-header">
-                            <h3 class="fw-bold mb-0">Request a Callback</h3>
-                        </div>
-                        <div class="p-4 p-md-5">
-                            <form id="contactForm">
-                                <div class="row g-3">
-                                    <div class="col-12 mb-2">
-                                        <label class="form-label fw-bold small">Company Name</label>
-                                        <input type="text" name="company" class="form-control" placeholder="Company Name" required>
-                                    </div>
-                                    <div class="col-md-6 mb-2">
-                                        <label class="form-label fw-bold small">Email ID</label>
-                                        <input type="email" name="email" class="form-control" placeholder="email@company.com" required>
-                                    </div>
-                                    <div class="col-md-6 mb-2">
-                                        <label class="form-label fw-bold small">Mobile Number</label>
-                                        <input type="tel" name="phone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
-                                    </div>
-                                    
-                                    <div class="col-12 mb-3">
-                                        <label class="form-label fw-bold small">Primary Requirement</label>
-                                        <select id="goal" name="goal" class="form-select" onchange="checkOthers(this)" required>
-                                            <option value="" disabled selected>Choose service...</option>
-                                            <option value="Firewall Optimization">Firewall Policy Review, Tuning, and Optimization</option>
-                                            <option value="WAN Deployment">Secure Multi-Branch WAN Design and Deployment</option>
-                                            <option value="End-to-End Setup">End-to-End Network Setup for Factories/MSME/IT Office</option>
-                                            <option value="Defense Monitoring">Continuous Network Defense Monitoring and Support</option>
-                                            <option value="IT Maintenance">IT Infrastructure Maintenance and Operational Support</option>
-                                            <option value="Others">Others</option>
-                                        </select>
-                                    </div>
-                                    </div>
-                                <button type="submit" class="btn btn-gold w-100 py-3 mt-4 shadow text-uppercase">Send Request</button>
-                            </form>
-                        </div>
+                <div class="col-md-8 text-center mb-5">
+                    <h2 class="fw-bold">Book Your Free Network Audit</h2>
+                    <p class="text-muted">Take the first step toward a secure infrastructure. Our engineers will provide a comprehensive review of your current setup.</p>
+                </div>
+                <div class="col-md-7">
+                    <div class="card form-card p-4 p-md-5">
+                        <form id="auditForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small">Contact Name</label>
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small">Mobile Number</label>
+                                    <input type="tel" class="form-control" placeholder="For Callback" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold small">How can we help?</label>
+                                    <select class="form-select" onchange="checkOthers(this)" required>
+                                        <option value="" disabled selected>Select your requirement...</option>
+                                        <optgroup label="Security Services">
+                                            <option value="Firewall">Firewall Policy Review & Fine Tuning</option>
+                                            <option value="Defense">Managed Network Defense & Monitoring</option>
+                                        </optgroup>
+                                        <optgroup label="Infrastructure Setup">
+                                            <option value="WAN">Secure Multi-Branch WAN Deployment</option>
+                                            <option value="Industrial">Industrial / Factory Network Setup</option>
+                                            <option value="Office">Corporate Office / MSME IT Setup</option>
+                                            <option value="School">Educational Institution Infrastructure</option>
+                                        </optgroup>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-3 hidden-field" id="otherBox">
+                                <textarea class="form-control" rows="3" placeholder="Please describe your specific requirement..."></textarea>
+                            </div>
+
+                            <button type="submit" id="submitBtn" class="btn btn-consult w-100 py-3 mt-4 shadow">
+                                REQUEST CALLBACK
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-4 text-center border-top bg-white">
+    <footer class="py-4 text-center border-top bg-light">
         <p class="text-muted small mb-0">&copy; 2026 Cybershield Security | Expert Network Solutions</p>
     </footer>
 </div>
 
 <div id="thankYouState">
-    <div class="ty-box">
-        <div class="ty-icon" style="font-size: 4rem; color: var(--accent-gold); margin-bottom: 20px;"><i class="fas fa-shield-check"></i></div>
-        <h2 class="fw-bold mb-3" style="color: var(--accent-gold);">Request Received</h2>
-        <p class="mb-4">One of our network engineers will review your details and contact you shortly.</p>
-        <button onclick="location.reload()" class="btn-gold">BACK TO HOME</button>
+    <div class="ty-box shadow-lg">
+        <div class="ty-icon"><i class="fas fa-shield-check"></i></div>
+        <h1 class="fw-bold mb-3" style="color: var(--accent-gold);">Request Confirmed</h1>
+        <p class="mb-4 text-light opacity-75">One of our network engineers will review your details and contact you shortly.</p>
+        <div class="text-start bg-dark p-3 rounded mb-4 shadow-sm" style="font-size: 0.9rem; border-left: 3px solid var(--accent-gold);">
+            <p class="mb-2 text-light"><i class="fas fa-phone-alt me-2 text-warning"></i> Callback expected within 24 hours.</p>
+            <p class="mb-0 text-light"><i class="fas fa-envelope me-2 text-warning"></i> Confirmation sent to your email.</p>
+        </div>
+        <button onclick="location.reload()" class="btn-gold w-100">BACK TO HOME</button>
     </div>
 </div>
 
 <script>
+    // Show/Hide "Others" textarea
     function checkOthers(select) {
-        if(select.value === "Others") {
-            console.log("Other service selected");
-        }
+        document.getElementById('otherBox').style.display = (select.value === 'Others') ? 'block' : 'none';
     }
 
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Form Handling - Merged with Thank You State
+    document.getElementById('auditForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        document.getElementById('mainSite').style.display = 'none';
-        document.getElementById('thankYouState').style.display = 'flex';
-        window.scrollTo(0, 0);
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = "SENDING...";
+        btn.disabled = true;
+        
+        // Simulate sending and switch views
+        setTimeout(() => {
+            // Hide the main content
+            document.getElementById('mainContent').style.display = 'none';
+            // Show the Thank You State
+            const tyState = document.getElementById('thankYouState');
+            tyState.style.display = 'flex';
+            window.scrollTo(0, 0); // Reset scroll to top
+        }, 1200);
     });
 </script>
 
