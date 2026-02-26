@@ -29,7 +29,7 @@
         /* Hero Section */
         .hero-section {
             background: linear-gradient(var(--overlay-dark), var(--overlay-dark)), 
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070'); /* Cyber Tech Background */
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
             background-size: cover;
             background-position: center;
             color: var(--text-light);
@@ -46,11 +46,11 @@
         }
         .counter-num { font-size: 1.4rem; font-weight: bold; color: var(--accent-gold); }
 
-        /* Feature Cards with Custom Backgrounds */
+        /* Feature Cards */
         .feature-card { 
             border: none; 
             border-top: 5px solid var(--accent-gold); 
-            height: 350px; 
+            height: 380px; 
             transition: 0.4s; 
             border-radius: 12px;
             position: relative;
@@ -61,12 +61,12 @@
             color: white;
         }
         
-        .card-msme { background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600') center/cover; }
-        .card-school { background: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600') center/cover; }
-        .card-factory { background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600') center/cover; }
+        .card-firewall { background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600') center/cover; }
+        .card-wan { background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600') center/cover; }
+        .card-infra { background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600') center/cover; }
 
         .card-overlay {
-            background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 30%, rgba(10, 25, 47, 0.2));
+            background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 40%, rgba(10, 25, 47, 0.2));
             padding: 25px;
             width: 100%;
             height: 100%;
@@ -103,9 +103,9 @@
 
 <header class="hero-section text-center">
     <div class="container">
-        <h1 class="display-4 fw-bold mb-3">Secure IT Infrastructure & Defense</h1>
+        <h1 class="display-4 fw-bold mb-3">Enterprise IT Defense & Infrastructure</h1>
         <p class="lead mb-5 mx-auto" style="max-width: 800px; opacity: 0.9;">
-            Specializing in Firewall Policy Optimization, Secure WAN, and End-to-End Network Hardening for SMBs, Schools, and Industrial Plants.
+            Specializing in Firewall Optimization, Secure Multi-Location WAN, and Full-Scale Infrastructure for Schools and Industrial Environments.
         </p>
         <a href="#audit-intake" class="btn btn-checkup">
             Free Infrastructure Check-up <i class="fas fa-hand-pointer ms-2"></i>
@@ -122,11 +122,11 @@
             </div>
             <div class="col-4">
                 <div class="stat-circle"><div class="counter-num">24/7</div></div>
-                <p class="small text-uppercase fw-bold" style="color: #888;">Monitoring</p>
+                <p class="small text-uppercase fw-bold" style="color: #888;">Defense Support</p>
             </div>
             <div class="col-4">
                 <div class="stat-circle"><div class="counter-num">0</div></div>
-                <p class="small text-uppercase fw-bold" style="color: #888;">Breaches</p>
+                <p class="small text-uppercase fw-bold" style="color: #888;">Critical Breaches</p>
             </div>
         </div>
     </div>
@@ -134,31 +134,31 @@
 
 <section class="container py-5">
     <div class="text-center mb-5">
-        <h2 class="fw-bold" style="color: var(--primary-blue);">Industry-Specific Defense</h2>
+        <h2 class="fw-bold" style="color: var(--primary-blue);">What We Protect & Build</h2>
         <div style="width: 60px; height: 3px; background: var(--accent-gold); margin: 10px auto;"></div>
     </div>
     <div class="row g-4">
         <div class="col-md-4">
-            <div class="card feature-card card-msme shadow">
+            <div class="card feature-card card-firewall shadow">
                 <div class="card-overlay">
-                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">MSME & Corporate</h3>
-                    <p class="small">Firewall rule optimization and encrypted WAN tunnels for growing business networks.</p>
+                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Network Security</h3>
+                    <p class="small">Enterprise Firewall Security, Policy Optimization, and Continuous Cybersecurity Defense.</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card feature-card card-school shadow">
+            <div class="card feature-card card-wan shadow">
                 <div class="card-overlay">
-                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Education Campus</h3>
-                    <p class="small">Protecting student data and securing campus-wide Wi-Fi from unauthorized access.</p>
+                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Multi-Location WAN</h3>
+                    <p class="small">Secure Multi-Location Network Architecture and Managed Support Services for seamless connectivity.</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card feature-card card-factory shadow">
+            <div class="card feature-card card-infra shadow">
                 <div class="card-overlay">
-                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Industrial & Manufacturing</h3>
-                    <p class="small">Hardening OT networks and factory-to-office connectivity against cyber threats.</p>
+                    <h3 class="h5 fw-bold text-uppercase" style="color: var(--accent-gold);">Infrastructure</h3>
+                    <p class="small">Complete IT Infrastructure Setup for Schools, Factories, and Industrial Environments.</p>
                 </div>
             </div>
         </div>
@@ -187,15 +187,16 @@
                                 <label class="form-label fw-bold small">Primary Requirement</label>
                                 <select id="goal" name="goal" class="form-select" onchange="checkOthers(this)" required>
                                     <option value="" disabled selected>Choose service...</option>
-                                    <option value="Firewall">Firewall Policy Tuning</option>
-                                    <option value="WAN">Secure Multi-Branch WAN</option>
-                                    <option value="New Setup">New School/Factory Setup</option>
-                                    <option value="Maintenance">Ongoing Defense Support</option>
+                                    <option value="Firewall Optimization">Firewall Policy Review, Tuning, and Optimization</option>
+                                    <option value="WAN Deployment">Secure Multi-Branch WAN Design and Deployment</option>
+                                    <option value="End-to-End Setup">End-to-End Network Setup for Factories/MSME/IT Office</option>
+                                    <option value="Defense Monitoring">Continuous Network Defense Monitoring and Support</option>
+                                    <option value="IT Maintenance">IT Infrastructure Maintenance and Operational Support</option>
                                     <option value="Others">Others</option>
                                 </select>
                             </div>
                             <div class="mb-3 hidden-field" id="otherBox">
-                                <textarea id="other_detail" name="other_detail" class="form-control" rows="2" placeholder="Tell us more..."></textarea>
+                                <textarea id="other_detail" name="other_detail" class="form-control" rows="2" placeholder="Tell us more about your specific requirement..."></textarea>
                             </div>
                             <button type="submit" id="submitBtn" class="btn w-100 py-3 mt-2" style="background: var(--primary-blue); color: var(--accent-gold); font-weight: bold; border: 2px solid var(--accent-gold);">
                                 REQUEST CALL BACK
