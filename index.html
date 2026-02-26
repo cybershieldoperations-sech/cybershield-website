@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybershield Security | Smart IT Infrastructure</title>
+    <title>Cybershield Security | Expert IT & Network Infrastructure</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -45,14 +45,16 @@
             padding: 12px 25px;
             border-radius: 8px;
             text-decoration: none;
+            transition: 0.3s;
         }
+        .btn-consult:hover { background-color: white; color: var(--primary-blue); }
 
-        /* Stats Bar */
+        /* Stats Bar - Meaningful Metrics for a New Business */
         .stats-bar {
             background-color: #1b2735;
             color: white;
-            padding: 20px 0;
-            margin-top: -2px;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
         }
 
         /* Feature Cards Section */
@@ -63,7 +65,7 @@
             border-radius: 15px;
             overflow: hidden;
             border: none;
-            height: 380px;
+            height: 400px;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -93,22 +95,16 @@
         }
 
         .card-title-gold { color: var(--accent-gold); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px; }
-        .card-subtitle { font-weight: 600; font-size: 1rem; margin-bottom: 10px; }
+        .card-subtitle { font-weight: 600; font-size: 1rem; margin-bottom: 10px; color: #fff; }
         .card-text { font-size: 0.85rem; opacity: 0.8; line-height: 1.5; }
-
-        .form-section { background: white; padding: 80px 0; }
-        .form-card { border-radius: 20px; border: none; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
 
 <div class="brand-header">
-    <div class="container d-flex justify-content-between align-items-center">
+    <div class="container text-center text-md-start">
         <div class="logo-text">
             <i class="fas fa-shield-check me-2"></i>Cybershield Security
-        </div>
-        <div class="d-none d-md-block text-white border border-secondary px-3 py-1 rounded small">
-            HTML <i class="fas fa-wrench ms-2"></i>
         </div>
     </div>
 </div>
@@ -119,7 +115,7 @@
             <div class="col-lg-6">
                 <span class="badge bg-warning text-dark mb-3 px-3 py-2">PROFESSIONAL SECURITY</span>
                 <h1 class="display-5 fw-bold mb-3">Smart IT Infrastructure <br>for Your Business</h1>
-                <p class="lead mb-4 opacity-75">We specialize in Secure Firewall Setup, Multi-Branch Connectivity, and infrastructure for Schools, Factories, and MSMEs.</p>
+                <p class="lead mb-4 opacity-75">We provide expert network deployment and firewall protection tailored for Schools, Factories, and MSMEs.</p>
                 <a href="#contact" class="btn-consult">Get a Free Consultation &rarr;</a>
             </div>
             <div class="col-lg-6 mt-5 mt-lg-0 text-center">
@@ -135,20 +131,20 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-3 col-6 mb-3 mb-md-0">
-                <div class="h4 mb-0 fw-bold">175+</div>
-                <div class="small opacity-50">STAT LABE</div>
+                <div class="h4 mb-0 fw-bold">EXPERT</div>
+                <div class="small opacity-50 text-uppercase">Led Engineering</div>
             </div>
             <div class="col-md-3 col-6 mb-3 mb-md-0">
-                <div class="h4 mb-0 fw-bold text-uppercase">Bold</div>
-                <div class="small opacity-50">STAT LABE</div>
+                <div class="h4 mb-0 fw-bold">99.9%</div>
+                <div class="small opacity-50 text-uppercase">Uptime Commitment</div>
             </div>
             <div class="col-md-3 col-6">
-                <div class="h4 mb-0 fw-bold">0.30</div>
-                <div class="small opacity-50">OPAIY&JKY</div>
+                <div class="h4 mb-0 fw-bold">24/7</div>
+                <div class="small opacity-50 text-uppercase">Monitoring</div>
             </div>
             <div class="col-md-3 col-6">
-                <div class="h4 mb-0 fw-bold">#80</div>
-                <div class="small opacity-50">STAY LAK</div>
+                <div class="h4 mb-0 fw-bold">SECURE</div>
+                <div class="small opacity-50 text-uppercase">By Design</div>
             </div>
         </div>
     </div>
@@ -162,7 +158,7 @@
                 <div class="card-body">
                     <div class="card-title-gold">Netwall</div>
                     <div class="card-subtitle">Network Security</div>
-                    <p class="card-text">Professional Firewall & Network Security Tuning to protect your business assets.</p>
+                    <p class="card-text">Professional Firewall Tuning and Protection designed to keep your business assets safe from day one.</p>
                 </div>
             </div>
         </div>
@@ -171,8 +167,8 @@
                 <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="Business WAN">
                 <div class="card-body">
                     <div class="card-title-gold">Wan</div>
-                    <div class="card-subtitle text-uppercase">Business Connectivity</div>
-                    <p class="card-text">Secure Multi-Branch WAN Design ensuring your branches stay connected 24/7.</p>
+                    <div class="card-subtitle">Business WAN</div>
+                    <p class="card-text">Securely connect all your branches with encrypted, high-speed tunnels for seamless operations.</p>
                 </div>
             </div>
         </div>
@@ -181,47 +177,16 @@
                 <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="IT Infrastructure">
                 <div class="card-body">
                     <div class="card-title-gold">Infara</div>
-                    <div class="card-subtitle">Infrastructure</div>
-                    <p class="card-text">Complete IT Infrastructure setup for Schools, Factories, and MSMEs with expert support.</p>
+                    <div class="card-subtitle">IT Infrastructure</div>
+                    <p class="card-text">Full end-to-end network setup for Schools, Factories, and MSMEs with high-density hardware.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="form-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="card form-card p-4 p-md-5">
-                    <h3 class="fw-bold text-center mb-4">Request a Callback</h3>
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Full Name</label>
-                            <input type="text" class="form-control py-3 border-0 bg-light" placeholder="Enter Name">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label small fw-bold">Phone Number</label>
-                            <input type="tel" class="form-control py-3 border-0 bg-light" placeholder="Enter Number">
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label small fw-bold">Primary Need</label>
-                            <select class="form-select py-3 border-0 bg-light">
-                                <option>Network Security (Netwall)</option>
-                                <option>Business WAN Connectivity</option>
-                                <option>Factory/Office Infrastructure</option>
-                            </select>
-                        </div>
-                        <button class="btn btn-consult w-100 py-3 mt-2 shadow-sm">BOOK APPOINTMENT</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="py-4 text-center opacity-50 small">
-    &copy; 2026 Cybershield Security | Expert IT & Defense Solutions
+<footer class="py-5 text-center mt-5 border-top bg-white">
+    <p class="text-muted small">&copy; 2026 Cybershield Security | Launching Modern Infrastructure</p>
 </footer>
 
 </body>
