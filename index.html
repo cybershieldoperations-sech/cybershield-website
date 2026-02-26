@@ -2,161 +2,345 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CyberShield Security | Enterprise Network Defense</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybershield Security | Expert IT & Network Infrastructure</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #0f172a;
-            color: #ffffff;
+        :root {
+            --primary-blue: #0a192f;
+            --secondary-blue: #112240;
+            --accent-gold: #c5a059;
+            --text-light: #e6f1ff;
         }
-        section {
-            padding: 60px 10%;
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; scroll-behavior: smooth; margin: 0; }
+
+        /* Navigation Header */
+        .brand-header { background-color: var(--primary-blue); padding: 15px 0; border-bottom: 2px solid var(--accent-gold); }
+        .logo-text { color: var(--accent-gold); font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; text-decoration: none; }
+        .logo-icon { width: 35px; height: 35px; margin-right: 12px; }
+
+        /* Hero Section */
+        .hero-section { background-color: var(--primary-blue); padding: 80px 0 120px; color: white; overflow: hidden; }
+        .hero-image-box img { 
+            border: 2px solid var(--accent-gold); 
+            border-radius: 15px; 
+            box-shadow: 0 0 35px rgba(197, 160, 89, 0.4); 
+            width: 100%; 
+            max-width: 520px; 
         }
-        h1, h2, h3 {
-            margin-bottom: 20px;
+        
+        .btn-gold { 
+            background-color: var(--accent-gold); 
+            color: var(--primary-blue); 
+            font-weight: 700; 
+            padding: 12px 28px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            display: inline-block; 
+            transition: 0.3s; 
+            border: 2px solid var(--accent-gold); 
+            cursor: pointer; 
         }
-        p {
-            line-height: 1.6;
-            color: #cbd5e1;
+        .btn-gold:hover { background-color: transparent; color: var(--accent-gold); transform: translateY(-3px); }
+
+        /* Our Process Section */
+        .process-section { padding: 90px 0; background-color: white; }
+        .process-step { text-align: center; position: relative; padding: 20px; }
+        .step-icon-wrap {
+            width: 85px; height: 85px; background-color: var(--primary-blue); border: 3px solid var(--accent-gold);
+            color: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin: 0 auto 20px; transition: 0.4s; position: relative; z-index: 2;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            margin-top: 20px;
-            background-color: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+        
+        @media (min-width: 992px) {
+            .process-step::after {
+                content: ''; position: absolute; top: 62px; left: 60%; width: 80%; height: 2px;
+                background: dashed var(--accent-gold); z-index: 1; opacity: 0.3;
+            }
+            .process-step:last-child::after { display: none; }
         }
-        .btn:hover {
-            background-color: #1d4ed8;
+
+        /* Feature Cards */
+        .feature-container { margin-top: -80px; position: relative; z-index: 10; padding-bottom: 60px; }
+        .feature-card {
+            background-color: var(--secondary-blue); border-radius: 15px; overflow: hidden; border: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            height: 100%;
         }
-        .light-section {
-            background-color: #1e293b;
-        }
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .card {
-            background-color: #0f172a;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #334155;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: none;
-        }
-        .contact-form button {
-            padding: 12px 25px;
-            background-color: #2563eb;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .contact-form button:hover {
-            background-color: #1d4ed8;
-        }
-        footer {
+        .feature-card:hover { transform: translateY(-15px) scale(1.03); box-shadow: 0 25px 50px rgba(0,0,0,0.6); }
+        .card-img-top { height: 180px; object-fit: cover; }
+        .card-body { padding: 25px; color: white; background: linear-gradient(to bottom, #112240, #0a192f); }
+        .card-title-gold { color: var(--accent-gold); font-weight: 700; font-size: 1.3rem; margin-bottom: 10px; }
+
+        /* Consultation Form */
+        .consultation-section { background-color: #f0f2f5; padding: 100px 0; }
+        .form-card { border-radius: 20px; border: none; box-shadow: 0 15px 40px rgba(0,0,0,0.1); background: white; overflow: hidden; }
+        .form-header { background-color: var(--primary-blue); color: var(--accent-gold); padding: 25px; text-align: center; }
+        .form-label { font-size: 0.8rem; font-weight: 700; color: var(--primary-blue); letter-spacing: 0.5px; }
+
+        /* Thank You Screen (Hidden by Default) */
+        #thankYouState { 
+            display: none; 
+            background-color: var(--primary-blue); 
+            min-height: 100vh; 
+            align-items: center; 
+            justify-content: center; 
             text-align: center;
+            color: white;
             padding: 20px;
-            background-color: #020617;
-            font-size: 14px;
-            color: #94a3b8;
         }
+        .ty-box { 
+            background: var(--secondary-blue); 
+            padding: 60px 40px; 
+            border-radius: 25px; 
+            border: 1px solid var(--accent-gold); 
+            max-width: 550px; 
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .ty-icon { font-size: 4.5rem; color: var(--accent-gold); margin-bottom: 25px; }
     </style>
 </head>
 <body>
 
-<!-- HERO SECTION -->
-<section>
-    <h1>Enterprise-Grade Network Security & Infrastructure Defense</h1>
-    <p>
-        We design, secure, and optimize firewall and WAN architectures to protect your organization from evolving cyber threats. 
-        From policy tuning to multi-branch secure connectivity, we build resilient infrastructures that perform under pressure.
-    </p>
-    <a href="#contact" class="btn">Protect Your Business — Let’s Begin</a>
-</section>
+<div id="mainSite">
+    <nav class="brand-header">
+        <div class="container">
+            <div class="logo-text">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="#c5a059"/>
+                    <path d="M9 11L11 13L15 9" stroke="#0a192f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Cybershield Security
+            </div>
+        </div>
+    </nav>
 
-<!-- TRUST STRIP -->
-<section class="light-section">
-    <h2>Why Choose CyberShield Security</h2>
-    <p>
-        17+ Years of Network Security Expertise | Enterprise Firewall & WAN Specialists | 
-        Multi-Vendor Architecture Experience | Secure. Scalable. Future-Ready.
-    </p>
-</section>
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">Enterprise IT Defense <br>& Infrastructure</h1>
+                    <p class="lead mb-4 opacity-75">Expert network deployment and firewall fine-tuning for Schools, Factories, and MSMEs.</p>
+                    <a href="#free-consult" class="btn-gold text-uppercase">Protect Your Business — Let’s Begin &rarr;</a>
+                </div>
+                <div class="col-lg-6 text-lg-end mt-5 mt-lg-0">
+                    <div class="hero-image-box">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800" alt="Server Infrastructure">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<!-- SERVICES -->
-<section>
-    <h2>Our Core Security Services</h2>
-    <div class="services">
-        <div class="card">
-            <h3>Firewall Architecture & Policy Optimization</h3>
-            <p>Strategic firewall design, migration, and rule tuning to eliminate security gaps and enhance performance.</p>
+   <style>
+    /* Process Section Styling */
+    .process-section {
+        padding: 80px 0;
+        background-color: #ffffff;
+    }
+    .process-step {
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
+    .process-step:hover {
+        transform: translateY(-5px);
+    }
+    .step-icon-wrap {
+        width: 80px;
+        height: 80px;
+        background-color: var(--secondary-blue);
+        color: var(--accent-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 1.8rem;
+        border: 2px solid var(--accent-gold);
+        box-shadow: 0 10px 20px rgba(10, 25, 47, 0.1);
+    }
+</style>
+
+<section class="process-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Engineering Process</h2>
+            <div class="mx-auto mb-3" style="width: 60px; height: 3px; background-color: var(--accent-gold);"></div>
+            <p class="text-muted">Methodical infrastructure security in 4 steps</p>
         </div>
-        <div class="card">
-            <h3>Secure Multi-Branch WAN Design</h3>
-            <p>Resilient WAN frameworks built for high availability, segmentation, and secure inter-branch communication.</p>
-        </div>
-        <div class="card">
-            <h3>Network Infrastructure Setup</h3>
-            <p>Complete deployment of secure IT foundations tailored for schools, factories, and SMB environments.</p>
-        </div>
-        <div class="card">
-            <h3>Ongoing Security Defense & Support</h3>
-            <p>Continuous infrastructure review, hardening, optimization, and strategic advisory support.</p>
+        
+        <div class="row g-4 text-center">
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h5 class="fw-bold">1. Discovery</h5>
+                    <p class="small text-muted">Complete on-site audit of hardware and security gaps.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h5 class="fw-bold">2. Design</h5>
+                    <p class="small text-muted">Technical blueprint for Firewall and WAN mapping.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h5 class="fw-bold">3. Deployment</h5>
+                    <p class="small text-muted">Hardware mounting and granular policy fine-tuning.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h5 class="fw-bold">4. Monitoring</h5>
+                    <p class="small text-muted">24/7 proactive threat detection and branch support.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- PROCESS -->
-<section class="light-section">
-    <h2>Our Security Approach</h2>
-    <p><strong>1. Assess:</strong> Analyze current infrastructure and identify risks.</p>
-    <p><strong>2. Design:</strong> Architect a secure and scalable framework.</p>
-    <p><strong>3. Implement:</strong> Deploy optimized firewall and WAN configurations.</p>
-    <p><strong>4. Strengthen:</strong> Harden security controls and eliminate vulnerabilities.</p>
-    <p><strong>5. Support:</strong> Provide continuous improvement and strategic guidance.</p>
+    <section class="container feature-container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="Network">
+                    <div class="card-body">
+                        <div class="card-title-gold">Network</div>
+                        <p class="small mb-0 opacity-75">Advanced firewall tuning for industrial and corporate assets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="Wan">
+                    <div class="card-body">
+                        <div class="card-title-gold">Wan</div>
+                        <p class="small mb-0 opacity-75">Secure tunnels for multi-branch connectivity and data sharing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="Infrastructure services">
+                    <div class="card-body">
+                        <div class="card-title-gold">Infrastructure services</div>
+                        <p class="small mb-0 opacity-75">End-to-end IT setup for specialized School and Factory campuses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="free-consult" class="consultation-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center mb-5">
+                <h2 class="fw-bold">Start Your Security Consultation</h2>
+                <p class="text-muted">Take the first step toward a stronger, more resilient network. Our security experts will evaluate your infrastructure and provide strategic recommendations tailored to your business.</p>
+            </div>
+            <div class="col-md-8">
+                <div class="card form-card p-4 p-md-5 shadow-sm border-0">
+                    <form id="auditForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small">Contact Name</label>
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small">Company Name</label>
+                                <input type="text" class="form-control" placeholder="Organization Name" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small">Email ID</label>
+                                <input type="email" class="form-control" placeholder="name@company.com" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small">Mobile Number</label>
+                                <input type="tel" class="form-control" placeholder="For Callback" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-bold small">How can we help?</label>
+                                <select class="form-select" onchange="checkOthers(this)" required>
+                                    <option value="" disabled selected>Select your requirement...</option>
+                                    <optgroup label="Security Services">
+                                        <option value="Firewall">Firewall Policy Review & Fine Tuning</option>
+                                        <option value="Defense">Managed Network Defense & Monitoring</option>
+                                    </optgroup>
+                                    <optgroup label="Infrastructure Setup">
+                                        <option value="WAN">Secure Multi-Branch WAN Deployment</option>
+                                        <option value="Industrial">Industrial / Factory Network Setup</option>
+                                        <option value="Office">Corporate Office / MSME IT Setup</option>
+                                        <option value="School">Educational Institution Infrastructure</option>
+                                    </optgroup>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3 hidden-field" id="otherBox" style="display: none;">
+                            <textarea class="form-control" rows="3" placeholder="Please describe your specific requirement..."></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn btn-consult w-100 py-3 mt-4 shadow">
+                            REQUEST CALLBACK
+                        </button>
+                    </form>
+
+                    <div id="successBox" class="mt-4 text-center d-none">
+                        <div class="alert alert-success border-0 shadow-sm">
+                            <i class="fas fa-check-circle fa-2x mb-2"></i>
+                            <h6 class="fw-bold">Audit Requested!</h6>
+                            <p class="small mb-0">Our specialist will contact you shortly via email or phone to schedule your review.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- CTA -->
-<section>
-    <h2>Secure Your Infrastructure with Confidence</h2>
-    <p>
-        Speak directly with a security architect to evaluate your environment and receive 
-        strategic recommendations tailored to your business objectives.
-    </p>
-    <a href="#contact" class="btn">Start Your Security Consultation</a>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="light-section">
-    <h2>Let’s Build a Stronger Network</h2>
-    <form class="contact-form">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Business Email" required>
-        <input type="text" placeholder="Company Name" required>
-        <input type="tel" placeholder="Contact Number">
-        <textarea rows="5" placeholder="Tell us about your infrastructure needs"></textarea>
-        <button type="submit">Request Consultation</button>
-    </form>
-</section>
-
-<footer>
-    © 2026 CyberShield Security. All Rights Reserved.
+<footer class="py-4 text-center border-top bg-light">
+    <p class="text-muted small mb-0">&copy; 2026 Cybershield Security | Expert Network Solutions</p>
 </footer>
 
-</body>
-</html>
+<script>
+    // Show/Hide "Others" textarea
+    function checkOthers(select) {
+        document.getElementById('otherBox').style.display = (select.value === 'Others') ? 'block' : 'none';
+    }
+
+    // Form Handling
+    document.getElementById('auditForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = "SENDING...";
+        btn.disabled = true;
+        
+        // Simulate sending
+        setTimeout(() => {
+            this.classList.add('d-none');
+            document.getElementById('successBox').classList.remove('d-none');
+        }, 1000);
+    });
+</script>
