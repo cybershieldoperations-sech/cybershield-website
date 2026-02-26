@@ -135,46 +135,86 @@
         </div>
     </header>
 
-    <section class="process-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Our Engineering Process</h2>
-                <div class="mx-auto bg-gold mb-3" style="width: 60px; height: 3px; background-color: var(--accent-gold);"></div>
-                <p class="text-muted">Methodical infrastructure security in 4 steps</p>
+   <style>
+    /* Process Section Styling */
+    .process-section {
+        padding: 80px 0;
+        background-color: #ffffff;
+    }
+    .process-step {
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
+    .process-step:hover {
+        transform: translateY(-5px);
+    }
+    .step-icon-wrap {
+        width: 80px;
+        height: 80px;
+        background-color: var(--secondary-blue);
+        color: var(--accent-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 1.8rem;
+        border: 2px solid var(--accent-gold);
+        box-shadow: 0 10px 20px rgba(10, 25, 47, 0.1);
+    }
+</style>
+
+<section class="process-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Engineering Process</h2>
+            <div class="mx-auto mb-3" style="width: 60px; height: 3px; background-color: var(--accent-gold);"></div>
+            <p class="text-muted">Methodical infrastructure security in 4 steps</p>
+        </div>
+        
+        <div class="row g-4 text-center">
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h5 class="fw-bold">1. Discovery</h5>
+                    <p class="small text-muted">Complete on-site audit of hardware and security gaps.</p>
+                </div>
             </div>
             
-            <div class="row g-4 text-center">
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-step">
-                        <div class="step-icon-wrap"><i class="fas fa-search"></i></div>
-                        <h5 class="fw-bold">1. Discovery</h5>
-                        <p class="small text-muted">Complete on-site audit of hardware and security gaps.</p>
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-drafting-compass"></i>
                     </div>
+                    <h5 class="fw-bold">2. Design</h5>
+                    <p class="small text-muted">Technical blueprint for Firewall and WAN mapping.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-step">
-                        <div class="step-icon-wrap"><i class="fas fa-drafting-compass"></i></div>
-                        <h5 class="fw-bold">2. Design</h5>
-                        <p class="small text-muted">Technical blueprint for Firewall and WAN mapping.</p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-tools"></i>
                     </div>
+                    <h5 class="fw-bold">3. Deployment</h5>
+                    <p class="small text-muted">Hardware mounting and granular policy fine-tuning.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-step">
-                        <div class="step-icon-wrap"><i class="fas fa-tools"></i></div>
-                        <h5 class="fw-bold">3. Deployment</h5>
-                        <p class="small text-muted">Hardware mounting and granular policy fine-tuning.</p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-satellite-dish"></i>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="process-step">
-                        <div class="step-icon-wrap"><i class="fas fa-satellite-dish"></i></div>
-                        <h5 class="fw-bold">4. Monitoring</h5>
-                        <p class="small text-muted">24/7 proactive threat detection and branch support.</p>
-                    </div>
+                    <h5 class="fw-bold">4. Monitoring</h5>
+                    <p class="small text-muted">24/7 proactive threat detection and branch support.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="container feature-container">
         <div class="row g-4">
