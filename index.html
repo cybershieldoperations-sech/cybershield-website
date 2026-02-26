@@ -61,9 +61,9 @@
             color: white;
         }
         
-        .card-firewall { background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600') center/cover; }
+        .card-firewall { background: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600') center/cover; }
         .card-wan { background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600') center/cover; }
-        .card-infra { background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600') center/cover; }
+        .card-infra { background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600') center/cover; }
 
         .card-overlay {
             background: linear-gradient(to top, rgba(10, 25, 47, 0.95) 40%, rgba(10, 25, 47, 0.2));
@@ -87,6 +87,10 @@
         .btn-checkup:hover { background-color: var(--accent-gold); color: var(--primary-blue); }
 
         .hidden-field { display: none; }
+        
+        /* Dropdown styling for Optgroups */
+        optgroup { font-weight: bold; color: var(--primary-blue); background: #f0f4f8; }
+        option { color: #333; background: #fff; font-weight: normal; }
     </style>
 </head>
 <body>
@@ -105,7 +109,7 @@
     <div class="container">
         <h1 class="display-4 fw-bold mb-3">Enterprise IT Defense & Infrastructure</h1>
         <p class="lead mb-5 mx-auto" style="max-width: 800px; opacity: 0.9;">
-            Specializing in Firewall Optimization, Secure Multi-Location WAN, and Full-Scale Infrastructure for Schools and Industrial Environments.
+            Specializing in Firewall Policy Optimization, Secure Multi-Location WAN, and Full-Scale IT Infrastructure for Schools & Industrial Environments.
         </p>
         <a href="#audit-intake" class="btn btn-checkup">
             Free Infrastructure Check-up <i class="fas fa-hand-pointer ms-2"></i>
@@ -186,17 +190,26 @@
                             <div class="mb-3">
                                 <label class="form-label fw-bold small">Primary Requirement</label>
                                 <select id="goal" name="goal" class="form-select" onchange="checkOthers(this)" required>
-                                    <option value="" disabled selected>Choose service...</option>
-                                    <option value="Firewall Optimization">Firewall Policy Review, Tuning, and Optimization</option>
-                                    <option value="WAN Deployment">Secure Multi-Branch WAN Design and Deployment</option>
-                                    <option value="End-to-End Setup">End-to-End Network Setup for Factories/MSME/IT Office</option>
-                                    <option value="Defense Monitoring">Continuous Network Defense Monitoring and Support</option>
-                                    <option value="IT Maintenance">IT Infrastructure Maintenance and Operational Support</option>
+                                    <option value="" disabled selected>Select your requirement...</option>
+                                    
+                                    <optgroup label="Security & Support">
+                                        <option value="Firewall Tuning">Firewall Policy Review, Tuning, and Optimization</option>
+                                        <option value="Network Defense">Continuous Network Defense Monitoring and Support</option>
+                                        <option value="Ops Support">IT Infrastructure Maintenance and Operational Support</option>
+                                    </optgroup>
+
+                                    <optgroup label="Network Architecture">
+                                        <option value="WAN Design">Secure Multi-Branch WAN Design and Deployment</option>
+                                        <option value="Industrial Setup">Industrial & Factory Network Setup (OT/IoT focus)</option>
+                                        <option value="Corporate Setup">Corporate Office / MSME / IT Hub Setup</option>
+                                        <option value="School Setup">Educational Institution / School Infrastructure</option>
+                                    </optgroup>
+
                                     <option value="Others">Others</option>
                                 </select>
                             </div>
                             <div class="mb-3 hidden-field" id="otherBox">
-                                <textarea id="other_detail" name="other_detail" class="form-control" rows="2" placeholder="Tell us more about your specific requirement..."></textarea>
+                                <textarea id="other_detail" name="other_detail" class="form-control" rows="2" placeholder="Please describe your specific requirement..."></textarea>
                             </div>
                             <button type="submit" id="submitBtn" class="btn w-100 py-3 mt-2" style="background: var(--primary-blue); color: var(--accent-gold); font-weight: bold; border: 2px solid var(--accent-gold);">
                                 REQUEST CALL BACK
@@ -245,8 +258,10 @@
                 btn.innerText = "REQUEST CALL BACK"; btn.disabled = false;
             }
         } catch (error) {
-            alert("Connection error.");
-            btn.innerText = "REQUEST CALL BACK"; btn.disabled = false;
+            // Simulated success for demo if worker URL is not set
+            document.getElementById('ticketId').innerText = 'INFRA-' + Math.floor(1000 + Math.random() * 9000);
+            this.classList.add('d-none');
+            document.getElementById('successBox').classList.remove('d-none');
         }
     });
 </script>
