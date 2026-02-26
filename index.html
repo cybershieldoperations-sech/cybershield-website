@@ -29,7 +29,22 @@
             background-color: var(--primary-blue);
             padding: 60px 0 80px;
             color: white;
+            position: relative;
+            overflow: hidden;
         }
+        /* Background Shield Decor */
+        .hero-section::after {
+            content: "\f3ed";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            font-size: 25rem;
+            color: rgba(197, 160, 89, 0.03);
+            right: -5%;
+            top: 0;
+            transform: rotate(15deg);
+        }
+
         .hero-image-box img {
             border: 2px solid var(--accent-gold);
             border-radius: 15px;
@@ -135,6 +150,12 @@
             font-size: 4rem;
             color: var(--accent-gold);
             margin-bottom: 20px;
+            animation: pulse-shield 2s infinite;
+        }
+        @keyframes pulse-shield {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
         }
         .btn-gold {
             background-color: var(--accent-gold);
@@ -157,7 +178,7 @@
     <div class="brand-header">
         <div class="container text-center text-md-start">
             <div class="logo-text">
-                <i class="fas fa-shield-check me-2"></i>Cybershield Security
+                <i class="fas fa-shield-halved me-2"></i>Cybershield Security
             </div>
         </div>
     </div>
@@ -166,9 +187,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <span class="badge bg-warning text-dark px-3 py-2 me-2">NEW BUSINESS LAUNCH</span>
+                        <i class="fas fa-shield-check text-warning"></i>
+                    </div>
                     <h1 class="display-5 fw-bold mb-3">Smart IT Infrastructure <br>for Your Business</h1>
                     <p class="lead mb-4 opacity-75">Tailored network deployment and firewall protection for Schools, Factories, and MSMEs.</p>
-                    <a href="#free-consult" class="btn-consult">Claim Free Consultation &rarr;</a>
+                    <a href="#free-consult" class="btn-consult">
+                        <i class="fas fa-shield-virus me-2"></i>Claim Free Consultation &rarr;
+                    </a>
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0 text-center">
                     <div class="hero-image-box">
@@ -183,19 +210,19 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-3 col-6 mb-3 mb-md-0">
-                    <div class="h4 mb-0 fw-bold">EXPERT</div>
+                    <div class="h4 mb-0 fw-bold"><i class="fas fa-user-shield me-2 small"></i>EXPERT</div>
                     <div class="small opacity-50 text-uppercase">Led Engineering</div>
                 </div>
                 <div class="col-md-3 col-6 mb-3 mb-md-0">
-                    <div class="h4 mb-0 fw-bold">99.9%</div>
+                    <div class="h4 mb-0 fw-bold"><i class="fas fa-shield-heart me-2 small"></i>99.9%</div>
                     <div class="small opacity-50 text-uppercase">Uptime Focus</div>
                 </div>
                 <div class="col-md-3 col-6">
-                    <div class="h4 mb-0 fw-bold">24/7</div>
+                    <div class="h4 mb-0 fw-bold"><i class="fas fa-headset me-2 small"></i>24/7</div>
                     <div class="small opacity-50 text-uppercase">Support Ready</div>
                 </div>
                 <div class="col-md-3 col-6">
-                    <div class="h4 mb-0 fw-bold">SECURE</div>
+                    <div class="h4 mb-0 fw-bold"><i class="fas fa-vault me-2 small"></i>SECURE</div>
                     <div class="small opacity-50 text-uppercase">By Design</div>
                 </div>
             </div>
@@ -209,7 +236,7 @@
                     <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="Network Security">
                     <div class="card-body">
                         <div class="card-title-gold">Netwall</div>
-                        <div class="card-subtitle">Network Security</div>
+                        <div class="card-subtitle"><i class="fas fa-shield-lock me-2"></i>Network Security</div>
                         <p class="card-text small opacity-75">Professional firewall tuning to shield your corporate data and industrial assets.</p>
                     </div>
                 </div>
@@ -219,7 +246,7 @@
                     <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="Business WAN">
                     <div class="card-body">
                         <div class="card-title-gold">Wan</div>
-                        <div class="card-subtitle">Business WAN</div>
+                        <div class="card-subtitle"><i class="fas fa-shield-network me-2"></i>Business WAN</div>
                         <p class="card-text small opacity-75">Reliable branch-to-branch connectivity via encrypted high-speed tunnels.</p>
                     </div>
                 </div>
@@ -229,7 +256,7 @@
                     <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600" class="card-img-top" alt="IT Infrastructure">
                     <div class="card-body">
                         <div class="card-title-gold">Infara</div>
-                        <div class="card-subtitle">IT Infrastructure</div>
+                        <div class="card-subtitle"><i class="fas fa-shield me-2"></i>IT Infrastructure</div>
                         <p class="card-text small opacity-75">End-to-end setup for campuses and factories, from cabling to cloud integration.</p>
                     </div>
                 </div>
@@ -241,7 +268,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center mb-5">
-                    <h2 class="fw-bold">Book Your Free Network Audit</h2>
+                    <h2 class="fw-bold"><i class="fas fa-file-shield me-3 text-warning"></i>Book Your Free Network Audit</h2>
                     <p class="text-muted">Take the first step toward a secure infrastructure. Our engineers will provide a comprehensive review of your current setup.</p>
                 </div>
                 <div class="col-md-7">
@@ -280,7 +307,7 @@
                             </div>
 
                             <button type="submit" id="submitBtn" class="btn btn-consult w-100 py-3 mt-4 shadow">
-                                REQUEST CALLBACK
+                                <i class="fas fa-paper-plane me-2"></i>REQUEST CALLBACK
                             </button>
                         </form>
                     </div>
@@ -290,7 +317,7 @@
     </section>
 
     <footer class="py-4 text-center border-top bg-light">
-        <p class="text-muted small mb-0">&copy; 2026 Cybershield Security | Expert Network Solutions</p>
+        <p class="text-muted small mb-0">&copy; 2026 Cybershield Security | <i class="fas fa-shield-halved mx-1"></i> Expert Network Solutions</p>
     </footer>
 </div>
 
@@ -303,32 +330,27 @@
             <p class="mb-2 text-light"><i class="fas fa-phone-alt me-2 text-warning"></i> Callback expected within 24 hours.</p>
             <p class="mb-0 text-light"><i class="fas fa-envelope me-2 text-warning"></i> Confirmation sent to your email.</p>
         </div>
-        <button onclick="location.reload()" class="btn-gold w-100">BACK TO HOME</button>
+        <button onclick="location.reload()" class="btn-gold w-100"><i class="fas fa-arrow-left me-2"></i>BACK TO HOME</button>
     </div>
 </div>
 
 <script>
-    // Show/Hide "Others" textarea
     function checkOthers(select) {
         document.getElementById('otherBox').style.display = (select.value === 'Others') ? 'block' : 'none';
     }
 
-    // Form Handling - Merged with Thank You State
     document.getElementById('auditForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
-        btn.innerText = "SENDING...";
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>ENCRYPTING & SENDING...';
         btn.disabled = true;
         
-        // Simulate sending and switch views
         setTimeout(() => {
-            // Hide the main content
             document.getElementById('mainContent').style.display = 'none';
-            // Show the Thank You State
             const tyState = document.getElementById('thankYouState');
             tyState.style.display = 'flex';
-            window.scrollTo(0, 0); // Reset scroll to top
-        }, 1200);
+            window.scrollTo(0, 0);
+        }, 1500);
     });
 </script>
 
