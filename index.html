@@ -208,25 +208,37 @@
         </div>
     </section>
 
-    <section id="free-consult" class="consultation-section">
+   <section id="free-consult" class="consultation-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center mb-5">
                 <h2 class="fw-bold">Book Your Free Network Audit</h2>
                 <p class="text-muted">Take the first step toward a secure infrastructure. Our engineers will provide a comprehensive review of your current setup.</p>
             </div>
-            <div class="col-md-7">
-                <div class="card form-card p-4 p-md-5">
+            <div class="col-md-8">
+                <div class="card form-card p-4 p-md-5 shadow-sm border-0">
                     <form id="auditForm">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label fw-bold small">Contact Name</label>
                                 <input type="text" class="form-control" placeholder="Your Name" required>
                             </div>
+                            
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small">Company Name</label>
+                                <input type="text" class="form-control" placeholder="Organization Name" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold small">Email ID</label>
+                                <input type="email" class="form-control" placeholder="name@company.com" required>
+                            </div>
+
                             <div class="col-md-6">
                                 <label class="form-label fw-bold small">Mobile Number</label>
                                 <input type="tel" class="form-control" placeholder="For Callback" required>
                             </div>
+
                             <div class="col-12">
                                 <label class="form-label fw-bold small">How can we help?</label>
                                 <select class="form-select" onchange="checkOthers(this)" required>
@@ -246,7 +258,7 @@
                             </div>
                         </div>
                         
-                        <div class="mt-3 hidden-field" id="otherBox">
+                        <div class="mt-3 hidden-field" id="otherBox" style="display: none;">
                             <textarea class="form-control" rows="3" placeholder="Please describe your specific requirement..."></textarea>
                         </div>
 
@@ -259,7 +271,7 @@
                         <div class="alert alert-success border-0 shadow-sm">
                             <i class="fas fa-check-circle fa-2x mb-2"></i>
                             <h6 class="fw-bold">Audit Requested!</h6>
-                            <p class="small mb-0">Our specialist will contact you shortly to schedule your review.</p>
+                            <p class="small mb-0">Our specialist will contact you shortly via email or phone to schedule your review.</p>
                         </div>
                     </div>
                 </div>
@@ -292,6 +304,3 @@
         }, 1000);
     });
 </script>
-
-</body>
-</html>
