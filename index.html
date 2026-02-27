@@ -3,94 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybershield Security | Premium IT Solutions & MSME Infrastructure</title>
+    <title>Cybershield Security | MSME Infrastructure Expert</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --mitech-blue: #086ad8;
-            --mitech-dark: #333333;
-            --mitech-gray: #f8f8f8;
-            --mitech-text: #696969;
+            --primary-blue: #0a192f;
+            --secondary-blue: #112240;
             --accent-gold: #c5a059;
+            --text-gray: #64748b;
+            --section-padding: 90px;
         }
 
-        body { font-family: 'Inter', 'Segoe UI', sans-serif; color: var(--mitech-text); background-color: #fff; line-height: 1.7; }
+        body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.8; }
 
-        /* --- MITECH HEADER STYLE --- */
-        .top-bar { background: #fdfdfd; border-bottom: 1px solid #eee; padding: 10px 0; font-size: 14px; }
-        .navbar { padding: 20px 0; transition: 0.3s; }
-        .nav-link { font-weight: 500; color: var(--mitech-dark) !important; margin: 0 15px; }
-        .nav-link:hover { color: var(--mitech-blue) !important; }
+        /* Navigation */
+        .navbar { padding: 20px 0; background: #fff; border-bottom: 1px solid #eee; }
+        .navbar-brand { font-weight: 800; color: var(--primary-blue); }
+        .brand-gold { color: var(--accent-gold); }
 
-        /* --- HERO SECTION (Modern & Clean) --- */
+        /* Hero */
         .hero { 
-            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
-                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1600');
-            background-size: cover; padding: 120px 0; position: relative;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0d213f 100%);
+            padding: 120px 0; color: white; position: relative; overflow: hidden;
         }
-        .hero h1 { color: var(--mitech-dark); font-weight: 800; font-size: 3.5rem; letter-spacing: -1px; }
-        .btn-mitech { 
-            background: var(--mitech-blue); color: #fff; padding: 15px 35px; 
-            border-radius: 5px; font-weight: 600; text-decoration: none; display: inline-block;
-            transition: 0.3s; border: none;
+        .btn-gold { 
+            background: var(--accent-gold); color: var(--primary-blue); padding: 15px 35px; 
+            border-radius: 5px; font-weight: 700; border: none; transition: 0.3s;
         }
-        .btn-mitech:hover { background: var(--mitech-dark); color: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(8,106,216,0.2); }
+        .btn-gold:hover { background: #fff; transform: translateY(-3px); }
 
-        /* --- MITECH SERVICE CARDS (The key "Mitech" look) --- */
+        /* About Us - Restored */
+        .about-section { padding: var(--section-padding) 0; background: #fff; }
+        .about-img { border-radius: 15px; border-bottom: 8px solid var(--accent-gold); }
+
+        /* Service Cards */
         .service-card {
-            background: #fff; padding: 50px 40px; border-radius: 10px; text-align: center;
-            transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-            border: 1px solid transparent; height: 100%; position: relative;
+            padding: 50px 30px; border-radius: 12px; background: #fff; border: 1px solid #f0f0f0;
+            transition: 0.4s; height: 100%; text-align: center;
         }
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(8,106,216,0.1);
-            box-shadow: 0 40px 70px rgba(0,0,0,0.08);
-        }
-        .service-card i { font-size: 50px; color: var(--mitech-blue); margin-bottom: 30px; transition: 0.3s; }
-        .service-card:hover i { color: var(--accent-gold); transform: scale(1.1); }
-        .service-card h4 { font-weight: 700; color: var(--mitech-dark); margin-bottom: 15px; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); border-color: var(--accent-gold); }
+        .service-card i { font-size: 45px; color: var(--accent-gold); margin-bottom: 25px; }
 
-        /* --- PROCESS SECTION (Numbered & Professional) --- */
-        .process-bg { background: var(--mitech-gray); padding: 100px 0; }
+        /* Process Section - Fixed Overlap */
+        .process-bg { background: #f8fafc; padding: var(--section-padding) 0; }
+        .step-box { 
+            background: #fff; padding: 40px; border-radius: 10px; position: relative; 
+            z-index: 2; height: 100%; border-top: 4px solid var(--primary-blue);
+            transition: 0.3s;
+        }
         .step-num { 
-            font-size: 80px; font-weight: 800; color: #fff; 
-            -webkit-text-stroke: 1px #eee; position: absolute; top: -20px; right: 20px; z-index: 1;
+            font-size: 60px; font-weight: 900; color: rgba(10, 25, 47, 0.05); 
+            position: absolute; top: 10px; right: 20px; z-index: 1;
         }
-        .step-box { background: #fff; padding: 40px; border-radius: 8px; position: relative; z-index: 2; height: 100%; }
+        .step-box:hover { border-top-color: var(--accent-gold); }
 
-        /* --- CONTACT FORM (Glass Style) --- */
-        .contact-section { padding: 100px 0; }
+        /* Form */
         .form-container { 
-            background: #fff; border: 1px solid #f0f0f0; padding: 50px; 
-            border-radius: 15px; box-shadow: 0 30px 60px rgba(0,0,0,0.03); 
+            background: #fff; padding: 50px; border-radius: 20px; 
+            box-shadow: 0 40px 80px rgba(0,0,0,0.07); margin-top: -50px;
         }
-        .form-control { border: 1px solid #eee; padding: 15px; background: #f9f9f9; border-radius: 5px; }
-        .form-control:focus { background: #fff; border-color: var(--mitech-blue); box-shadow: none; }
+        .form-control { padding: 14px; border: 1px solid #e2e8f0; background: #f9fbff; }
+        .form-control:focus { border-color: var(--accent-gold); box-shadow: none; background: #fff; }
 
     </style>
 </head>
 <body>
 
-    <div class="top-bar d-none d-md-block">
-        <div class="container d-flex justify-content-between">
-            <div><i class="fas fa-map-marker-alt me-2 text-primary"></i> Serving MSMEs Pan-India</div>
-            <div><i class="fas fa-envelope me-2 text-primary"></i> solutions@cybershield.in</div>
-        </div>
-    </div>
-    
-    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="#">CYBER<span style="color:var(--mitech-blue)">SHIELD</span></a>
+            <a class="navbar-brand" href="#">CYBER<span class="brand-gold">SHIELD</span></a>
             <div class="collapse navbar-collapse justify-content-end">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#about">About</a>
-                    <a class="nav-link" href="#services">Infrastructure</a>
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link fw-bold px-3" href="#about">About</a>
+                    <a class="nav-link fw-bold px-3" href="#services">Solutions</a>
+                    <a class="nav-link fw-bold px-3" href="#process">Process</a>
+                    <a class="nav-link fw-bold px-3 text-primary" href="#contact">Free Audit</a>
                 </div>
             </div>
         </div>
@@ -99,129 +89,144 @@
     <header class="hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h6 class="text-primary fw-bold text-uppercase mb-3" style="letter-spacing:3px">Trusted IT Partner</h6>
-                    <h1>Secure IT Infrastructure for Growing MSMEs</h1>
-                    <p class="fs-5 my-4">Expert Firewall Architecture, WAN Mapping, and Technical Blueprints tailored for the modern enterprise.</p>
-                    <a href="#contact" class="btn-mitech">Schedule a Free Audit <i class="fas fa-arrow-right ms-2"></i></a>
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">The Architecture of <span class="brand-gold">Business Trust</span></h1>
+                    <p class="lead mb-5 opacity-75">Precision-engineered IT infrastructure for MSMEs, Factories, and Professional Institutions. We don't just secure; we blueprint your growth.</p>
+                    <a href="#contact" class="btn-gold shadow-lg">GET TECHNICAL AUDIT &rarr;</a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-4 shadow-lg border border-secondary" alt="Network Center">
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="services" class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-dark">Our Engineering Solutions</h2>
-                <p>Tailored IT solutions for factories, offices, and multi-branch businesses.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card shadow-sm">
-                        <i class="fas fa-shield-halved"></i>
-                        <h4>Firewall Advancement</h4>
-                        <p>Detailed architecture and rule optimization to prevent data breaches in MSME networks.</p>
-                    </div>
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800" class="img-fluid about-img shadow" alt="MSME Solutions">
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card shadow-sm">
-                        <i class="fas fa-network-wired"></i>
-                        <h4>Infrastructure Plan</h4>
-                        <p>Technical blueprints for high-availability networking, server rooms, and structured cabling.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card shadow-sm">
-                        <i class="fas fa-project-diagram"></i>
-                        <h4>WAN Mapping</h4>
-                        <p>Secure, encrypted site-to-site connectivity for multi-branch offices and remote warehouses.</p>
+                <div class="col-lg-6">
+                    <h6 class="text-primary fw-bold text-uppercase mb-2">Since 2026</h6>
+                    <h2 class="fw-bold mb-4">Safeguarding MSME Assets with Expert Precision</h2>
+                    <p class="text-muted mb-4">Cybershield Security bridges the gap between enterprise-grade protection and the unique needs of MSMEs. We treat your network as a masterpiece, ensuring every firewall rule and WAN map is designed for maximum resilience.</p>
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <h5 class="fw-bold mb-2"><i class="fas fa-check-circle text-warning me-2"></i> On-Site Audit</h5>
+                            <p class="small text-muted">Direct physical assessment of your infrastructure.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="fw-bold mb-2"><i class="fas fa-check-circle text-warning me-2"></i> 24/7 Monitoring</h5>
+                            <p class="small text-muted">Proactive threat detection around the clock.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="process-bg">
-        <div class="container">
-            <div class="row mb-5 text-center">
-                <div class="col-12">
-                    <h2 class="fw-bold text-dark">How We Work</h2>
-                    <p>Methodical security from discovery to deployment.</p>
+    <section id="services" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Engineering Solutions</h2>
+                <div class="mx-auto mt-2 mb-4" style="width: 50px; height: 3px; background: var(--accent-gold);"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-shield-halved"></i>
+                        <h4 class="fw-bold">Firewall Architecture</h4>
+                        <p class="text-muted small">Deep rule optimization and perimeter defense specifically mapped for factory and office environments.</p>
+                    </div>
                 </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4 class="fw-bold">Secure WAN Mapping</h4>
+                        <p class="text-muted small">Encrypted site-to-site connectivity for multi-branch sync and secure remote access for MSMEs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h4 class="fw-bold">Tech Blueprints</h4>
+                        <p class="text-muted small">Comprehensive technical documentation for server rooms, structured cabling, and network hierarchy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process-bg">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Methodical Engineering Process</h2>
+                <p class="text-muted">Methodical security from discovery to deployment</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="step-box shadow-sm">
                         <span class="step-num">01</span>
-                        <h5 class="fw-bold mt-3">On-Site Audit</h5>
-                        <p class="small">We visit your facility to identify physical and digital gaps.</p>
+                        <h5 class="fw-bold mt-2">Discovery</h5>
+                        <p class="small text-muted">On-site audit to find hardware and security gaps.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="step-box shadow-sm">
                         <span class="step-num">02</span>
-                        <h5 class="fw-bold mt-3">Blueprint Design</h5>
-                        <p class="small">You receive a detailed technical map of your future network.</p>
+                        <h5 class="fw-bold mt-2">Design</h5>
+                        <p class="small text-muted">Creation of detailed technical network maps.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="step-box shadow-sm">
                         <span class="step-num">03</span>
-                        <h5 class="fw-bold mt-3">Expert Setup</h5>
-                        <p class="small">Our engineers install and fine-tune your security hardware.</p>
+                        <h5 class="fw-bold mt-2">Deployment</h5>
+                        <p class="small text-muted">Hardware mounting and policy fine-tuning.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="step-box shadow-sm">
                         <span class="step-num">04</span>
-                        <h5 class="fw-bold mt-3">24/7 Monitoring</h5>
-                        <p class="small">We watch your network so you can focus on growing your business.</p>
+                        <h5 class="fw-bold mt-2">Monitoring</h5>
+                        <p class="small text-muted">24/7 proactive threat detection & support.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
+    <section id="contact" class="py-5 bg-white">
+        <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="form-container">
-                        <div class="row g-5">
+                        <div class="row g-4 align-items-center">
                             <div class="col-md-5">
-                                <h2 class="fw-bold text-dark">Get a Free Technical Audit</h2>
-                                <p class="my-4">Ready to secure your business? Our specialists are here to provide sound advice and zero-risk solutions.</p>
-                                <div class="mt-5">
-                                    <p class="mb-1 fw-bold">Call for Support:</p>
-                                    <h4 class="text-primary fw-bold">+91 9XXXXXXXXX</h4>
-                                </div>
+                                <h2 class="fw-bold">Request a <br><span class="text-primary">Free Audit</span></h2>
+                                <p class="text-muted mt-3">Our engineers will visit your site to assess your current security posture.</p>
+                                <hr class="my-4">
+                                <p class="mb-0 small fw-bold text-uppercase">Direct Line</p>
+                                <h4 class="fw-bold text-primary">+91 9XXXXXXXXX</h4>
                             </div>
                             <div class="col-md-7">
                                 <form id="auditForm">
                                     <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="Contact Name" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="Company Name" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="email" class="form-control" placeholder="Email Address" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="tel" class="form-control" placeholder="Mobile Number" required>
-                                        </div>
+                                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Name" required></div>
+                                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Company" required></div>
+                                        <div class="col-md-6"><input type="email" class="form-control" placeholder="Email ID" required></div>
+                                        <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile" required></div>
                                         <div class="col-12">
                                             <select class="form-select form-control" required>
                                                 <option value="" disabled selected>How can we help?</option>
-                                                <option>Firewall / Security Audit</option>
-                                                <option>Multi-branch WAN Setup</option>
-                                                <option>New MSME Infrastructure</option>
-                                                <option>Managed Support</option>
+                                                <option>Firewall / Security Review</option>
+                                                <option>WAN / Multi-branch Mapping</option>
+                                                <option>Full Infrastructure Setup</option>
                                             </select>
                                         </div>
                                         <div class="col-12 mt-4">
-                                            <button type="submit" class="btn-mitech w-100">Send Request <i class="fas fa-paper-plane ms-2"></i></button>
+                                            <button type="submit" class="btn-gold w-100">SEND REQUEST</button>
                                         </div>
                                     </div>
                                 </form>
@@ -233,8 +238,8 @@
         </div>
     </section>
 
-    <footer class="py-5 bg-dark text-white text-center">
-        <p class="mb-0 opacity-50 small">&copy; 2026 Cybershield Security | Expert IT Solutions for MSMEs</p>
+    <footer class="py-4 text-center bg-dark text-white">
+        <p class="mb-0 small opacity-50">&copy; 2026 Cybershield.in | Expert MSME Infrastructure</p>
     </footer>
 
 </body>
