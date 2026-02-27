@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybershield Security | Expert MSME & Network Infrastructure</title>
-    
+    <title>Cybershield Security | Expert IT & Network Infrastructure</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -13,195 +12,209 @@
             --primary-blue: #0a192f;
             --secondary-blue: #112240;
             --accent-gold: #c5a059;
-            --text-muted: #64748b;
-            --bg-light: #f8fafc;
+            --text-light: #e6f1ff;
         }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; scroll-behavior: smooth; margin: 0; }
 
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: #fff; color: #333; scroll-behavior: smooth; }
-
-        /* Top Bar (Sri Sudarsan Inspired) */
-        .top-info-bar {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 10px 0;
-            font-size: 0.85rem;
-            border-bottom: 3px solid var(--accent-gold);
-        }
-
-        /* Navigation */
-        .navbar-brand { font-weight: 700; color: var(--primary-blue); letter-spacing: 1px; }
-        .logo-gold { color: var(--accent-gold); }
+        /* Navigation Header */
+        .brand-header { background-color: var(--primary-blue); padding: 15px 0; border-bottom: 2px solid var(--accent-gold); }
+        .logo-text { color: var(--accent-gold); font-weight: 700; font-size: 1.5rem; display: flex; align-items: center; text-decoration: none; }
+        .logo-icon { width: 35px; height: 35px; margin-right: 12px; }
 
         /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #1a365d 100%);
-            padding: 100px 0;
-            color: white;
-            position: relative;
-            overflow: hidden;
+        .hero-section { background-color: var(--primary-blue); padding: 80px 0 120px; color: white; overflow: hidden; }
+        .hero-image-box img { 
+            border: 2px solid var(--accent-gold); 
+            border-radius: 15px; 
+            box-shadow: 0 0 35px rgba(197, 160, 89, 0.4); 
+            width: 100%; 
+            max-width: 520px; 
         }
-        .hero-section::after {
-            content: "\f3ed"; font-family: "Font Awesome 6 Free"; font-weight: 900;
-            position: absolute; font-size: 30rem; color: rgba(197, 160, 89, 0.05);
-            right: -10%; top: -10%; transform: rotate(15deg);
-        }
-
-        .btn-gold {
-            background-color: var(--accent-gold);
-            color: var(--primary-blue);
-            font-weight: 700;
-            padding: 14px 30px;
-            border-radius: 5px;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            border: none;
-        }
-        .btn-gold:hover { background-color: white; transform: translateY(-3px); }
-
-        /* About Us Section */
-        .about-us { padding: 90px 0; }
-        .gold-divider { width: 50px; height: 3px; background-color: var(--accent-gold); margin: 15px 0; }
         
-        .msme-card {
-            border: 1px solid #f1f5f9;
-            padding: 35px;
-            border-radius: 12px;
-            background: #fff;
-            transition: 0.4s;
+        .btn-gold { 
+            background-color: var(--accent-gold); 
+            color: var(--primary-blue); 
+            font-weight: 700; 
+            padding: 12px 28px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            display: inline-block; 
+            transition: 0.3s; 
+            border: 2px solid var(--accent-gold); 
+            cursor: pointer; 
+        }
+        .btn-gold:hover { background-color: transparent; color: var(--accent-gold); transform: translateY(-3px); }
+
+        /* Our Process Section */
+        .process-section { padding: 90px 0; background-color: white; }
+        .process-step { text-align: center; position: relative; padding: 20px; }
+        .step-icon-wrap {
+            width: 85px; height: 85px; background-color: var(--primary-blue); border: 3px solid var(--accent-gold);
+            color: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin: 0 auto 20px; transition: 0.4s; position: relative; z-index: 2;
+        }
+        
+        @media (min-width: 992px) {
+            .process-step::after {
+                content: ''; position: absolute; top: 62px; left: 60%; width: 80%; height: 2px;
+                background: dashed var(--accent-gold); z-index: 1; opacity: 0.3;
+            }
+            .process-step:last-child::after { display: none; }
+        }
+
+        /* Feature Cards */
+        .feature-container { margin-top: -80px; position: relative; z-index: 10; padding-bottom: 60px; }
+        .feature-card {
+            background-color: var(--secondary-blue); border-radius: 15px; overflow: hidden; border: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             height: 100%;
         }
-        .msme-card:hover { border-color: var(--accent-gold); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .icon-circle {
-            width: 60px; height: 60px; background: #fffcf4; color: var(--accent-gold);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; margin-bottom: 20px; border: 1px solid #fde68a;
+        .feature-card:hover { transform: translateY(-15px) scale(1.03); box-shadow: 0 25px 50px rgba(0,0,0,0.6); }
+        .card-img-top { height: 180px; object-fit: cover; }
+        .card-body { padding: 25px; color: white; background: linear-gradient(to bottom, #112240, #0a192f); }
+        .card-title-gold { color: var(--accent-gold); font-weight: 700; font-size: 1.3rem; margin-bottom: 10px; }
+
+        /* Consultation Form */
+        .consultation-section { background-color: #f0f2f5; padding: 100px 0; }
+        .form-card { border-radius: 20px; border: none; box-shadow: 0 15px 40px rgba(0,0,0,0.1); background: white; overflow: hidden; }
+        .form-header { background-color: var(--primary-blue); color: var(--accent-gold); padding: 25px; text-align: center; }
+        .form-label { font-size: 0.8rem; font-weight: 700; color: var(--primary-blue); letter-spacing: 0.5px; }
+
+        /* Thank You Screen (Hidden by Default) */
+        #thankYouState { 
+            display: none; 
+            background-color: var(--primary-blue); 
+            min-height: 100vh; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+            color: white;
+            padding: 20px;
         }
-
-        /* Process Steps */
-        .process-section { background-color: var(--bg-light); padding: 90px 0; }
-        .step-wrap { position: relative; padding: 20px; }
-        .step-number {
-            width: 80px; height: 80px; background: var(--primary-blue); color: var(--accent-gold);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 20px; font-size: 1.8rem; border: 2px solid var(--accent-gold);
+        .ty-box { 
+            background: var(--secondary-blue); 
+            padding: 60px 40px; 
+            border-radius: 25px; 
+            border: 1px solid var(--accent-gold); 
+            max-width: 550px; 
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
-
-        /* Form Styling */
-        .consultation-section { padding: 90px 0; background-color: white; }
-        .form-card { border-radius: 15px; border: none; box-shadow: 0 10px 50px rgba(0,0,0,0.08); padding: 40px; }
-        .form-control, .form-select { padding: 12px; border: 1px solid #e2e8f0; background: #f8fafc; }
-        .form-control:focus { border-color: var(--accent-gold); box-shadow: none; background: #fff; }
-
-        /* Success State */
-        .hidden-content { display: none; }
+        .ty-icon { font-size: 4.5rem; color: var(--accent-gold); margin-bottom: 25px; }
     </style>
 </head>
 <body>
 
-    <div class="top-info-bar">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div><i class="fas fa-shield-check text-warning me-2"></i>ISO Certified Security Standards</div>
-            <div class="d-none d-md-block">
-                <i class="fas fa-phone-alt text-warning me-2"></i>Expert Support: +91 996202039X
-                <i class="fas fa-envelope text-warning ms-4 me-2"></i>info@cybershield.in
+<div id="mainSite">
+    <nav class="brand-header">
+        <div class="container">
+            <div class="logo-text">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="#c5a059"/>
+                    <path d="M9 11L11 13L15 9" stroke="#0a192f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Cybershield Security
             </div>
         </div>
-    </div>
+    </nav>
 
     <header class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <h1 class="display-4 fw-bold mb-4">Enterprise Security <br>Architected for <span class="logo-gold">MSMEs</span></h1>
-                    <p class="lead mb-5 opacity-75">We provide technical blueprints and on-site deployment for Firewalls, WAN Mapping, and Secure Infrastructure.</p>
-                    <a href="#audit-form" class="btn-gold shadow-lg">REQUEST TECHNICAL AUDIT &rarr;</a>
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">Enterprise IT Defense <br>& Infrastructure</h1>
+                    <p class="lead mb-4 opacity-75">Expert network deployment and firewall fine-tuning for Schools, Factories, and MSMEs.</p>
+                    <a href="#free-consult" class="btn-gold text-uppercase">Protect Your Business — Let’s Begin &rarr;</a>
                 </div>
-                <div class="col-lg-6 mt-5 mt-lg-0">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-3 border border-warning shadow-lg" alt="Secure Network Server">
+                <div class="col-lg-6 text-lg-end mt-5 mt-lg-0">
+                    <div class="hero-image-box">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800" alt="Server Infrastructure">
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="about-us">
-        <div class="container">
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-6">
-                    <h6 class="text-uppercase fw-bold text-muted small">About Cybershield.in</h6>
-                    <h2 class="fw-bold">The Architecture of Business Trust</h2>
-                    <div class="gold-divider"></div>
-                    <p class="text-muted lead">Specializing in end-to-end IT infrastructure for MSMEs, Factories, and Professional Institutions.</p>
-                    <p class="text-muted">We recognize that for an MSME, your network is your competitive edge. We handle the complexity of your IT infrastructure—from granular firewall policy tuning to secure WAN mapping—so you can focus on scaling your business with absolute peace of mind.</p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="msme-card text-center">
-                                <div class="icon-circle mx-auto"><i class="fas fa-microchip"></i></div>
-                                <h6 class="fw-bold">Resilience</h6>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="msme-card text-center">
-                                <div class="icon-circle mx-auto"><i class="fas fa-project-diagram"></i></div>
-                                <h6 class="fw-bold">WAN Mapping</h6>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="msme-card text-center">
-                                <div class="icon-circle mx-auto"><i class="fas fa-lock"></i></div>
-                                <h6 class="fw-bold">Compliance</h6>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="msme-card text-center">
-                                <div class="icon-circle mx-auto"><i class="fas fa-headset"></i></div>
-                                <h6 class="fw-bold">24/7 Support</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <style>
+    /* Process Section Styling */
+    .process-section {
+        padding: 80px 0;
+        background-color: #ffffff;
+    }
+    .process-step {
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
+    .process-step:hover {
+        transform: translateY(-5px);
+    }
+    .step-icon-wrap {
+        width: 80px;
+        height: 80px;
+        background-color: var(--secondary-blue);
+        color: var(--accent-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 1.8rem;
+        border: 2px solid var(--accent-gold);
+        box-shadow: 0 10px 20px rgba(10, 25, 47, 0.1);
+    }
+</style>
 
-    <section class="process-section">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-2">Our Engineering Process</h2>
-            <p class="text-muted mb-5">Methodical infrastructure security in 4 critical steps</p>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-wrap">
-                        <div class="step-number"><i class="fas fa-search"></i></div>
-                        <h5 class="fw-bold">1. Discovery</h5>
-                        <p class="small text-muted">Complete on-site audit of hardware and security gaps.</p>
+<section class="process-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Engineering Process</h2>
+            <div class="mx-auto mb-3" style="width: 60px; height: 3px; background-color: var(--accent-gold);"></div>
+            <p class="text-muted">Methodical infrastructure security in 4 steps</p>
+        </div>
+        
+        <div class="row g-4 text-center">
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-search"></i>
                     </div>
+                    <h5 class="fw-bold">1. Discovery</h5>
+                    <p class="small text-muted">Complete on-site audit of hardware and security gaps.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-wrap">
-                        <div class="step-number"><i class="fas fa-drafting-compass"></i></div>
-                        <h5 class="fw-bold">2. Design</h5>
-                        <p class="small text-muted">Technical blueprint for Firewall and WAN mapping.</p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-drafting-compass"></i>
                     </div>
+                    <h5 class="fw-bold">2. Design</h5>
+                    <p class="small text-muted">Technical blueprint for Firewall and WAN mapping.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-wrap">
-                        <div class="step-number"><i class="fas fa-tools"></i></div>
-                        <h5 class="fw-bold">3. Deployment</h5>
-                        <p class="small text-muted">Hardware mounting and granular policy fine-tuning.</p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-tools"></i>
                     </div>
+                    <h5 class="fw-bold">3. Deployment</h5>
+                    <p class="small text-muted">Hardware mounting and granular policy fine-tuning.</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="step-wrap">
-                        <div class="step-number"><i class="fas fa-satellite-dish"></i></div>
-                        <h5 class="fw-bold">4. Monitoring</h5>
-                        <p class="small text-muted">24/7 proactive threat detection and branch support.</p>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-icon-wrap">
+                        <i class="fas fa-satellite-dish"></i>
                     </div>
+                    <h5 class="fw-bold">4. Monitoring</h5>
+                    <p class="small text-muted">24/7 proactive threat detection and branch support.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="container feature-container">
         <div class="row g-4">
