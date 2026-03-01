@@ -20,16 +20,16 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Deploy Static Site (no build)
+      - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_COAST_0B2ABBB10 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/"     # repo root contains index.html
-          output_location: ""   # no build step (must be empty)
-          api_location: ""      # no API
+          app_location: "/"       # This tells Azure your index.html is in the main folder
+          api_location: ""        # You don't have an API folder yet
+          output_location: ""     # This is empty because you have no 'dist' or 'build' folder
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
