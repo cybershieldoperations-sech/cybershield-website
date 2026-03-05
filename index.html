@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cybershield Security | MSME Infrastructure & SOC Expert</title>
+  <title>Cybershield Security | Hybrid Infra & SOC</title>
 
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -26,13 +26,12 @@
 
     body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.8; overflow-x: hidden; scroll-behavior: smooth; }
     
-    /* Custom Cybershield Icon (Shield + Binoculars) */
+    /* Shield + Binoculars Icon Stack */
     .icon-stack {
         position: relative;
         display: inline-block;
         width: 80px;
         height: 80px;
-        margin-bottom: 20px;
     }
     .fa-shield-base {
         font-size: 80px;
@@ -40,35 +39,31 @@
     }
     .fa-binoculars-overlay {
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 50%;
-        transform: translate(-50%, -40%);
-        font-size: 28px;
+        transform: translate(-50%, -50%);
+        font-size: 26px;
         color: var(--accent-gold);
     }
 
-    /* Navigation */
     .navbar { padding: 15px 0; background: #fff; border-bottom: 1px solid #eee; }
     .navbar-brand { font-weight: 800; color: var(--primary-blue); font-size: 1.5rem; }
     .brand-gold { color: var(--accent-gold); }
     
-    /* Hero Section */
-    .hero { background: linear-gradient(135deg, var(--primary-blue) 0%, #0d213f 100%); padding: 140px 0; color: #fff; }
-    .hero h1 { font-weight: 800; font-size: 3.5rem; line-height: 1.2; }
+    .hero { background: linear-gradient(135deg, var(--primary-blue) 0%, #0d213f 100%); padding: 120px 0; color: #fff; }
+    .hero h1 { font-weight: 800; font-size: 3.5rem; }
+    
     .btn-gold { background: var(--accent-gold); color: var(--primary-blue); padding: 16px 35px; border-radius: 5px; font-weight: 700; text-decoration: none; display: inline-block; transition: .3s; border: none; }
     .btn-gold:hover { background: #fff; transform: translateY(-3px); }
 
-    /* Solutions Section */
     .solutions-bg { background: #f8fafc; padding: var(--section-padding) 0; }
     .solution-card { 
         background: #fff; padding: 40px 30px; border-radius: 15px; height: 100%; 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: .4s; text-align: center; border-bottom: 4px solid transparent;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: .4s; text-align: center;
     }
-    .solution-card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent-gold); }
-    .solution-card i.main-icon { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 20px; }
+    .solution-card:hover { transform: translateY(-10px); }
     
-    /* Form Styling */
-    .form-card { border-radius: 20px; border: none; box-shadow: 0 40px 80px rgba(0,0,0,0.08); background: #fff; }
+    .form-card { border-radius: 20px; border: none; box-shadow: 0 40px 80px rgba(0,0,0,0.1); background: #fff; }
     .btn-consult { background: var(--primary-blue); color: #fff; font-weight: 700; padding: 15px; border: none; border-radius: 5px; }
     .btn-consult:hover { background: var(--accent-gold); color: var(--primary-blue); }
 
@@ -82,15 +77,10 @@
       <a class="navbar-brand" href="#">
         <i class="fas fa-shield-halved me-2"></i>CYBER<span class="brand-gold">SHIELD</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item"><a class="nav-link px-3 fw-bold" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link px-3 fw-bold" href="#audit">Request Audit</a></li>
-          <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-lg-3 px-4" href="mailto:info@cybershieldsecurity.in">Email Us</a></li>
-        </ul>
+      <div class="ms-auto d-none d-lg-block">
+        <a href="mailto:info@cybershieldsecurity.in" class="text-decoration-none fw-bold" style="color: var(--primary-blue);">
+            <i class="fas fa-envelope me-2 brand-gold"></i>info@cybershieldsecurity.in
+        </a>
       </div>
     </div>
   </nav>
@@ -100,84 +90,53 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-7">
-            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:3px;color:var(--accent-gold)">Hybrid Security Infrastructure</h6>
-            <h1>Protecting MSME Assets with Precision</h1>
-            <p class="lead my-4 opacity-75">From on-premise firewall architecture to Azure-integrated SOC monitoring, we build the shield that guards your business 24/7.</p>
-            <a href="#audit" class="btn-gold shadow-lg">START TECHNICAL AUDIT <i class="fas fa-chevron-right ms-2"></i></a>
+            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:3px;color:var(--accent-gold)">Complete Security Infrastructure</h6>
+            <h1>Protect. Monitor. Respond.</h1>
+            <p class="lead my-4 opacity-75">From modernizing your on-premise network to establishing a 24/7 SOC, we provide the architectural blueprints for business resilience.</p>
+            <a href="#audit" class="btn-gold shadow-lg">START TECHNICAL AUDIT <i class="fas fa-arrow-right ms-2"></i></a>
           </div>
           <div class="col-lg-5 d-none d-lg-block text-center">
             <div class="icon-stack">
                 <i class="fas fa-shield fa-shield-base"></i>
                 <i class="fas fa-binoculars fa-binoculars-overlay"></i>
             </div>
-            <h3 class="fw-bold">Watchful. Resilient.</h3>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="services" class="solutions-bg">
-      <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Our Security Pillars</h2>
-            <p class="text-muted">Comprehensive protection across Physical and Cloud environments.</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <div class="solution-card">
-              <i class="fas fa-network-wired main-icon"></i>
-              <h4>Network Setup</h4>
-              <p>End-to-end design and deployment of secure local and wide area networks for factories and offices.</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="solution-card">
-              <i class="fas fa-eye main-icon"></i>
-              <h4>SOC & SIEM</h4>
-              <p>24/7 Monitoring and incident response using industry-leading SIEM tools and Azure Sentinel integrations.</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="solution-card">
-              <i class="fas fa-user-shield main-icon"></i>
-              <h4>Managed Services</h4>
-              <p>Complete IT infrastructure management, ensuring zero downtime and proactive patch management.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="audit" class="py-5">
+    <section id="audit" class="py-5 bg-light">
       <div class="container py-5">
         <div class="row justify-content-center">
-          <div class="col-md-8">
+          <div class="col-md-9">
             <div class="card form-card p-4 p-md-5">
               <div class="text-center mb-4">
-                <div class="icon-stack" style="transform: scale(0.7); margin-bottom: 0;">
-                    <i class="fas fa-shield fa-shield-base"></i>
-                    <i class="fas fa-binoculars fa-binoculars-overlay"></i>
-                </div>
                 <h2 class="fw-bold">Request Technical Audit</h2>
+                <p class="text-muted">Fill in your details below and our security engineers will contact you.</p>
               </div>
 
               <form id="auditForm">
-                <div class="row g-3">
+                <div class="row g-4">
                   <div class="col-md-6">
-                    <input name="name" type="text" class="form-control form-control-lg" placeholder="Name" required />
+                    <label class="form-label fw-bold">Full Name</label>
+                    <input name="name" type="text" class="form-control form-control-lg" placeholder="John Doe" required />
                   </div>
                   <div class="col-md-6">
-                    <input name="company" type="text" class="form-control form-control-lg" placeholder="Company" required />
+                    <label class="form-label fw-bold">Company Name</label>
+                    <input name="company" type="text" class="form-control form-control-lg" placeholder="Business Name" required />
                   </div>
                   <div class="col-md-6">
-                    <input name="email" type="email" class="form-control form-control-lg" placeholder="Email" required />
+                    <label class="form-label fw-bold">Email Address</label>
+                    <input name="email" type="email" class="form-control form-control-lg" placeholder="john@company.com" required />
                   </div>
                   <div class="col-md-6">
-                    <input name="phone" type="tel" class="form-control form-control-lg" placeholder="Phone" required />
+                    <label class="form-label fw-bold">Phone Number</label>
+                    <input name="phone" type="tel" class="form-control form-control-lg" placeholder="+91 XXXX XXX XXX" required />
                   </div>
                   <div class="col-12">
+                    <label class="form-label fw-bold">Service Requirement</label>
                     <select name="requirement" class="form-select form-select-lg" required>
-                      <option value="" disabled selected>Select Requirement</option>
+                      <option value="" disabled selected>Select an option</option>
                       <option value="Firewall Policy">Firewall Policy Fine-tuning</option>
                       <option value="SOC Establishment">SOC Establishment</option>
                       <option value="SIEM Integration">SIEM Integration</option>
@@ -187,7 +146,7 @@
                     </select>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-consult w-100 mt-4 shadow-sm">REQUEST CALLBACK</button>
+                <button type="submit" class="btn btn-consult w-100 mt-5 shadow-sm">SUBMIT REQUEST</button>
               </form>
             </div>
           </div>
@@ -196,12 +155,9 @@
     </section>
   </main>
 
-  <footer class="py-5 bg-dark text-white text-center">
+  <footer class="py-4 bg-dark text-white text-center">
     <div class="container">
-      <h4 class="brand-gold mb-3">CYBERSHIELD SECURITY</h4>
-      <p class="opacity-75">Integrated Security for the Modern Enterprise</p>
-      <hr class="opacity-25 my-4" />
-      <p class="small opacity-50">&copy; 2026 Cybershield Security. All Rights Reserved.</p>
+      <p class="mb-0 small opacity-50">&copy; 2026 Cybershield Security. All Rights Reserved.</p>
     </div>
   </footer>
 
