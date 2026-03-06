@@ -191,11 +191,11 @@
                   </div>
                   <div class="col-md-6">
                     <label class="form-label fw-bold small">COMPANY</label>
-                    <input name="company" type="text" class="form-control" placeholder="Acme Corp" required />
+                    <input name="company" type="text" class="form-control" placeholder="" required />
                   </div>
                   <div class="col-md-6">
                     <label class="form-label fw-bold small">EMAIL</label>
-                    <input name="email" type="email" class="form-control" placeholder="john@acme.com" required />
+                    <input name="email" type="email" class="form-control" placeholder="" required />
                   </div>
                   <div class="col-md-6">
                     <label class="form-label fw-bold small">PHONE</label>
@@ -203,15 +203,48 @@
                   </div>
                   <div class="col-12">
                     <label class="form-label fw-bold small">REQUIREMENT</label>
-                    <select name="requirement" class="form-select" required>
-                      <option value="" disabled selected>Select a Service</option>
-                      <option value="Firewall Tuning">Firewall Policy Fine-tuning</option>
-                      <option value="SOC Establishment">SOC Establishment</option>
-                      <option value="SIEM Integration">SIEM Integration</option>
-                      <option value="Infra Managed">Infra Managed Service</option>
-                      <option value="New Network">New Network Setup</option>
-                      <option value="Others">Others</option>
-                    </select>
+              <select name="requirement" class="form-select" required>
+
+<option value="" disabled selected>Select a Service</option>
+
+<!-- Network Security -->
+<option value="Firewall Audit">Firewall Health Check & Audit</option>
+<option value="Firewall Optimization">Firewall Policy Fine-tuning</option>
+<option value="Firewall Migration">Firewall Migration (Cisco / Palo Alto / Checkpoint)</option>
+<option value="VPN Setup">Secure VPN Setup (Remote / Site-to-Site)</option>
+<option value="Network Segmentation">Network Segmentation Design</option>
+
+<!-- Security Monitoring -->
+<option value="SOC Setup">SOC Establishment</option>
+<option value="SIEM Deployment">SIEM / Log Monitoring Setup</option>
+<option value="Sentinel Deployment">Microsoft Sentinel Implementation</option>
+<option value="Security Monitoring">24/7 Security Monitoring</option>
+
+<!-- Identity & Access -->
+<option value="NAC Deployment">NAC Deployment (Cisco ISE)</option>
+<option value="Active Directory Security">Active Directory Security Review</option>
+<option value="Identity Access">Identity & Access Management</option>
+
+<!-- Cloud Security -->
+<option value="Cloud Security">Cloud Security Assessment</option>
+<option value="Zscaler Deployment">Secure Internet Access (Zscaler)</option>
+
+<!-- Infrastructure -->
+<option value="Infra Managed">Infrastructure Managed Services</option>
+<option value="New Network Setup">New Office Network Setup</option>
+<option value="Network Optimization">Network Performance Optimization</option>
+
+<!-- Security Assessment -->
+<option value="Security Audit">Network Security Audit</option>
+<option value="VAPT Support">VAPT Coordination & Remediation</option>
+<option value="Compliance">ISO 27001 / Compliance Guidance</option>
+
+<!-- Other -->
+<option value="Security Training">Security Awareness Training</option>
+<option value="Incident Response">Cyber Incident Response</option>
+<option value="Others">Others</option>
+
+</select>
                   </div>
                 </div>
                 <button type="submit" class="btn btn-consult w-100 mt-5">SUBMIT REQUIREMENT</button>
