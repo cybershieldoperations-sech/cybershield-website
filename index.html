@@ -54,7 +54,7 @@
 
         /* HERO */
         .hero {
-            padding: 140px 0 100px;
+            padding: 160px 0 120px;
             background: linear-gradient(135deg, #132a4e 0%, #0a192f 100%);
         }
 
@@ -62,6 +62,26 @@
             font-size: clamp(2.5rem, 5vw, 3.8rem);
             font-weight: 800;
             margin-bottom: 25px;
+        }
+
+        /* ABOUT SECTION (FANCY) */
+        .about-badge {
+            background: rgba(0, 174, 239, 0.1);
+            color: var(--appasamy-cyan);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border: 1px solid var(--appasamy-cyan);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .mission-box {
+            border-left: 4px solid var(--appasamy-cyan);
+            padding-left: 30px;
+            margin: 40px 0;
         }
 
         /* SERVICE CARDS */
@@ -122,24 +142,14 @@
             box-shadow: 0 10px 20px rgba(0, 174, 239, 0.2);
         }
 
-        /* FORM & CONTACT CARD */
-        .form-card, .info-card {
+        /* CONTACT INFO */
+        .info-card {
             background: var(--appasamy-navy);
             border: 2px solid var(--appasamy-cyan);
             padding: 40px;
             border-radius: 12px;
         }
 
-        .form-label-bright { color: var(--appasamy-cyan) !important; font-weight: 700; margin-bottom: 8px; display: block; }
-
-        .form-control-bright {
-            background: #ffffff !important;
-            border: 2px solid #e2e8f0 !important;
-            color: #1e293b !important;
-            padding: 12px !important;
-        }
-
-        /* CONTACT HIGHLIGHT */
         .email-display {
             font-size: clamp(1.2rem, 3vw, 2rem);
             color: var(--appasamy-cyan);
@@ -166,9 +176,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
+                <li class="nav-item"><a class="nav-link px-3" href="#about">About Us</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#services">Capabilities</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#contact-info">Email Us</a></li>
-                <li class="nav-item"><a class="nav-link px-3" href="#audit" style="color:var(--appasamy-cyan) !important;">Request Protocol</a></li>
             </ul>
         </div>
     </div>
@@ -179,10 +189,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--appasamy-cyan)">Elite Infrastructure & Security</h6>
-                    <h1>Building <span style="color:var(--appasamy-cyan)">Resilient</span><br>Digital Fortresses</h1>
+                    <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--appasamy-cyan)">Enterprise Security Architecture</h6>
+                    <h1>Fortifying the <br><span style="color:var(--appasamy-cyan)">Next Generation</span> of MSMEs</h1>
                     <p class="lead opacity-75 mb-5" style="max-width: 650px;">
-                        Strategic deployment and expert monitoring of high-uptime security architecture for MSMEs.
+                        Engineering resilient infrastructure and proactive SOC environments to safeguard your digital sovereignty.
                     </p>
                     <div>
                         <a href="#audit" class="btn-premium">Initiate Technical Audit</a>
@@ -192,10 +202,38 @@
         </div>
     </section>
 
+    <section id="about" style="padding: 100px 0; background-color: #0f1a2e;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="about-badge">The CSS Digital Legacy</span>
+                    <h2 class="fw-bold text-white mb-4" style="font-size: 2.5rem;">Pioneers in Digital <br>Vigilance.</h2>
+                    <p class="lead" style="color: var(--appasamy-cyan);">Founded on the principle that elite security should not be exclusive to conglomerates.</p>
+                    <p class="opacity-75">CSS Digital Tech (Cybershield Security) emerged from a vision to provide MSMEs with the same robust, high-uptime infrastructure utilized by global leaders. We don't just "setup" networks; we architect secure ecosystems.</p>
+                    
+                    <div class="mission-box">
+                        <h5 class="fw-bold text-white">Our Overarching Goal</h5>
+                        <p class="small opacity-75 mb-0">To eliminate infrastructure vulnerability through strategic automation, deep log correlation, and uncompromising firewall integrity—ensuring your business stays operational 100% of the time.</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="p-5" style="background: var(--appasamy-navy); border-radius: 20px; border: 1px solid rgba(0,174,239,0.3);">
+                        <h4 class="fw-bold text-white mb-4"><i class="fas fa-crosshairs me-2 text-info"></i> Our Core Focus</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex align-items-start"><i class="fas fa-check-circle me-2 mt-1 text-info"></i> <span><strong>Zero Trust:</strong> Implementing strict identity verification for every asset.</span></li>
+                            <li class="mb-3 d-flex align-items-start"><i class="fas fa-check-circle me-2 mt-1 text-info"></i> <span><strong>Uptime Optimization:</strong> Minimizing latency while maximizing safety.</span></li>
+                            <li class="mb-3 d-flex align-items-start"><i class="fas fa-check-circle me-2 mt-1 text-info"></i> <span><strong>Scalable Defense:</strong> Infrastructure that grows with your enterprise.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="services" style="padding: 100px 0;">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="fw-bold text-white" style="font-size: 2.5rem;">Our Capabilities</h2>
+                <h2 class="fw-bold text-white" style="font-size: 2.5rem;">Technical Capabilities</h2>
                 <div style="width: 80px; height: 4px; background: var(--appasamy-cyan); margin: 15px auto;"></div>
             </div>
 
@@ -271,67 +309,56 @@
     </section>
 
     <section id="audit" style="background: #0f172a; padding: 100px 0;">
-        <div class="container">
+        <div class="container text-center">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="card form-card">
-                        <div class="text-center mb-5">
-                            <h2 class="fw-bold text-white">Project Requirement Protocol</h2>
-                            <p style="color: var(--appasamy-cyan);">Detailed scoping for Infrastructure & Security Engagements</p>
-                        </div>
-
-                        <form action="https://api.web3forms.com/submit" method="POST">
+                   <div class="info-card mb-5">
+                       <h3 class="fw-bold mb-3">Begin Your Security Transformation</h3>
+                       <p class="opacity-75">Submit your details for a technical review by our engineering team.</p>
+                       <form action="https://api.web3forms.com/submit" method="POST" class="text-start mt-4">
                             <input type="hidden" name="access_key" value="YOUR_KEY_HERE">
-                            <input type="hidden" name="to" value="support@cssdigitaltech.com">
-
-                            <div class="row g-4 text-start">
+                            <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="form-label-bright small">NAME</label>
-                                    <input type="text" name="name" class="form-control form-control-bright" placeholder="Full Name" required>
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label-bright small">COMPANY</label>
-                                    <input type="text" name="company" class="form-control form-control-bright" placeholder="Organization" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label-bright small">EMAIL</label>
-                                    <input type="email" name="email" class="form-control form-control-bright" placeholder="Office Email" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label-bright small">PHONE</label>
-                                    <input type="tel" name="phone" class="form-control form-control-bright" placeholder="Phone Number" required>
+                                    <input type="email" name="email" class="form-control" placeholder="Official Email" required>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label-bright small">TECHNICAL VERTICAL</label>
-                                    <select name="service" class="form-select form-control-bright" required>
-                                        <option disabled selected>Select Technical Service Vertical</option>
-                                        <option>Firewall Setup / Security Upgrade</option>
-                                        <option>Firewall Security Audit & Policy Optimization</option>
-                                        <option>New Office Network Setup</option>
-                                        <option>SOC / Security Monitoring</option>
-                                        <option>Cloud Security Setup</option>
-                                        <option>IT Infrastructure Setup</option>
-                                        <option>Other Requirement</option>
+                                    <select name="service" class="form-select" required>
+                                        <option disabled selected>Select Vertical</option>
+                                        <option>Firewall / Network</option>
+                                        <option>SOC / SIEM</option>
+                                        <option>Managed Infrastructure</option>
                                     </select>
                                 </div>
-                                <div class="col-12 mt-5">
-                                    <button type="submit" class="btn-premium w-100">SUBMIT REQUIREMENT PROTOCOL</button>
+                                <div class="col-12">
+                                    <button type="submit" class="btn-premium w-100">Submit Audit Request</button>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                       </form>
+                   </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact-info" style="background: var(--appasamy-dark); padding: 100px 0;">
+    <section id="contact-info" style="background: var(--appasamy-dark); padding: 80px 0;">
         <div class="container text-center">
-            <div class="info-card d-inline-block px-5">
-                <h3 class="fw-bold mb-4">Direct Communication</h3>
-                <p class="opacity-75 mb-4">For general inquiries and immediate technical support reach out to us at:</p>
-                <div class="email-display">support@cssdigitaltech.com</div>
-            </div>
+            <h3 class="fw-bold mb-4">Direct Communication</h3>
+            <div class="email-display">support@cssdigitaltech.com</div>
         </div>
     </section>
 </main>
+
+<footer class="text-center">
+    <div class="container">
+        <h4 class="fw-bold text-white mb-2">CSS DIGITAL TECH</h4>
+        <div class="pt-4 opacity-25 small">© 2026 CSS Digital Tech. Operational Legacy of Cybershield Security.</div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
