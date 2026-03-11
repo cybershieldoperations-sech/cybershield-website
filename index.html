@@ -74,7 +74,7 @@
             height: 180px; width: 100%; background-size: cover; background-position: center;
             position: relative; display: flex; align-items: center; justify-content: center;
         }
-        .service-image-header::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(19, 42, 78, 0.6); }
+        .service-image-header::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(19, 42, 78, 0.5); }
         .service-image-header i { font-size: 3rem; color: var(--appasamy-cyan); position: relative; z-index: 2; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .service-body { padding: 25px; color: var(--card-text); text-align: center; }
         .service-body h5 { color: var(--appasamy-navy); font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; }
@@ -92,10 +92,16 @@
         .form-control, .form-select { background: #fff !important; color: #1e293b !important; border: 2px solid #e2e8f0; padding: 12px; }
         .form-label-fancy { color: var(--appasamy-cyan); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 5px; display: block; }
 
-        /* CONTACT */
+        /* CONTACT SECTION WITH WOMAN IMAGE */
+        .contact-wrap { display: flex; align-items: center; gap: 40px; text-align: left; }
+        .contact-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--appasamy-cyan); object-fit: cover; }
         .email-display { font-size: clamp(1.2rem, 3vw, 2.2rem); color: var(--appasamy-cyan); font-weight: 800; text-decoration: none; border-bottom: 2px dashed var(--appasamy-cyan); padding-bottom: 5px; }
 
         footer { background: #08111f; padding: 60px 0; border-top: 5px solid var(--appasamy-navy); }
+
+        @media (max-width: 768px) {
+            .contact-wrap { flex-direction: column; text-align: center; }
+        }
     </style>
 </head>
 
@@ -140,7 +146,7 @@
                     <span class="about-badge">The CSS Digital Legacy</span>
                     <h2 class="fw-bold text-white mb-4" style="font-size: 2.5rem;">Pioneers in Digital Vigilance.</h2>
                     <p class="lead" style="color: var(--appasamy-cyan);">Elite security shouldn't be exclusive to conglomerates.</p>
-                    <p class="opacity-75">CSS Digital Tech (Cybershield Security) provides MSMEs with the same robust, high-uptime infrastructure utilized by global leaders.</p>
+                    <p class="opacity-75">CSS Digital Tech (Cybershield Security) provides MSMEs with the same robust infrastructure utilized by global leaders.</p>
                     <div class="mission-box">
                         <h5 class="fw-bold text-white">Our Overarching Goal</h5>
                         <p class="small opacity-75 mb-0">To eliminate infrastructure vulnerability through strategic automation and uncompromising firewall integrity.</p>
@@ -169,7 +175,7 @@
             <div class="row g-4 text-start">
                 <div class="col-md-4">
                     <div class="service-card">
-                        <div class="service-image-header" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/2082964786113206261_0');">
+                        <div class="service-image-header" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/11381122555361617356_0');">
                             <i class="fas fa-fire-alt"></i>
                         </div>
                         <div class="service-body">
@@ -180,7 +186,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="service-card">
-                        <div class="service-image-header" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/4707729408932680871_0');">
+                        <div class="service-image-header" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/1931604961039920168_0');">
                             <i class="fas fa-eye"></i>
                         </div>
                         <div class="service-body">
@@ -281,10 +287,18 @@
         </div>
     </section>
 
-    <section id="contact-info" style="background: var(--appasamy-dark); padding: 80px 0;">
-        <div class="container text-center">
-            <h3 class="fw-bold mb-4">Direct Communication</h3>
-            <div class="email-display">support@cssdigitaltech.com</div>
+    <section id="contact-info" style="background: var(--appasamy-dark); padding: 100px 0;">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="contact-wrap">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/10865862407873833762_0" alt="Support Specialist" class="contact-img">
+                    <div>
+                        <h3 class="fw-bold mb-3">Direct Communication</h3>
+                        <p class="opacity-75 mb-3">Our engineers are ready to assist with your infrastructure queries.</p>
+                        <div class="email-display">support@cssdigitaltech.com</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </main>
