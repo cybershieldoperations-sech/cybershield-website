@@ -1,181 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSS DIGITAL TECH | Infrastructure & SOC Experts</title>
+<style>
+    /* THE NEW LOGO CSS */
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+    }
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+        background: var(--appasamy-navy);
+        border: 2px solid var(--appasamy-cyan);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-shadow: 0 0 15px rgba(0, 174, 239, 0.3);
+    }
 
-    <style>
-        :root {
-            --appasamy-navy: #132a4e;
-            --appasamy-cyan: #00aeef;
-            --appasamy-dark: #0a192f;
-            --text-white: #ffffff;
-            --card-bg: #ffffff;
-            --card-text: #1e293b;
-        }
+    .logo-icon i {
+        color: var(--appasamy-cyan);
+        font-size: 22px;
+    }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--appasamy-dark);
-            color: var(--text-white);
-            line-height: 1.7;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+    /* Decorative pulse dot in the logo */
+    .logo-pulse {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 8px;
+        height: 8px;
+        background: #00ff00; /* Green for "System Active" */
+        border-radius: 50%;
+        box-shadow: 0 0 8px #00ff00;
+        animation: pulse-green 2s infinite;
+    }
 
-        /* NAVBAR */
-        .navbar {
-            padding: 15px 0;
-            background: var(--appasamy-navy);
-            border-bottom: 3px solid var(--appasamy-cyan);
-        }
+    @keyframes pulse-green {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(0, 255, 0, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+    }
 
-        .navbar-brand {
-            font-weight: 800;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-        }
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+    }
 
-        .brand-main { font-size: 1.5rem; color: #fff; text-transform: uppercase; }
-        .brand-sub { font-size: 0.75rem; font-weight: 600; color: var(--appasamy-cyan); letter-spacing: 1.5px; text-transform: uppercase; }
+    .logo-main {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 1px;
+    }
 
-        .nav-link {
-            font-weight: 600;
-            color: #ffffff !important;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-        }
+    .logo-main span {
+        color: var(--appasamy-cyan);
+    }
 
-        /* HERO */
-        .hero {
-            padding: 160px 0 120px;
-            background: linear-gradient(135deg, #132a4e 0%, #0a192f 100%);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: 800;
-            margin-bottom: 25px;
-        }
-
-        /* ABOUT SECTION (FANCY) */
-        .about-badge {
-            background: rgba(0, 174, 239, 0.1);
-            color: var(--appasamy-cyan);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            border: 1px solid var(--appasamy-cyan);
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .mission-box {
-            border-left: 4px solid var(--appasamy-cyan);
-            padding-left: 30px;
-            margin: 40px 0;
-        }
-
-        /* SERVICE CARDS */
-        .service-card {
-            background: var(--card-bg);
-            border: 1px solid #e2e8f0;
-            height: 100%;
-            transition: all 0.3s ease;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .service-image-header {
-            height: 160px;
-            width: 100%;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service-image-header::after {
-            content: '';
-            position: absolute;
-            top:0; left:0; width:100%; height:100%;
-            background: rgba(19, 42, 78, 0.7);
-        }
-
-        .service-image-header i {
-            font-size: 3rem;
-            color: var(--appasamy-cyan);
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-body { padding: 25px; color: var(--card-text); text-align: center; }
-        .service-body h5 { color: var(--appasamy-navy); font-weight: 800; }
-
-        /* BUTTONS */
-        .btn-premium {
-            background-color: var(--appasamy-cyan);
-            color: #fff !important;
-            font-weight: 800;
-            padding: 15px 40px;
-            letter-spacing: 1px;
-            border: none;
-            text-transform: uppercase;
-            border-radius: 6px;
-            transition: 0.3s;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .btn-premium:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 174, 239, 0.2);
-        }
-
-        /* CONTACT INFO */
-        .info-card {
-            background: var(--appasamy-navy);
-            border: 2px solid var(--appasamy-cyan);
-            padding: 40px;
-            border-radius: 12px;
-        }
-
-        .email-display {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            color: var(--appasamy-cyan);
-            font-weight: 800;
-            text-decoration: none;
-            border-bottom: 2px dashed var(--appasamy-cyan);
-            padding-bottom: 5px;
-        }
-
-        footer { background: #08111f; padding: 60px 0; border-top: 5px solid var(--appasamy-navy); }
-    </style>
-</head>
-
-<body>
+    .logo-sub {
+        font-size: 0.65rem;
+        font-weight: 600;
+        color: rgba(255,255,255,0.6);
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        margin-top: 4px;
+    }
+</style>
 
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <span class="brand-main">CSS DIGITAL TECH</span>
-            <span class="brand-sub">(Cybershield Security)</span>
+        <a class="logo-container" href="#">
+            <div class="logo-icon">
+                <i class="fas fa-shield-alt"></i>
+                <div class="logo-pulse"></div>
+            </div>
+            <div class="logo-text">
+                <div class="logo-main">CSS <span>DIGITAL</span> TECH</div>
+                <div class="logo-sub">Cybershield Security</div>
+            </div>
         </a>
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
         </button>
+
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav align-items-center">
+            <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link px-3" href="#about">About Us</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#services">Capabilities</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#contact-info">Email Us</a></li>
@@ -183,182 +97,3 @@
         </div>
     </div>
 </nav>
-
-<main>
-    <section class="hero text-center text-lg-start">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--appasamy-cyan)">Enterprise Security Architecture</h6>
-                    <h1>Fortifying the <br><span style="color:var(--appasamy-cyan)">Next Generation</span> of MSMEs</h1>
-                    <p class="lead opacity-75 mb-5" style="max-width: 650px;">
-                        Engineering resilient infrastructure and proactive SOC environments to safeguard your digital sovereignty.
-                    </p>
-                    <div>
-                        <a href="#audit" class="btn-premium">Initiate Technical Audit</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" style="padding: 100px 0; background-color: #0f1a2e;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <span class="about-badge">The CSS Digital Legacy</span>
-                    <h2 class="fw-bold text-white mb-4" style="font-size: 2.5rem;">Pioneers in Digital <br>Vigilance.</h2>
-                    <p class="lead" style="color: var(--appasamy-cyan);">Founded on the principle that elite security should not be exclusive to conglomerates.</p>
-                    <p class="opacity-75">CSS Digital Tech (Cybershield Security) emerged from a vision to provide MSMEs with the same robust, high-uptime infrastructure utilized by global leaders. We don't just "setup" networks; we architect secure ecosystems.</p>
-                    
-                    <div class="mission-box">
-                        <h5 class="fw-bold text-white">Our Overarching Goal</h5>
-                        <p class="small opacity-75 mb-0">To eliminate infrastructure vulnerability through strategic automation, deep log correlation, and uncompromising firewall integrity—ensuring your business stays operational 100% of the time.</p>
-                    </div>
-                </div>
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="p-5" style="background: var(--appasamy-navy); border-radius: 20px; border: 1px solid rgba(0,174,239,0.3);">
-                        <h4 class="fw-bold text-white mb-4"><i class="fas fa-crosshairs me-2 text-info"></i> Our Core Focus</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-3 d-flex align-items-start"><i class="fas fa-check-circle me-2 mt-1 text-info"></i> <span><strong>Zero Trust:</strong> Implementing strict identity verification for every asset.</span></li>
-                            <li class="mb-3 d-flex align-items-start"><i class="fas fa-check-circle me-2 mt-1 text-info"></i> <span><strong>Uptime Optimization:</strong> Minimizing latency while maximizing safety.</span></li>
-                            <li class="mb-3 d-flex align-items-start"><i class="fas fa-check-circle me-2 mt-1 text-info"></i> <span><strong>Scalable Defense:</strong> Infrastructure that grows with your enterprise.</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" style="padding: 100px 0;">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-white" style="font-size: 2.5rem;">Technical Capabilities</h2>
-                <div style="width: 80px; height: 4px; background: var(--appasamy-cyan); margin: 15px auto;"></div>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=600');">
-                            <i class="fas fa-fire-alt"></i>
-                        </div>
-                        <div class="service-body">
-                            <h5>Firewall Fine-tuning</h5>
-                            <p class="small">Optimization of rule sets to ensure maximum throughput without compromising security integrity.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600');">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <div class="service-body">
-                            <h5>SOC Establishment</h5>
-                            <p class="small">Building dedicated Security Operations Centers for real-time proactive threat monitoring.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600');">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div class="service-body">
-                            <h5>SIEM Integration</h5>
-                            <p class="small">Centralizing logs across entire infrastructure for deep correlation and automated alerting.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600');">
-                            <i class="fas fa-tasks"></i>
-                        </div>
-                        <div class="service-body">
-                            <h5>Infra Managed Service</h5>
-                            <p class="small">Strategic development and management of servers and cloud assets at cssdigitaltech.com.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600');">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <div class="service-body">
-                            <h5>New Network Setup</h5>
-                            <p class="small">Deployment of secure VLAN, WAN, and high-resilience physical/cloud infrastructure.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=600');">
-                            <i class="fas fa-shield-virus"></i>
-                        </div>
-                        <div class="service-body">
-                            <h5>Custom Security Audits</h5>
-                            <p class="small">Comprehensive risk assessments and gap analysis tailored for growing MSMEs.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="audit" style="background: #0f172a; padding: 100px 0;">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                   <div class="info-card mb-5">
-                       <h3 class="fw-bold mb-3">Begin Your Security Transformation</h3>
-                       <p class="opacity-75">Submit your details for a technical review by our engineering team.</p>
-                       <form action="https://api.web3forms.com/submit" method="POST" class="text-start mt-4">
-                            <input type="hidden" name="access_key" value="YOUR_KEY_HERE">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" name="email" class="form-control" placeholder="Official Email" required>
-                                </div>
-                                <div class="col-12">
-                                    <select name="service" class="form-select" required>
-                                        <option disabled selected>Select Vertical</option>
-                                        <option>Firewall / Network</option>
-                                        <option>SOC / SIEM</option>
-                                        <option>Managed Infrastructure</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn-premium w-100">Submit Audit Request</button>
-                                </div>
-                            </div>
-                       </form>
-                   </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact-info" style="background: var(--appasamy-dark); padding: 80px 0;">
-        <div class="container text-center">
-            <h3 class="fw-bold mb-4">Direct Communication</h3>
-            <div class="email-display">support@cssdigitaltech.com</div>
-        </div>
-    </section>
-</main>
-
-<footer class="text-center">
-    <div class="container">
-        <h4 class="fw-bold text-white mb-2">CSS DIGITAL TECH</h4>
-        <div class="pt-4 opacity-25 small">© 2026 CSS Digital Tech. Operational Legacy of Cybershield Security.</div>
-    </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
