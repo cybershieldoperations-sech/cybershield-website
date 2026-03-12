@@ -11,7 +11,6 @@
 
     <style>
         :root {
-            /* Appasamy Inspired Color Palette */
             --appasamy-navy: #132a4e;
             --appasamy-cyan: #00aeef;
             --appasamy-dark: #0a192f;
@@ -20,7 +19,11 @@
             --card-text: #1e293b;
         }
 
+        /* Anti-Copy Styling */
         body {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--appasamy-dark);
             color: var(--text-white);
@@ -29,7 +32,6 @@
             scroll-behavior: smooth;
         }
 
-        /* --- LOGO ENGINE --- */
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
         .logo-icon {
             width: 45px; height: 45px; background: var(--appasamy-navy);
@@ -53,16 +55,13 @@
         .logo-main span { color: var(--appasamy-cyan); }
         .logo-sub { font-size: 0.6rem; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 1.2px; text-transform: uppercase; }
 
-        /* --- NAVIGATION --- */
         .navbar { padding: 12px 0; background: var(--appasamy-navy); border-bottom: 3px solid var(--appasamy-cyan); }
         .nav-link { font-weight: 600; color: #ffffff !important; font-size: 0.85rem; text-transform: uppercase; }
         .nav-link:hover { color: var(--appasamy-cyan) !important; }
 
-        /* --- HERO --- */
         .hero { padding: 160px 0 120px; background: linear-gradient(135deg, #132a4e 0%, #0a192f 100%); }
         .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 25px; }
 
-        /* --- SERVICE CARDS --- */
         .service-card { background: var(--card-bg); border: 1px solid #e2e8f0; height: 100%; transition: 0.3s; overflow: hidden; border-radius: 12px; }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(19,42,78,0.2); }
         .service-image-header {
@@ -75,19 +74,16 @@
         .service-body h5 { color: var(--appasamy-navy); font-weight: 800; margin-bottom: 12px; font-size: 1.1rem; }
         .service-body p { font-size: 0.9rem; line-height: 1.5; color: #475569; }
 
-        /* --- TABLE STYLE --- */
         .table-custom { background: var(--appasamy-navy); border: 1px solid var(--appasamy-cyan); color: white; border-radius: 10px; overflow: hidden; }
         .table-custom th { background: rgba(0, 174, 239, 0.2); color: var(--appasamy-cyan); text-transform: uppercase; font-size: 0.8rem; padding: 15px; }
         .table-custom td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
 
-        /* --- FORM --- */
         .info-card { background: var(--appasamy-navy); border: 2px solid var(--appasamy-cyan); padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
         .form-label-fancy { color: var(--appasamy-cyan); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 5px; display: block; }
         .form-control, .form-select { background: #fff !important; color: #1e293b !important; border: 2px solid #e2e8f0; padding: 12px; border-radius: 8px; }
-        .btn-premium { background: var(--appasamy-cyan); color: white !important; font-weight: 800; padding: 15px; border-radius: 8px; border: none; width: 100%; text-transform: uppercase; transition: 0.3s; }
+        .btn-premium { background: var(--appasamy-cyan); color: white !important; font-weight: 800; padding: 15px; border-radius: 8px; border: none; width: 100%; text-transform: uppercase; transition: 0.3s; cursor: pointer; }
         .btn-premium:hover { background: #008cc1; transform: scale(1.02); }
 
-        /* --- CONTACT --- */
         .contact-wrap { display: flex; align-items: center; gap: 30px; }
         .contact-icon-box { 
             width: 120px; height: 120px; border-radius: 50%; 
@@ -107,7 +103,7 @@
     </style>
 </head>
 
-<body>
+<body oncontextmenu="return false;">
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
     <div class="container">
@@ -242,11 +238,31 @@
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="YOUR_KEY_HERE">
                             <div class="row g-3">
-                                <div class="col-md-6"><label class="form-label-fancy">Name</label><input type="text" name="name" class="form-control" required placeholder=""></div>
-                                <div class="col-md-6"><label class="form-label-fancy">Official Email</label><input type="email" name="email" class="form-control" required placeholder=">
-                                <div class="col-12"><label class="form-label-fancy">Requirement Vertical</label><select name="vertical" class="form-select"><option disabled selected>Choose a vertical...</option><option>Firewall / Network</option><option>SOC / SIEM</option><option>Managed Services</option><option>Other / Custom</option></select></div>
-                                <div class="col-12"><label class="form-label-fancy">Detailed Description</label><textarea name="message" class="form-control" rows="4" required placeholder="Please describe your technical needs..."></textarea></div>
-                                <div class="col-12 mt-4"><button type="submit" class="btn-premium">Submit Scoping Request</button></div>
+                                <div class="col-md-6">
+                                    <label class="form-label-fancy">Name</label>
+                                    <input type="text" name="name" class="form-control" required placeholder="Full Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label-fancy">Official Email</label>
+                                    <input type="email" name="email" class="form-control" required placeholder="email@company.com">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label-fancy">Requirement Vertical</label>
+                                    <select name="vertical" class="form-select" required>
+                                        <option disabled selected value="">Choose a vertical...</option>
+                                        <option>Firewall / Network</option>
+                                        <option>SOC / SIEM</option>
+                                        <option>Managed Services</option>
+                                        <option>Other / Custom</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label-fancy">Detailed Description</label>
+                                    <textarea name="message" class="form-control" rows="4" required placeholder="Please describe your technical needs..."></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn-premium">Submit Scoping Request</button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -273,10 +289,43 @@
     </section>
 </main>
 
-<footer class="text-center footer-bg">
+<footer class="text-center">
     <div class="container"><p class="mb-0 small opacity-25">© 2026 CSS DIGITAL TECH. A Cybershield Security Protocol. Infrastructure Management at cssdigitaltech.com.</p></div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener('keydown', function (e) {
+        if (
+            e.key === 'F12' ||
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+            (e.ctrlKey && e.key === 'U')
+        ) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    setInterval(function(){
+        (function() {
+            (function a() {
+                try {
+                    (function b(i) {
+                        if (('' + (i / i)).length !== 1 || i % 20 === 0) {
+                            (function() {}).constructor('debugger')();
+                        } else {
+                            debugger;
+                        }
+                        b(++i);
+                    })(0);
+                } catch (e) {
+                    setTimeout(a, 5000);
+                }
+            })();
+        })();
+    }, 1000);
+</script>
+
 </body>
 </html>
