@@ -47,11 +47,21 @@
         .btn-nav-cta:hover { background: #008cc1; transform: translateY(-1px); }
 
         /* HERO */
-        .hero { padding: 140px 0 100px; background: linear-gradient(135deg, var(--navy2) 0%, var(--navy) 100%); position: relative; overflow: hidden; }
-        .hero::after { content: ''; position: absolute; top: -150px; right: -150px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(0,174,239,0.1) 0%, transparent 70%); pointer-events: none; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.2; }
-        .btn-cta { background: var(--cyan); color: #fff; font-weight: 700; padding: 15px 36px; border-radius: 8px; border: none; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; }
-        .btn-cta:hover { background: #008cc1; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,174,239,0.35); color: #fff; }
+        .hero { padding: 140px 0 100px; background: var(--navy); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(19,42,78,0.9) 0%, rgba(10,25,47,0.6) 100%); z-index: 0; }
+        .hero::after { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(0,174,239,0.12) 0%, transparent 65%); pointer-events: none; z-index: 0; }
+        .hero > .container { position: relative; z-index: 1; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.15; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,174,239,0.1); border: 1px solid rgba(0,174,239,0.3); padding: 6px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; color: var(--cyan); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
+        .hero-badge span { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; animation: pulse 2s infinite; }
+        .btn-cta { background: linear-gradient(90deg, var(--cyan), #0072ff); color: #fff; font-weight: 700; padding: 15px 36px; border-radius: 8px; border: none; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; box-shadow: 0 8px 25px rgba(0,174,239,0.3); }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0,174,239,0.5); color: #fff; }
+        .btn-outline-cta { background: transparent; color: rgba(255,255,255,0.85); font-weight: 600; padding: 15px 32px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; }
+        .btn-outline-cta:hover { border-color: var(--cyan); color: var(--cyan); }
+        /* Hero stats */
+        .hero-stat { border-left: 2px solid rgba(0,174,239,0.3); padding-left: 16px; }
+        .hero-stat h4 { font-size: 1.8rem; font-weight: 800; color: var(--cyan); margin: 0; line-height: 1; }
+        .hero-stat p { font-size: 0.78rem; color: var(--muted); margin: 4px 0 0; text-transform: uppercase; letter-spacing: 0.5px; }
 
         /* ABOUT */
         .about-section { padding: 80px 0; background: #071426; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -60,12 +70,17 @@
         .about-check span { color: var(--muted); font-size: 0.95rem; }
 
         /* SERVICES */
-        .svc-card { background: var(--card-dark); border: 1px solid var(--border); border-radius: 14px; padding: 30px 24px; height: 100%; transition: 0.3s; }
-        .svc-card:hover { border-color: var(--cyan); transform: translateY(-6px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
-        .svc-icon { width: 48px; height: 48px; background: rgba(0,174,239,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-        .svc-icon i { color: var(--cyan); font-size: 1.1rem; }
-        .svc-card h5 { color: #fff; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
-        .svc-card p { color: var(--muted); font-size: 0.87rem; line-height: 1.7; margin: 0; }
+        .svc-card { background: var(--card-dark); border: 1px solid var(--border); border-radius: 16px; padding: 32px 28px; height: 100%; transition: 0.3s; position: relative; overflow: hidden; }
+        .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--cyan), #0072ff); opacity: 0; transition: 0.3s; }
+        .svc-card:hover::before { opacity: 1; }
+        .svc-card:hover { border-color: rgba(0,174,239,0.4); transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,174,239,0.1); }
+        .svc-icon { width: 52px; height: 52px; background: rgba(0,174,239,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(0,174,239,0.2); transition: 0.3s; }
+        .svc-card:hover .svc-icon { background: rgba(0,174,239,0.2); }
+        .svc-icon i { color: var(--cyan); font-size: 1.2rem; }
+        .svc-card h5 { color: #fff; font-weight: 700; font-size: 1rem; margin-bottom: 10px; }
+        .svc-card p { color: var(--muted); font-size: 0.87rem; line-height: 1.75; margin: 0; }
+        .svc-card .svc-arrow { color: rgba(0,174,239,0.4); font-size: 0.8rem; margin-top: 16px; display: block; transition: 0.3s; }
+        .svc-card:hover .svc-arrow { color: var(--cyan); transform: translateX(4px); }
 
         /* TECHNOLOGY */
         .tech-card { background: #fff; border-radius: 12px; padding: 18px 12px; text-align: center; transition: 0.3s; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
@@ -128,11 +143,49 @@
 
 <!-- HERO -->
 <section class="hero">
-    <div class="container text-center text-lg-start">
-        <p class="text-uppercase fw-bold mb-3" style="letter-spacing:4px;color:var(--cyan);font-size:0.8rem;">Network Security Consulting</p>
-        <h1>Enterprise Network Security.<br><span style="color:var(--cyan);">Firewall • SD-WAN • Cloud Security.</span></h1>
-        <p class="mt-4 mb-5" style="color:var(--muted);font-size:1rem;max-width:580px;">We help organizations strengthen their network security through firewall optimization, secure connectivity, and modern security architecture.</p>
-        <a href="#audit" class="btn-cta">Request Security Consultation</a>
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="hero-badge"><span></span> Enterprise Network Security</div>
+                <h1>Firewall Optimization.<br><span style="background:linear-gradient(90deg,var(--cyan),#0072ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">SD-WAN. Cloud Security.</span></h1>
+                <p class="mt-4 mb-5" style="color:var(--muted);font-size:1rem;max-width:500px;line-height:1.85;">We help organizations strengthen their network security through firewall optimization, secure connectivity, and modern security architecture.</p>
+                <div class="d-flex flex-wrap gap-3 mb-5">
+                    <a href="#audit" class="btn-cta">Request Security Consultation</a>
+                    <a href="#services" class="btn-outline-cta">Our Services</a>
+                </div>
+                <div class="d-flex gap-4 flex-wrap">
+                    <div class="hero-stat"><h4>50+</h4><p>Enterprise Clients</p></div>
+                    <div class="hero-stat"><h4>200+</h4><p>Deployments</p></div>
+                    <div class="hero-stat"><h4>10+</h4><p>Years Experience</p></div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div style="background:rgba(15,31,61,0.8);border:1px solid var(--border);border-radius:20px;padding:28px;backdrop-filter:blur(10px);box-shadow:0 30px 80px rgba(0,0,0,0.4);">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
+                        <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
+                        <div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div>
+                        <div style="width:10px;height:10px;border-radius:50%;background:#28c840;"></div>
+                        <span style="color:var(--muted);font-size:0.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-left:auto;">Security Operations Center</span>
+                    </div>
+                    <div style="background:rgba(0,174,239,0.05);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;">
+                        <div><div style="font-size:0.8rem;color:var(--muted);">Firewall Policy Status</div><div style="font-size:0.75rem;color:#00ff88;font-weight:600;margin-top:4px;">● Optimized — 0 redundant rules</div></div>
+                        <span style="color:#00ff88;font-weight:700;font-size:0.85rem;">Active</span>
+                    </div>
+                    <div style="background:rgba(0,174,239,0.05);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;">
+                        <div><div style="font-size:0.8rem;color:var(--muted);">SD-WAN Branch Connectivity</div><div style="font-size:0.75rem;color:#00ff88;font-weight:600;margin-top:4px;">● 12 branches — 99.9% uptime</div></div>
+                        <span style="color:#00ff88;font-weight:700;font-size:0.85rem;">Secure</span>
+                    </div>
+                    <div style="background:rgba(0,174,239,0.05);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;">
+                        <div><div style="font-size:0.8rem;color:var(--muted);">SIEM Threat Detection</div><div style="font-size:0.75rem;color:#ffaa00;font-weight:600;margin-top:4px;">● 3 alerts under review</div></div>
+                        <span style="color:#ffaa00;font-weight:700;font-size:0.85rem;">Review</span>
+                    </div>
+                    <div style="background:rgba(0,174,239,0.05);border:1px solid var(--border);border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;">
+                        <div><div style="font-size:0.8rem;color:var(--muted);">Cloud Security Posture</div><div style="font-size:0.75rem;color:var(--cyan);font-weight:600;margin-top:4px;">● Zscaler ZIA — All policies enforced</div></div>
+                        <span style="color:var(--cyan);font-weight:700;font-size:0.85rem;">Protected</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -171,6 +224,7 @@
                     <div class="svc-icon"><i class="fas fa-shield-alt"></i></div>
                     <h5>Firewall Optimization</h5>
                     <p>Policy tuning, rule cleanup, and security posture improvement across enterprise firewall platforms.</p>
+                    <span class="svc-arrow">Learn more →</span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -178,6 +232,7 @@
                     <div class="svc-icon"><i class="fas fa-network-wired"></i></div>
                     <h5>SD-WAN Design</h5>
                     <p>Secure branch connectivity using modern SD-WAN architecture for distributed enterprise environments.</p>
+                    <span class="svc-arrow">Learn more →</span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -185,6 +240,7 @@
                     <div class="svc-icon"><i class="fas fa-eye"></i></div>
                     <h5>SOC Monitoring</h5>
                     <p>Infrastructure visibility, real-time threat detection, and security operations center enablement.</p>
+                    <span class="svc-arrow">Learn more →</span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -192,6 +248,7 @@
                     <div class="svc-icon"><i class="fas fa-database"></i></div>
                     <h5>SIEM Setup</h5>
                     <p>Centralized security logging, SIEM integration, and incident response for audit-ready environments.</p>
+                    <span class="svc-arrow">Learn more →</span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -199,6 +256,7 @@
                     <div class="svc-icon"><i class="fas fa-cloud-upload-alt"></i></div>
                     <h5>Cloud Security</h5>
                     <p>Cloud security integration to protect workloads and enforce access policies across hybrid environments.</p>
+                    <span class="svc-arrow">Learn more →</span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -206,6 +264,7 @@
                     <div class="svc-icon"><i class="fas fa-search"></i></div>
                     <h5>Security Assessment</h5>
                     <p>In-depth evaluation of your network infrastructure to identify vulnerabilities and misconfigurations.</p>
+                    <span class="svc-arrow">Learn more →</span>
                 </div>
             </div>
             <div class="col-md-3">
@@ -213,6 +272,7 @@
                     <div class="svc-icon"><i class="fas fa-sitemap"></i></div>
                     <h5>Architecture Consulting</h5>
                     <p>Strategic guidance for designing scalable, resilient, and future-ready network security architectures.</p>
+                    <span class="svc-arrow">Learn more →</span>
                 </div>
             </div>
         </div>
