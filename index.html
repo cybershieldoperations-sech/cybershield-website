@@ -1,283 +1,368 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CSS DIGITAL TECH | Infrastructure & Security Consulting</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>CSS Digital Tech | Network Security Consulting</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
-:root {
---appasamy-navy:#132a4e;
---appasamy-cyan:#00aeef;
---appasamy-dark:#0a192f;
---text-white:#ffffff;
---card-bg:#ffffff;
---card-text:#1e293b;
-}
-
 body{
--webkit-user-select:none;
--ms-user-select:none;
-user-select:none;
 font-family:'Plus Jakarta Sans',sans-serif;
-background:var(--appasamy-dark);
-color:var(--text-white);
-line-height:1.7;
-overflow-x:hidden;
+background:#0a192f;
+color:white;
 scroll-behavior:smooth;
 }
 
-.logo-container{display:flex;align-items:center;gap:12px;text-decoration:none!important;}
-
-.logo-icon{
-width:45px;height:45px;background:var(--appasamy-navy);
-border:2px solid var(--appasamy-cyan);
-border-radius:10px;
-display:flex;align-items:center;justify-content:center;position:relative;
-box-shadow:0 0 15px rgba(0,174,239,0.3);
+.navbar{
+background:#132a4e;
+border-bottom:3px solid #00aeef;
 }
 
-.logo-icon i{color:var(--appasamy-cyan);font-size:22px;}
-
-.logo-pulse{
-position:absolute;top:5px;right:5px;width:8px;height:8px;
-background:#00ff00;border-radius:50%;box-shadow:0 0 8px #00ff00;
-animation:pulse-green 2s infinite;
+.nav-link{
+color:white!important;
+font-weight:600;
 }
 
-@keyframes pulse-green{
-0%{transform:scale(.95);box-shadow:0 0 0 0 rgba(0,255,0,.7);}
-70%{transform:scale(1);box-shadow:0 0 0 5px rgba(0,255,0,0);}
-100%{transform:scale(.95);box-shadow:0 0 0 0 rgba(0,255,0,0);}
+.hero{
+padding:160px 0 120px;
+background:linear-gradient(135deg,#132a4e,#0a192f);
 }
 
-.logo-text{display:flex;flex-direction:column;line-height:1.1;}
-
-.logo-main{font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:.5px;}
-
-.logo-main span{color:var(--appasamy-cyan);}
-
-.logo-sub{font-size:.6rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:1.2px;text-transform:uppercase;}
-
-.navbar{padding:12px 0;background:var(--appasamy-navy);border-bottom:3px solid var(--appasamy-cyan);}
-
-.nav-link{font-weight:600;color:#fff!important;font-size:.85rem;text-transform:uppercase;}
-
-.nav-link:hover{color:var(--appasamy-cyan)!important;}
-
-.hero{padding:160px 0 120px;background:linear-gradient(135deg,#132a4e 0%,#0a192f 100%);}
-
-.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;margin-bottom:25px;}
-
-.service-card{background:var(--card-bg);border:1px solid #e2e8f0;height:100%;transition:.3s;overflow:hidden;border-radius:12px;}
-
-.service-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(19,42,78,0.2);}
-
-.service-image-header{
-height:180px;width:100%;background-size:cover;background-position:center;
-position:relative;display:flex;align-items:center;justify-content:center;
+.hero h1{
+font-size:3.5rem;
+font-weight:800;
 }
 
-.service-image-header::after{
-content:'';position:absolute;top:0;left:0;width:100%;height:100%;
-background:rgba(19,42,78,.4);
+.hero span{
+color:#00aeef;
 }
 
-.service-image-header i{
-font-size:2.5rem;color:var(--appasamy-cyan);
-position:relative;z-index:2;text-shadow:0 2px 10px rgba(0,0,0,.5);
+.btn-main{
+background:#00aeef;
+color:white;
+padding:14px 30px;
+border-radius:8px;
+font-weight:700;
+border:none;
 }
 
-.service-body{padding:25px;color:var(--card-text);text-align:left;}
-
-.service-body h5{color:var(--appasamy-navy);font-weight:800;margin-bottom:12px;font-size:1.1rem;}
-
-.service-body p{font-size:.9rem;line-height:1.5;color:#475569;}
-
-.info-card{
-background:var(--appasamy-navy);
-border:2px solid var(--appasamy-cyan);
-padding:40px;border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.3);
+.section{
+padding:100px 0;
 }
 
-.form-label-fancy{
-color:var(--appasamy-cyan);
-font-weight:700;font-size:.7rem;
-text-transform:uppercase;margin-bottom:5px;display:block;
+.service-card{
+background:white;
+color:#1e293b;
+border-radius:12px;
+padding:30px;
+transition:0.3s;
+height:100%;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.service-card i{
+font-size:40px;
+color:#00aeef;
+margin-bottom:15px;
+}
+
+.tech-card{
+background:#0f1e35;
+border:1px solid rgba(255,255,255,0.1);
+border-radius:12px;
+padding:30px;
+text-align:center;
+height:120px;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.3s;
+}
+
+.tech-card img{
+max-width:120px;
+max-height:50px;
+filter:brightness(0) invert(1);
+opacity:0.8;
+}
+
+.tech-card:hover{
+border:1px solid #00aeef;
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,174,239,0.2);
+}
+
+.audit-box{
+background:#132a4e;
+border:2px solid #00aeef;
+padding:40px;
+border-radius:12px;
 }
 
 .form-control,.form-select{
-background:#fff!important;color:#1e293b!important;
-border:2px solid #e2e8f0;padding:12px;border-radius:8px;
-}
-
-.btn-premium{
-background:var(--appasamy-cyan);
-color:white!important;
-font-weight:800;padding:15px;border-radius:8px;border:none;
-width:100%;text-transform:uppercase;transition:.3s;cursor:pointer;
-}
-
-.btn-premium:hover{background:#008cc1;transform:scale(1.02);}
-
-.contact-wrap{display:flex;align-items:center;gap:30px;}
-
-.contact-icon-box{
-width:120px;height:120px;border-radius:50%;
-border:3px solid var(--appasamy-cyan);
-display:flex;align-items:center;justify-content:center;
-background:var(--appasamy-navy);
-box-shadow:0 0 20px rgba(0,174,239,.3);
-}
-
-.contact-icon-box i{font-size:4rem;color:var(--appasamy-cyan);}
-
-.email-display{
-font-size:clamp(1.1rem,3vw,2rem);
-color:var(--appasamy-cyan);
-font-weight:800;text-decoration:none;word-break:break-all;
+padding:12px;
+border-radius:8px;
 }
 
 footer{
-background:#050b14;padding:40px 0;
-border-top:3px solid var(--appasamy-navy);
-color:rgba(255,255,255,.5);font-size:.8rem;
+background:#050b14;
+padding:30px 0;
+margin-top:80px;
 }
 
 </style>
+
 </head>
 
-<body oncontextmenu="return false;">
+<body>
 
-<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
+
 <div class="container">
 
-<a class="logo-container" href="#">
-<div class="logo-icon">
-<i class="fas fa-shield-alt"></i>
-<div class="logo-pulse"></div>
-</div>
-
-<div class="logo-text">
-<div class="logo-main">CSS <span>DIGITAL</span> TECH</div>
-<div class="logo-sub">Cybershield Security</div>
-</div>
+<a class="navbar-brand fw-bold" href="#">
+CSS <span style="color:#00aeef">Digital Tech</span>
 </a>
 
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
 <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+<div class="collapse navbar-collapse justify-content-end" id="navmenu">
+
 <ul class="navbar-nav">
 
 <li class="nav-item">
-<a class="nav-link px-3" href="#services">Capabilities</a>
+<a class="nav-link" href="#services">Services</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link px-3" href="#audit">Request Audit</a>
+<a class="nav-link" href="#technology">Technology</a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link px-3" href="#contact-info">Support</a>
+<a class="nav-link" href="#audit">Request Audit</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
 </li>
 
 </ul>
+
 </div>
 
 </div>
+
 </nav>
 
-<main>
 
 <section class="hero">
 
-<div class="container text-center text-lg-start">
+<div class="container">
 
-<h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px;color:var(--appasamy-cyan)">
-Network Security Consulting
-</h6>
+<div class="row align-items-center">
+
+<div class="col-lg-7">
 
 <h1>
-Secure Firewalls.<br>
-<span style="color:var(--appasamy-cyan)">Protected Infrastructure.</span>
+Secure Firewalls <br>
+<span>Protected Infrastructure</span>
 </h1>
 
-<p class="lead opacity-75 mb-5" style="max-width:700px;">
-Specialized consulting for firewall optimization, infrastructure security, and secure branch connectivity across modern enterprise networks.
+<p class="mt-4 mb-4">
+Network security consulting for modern enterprise infrastructure including firewall optimization, secure branch connectivity and cloud security architecture.
 </p>
 
-<a href="#audit" class="btn btn-premium px-5" style="width:auto">
-Initiate Technical Audit
+<a href="#audit" class="btn-main">
+Request Security Assessment
 </a>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<section id="services" style="padding:100px 0;">
+
+<section id="services" class="section">
 
 <div class="container">
 
 <div class="text-center mb-5">
-<h2 class="fw-bold">Security Consulting Capabilities</h2>
-<div style="width:60px;height:4px;background:var(--appasamy-cyan);margin:15px auto;"></div>
+<h2>Security Consulting Services</h2>
 </div>
 
-<div class="row g-4 mt-2">
-
-<div class="col-md-4">
-<div class="service-card">
-<div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc48');">
-<i class="fas fa-fire-alt"></i>
-</div>
-<div class="service-body">
-<h5>Firewall Fine-tuning</h5>
-<p>Optimizing firewall policies to eliminate unused rules and strengthen security posture.</p>
-</div>
-</div>
-</div>
+<div class="row g-4">
 
 <div class="col-md-4">
+
 <div class="service-card">
-<div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b');">
-<i class="fas fa-eye"></i>
+
+<i class="fas fa-fire"></i>
+
+<h5>Firewall Policy Optimization</h5>
+
+<p>
+Review and optimize firewall rules to improve performance and eliminate security gaps.
+</p>
+
 </div>
-<div class="service-body">
-<h5>SOC Monitoring</h5>
-<p>Security monitoring and log visibility across infrastructure to detect abnormal activities.</p>
-</div>
-</div>
+
 </div>
 
 <div class="col-md-4">
-<div class="service-card">
-<div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3');">
-<i class="fas fa-project-diagram"></i>
-</div>
-<div class="service-body">
-<h5>SIEM Integration</h5>
-<p>Centralizing security logs for threat detection and improved operational visibility.</p>
-</div>
-</div>
-</div>
 
-<div class="col-md-4">
 <div class="service-card">
-<div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1555949963-aa79dcee981c');">
+
 <i class="fas fa-network-wired"></i>
+
+<h5>Branch Connectivity / SD-WAN</h5>
+
+<p>
+Design secure branch connectivity between corporate sites and cloud environments.
+</p>
+
 </div>
-<div class="service-body">
-<h5>Branch Connectivity & SD-WAN</h5>
-<p>Designing secure connectivity between headquarters, branch offices and cloud platforms.</p>
+
 </div>
+
+<div class="col-md-4">
+
+<div class="service-card">
+
+<i class="fas fa-shield-alt"></i>
+
+<h5>Network Security Assessment</h5>
+
+<p>
+Evaluate network infrastructure and identify vulnerabilities in security architecture.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="service-card">
+
+<i class="fas fa-eye"></i>
+
+<h5>SOC Monitoring</h5>
+
+<p>
+Improve visibility into security logs and monitoring platforms for threat detection.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="service-card">
+
+<i class="fas fa-cloud"></i>
+
+<h5>Zscaler Security Architecture</h5>
+
+<p>
+Design secure internet access architecture using modern cloud security platforms.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="service-card">
+
+<i class="fas fa-database"></i>
+
+<h5>SIEM Integration</h5>
+
+<p>
+Centralize security logs and integrate monitoring systems to improve incident response.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="technology" class="section" style="background:#071426;">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2>Technology Expertise</h2>
+
+<p style="opacity:0.7">
+Enterprise technologies used in modern network security environments
+</p>
+
+</div>
+
+<div class="row g-4 justify-content-center">
+
+<div class="col-6 col-md-3">
+<div class="tech-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Cisco_logo_blue_2016.svg">
+</div>
+</div>
+
+<div class="col-6 col-md-3">
+<div class="tech-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Palo_Alto_Networks_Logo_2020.svg">
+</div>
+</div>
+
+<div class="col-6 col-md-3">
+<div class="tech-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Check_Point_logo.svg">
+</div>
+</div>
+
+<div class="col-6 col-md-3">
+<div class="tech-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Zscaler_logo.svg">
+</div>
+</div>
+
+<div class="col-6 col-md-3">
+<div class="tech-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Microsoft_Azure_Logo.svg">
+</div>
+</div>
+
+<div class="col-6 col-md-3">
+<div class="tech-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Fortinet_logo.svg">
 </div>
 </div>
 
@@ -287,7 +372,8 @@ Initiate Technical Audit
 
 </section>
 
-<section id="audit" style="background:#0f172a;padding:100px 0;">
+
+<section id="audit" class="section">
 
 <div class="container">
 
@@ -295,59 +381,62 @@ Initiate Technical Audit
 
 <div class="col-lg-8">
 
-<div class="info-card">
+<div class="audit-box">
 
-<h3 class="fw-bold text-center mb-4 text-white">
-Initiate Technical Audit
+<h3 class="text-center mb-4">
+Request Security Assessment
 </h3>
 
 <form action="https://api.web3forms.com/submit" method="POST">
 
-<input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
-
-<input type="hidden" name="to" value="support@cssdigitaltech.com">
-
-<input type="checkbox" name="botcheck" style="display:none;">
+<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
 
 <div class="row g-3">
 
 <div class="col-md-6">
-<label class="form-label-fancy">Name</label>
-<input type="text" name="name" class="form-control" required placeholder="Full Name">
+<input type="text" name="name" class="form-control" placeholder="Full Name" required>
 </div>
 
 <div class="col-md-6">
-<label class="form-label-fancy">Official Email</label>
-<input type="email" name="email" class="form-control" required placeholder="email@company.com">
+<input type="email" name="email" class="form-control" placeholder="Official Email" required>
 </div>
 
 <div class="col-12">
-<label class="form-label-fancy">Requirement Vertical</label>
 
-<select name="vertical" class="form-select" required>
+<select class="form-select" name="service">
 
-<option disabled selected value="">Choose a service...</option>
+<option selected disabled>Select Service</option>
+
 <option>Firewall Security Optimization</option>
+
 <option>Network Security Assessment</option>
-<option>SOC / SIEM Integration</option>
-<option>Zscaler Secure Internet Architecture</option>
+
+<option>SOC Monitoring</option>
+
+<option>Zscaler Architecture</option>
+
 <option>Branch Connectivity / SD-WAN</option>
-<option>Security Monitoring</option>
-<option>Other Requirement</option>
+
+<option>SIEM Integration</option>
+
+<option>Other</option>
 
 </select>
 
 </div>
 
 <div class="col-12">
-<label class="form-label-fancy">Detailed Description</label>
-<textarea name="message" class="form-control" rows="4" required placeholder="Describe your technical requirement..."></textarea>
+
+<textarea name="message" class="form-control" rows="4" placeholder="Describe your requirement"></textarea>
+
 </div>
 
-<div class="col-12 mt-4">
-<button type="submit" class="btn-premium">
-Submit Scoping Request
+<div class="col-12 text-center">
+
+<button class="btn-main">
+Submit Request
 </button>
+
 </div>
 
 </div>
@@ -364,54 +453,41 @@ Submit Scoping Request
 
 </section>
 
-<section id="contact-info" style="padding:100px 0;">
+
+<section id="contact" class="section text-center">
 
 <div class="container">
 
-<div class="d-flex justify-content-center">
+<h3>Security Consulting Contact</h3>
 
-<div class="contact-wrap">
-
-<div class="contact-icon-box">
-<i class="fas fa-headset"></i>
-</div>
-
-<div>
-
-<h4 class="fw-bold text-white mb-2">
-Security Consulting Contact
-</h4>
-
-<p class="opacity-50 small mb-4">
-For inquiries related to firewall security, branch connectivity, and infrastructure protection.
+<p class="mt-3">
+For firewall security, branch connectivity and infrastructure consulting
 </p>
 
-<a href="mailto:support@cssdigitaltech.com" class="email-display">
+<h4 style="color:#00aeef">
 support@cssdigitaltech.com
-</a>
-
-</div>
-
-</div>
-
-</div>
+</h4>
 
 </div>
 
 </section>
 
-</main>
 
 <footer class="text-center">
+
 <div class="container">
-<p class="mb-0 small opacity-25">
-© 2026 CSS DIGITAL TECH. Network Security Consulting Services.
+
+<p>
+© 2026 CSS Digital Tech
 </p>
+
 </div>
+
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
 ```
