@@ -79,6 +79,12 @@
         .tech-card img { max-width: 100%; max-height: 40px; object-fit: contain; }
 
         /* Capability Cards */
+        .svc-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(0,174,239,0.15); border-radius: 16px; padding: 36px 28px; height: 100%; transition: 0.3s; }
+        .svc-card:hover { background: rgba(0,174,239,0.08); border-color: var(--css-cyan); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,174,239,0.1); }
+        .svc-icon { width: 52px; height: 52px; background: rgba(0,174,239,0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .svc-icon i { color: var(--css-cyan); font-size: 1.3rem; }
+        .svc-card h5 { color: #fff; font-weight: 700; margin-bottom: 12px; font-size: 1rem; }
+        .svc-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.7; margin: 0; }
         .service-card { background: var(--card-bg); border: 1px solid #e2e8f0; height: 100%; transition: 0.3s; overflow: hidden; border-radius: 12px; }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,174,239,0.2); }
         .service-image-header {
@@ -155,17 +161,67 @@
         </div>
     </section>
 
-    <section id="services" style="padding: 100px 0;">
+    <section id="services" style="padding: 100px 0; background: #060f1e;">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Our Services</h2>
-                <div style="width: 60px; height: 4px; background: var(--css-cyan); margin: 15px auto;"></div>
+            <div class="text-center mb-3">
+                <span style="color: var(--css-cyan); font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">What We Do</span>
+                <h2 class="fw-bold mt-2" style="color:#fff;">Our Services</h2>
+                <div style="width: 60px; height: 4px; background: var(--css-cyan); margin: 15px auto 25px;"></div>
+                <p class="mx-auto" style="max-width:720px; color:rgba(255,255,255,0.6); font-size:1rem; line-height:1.8;">
+                    CSS Digital Tech delivers specialized consulting services designed to strengthen network security, optimize firewall performance, and ensure secure connectivity across enterprise and branch infrastructure environments. Our solutions are tailored to help organizations build resilient, scalable, and secure network architectures.
+                </p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-3"><div class="service-card"><div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=400')"><i class="fas fa-fire-alt"></i></div><div class="service-body"><h5>Firewall Tuning</h5><p>Policy optimization and rule cleanup.</p></div></div></div>
-                <div class="col-md-3"><div class="service-card"><div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=400')"><i class="fas fa-eye"></i></div><div class="service-body"><h5>SOC Monitoring</h5><p>Infrastructure visibility and alerts.</p></div></div></div>
-                <div class="col-md-3"><div class="service-card"><div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400')"><i class="fas fa-project-diagram"></i></div><div class="service-body"><h5>SIEM Setup</h5><p>Centralized logging for audits.</p></div></div></div>
-                <div class="col-md-3"><div class="service-card"><div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=400')"><i class="fas fa-network-wired"></i></div><div class="service-body"><h5>SD-WAN Design</h5><p>Secure branch-to-cloud links.</p></div></div></div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h5>Firewall Policy Optimization & Rule Review</h5>
+                        <p>Comprehensive analysis and optimization of firewall policies to improve performance, eliminate redundant rules, and strengthen security posture.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fas fa-search"></i></div>
+                        <h5>Network Security Assessment</h5>
+                        <p>In-depth evaluation of existing network infrastructure to identify vulnerabilities, misconfigurations, and potential security risks.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fas fa-network-wired"></i></div>
+                        <h5>Secure Branch Connectivity & SD-WAN Architecture</h5>
+                        <p>Design and implementation of secure branch networking solutions using modern SD-WAN technologies for reliable and optimized connectivity.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <h5>Cloud Security Integration & Secure Internet Access</h5>
+                        <p>Integration of cloud security solutions to protect workloads, enforce access policies, and ensure safe internet connectivity.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fas fa-eye"></i></div>
+                        <h5>Security Monitoring & Log Visibility Enhancement</h5>
+                        <p>Implementation of monitoring systems that improve real-time threat detection, log analysis, and operational visibility.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fas fa-database"></i></div>
+                        <h5>SIEM Integration & Centralized Security Analysis</h5>
+                        <p>Deployment and integration of SIEM systems for centralized threat intelligence and incident response.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 offset-md-4">
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fas fa-sitemap"></i></div>
+                        <h5>Network Security Architecture Consulting</h5>
+                        <p>Strategic guidance for designing scalable, resilient, and future-ready network security architectures.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
