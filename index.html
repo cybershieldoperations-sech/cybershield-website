@@ -79,17 +79,16 @@
         .tech-card img { max-width: 100%; max-height: 40px; object-fit: contain; }
 
         /* Capability Cards */
-        .service-card { background: var(--card-bg); border: 1px solid #e2e8f0; height: 100%; transition: 0.3s; overflow: hidden; border-radius: 12px; }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,174,239,0.2); }
-        .service-image-header {
-            height: 160px; width: 100%; background-size: cover; background-position: center;
-            position: relative; display: flex; align-items: center; justify-content: center;
+        .service-card {
+            background: #0f1f36;
+            border: 1px solid rgba(0,174,239,0.15);
+            height: 100%; transition: 0.3s; overflow: hidden; border-radius: 14px;
+            padding: 32px 24px;
         }
-        .service-image-header::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(19, 42, 78, 0.5); }
-        .service-image-header i { font-size: 2.5rem; color: var(--css-cyan); position: relative; z-index: 2; }
-        .service-body { padding: 20px; color: var(--card-text); }
-        .service-body h5 { color: var(--css-navy); font-weight: 800; font-size: 1.1rem; }
-        .service-body p { font-size: 0.9rem; color: #475569; margin-bottom: 0; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(0,174,239,0.2); border-color: rgba(0,174,239,0.4); }
+        .service-icon { font-size: 2.2rem; color: var(--css-cyan); margin-bottom: 18px; }
+        .service-body h5 { color: #fff; font-weight: 800; font-size: 1.05rem; margin-bottom: 10px; }
+        .service-body p { font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 0; }
 
         /* Form Styling */
         .info-card { background: var(--css-navy); border: 2px solid var(--css-cyan); padding: 45px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
@@ -136,9 +135,9 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link px-3" href="#services">Capabilities</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#technology">Expertise</a></li>
-                <li class="nav-item"><a class="nav-link px-3" href="#services">Our Services</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#about">About Us</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#contact-info">Contact Us</a></li>
             </ul>
         </div>
@@ -151,7 +150,7 @@
             <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Network Security Consulting</h6>
             <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
             <p class="lead opacity-75 mb-5" style="max-width: 700px;">Specialized consulting for firewall optimization, infrastructure security, and secure branch connectivity.</p>
-            <a href="javascript:void(0)" onclick="triggerGlow()" class="btn btn-premium">Click here for your requirement</a>
+            <a href="javascript:void(0)" onclick="triggerGlow()" class="btn btn-premium">Request Security Consultation</a>
         </div>
     </section>
 
@@ -162,10 +161,45 @@
                 <div style="width: 60px; height: 4px; background: var(--css-cyan); margin: 15px auto;"></div>
             </div>
             <div class="row g-4">
-                <div class="col-md-3"><div class="service-card"><div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=400')"><i class="fas fa-fire-alt"></i></div><div class="service-body"><h5>Firewall Tuning</h5><p>Policy optimization and rule cleanup.</p></div></div></div>
-                <div class="col-md-3"><div class="service-card"><div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=400')"><i class="fas fa-eye"></i></div><div class="service-body"><h5>SOC Monitoring</h5><p>Infrastructure visibility and alerts.</p></div></div></div>
-                <div class="col-md-3"><div class="service-card"><div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400')"><i class="fas fa-project-diagram"></i></div><div class="service-body"><h5>SIEM Setup</h5><p>Centralized logging for audits.</p></div></div></div>
-                <div class="col-md-3"><div class="service-card"><div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=400')"><i class="fas fa-network-wired"></i></div><div class="service-body"><h5>SD-WAN Design</h5><p>Secure branch-to-cloud links.</p></div></div></div>
+                <div class="col-md-3"><div class="service-card"><div class="service-icon"><i class="fas fa-fire-alt"></i></div><div class="service-body"><h5>Firewall Tuning</h5><p>Policy optimization and rule cleanup for maximum security posture.</p></div></div></div>
+                <div class="col-md-3"><div class="service-card"><div class="service-icon"><i class="fas fa-eye"></i></div><div class="service-body"><h5>SOC Monitoring</h5><p>Infrastructure visibility, threat detection, and real-time alerts.</p></div></div></div>
+                <div class="col-md-3"><div class="service-card"><div class="service-icon"><i class="fas fa-project-diagram"></i></div><div class="service-body"><h5>SIEM Setup</h5><p>Centralized security logging and audit-ready event management.</p></div></div></div>
+                <div class="col-md-3"><div class="service-card"><div class="service-icon"><i class="fas fa-network-wired"></i></div><div class="service-body"><h5>SD-WAN Design</h5><p>Secure, reliable branch-to-cloud connectivity architecture.</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" style="padding: 100px 0; background: #071426;">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">About Us</h6>
+                    <h2 class="fw-bold mb-4">Who We Are</h2>
+                    <p style="color:rgba(255,255,255,0.7); line-height:1.9;">CSS Digital Tech is a cybersecurity consulting firm specializing in network security architecture, firewall optimization, and secure infrastructure design. We work with organizations to strengthen their security posture using enterprise-grade technologies and proven methodologies.</p>
+                    <p style="color:rgba(255,255,255,0.7); line-height:1.9;">Our team brings hands-on experience with leading security platforms including Cisco, Palo Alto Networks, Check Point, Fortinet, Zscaler, and Microsoft Azure — delivering practical, scalable solutions for growing businesses.</p>
+                    <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; font-style:italic;">Focused on practical, scalable security solutions for growing organizations.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6"><div style="background:#0f1f36; border:1px solid rgba(0,174,239,0.15); border-radius:12px; padding:28px 20px; text-align:center;"><i class="fas fa-shield-alt fa-2x mb-3" style="color:var(--css-cyan)"></i><h6 class="fw-bold mb-1">Network Security</h6><p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin:0;">Firewall & perimeter defense</p></div></div>
+                        <div class="col-6"><div style="background:#0f1f36; border:1px solid rgba(0,174,239,0.15); border-radius:12px; padding:28px 20px; text-align:center;"><i class="fas fa-cloud fa-2x mb-3" style="color:var(--css-cyan)"></i><h6 class="fw-bold mb-1">Cloud Security</h6><p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin:0;">Secure cloud architecture</p></div></div>
+                        <div class="col-6"><div style="background:#0f1f36; border:1px solid rgba(0,174,239,0.15); border-radius:12px; padding:28px 20px; text-align:center;"><i class="fas fa-sitemap fa-2x mb-3" style="color:var(--css-cyan)"></i><h6 class="fw-bold mb-1">SD-WAN</h6><p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin:0;">Branch connectivity design</p></div></div>
+                        <div class="col-6"><div style="background:#0f1f36; border:1px solid rgba(0,174,239,0.15); border-radius:12px; padding:28px 20px; text-align:center;"><i class="fas fa-search fa-2x mb-3" style="color:var(--css-cyan)"></i><h6 class="fw-bold mb-1">SOC & SIEM</h6><p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin:0;">Monitoring & log management</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" style="padding: 80px 0; background: #0a192f;">
+        <div class="container text-center">
+            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Why Choose Us</h6>
+            <h2 class="fw-bold mb-5">Why Choose CSS Digital Tech</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-3"><div style="padding:20px;"><i class="fas fa-user-shield fa-2x mb-3" style="color:var(--css-cyan)"></i><h6 class="fw-bold mb-2">Experienced Engineers</h6><p style="font-size:0.85rem; color:rgba(255,255,255,0.55);">Hands-on security professionals with real-world deployment experience.</p></div></div>
+                <div class="col-md-3"><div style="padding:20px;"><i class="fas fa-cogs fa-2x mb-3" style="color:var(--css-cyan)"></i><h6 class="fw-bold mb-2">Enterprise Technologies</h6><p style="font-size:0.85rem; color:rgba(255,255,255,0.55);">We work with industry-leading platforms trusted by enterprises worldwide.</p></div></div>
+                <div class="col-md-3"><div style="padding:20px;"><i class="fas fa-drafting-compass fa-2x mb-3" style="color:var(--css-cyan)"></i><h6 class="fw-bold mb-2">Practical Architecture</h6><p style="font-size:0.85rem; color:rgba(255,255,255,0.55);">Security designs built for real operational environments, not just theory.</p></div></div>
+                <div class="col-md-3"><div style="padding:20px;"><i class="fas fa-lock fa-2x mb-3" style="color:var(--css-cyan)"></i><h6 class="fw-bold mb-2">Reliable Protection</h6><p style="font-size:0.85rem; color:rgba(255,255,255,0.55);">Consistent, dependable network security for growing organizations.</p></div></div>
             </div>
         </div>
     </section>
@@ -189,7 +223,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="info-card">
-                        <h3 class="fw-bold text-center mb-4 text-white">Infrastructure Enhancements</h3>
+                        <h3 class="fw-bold text-center mb-4 text-white">Request Security Consultation</h3>
+                        <p class="text-center mb-4" style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Tell us about your network security requirements and our team will contact you.</p>
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
@@ -228,8 +263,36 @@
     </section>
 </main>
 
-<footer class="text-center">
-    <div class="container"><p class="mb-0 small opacity-25">© 2026 CSS DIGITAL TECH.</p></div>
+<footer style="background: #050b14; padding: 50px 0 30px; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4);">
+    <div class="container">
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="logo-container mb-3">
+                    <div class="logo-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="logo-text">
+                        <div class="logo-main">CSS <span>DIGITAL</span> TECH</div>
+                        <div class="logo-sub">Cybershield Security</div>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem; color:rgba(255,255,255,0.4);">Network security consulting for growing organizations.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="fw-bold mb-3" style="color:rgba(255,255,255,0.7); font-size:0.8rem; text-transform:uppercase; letter-spacing:1.5px;">Services</h6>
+                <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem;">
+                    <li class="mb-1"><a href="#services" style="color:rgba(255,255,255,0.4); text-decoration:none;">Firewall Optimization</a></li>
+                    <li class="mb-1"><a href="#services" style="color:rgba(255,255,255,0.4); text-decoration:none;">SD-WAN Architecture</a></li>
+                    <li class="mb-1"><a href="#services" style="color:rgba(255,255,255,0.4); text-decoration:none;">SOC Monitoring</a></li>
+                    <li class="mb-1"><a href="#services" style="color:rgba(255,255,255,0.4); text-decoration:none;">SIEM Setup</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h6 class="fw-bold mb-3" style="color:rgba(255,255,255,0.7); font-size:0.8rem; text-transform:uppercase; letter-spacing:1.5px;">Contact</h6>
+                <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); margin-bottom:6px;"><i class="fas fa-envelope me-2" style="color:var(--css-cyan)"></i>support@cssdigitaltech.com</p>
+            </div>
+        </div>
+        <hr style="border-color:rgba(255,255,255,0.08);">
+        <p class="text-center mb-0 small" style="color:rgba(255,255,255,0.25);">© 2026 CSS Digital Tech. All rights reserved.</p>
+    </div>
 </footer>
 
 <script>
