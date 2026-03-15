@@ -98,7 +98,7 @@
         .service-body p { font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 0; }
 
         /* Form Styling */
-        .info-card { background: #060d18; border: 1px solid rgba(255,255,255,0.06); padding: 60px; border-radius: 16px; }
+        .info-card { background: #060d18; border: 1px solid rgba(255,255,255,0.06); padding: 40px 36px; border-radius: 16px; }
         .form-label-fancy { color: rgba(255,255,255,0.35); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px; display:block; }
         .info-card .form-control,
         .info-card .form-select {
@@ -261,23 +261,23 @@
         </div>
     </section>
 
-    <section id="audit" style="background: #060d18; padding: 100px 0;">
+    <section id="audit" style="background: #060d18; padding: 80px 0;">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-6 col-md-8">
                     <div class="info-card">
-                        <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; text-align:center; margin-bottom:16px;">Get In Touch</p>
-                        <h3 class="fw-bold text-center mb-3 text-white" style="font-size:2rem;">Request Security Consultation</h3>
-                        <p class="text-center mb-5" style="color:rgba(255,255,255,0.35); font-size:0.88rem;">Tell us about your network security requirements and our team will contact you.</p>
+                        <p style="font-size:0.65rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; text-align:center; margin-bottom:10px;">Get In Touch</p>
+                        <h4 class="fw-bold text-center mb-2 text-white">Request Security Consultation</h4>
+                        <p class="text-center mb-4" style="color:rgba(255,255,255,0.3); font-size:0.82rem;">Tell us about your requirements and we'll get back to you.</p>
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
-                            <div class="row g-3">
-                                <div class="col-md-6"><label class="form-label-fancy">Full Name</label><input type="text" name="name" class="form-control" required></div>
-                                <div class="col-md-6"><label class="form-label-fancy">Work Email</label><input type="email" name="email" class="form-control" required></div>
+                            <div class="row g-2">
+                                <div class="col-6"><label class="form-label-fancy">Full Name</label><input type="text" name="name" class="form-control" required></div>
+                                <div class="col-6"><label class="form-label-fancy">Work Email</label><input type="email" name="email" class="form-control" required></div>
                                 <div class="col-12">
-                                    <label class="form-label-fancy">Requested Upgrade/Enhancement</label>
+                                    <label class="form-label-fancy">Service</label>
                                     <select name="vertical" class="form-select" required>
-                                        <option disabled selected value="">Select Enhancement Type...</option>
+                                        <option disabled selected value="">Select service...</option>
                                         <option>Firewall Upgrade</option>
                                         <option>Cloud Migration</option>
                                         <option>SOC Visibility</option>
@@ -285,10 +285,10 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label-fancy">Detailed Description</label>
-                                    <textarea id="description-field" name="message" class="form-control" rows="4" required placeholder="Tell us about the features or enhancements you need..."></textarea>
+                                    <label class="form-label-fancy">Message</label>
+                                    <textarea id="description-field" name="message" class="form-control" rows="3" required placeholder="Describe your security requirements..."></textarea>
                                 </div>
-                                <div class="col-12 mt-4"><button type="submit" class="btn-premium">Submit Request</button></div>
+                                <div class="col-12 mt-3 text-center"><button type="submit" class="btn-premium">Submit Request</button></div>
                             </div>
                         </form>
                     </div>
