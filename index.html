@@ -95,6 +95,16 @@
         /* Form Styling */
         .info-card { background: var(--css-navy); border: 2px solid var(--css-cyan); padding: 45px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
         .form-label-fancy { color: var(--css-cyan); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; display: block; }
+        
+        /* THE GLOW ANIMATION */
+        @keyframes focus-glow {
+            0% { box-shadow: 0 0 0px var(--css-cyan); border-color: #dee2e6; }
+            50% { box-shadow: 0 0 25px var(--css-cyan); border-color: var(--css-cyan); }
+            100% { box-shadow: 0 0 0px var(--css-cyan); border-color: #dee2e6; }
+        }
+        .glow-active {
+            animation: focus-glow 1.5s ease-in-out 2; /* Glows twice */
+        }
 
         /* Footer/Contact Styles */
         .contact-section { background: #0f172a; padding: 100px 0; border-top: 1px solid rgba(0,174,239,0.1); }
@@ -129,7 +139,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link px-3" href="#services">Capabilities</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#technology">Expertise</a></li>
-                <li class="nav-item"><a class="nav-link px-3" href="#requirement-select">Audit</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="javascript:void(0)" onclick="triggerGlow()">Project Scope</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#contact-info">Contact Us</a></li>
             </ul>
         </div>
@@ -142,7 +152,7 @@
             <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Network Security Consulting</h6>
             <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
             <p class="lead opacity-75 mb-5" style="max-width: 700px;">Specialized consulting for firewall optimization, infrastructure security, and secure branch connectivity.</p>
-            <a href="#requirement-select" class="btn btn-premium">Click here for your requirement</a>
+            <a href="javascript:void(0)" onclick="triggerGlow()" class="btn btn-premium">Click here for your requirement</a>
         </div>
     </section>
 
@@ -180,36 +190,27 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="info-card">
-                        <h3 class="fw-bold text-center mb-4 text-white">Initiate Technical Audit</h3>
+                        <h3 class="fw-bold text-center mb-4 text-white">Infrastructure Enhancements</h3>
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label-fancy">Name</label>
-                                    <input type="text" name="name" class="form-control" required placeholder="Full Name">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label-fancy">Official Email</label>
-                                    <input type="email" name="email" class="form-control" required placeholder="email@company.com">
-                                </div>
-                                <div class="col-12" id="requirement-select">
-                                    <label class="form-label-fancy">Select Your Requirement</label>
+                                <div class="col-md-6"><label class="form-label-fancy">Full Name</label><input type="text" name="name" class="form-control" required></div>
+                                <div class="col-md-6"><label class="form-label-fancy">Work Email</label><input type="email" name="email" class="form-control" required></div>
+                                <div class="col-12">
+                                    <label class="form-label-fancy">Requested Upgrade/Enhancement</label>
                                     <select name="vertical" class="form-select" required>
-                                        <option disabled selected value="">Choose a service...</option>
-                                        <option>Firewall Security Optimization</option>
-                                        <option>Network Security Assessment</option>
-                                        <option>SOC / SIEM Integration</option>
-                                        <option>Branch Connectivity / SD-WAN</option>
-                                        <option>Zscaler Cloud Security</option>
+                                        <option disabled selected value="">Select Enhancement Type...</option>
+                                        <option>Firewall Upgrade</option>
+                                        <option>Cloud Migration</option>
+                                        <option>SOC Visibility</option>
+                                        <option>SD-WAN Rollout</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label-fancy">Detailed Description</label>
-                                    <textarea name="message" class="form-control" rows="4" required placeholder="Describe your technical requirement..."></textarea>
+                                    <textarea id="description-field" name="message" class="form-control" rows="4" required placeholder="Tell us about the features or enhancements you need..."></textarea>
                                 </div>
-                                <div class="col-12 mt-4">
-                                    <button type="submit" class="btn-premium">Submit Scoping Request</button>
-                                </div>
+                                <div class="col-12 mt-4"><button type="submit" class="btn-premium">Submit Request</button></div>
                             </div>
                         </form>
                     </div>
@@ -220,21 +221,34 @@
 
     <section id="contact-info" class="contact-section text-center">
         <div class="container">
-            <div class="contact-icon-box">
-                <i class="fas fa-envelope-open-text"></i>
-            </div>
+            <div class="contact-icon-box"><i class="fas fa-envelope-open-text"></i></div>
             <h2 class="fw-bold mb-3">Get In Touch</h2>
-            <p class="opacity-75 mb-4 mx-auto" style="max-width: 600px;">Our consulting team is ready to assist. Contact us directly via our official email for all security and infrastructure inquiries.</p>
+            <p class="opacity-75 mb-4 mx-auto" style="max-width: 600px;">Contact us directly via our official email for all security inquiries.</p>
             <a href="mailto:support@cssdigitaltech.com" class="email-display">support@cssdigitaltech.com</a>
         </div>
     </section>
 </main>
 
 <footer class="text-center">
-    <div class="container">
-        <p class="mb-0 small opacity-25">© 2026 CSS DIGITAL TECH. Network Security Consulting Services.</p>
-    </div>
+    <div class="container"><p class="mb-0 small opacity-25">© 2026 CSS DIGITAL TECH.</p></div>
 </footer>
+
+<script>
+    function triggerGlow() {
+        const field = document.getElementById('description-field');
+        
+        // Scroll smoothly to the field
+        field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Wait a moment for scroll, then add glow
+        setTimeout(() => {
+            field.classList.remove('glow-active');
+            void field.offsetWidth; // Trigger reflow to restart animation
+            field.classList.add('glow-active');
+            field.focus();
+        }, 600);
+    }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
