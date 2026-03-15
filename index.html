@@ -31,7 +31,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Logo Branding */
+        /* Animated Cybershield Logo */
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
         .logo-icon {
             width: 45px; height: 45px; background: var(--css-navy);
@@ -62,7 +62,7 @@
         .hero { padding: 160px 0 120px; background: linear-gradient(135deg, #132a4e 0%, #0a192f 100%); }
         .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 25px; }
 
-        /* Tech Expertise Section */
+        /* Technology Expertise Grid */
         .tech-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -70,37 +70,72 @@
             padding: 20px;
             text-align: center;
             transition: 0.3s;
-            height: 110px;
+            height: 120px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        .tech-card:hover { border-color: var(--css-cyan); transform: translateY(-5px); }
-        .tech-card img {
-            max-width: 90px; height: 35px; object-fit: contain;
-            filter: brightness(0) invert(1); margin-bottom: 8px; opacity: 0.8;
+        .tech-card:hover {
+            border-color: var(--css-cyan);
+            background: rgba(0, 174, 239, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
-        .tech-card span { font-size: 10px; font-weight: 700; color: var(--css-cyan); text-transform: uppercase; }
+        .tech-card img {
+            max-width: 100px; height: 40px; object-fit: contain;
+            filter: brightness(0) invert(1); margin-bottom: 10px; opacity: 0.8;
+        }
+        .tech-card span { font-size: 11px; font-weight: 700; color: var(--css-cyan); text-transform: uppercase; letter-spacing: 1px; }
 
+        /* Service Cards with Image Headers */
         .service-card { background: var(--card-bg); border: 1px solid #e2e8f0; height: 100%; transition: 0.3s; overflow: hidden; border-radius: 12px; }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(19,42,78,0.2); }
+        
         .service-image-header {
             height: 180px; width: 100%; background-size: cover; background-position: center;
             position: relative; display: flex; align-items: center; justify-content: center;
         }
-        .service-image-header::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(19, 42, 78, 0.4); }
-        .service-image-header i { font-size: 2.5rem; color: var(--css-cyan); position: relative; z-index: 2; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .service-image-header::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(19, 42, 78, 0.5);
+        }
+        .service-image-header i {
+            font-size: 2.8rem; color: var(--css-cyan);
+            position: relative; z-index: 2; text-shadow: 0 2px 15px rgba(0,0,0,0.6);
+        }
+
         .service-body { padding: 25px; color: var(--card-text); text-align: left; }
-        .service-body h5 { color: var(--css-navy); font-weight: 800; margin-bottom: 12px; font-size: 1.1rem; }
-        .service-body p { font-size: 0.9rem; line-height: 1.5; color: #475569; }
+        .service-body h5 { color: var(--css-navy); font-weight: 800; margin-bottom: 12px; font-size: 1.15rem; }
+        .service-body p { font-size: 0.9rem; line-height: 1.6; color: #475569; margin-bottom: 0; }
 
-        .info-card { background: var(--css-navy); border: 2px solid var(--css-cyan); padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        .form-label-fancy { color: var(--css-cyan); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 5px; display: block; }
-        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 15px; border-radius: 8px; border: none; width: 100%; text-transform: uppercase; transition: 0.3s; cursor: pointer; }
-        .btn-premium:hover { background: #008cc1; transform: scale(1.02); }
+        /* Form & Contact Styling */
+        .info-card {
+            background: var(--css-navy);
+            border: 2px solid var(--css-cyan);
+            padding: 45px; border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        .form-label-fancy { color: var(--css-cyan); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; display: block; }
+        .form-control, .form-select { border: 2px solid #e2e8f0; padding: 12px; border-radius: 8px; font-size: 0.95rem; }
+        
+        .btn-premium {
+            background: var(--css-cyan);
+            color: white !important; font-weight: 800; padding: 16px; border-radius: 8px; border: none;
+            width: 100%; text-transform: uppercase; transition: 0.3s; cursor: pointer; letter-spacing: 1px;
+        }
+        .btn-premium:hover { background: #008cc1; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,174,239,0.3); }
 
-        footer { background: #050b14; padding: 40px 0; border-top: 3px solid var(--css-navy); color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+        .contact-icon-box {
+            width: 100px; height: 100px; border-radius: 50%;
+            border: 3px solid var(--css-cyan); display: flex; align-items: center; justify-content: center;
+            background: var(--css-navy); box-shadow: 0 0 20px rgba(0, 174, 239, 0.3); margin-bottom: 20px;
+        }
+        .contact-icon-box i { font-size: 3rem; color: var(--css-cyan); }
+        .email-display { font-size: clamp(1.2rem, 3vw, 2.2rem); color: var(--css-cyan); font-weight: 800; text-decoration: none; transition: 0.3s; }
+        .email-display:hover { opacity: 0.8; }
+
+        footer { background: #050b14; padding: 40px 0; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4); }
     </style>
 </head>
 
@@ -119,7 +154,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link px-3" href="#services">Capabilities</a></li>
-                <li class="nav-item"><a class="nav-link px-3" href="#technology">Technology</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#technology">Expertise</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#audit">Request Audit</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#contact-info">Support</a></li>
             </ul>
@@ -137,9 +172,12 @@
         </div>
     </section>
 
-    <section id="technology" style="padding: 60px 0; background: #071426;">
-        <div class="container text-center">
-            <h4 class="mb-4 fw-bold" style="font-size: 1.2rem; letter-spacing: 1px; color: rgba(255,255,255,0.6);">TECHNOLOGY EXPERTISE</h4>
+    <section id="technology" style="padding: 80px 0; background: #071426; border-bottom: 1px solid rgba(0,174,239,0.1);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h4 class="fw-bold" style="letter-spacing: 2px; color: rgba(255,255,255,0.7);">TECHNOLOGY EXPERTISE</h4>
+                <p class="small opacity-50">Enterprise technologies used across modern network security environments</p>
+            </div>
             <div class="row g-3 justify-content-center">
                 <div class="col-6 col-md-2"><div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/1280px-Cisco_logo.svg.png"><span>Cisco</span></div></div>
                 <div class="col-6 col-md-2"><div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Palo_Alto_Networks_logo.svg/1280px-Palo_Alto_Networks_logo.svg.png"><span>Palo Alto</span></div></div>
@@ -158,36 +196,47 @@
                 <div style="width: 60px; height: 4px; background: var(--css-cyan); margin: 15px auto;"></div>
             </div>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=600');">
                             <i class="fas fa-fire-alt"></i>
                         </div>
                         <div class="service-body">
                             <h5>Firewall Fine-tuning</h5>
-                            <p>Optimizing firewall policies to eliminate unused rules and strengthen security posture.</p>
+                            <p>Optimizing policies to eliminate unused rules and strengthen security posture.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600');">
                             <i class="fas fa-eye"></i>
                         </div>
                         <div class="service-body">
                             <h5>SOC Monitoring</h5>
-                            <p>Security monitoring and log visibility across infrastructure to detect abnormal activities.</p>
+                            <p>Log visibility across infrastructure to detect and respond to abnormal activities.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600');">
                             <i class="fas fa-project-diagram"></i>
                         </div>
                         <div class="service-body">
                             <h5>SIEM Integration</h5>
-                            <p>Centralizing security logs for threat detection and improved operational visibility.</p>
+                            <p>Centralizing security logs for better threat detection and operational visibility.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-image-header" style="background-image: url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=600');">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="service-body">
+                            <h5>Branch & SD-WAN</h5>
+                            <p>Secure connectivity design between HQ, remote branches, and cloud platforms.</p>
                         </div>
                     </div>
                 </div>
@@ -204,8 +253,14 @@
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
-                                <div class="col-md-6"><label class="form-label-fancy">Name</label><input type="text" name="name" class="form-control" required placeholder="Full Name"></div>
-                                <div class="col-md-6"><label class="form-label-fancy">Official Email</label><input type="email" name="email" class="form-control" required placeholder="email@company.com"></div>
+                                <div class="col-md-6">
+                                    <label class="form-label-fancy">Name</label>
+                                    <input type="text" name="name" class="form-control" required placeholder="Full Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label-fancy">Official Email</label>
+                                    <input type="email" name="email" class="form-control" required placeholder="email@company.com">
+                                </div>
                                 <div class="col-12">
                                     <label class="form-label-fancy">Requirement Vertical</label>
                                     <select name="vertical" class="form-select" required>
@@ -213,12 +268,17 @@
                                         <option>Firewall Security Optimization</option>
                                         <option>Network Security Assessment</option>
                                         <option>SOC / SIEM Integration</option>
-                                        <option>Zscaler Secure Internet Architecture</option>
                                         <option>Branch Connectivity / SD-WAN</option>
+                                        <option>Zscaler Cloud Security</option>
                                     </select>
                                 </div>
-                                <div class="col-12"><label class="form-label-fancy">Detailed Description</label><textarea name="message" class="form-control" rows="4" required placeholder="Describe your technical requirement..."></textarea></div>
-                                <div class="col-12 mt-4"><button type="submit" class="btn-premium">Submit Scoping Request</button></div>
+                                <div class="col-12">
+                                    <label class="form-label-fancy">Detailed Description</label>
+                                    <textarea name="message" class="form-control" rows="4" required placeholder="Describe your technical requirement..."></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn-premium">Submit Scoping Request</button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -229,9 +289,12 @@
 
     <section id="contact-info" style="padding: 100px 0;">
         <div class="container text-center">
-            <h4 class="fw-bold text-white mb-4">Security Consulting Contact</h4>
-            <a href="mailto:support@cssdigitaltech.com" class="email-display" style="text-decoration: none;">support@cssdigitaltech.com</a>
-            <p class="opacity-50 small mt-3">For inquiries related to firewall security and infrastructure protection.</p>
+            <div class="d-flex flex-column align-items-center">
+                <div class="contact-icon-box"><i class="fas fa-headset"></i></div>
+                <h4 class="fw-bold text-white mb-2">Security Consulting Contact</h4>
+                <p class="opacity-50 small mb-4">Inquiries for firewall security, connectivity, and infrastructure protection.</p>
+                <a href="mailto:support@cssdigitaltech.com" class="email-display">support@cssdigitaltech.com</a>
+            </div>
         </div>
     </section>
 </main>
@@ -241,6 +304,5 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
