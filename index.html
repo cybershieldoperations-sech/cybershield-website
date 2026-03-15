@@ -1,285 +1,212 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CSS DIGITAL TECH | Firewall & Network Security Consulting</title>
+<title>CSS DIGITAL TECH | Network Security Consulting</title>
 
-<meta name="description" content="Firewall and Network Security Consulting services helping businesses optimize firewall policies, secure internet access, and strengthen infrastructure security.">
+<meta name="description" content="Firewall optimization, Zscaler security consulting, SD-WAN branch connectivity and network security architecture services.">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
-:root {
---appasamy-navy:#132a4e;
---appasamy-cyan:#00aeef;
---appasamy-dark:#0a192f;
---text-white:#ffffff;
---card-bg:#ffffff;
---card-text:#1e293b;
-}
-
 body{
--webkit-user-select:none;
--ms-user-select:none;
-user-select:none;
 font-family:'Plus Jakarta Sans',sans-serif;
-background:var(--appasamy-dark);
-color:var(--text-white);
-line-height:1.7;
-overflow-x:hidden;
-scroll-behavior:smooth;
+background:#0a192f;
+color:white;
 }
 
-.logo-container{display:flex;align-items:center;gap:12px;text-decoration:none!important;}
-
-.logo-icon{
-width:45px;height:45px;background:var(--appasamy-navy);
-border:2px solid var(--appasamy-cyan);
-border-radius:10px;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
-box-shadow:0 0 15px rgba(0,174,239,0.3);
+.navbar{
+background:#132a4e;
+border-bottom:3px solid #00aeef;
 }
 
-.logo-icon i{color:var(--appasamy-cyan);font-size:22px;}
-
-.logo-pulse{
-position:absolute;
-top:5px;
-right:5px;
-width:8px;height:8px;
-background:#00ff00;
-border-radius:50%;
-box-shadow:0 0 8px #00ff00;
-animation:pulse-green 2s infinite;
+.hero{
+padding:140px 0;
+background:linear-gradient(135deg,#132a4e,#0a192f);
+text-align:center;
 }
 
-@keyframes pulse-green{
-0%{transform:scale(.95);box-shadow:0 0 0 0 rgba(0,255,0,.7);}
-70%{transform:scale(1);box-shadow:0 0 0 5px rgba(0,255,0,0);}
-100%{transform:scale(.95);box-shadow:0 0 0 0 rgba(0,255,0,0);}
-}
-
-.logo-text{display:flex;flex-direction:column;line-height:1.1;}
-.logo-main{font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:.5px;}
-.logo-main span{color:var(--appasamy-cyan);}
-.logo-sub{font-size:.6rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:1.2px;text-transform:uppercase;}
-
-.navbar{padding:12px 0;background:var(--appasamy-navy);border-bottom:3px solid var(--appasamy-cyan);}
-.nav-link{font-weight:600;color:#fff!important;font-size:.85rem;text-transform:uppercase;}
-.nav-link:hover{color:var(--appasamy-cyan)!important;}
-
-.hero{padding:160px 0 120px;background:linear-gradient(135deg,#132a4e 0%,#0a192f 100%);}
-.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;margin-bottom:25px;}
-
-.service-card{background:var(--card-bg);border:1px solid #e2e8f0;height:100%;transition:.3s;overflow:hidden;border-radius:12px;}
-.service-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(19,42,78,.2);}
-
-.service-image-header{
-height:180px;width:100%;background-size:cover;background-position:center;
-position:relative;display:flex;align-items:center;justify-content:center;
-}
-
-.service-image-header::after{
-content:'';position:absolute;top:0;left:0;width:100%;height:100%;
-background:rgba(19,42,78,.4);
-}
-
-.service-image-header i{
-font-size:2.5rem;color:var(--appasamy-cyan);
-position:relative;z-index:2;text-shadow:0 2px 10px rgba(0,0,0,.5);
-}
-
-.service-body{padding:25px;color:var(--card-text);text-align:left;}
-.service-body h5{color:var(--appasamy-navy);font-weight:800;margin-bottom:12px;font-size:1.1rem;}
-.service-body p{font-size:.9rem;line-height:1.5;color:#475569;}
-
-.info-card{
-background:var(--appasamy-navy);
-border:2px solid var(--appasamy-cyan);
-padding:40px;border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.3);
-}
-
-.form-label-fancy{
-color:var(--appasamy-cyan);
-font-weight:700;font-size:.7rem;
-text-transform:uppercase;margin-bottom:5px;display:block;
-}
-
-.form-control,.form-select{
-background:#fff!important;color:#1e293b!important;
-border:2px solid #e2e8f0;padding:12px;border-radius:8px;
-}
-
-.btn-premium{
-background:var(--appasamy-cyan);
-color:white!important;
+.hero h1{
 font-weight:800;
-padding:15px;border-radius:8px;border:none;width:100%;
-text-transform:uppercase;transition:.3s;cursor:pointer;
+font-size:48px;
 }
 
-.btn-premium:hover{background:#008cc1;transform:scale(1.02);}
-
-.contact-wrap{display:flex;align-items:center;gap:30px;}
-
-.contact-icon-box{
-width:120px;height:120px;border-radius:50%;
-border:3px solid var(--appasamy-cyan);
-display:flex;align-items:center;justify-content:center;
-background:var(--appasamy-navy);
-box-shadow:0 0 20px rgba(0,174,239,.3);
+.hero span{
+color:#00aeef;
 }
 
-.contact-icon-box i{font-size:4rem;color:var(--appasamy-cyan);}
+.section{
+padding:90px 0;
+}
 
-.email-display{
-font-size:clamp(1.1rem,3vw,2rem);
-color:var(--appasamy-cyan);
-font-weight:800;
-text-decoration:none;
-word-break:break-all;
+.service-card{
+background:white;
+color:#1e293b;
+padding:30px;
+border-radius:12px;
+height:100%;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+}
+
+.btn-main{
+background:#00aeef;
+color:white;
+font-weight:700;
+padding:14px 28px;
+border:none;
+}
+
+.btn-main:hover{
+background:#0093c9;
+}
+
+.form-section{
+background:#132a4e;
+padding:50px;
+border-radius:12px;
 }
 
 footer{
 background:#050b14;
-padding:40px 0;
-border-top:3px solid var(--appasamy-navy);
-color:rgba(255,255,255,.5);
-font-size:.8rem;
+padding:40px;
+text-align:center;
+color:rgba(255,255,255,0.5);
 }
 
 </style>
+
 </head>
 
-<body oncontextmenu="return false;">
+<body>
 
-<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
+
 <div class="container">
 
-<a class="logo-container" href="#">
-<div class="logo-icon"><i class="fas fa-shield-alt"></i><div class="logo-pulse"></div></div>
-
-<div class="logo-text">
-<div class="logo-main">CSS <span>DIGITAL</span> TECH</div>
-<div class="logo-sub">Cybershield Security</div>
-</div>
-
-</a>
+<a class="navbar-brand fw-bold" href="#">CSS DIGITAL TECH</a>
 
 </div>
+
 </nav>
 
-<main>
-
 <section class="hero">
-<div class="container text-center text-lg-start">
-
-<h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px;color:var(--appasamy-cyan)">Network Security Consulting</h6>
-
-<h1>
-Firewall Security <br>
-<span style="color:var(--appasamy-cyan)">Secure Infrastructure</span>
-</h1>
-
-<p class="lead opacity-75 mb-5" style="max-width:700px">
-Helping organizations strengthen network security through firewall optimization, secure internet architecture, and proactive infrastructure monitoring backed by enterprise security expertise.
-</p>
-
-<a href="#audit" class="btn btn-premium px-5" style="width:auto">Request Security Assessment</a>
-
-</div>
-</section>
-
-<section id="services" style="padding:100px 0">
 
 <div class="container">
 
-<div class="text-center mb-5">
-<h2 class="fw-bold">Core Security Services</h2>
-<div style="width:60px;height:4px;background:var(--appasamy-cyan);margin:15px auto"></div>
+<h1>Secure Your <span>Network Infrastructure</span></h1>
+
+<p class="mt-4">
+Firewall Optimization • SD-WAN Connectivity • Zscaler Security • Infrastructure Protection
+</p>
+
+<a href="#services" class="btn btn-main mt-3">View Services</a>
+
 </div>
+
+</section>
+
+<section class="section" id="about">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-lg-8">
+
+<h2 class="fw-bold mb-4">About CSS Digital Tech</h2>
+
+<p>
+CSS Digital Tech provides specialized consulting services in network security,
+secure infrastructure design and branch connectivity.
+</p>
+
+<p>
+With more than 19 years of experience in enterprise network security, our focus is
+helping organizations strengthen firewall security, optimize network performance,
+and design secure connectivity between headquarters, cloud platforms and branch offices.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section bg-light" id="services">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-5 text-dark">Core Services</h2>
 
 <div class="row g-4">
 
 <div class="col-md-4">
-
 <div class="service-card">
-
-<div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc48?auto=format&fit=crop&q=80&w=600')">
-
-<i class="fas fa-fire-alt"></i>
-
-</div>
-
-<div class="service-body">
-
-<h5>Firewall Security Review</h5>
-
+<h5 class="fw-bold">Firewall Policy Optimization</h5>
 <p>
-Reviewing firewall configurations and rule sets to identify unused policies, security gaps, and opportunities to improve network protection.
+Reviewing firewall rules to remove unused policies, improve security posture and maintain efficient traffic flow.
 </p>
-
 </div>
-
-</div>
-
 </div>
 
 <div class="col-md-4">
-
 <div class="service-card">
-
-<div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600')">
-
-<i class="fas fa-eye"></i>
-
-</div>
-
-<div class="service-body">
-
-<h5>Security Monitoring</h5>
-
+<h5 class="fw-bold">Zscaler Security Consulting</h5>
 <p>
-Monitoring network and security logs to detect suspicious activity early and improve visibility across the infrastructure environment.
+Implementation and optimization of secure internet access using modern zero trust architecture.
 </p>
-
 </div>
-
-</div>
-
 </div>
 
 <div class="col-md-4">
-
 <div class="service-card">
-
-<div class="service-image-header" style="background-image:url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600')">
-
-<i class="fas fa-project-diagram"></i>
-
-</div>
-
-<div class="service-body">
-
-<h5>SIEM & Log Integration</h5>
-
+<h5 class="fw-bold">SD-WAN Branch Connectivity</h5>
 <p>
-Centralizing infrastructure logs into security platforms to enable threat detection, investigation, and faster incident response.
+Securely connect branch offices, factories and remote sites using scalable SD-WAN architecture.
 </p>
-
+</div>
 </div>
 
+<div class="col-md-4">
+<div class="service-card">
+<h5 class="fw-bold">Network Security Assessment</h5>
+<p>
+Evaluate current infrastructure security posture and identify areas for improvement.
+</p>
+</div>
 </div>
 
+<div class="col-md-4">
+<div class="service-card">
+<h5 class="fw-bold">Security Monitoring</h5>
+<p>
+Monitoring infrastructure logs and network events to identify suspicious activities.
+</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="service-card">
+<h5 class="fw-bold">Infrastructure Security Architecture</h5>
+<p>
+Designing secure network architecture supporting cloud, branch and remote workforce connectivity.
+</p>
+</div>
 </div>
 
 </div>
@@ -288,35 +215,67 @@ Centralizing infrastructure logs into security platforms to enable threat detect
 
 </section>
 
-<section id="contact-info" style="padding:100px 0">
+<section class="section" id="request">
 
 <div class="container">
 
-<div class="d-flex justify-content-center">
+<h2 class="text-center fw-bold mb-5">Request Consulting Service</h2>
 
-<div class="contact-wrap">
+<div class="form-section">
 
-<div class="contact-icon-box">
+<form>
 
-<i class="fas fa-headset"></i>
+<div class="row g-3">
+
+<div class="col-md-6">
+<label class="form-label">Full Name</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Company Name</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Email</label>
+<input type="email" class="form-control">
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Phone</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="col-md-12">
+<label class="form-label">Select Required Service</label>
+
+<select class="form-select">
+
+<option>Firewall Policy Optimization</option>
+<option>Zscaler Security Consulting</option>
+<option>SD-WAN Branch Connectivity</option>
+<option>Network Security Assessment</option>
+<option>Security Monitoring</option>
+<option>Infrastructure Security Architecture</option>
+<option>Other</option>
+
+</select>
 
 </div>
 
-<div>
+<div class="col-md-12">
+<label class="form-label">Describe Your Requirement</label>
+<textarea class="form-control" rows="4"></textarea>
+</div>
 
-<h4 class="fw-bold text-white mb-2">Security Consulting Contact</h4>
-
-<p class="opacity-50 small mb-4">
-Contact our network security consulting team for firewall and infrastructure security inquiries.
-</p>
-
-<a href="mailto:support@cssdigitaltech.com" class="email-display">
-support@cssdigitaltech.com
-</a>
-
+<div class="col-md-12 text-center mt-4">
+<button class="btn btn-main">Submit Request</button>
 </div>
 
 </div>
+
+</form>
 
 </div>
 
@@ -324,21 +283,29 @@ support@cssdigitaltech.com
 
 </section>
 
-</main>
+<section class="section">
 
-<footer class="text-center">
+<div class="container text-center">
 
-<div class="container">
+<h3>Contact</h3>
 
-<p class="mb-0 small opacity-25">
-© 2026 CSS DIGITAL TECH. Network Security & Firewall Consulting Services.
+<p class="mt-3">
+Email : support@cssdigitaltech.com
 </p>
 
 </div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 CSS Digital Tech | Network Security Consulting
+</p>
 
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
+
 </html>
+```
