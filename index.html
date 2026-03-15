@@ -98,14 +98,33 @@
         .service-body p { font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 0; }
 
         /* Form Styling */
-        .info-card { background: var(--css-navy); border: 2px solid var(--css-cyan); padding: 45px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
-        .form-label-fancy { color: var(--css-cyan); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; display: block; }
+        .info-card { background: #060d18; border: 1px solid rgba(255,255,255,0.06); padding: 60px; border-radius: 16px; }
+        .form-label-fancy { color: rgba(255,255,255,0.35); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px; display:block; }
+        .info-card .form-control,
+        .info-card .form-select {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #fff;
+            border-radius: 8px;
+            padding: 14px 16px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .info-card .form-control::placeholder { color: rgba(255,255,255,0.2); }
+        .info-card .form-control:focus,
+        .info-card .form-select:focus {
+            background: rgba(0,174,239,0.05);
+            border-color: rgba(0,174,239,0.4);
+            color: #fff;
+            box-shadow: 0 0 0 3px rgba(0,174,239,0.08);
+        }
+        .info-card .form-select option { background: #0a192f; color: #fff; }
         
         /* THE GLOW ANIMATION */
         @keyframes focus-glow {
-            0% { box-shadow: 0 0 0px var(--css-cyan); border-color: #dee2e6; }
-            50% { box-shadow: 0 0 25px var(--css-cyan); border-color: var(--css-cyan); }
-            100% { box-shadow: 0 0 0px var(--css-cyan); border-color: #dee2e6; }
+            0% { box-shadow: 0 0 0px rgba(0,174,239,0.3); border-color: rgba(255,255,255,0.08); }
+            50% { box-shadow: 0 0 20px rgba(0,174,239,0.25); border-color: rgba(0,174,239,0.5); }
+            100% { box-shadow: 0 0 0px rgba(0,174,239,0.3); border-color: rgba(255,255,255,0.08); }
         }
         .glow-active {
             animation: focus-glow 1.5s ease-in-out 2; /* Glows twice */
@@ -242,13 +261,14 @@
         </div>
     </section>
 
-    <section id="audit" style="background: #0f172a; padding: 100px 0;">
+    <section id="audit" style="background: #060d18; padding: 100px 0;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="info-card">
-                        <h3 class="fw-bold text-center mb-4 text-white">Request Security Consultation</h3>
-                        <p class="text-center mb-4" style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Tell us about your network security requirements and our team will contact you.</p>
+                        <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; text-align:center; margin-bottom:16px;">Get In Touch</p>
+                        <h3 class="fw-bold text-center mb-3 text-white" style="font-size:2rem;">Request Security Consultation</h3>
+                        <p class="text-center mb-5" style="color:rgba(255,255,255,0.35); font-size:0.88rem;">Tell us about your network security requirements and our team will contact you.</p>
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
