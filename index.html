@@ -227,18 +227,24 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
-                    <div class="info-card">
+                    <div style="background:#0d1f3c; border:1.5px solid var(--css-cyan); padding:48px 44px; border-radius:16px; box-shadow:0 0 40px rgba(0,174,239,0.12);">
                         <p style="font-size:0.65rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; text-align:center; margin-bottom:10px;">Get In Touch</p>
-                        <h4 class="fw-bold text-center mb-2 text-white">Request Security Consultation</h4>
-                        <p class="text-center mb-4" style="color:rgba(255,255,255,0.3); font-size:0.82rem;">Tell us about your requirements and we'll get back to you.</p>
+                        <h4 style="font-weight:800; text-align:center; color:#fff; margin-bottom:8px;">Request Security Consultation</h4>
+                        <p style="text-align:center; color:rgba(255,255,255,0.3); font-size:0.82rem; margin-bottom:28px;">Tell us about your requirements and we'll get back to you.</p>
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
-                            <div class="row g-2">
-                                <div class="col-6"><label class="form-label-fancy">Full Name</label><input type="text" name="name" class="form-control" required></div>
-                                <div class="col-6"><label class="form-label-fancy">Work Email</label><input type="email" name="email" class="form-control" required></div>
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Full Name</label>
+                                    <input type="text" name="name" required style="width:100%; background:#fff; border:1px solid #dde3ed; color:#1e293b; border-radius:8px; padding:13px 16px; font-size:0.9rem; outline:none; font-family:inherit;">
+                                </div>
+                                <div class="col-6">
+                                    <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Work Email</label>
+                                    <input type="email" name="email" required style="width:100%; background:#fff; border:1px solid #dde3ed; color:#1e293b; border-radius:8px; padding:13px 16px; font-size:0.9rem; outline:none; font-family:inherit;">
+                                </div>
                                 <div class="col-12">
-                                    <label class="form-label-fancy">Service</label>
-                                    <select name="vertical" class="form-select" required>
+                                    <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Service</label>
+                                    <select name="vertical" required style="width:100%; background:#fff; border:1px solid #dde3ed; color:#1e293b; border-radius:8px; padding:13px 16px; font-size:0.9rem; outline:none; font-family:inherit; appearance:auto;">
                                         <option disabled selected value="">Select service...</option>
                                         <option>Firewall Upgrade</option>
                                         <option>Cloud Migration</option>
@@ -247,10 +253,12 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label-fancy">Message</label>
-                                    <textarea id="description-field" name="message" class="form-control" rows="3" required placeholder="Describe your security requirements..."></textarea>
+                                    <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Message</label>
+                                    <textarea id="description-field" name="message" rows="4" required placeholder="Describe your security requirements..." style="width:100%; background:#fff; border:1px solid #dde3ed; color:#1e293b; border-radius:8px; padding:13px 16px; font-size:0.9rem; outline:none; font-family:inherit; resize:vertical;"></textarea>
                                 </div>
-                                <div class="col-12 mt-3 text-center"><button type="submit" class="btn-premium">Submit Request</button></div>
+                                <div class="col-12 mt-2">
+                                    <button type="submit" class="btn-premium">Submit Request</button>
+                                </div>
                             </div>
                         </form>
                     </div>
