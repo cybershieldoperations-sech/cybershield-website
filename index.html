@@ -231,7 +231,7 @@
                         <p style="font-size:0.65rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; text-align:center; margin-bottom:10px;">Get In Touch</p>
                         <h4 style="font-weight:800; text-align:center; color:#fff; margin-bottom:8px;">Request Security Consultation</h4>
                         <p style="text-align:center; color:rgba(255,255,255,0.3); font-size:0.82rem; margin-bottom:28px;">Tell us about your requirements and we'll get back to you.</p>
-                        <form action="https://api.web3forms.com/submit" method="POST">
+                        <form id="consultation-form">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
                                 <div class="col-6">
@@ -257,7 +257,14 @@
                                     <textarea id="description-field" name="message" rows="4" required spellcheck="true" autocorrect="on" placeholder="Describe your security requirements..." style="width:100%; background:#fff; border:1px solid #dde3ed; color:#1e293b; border-radius:8px; padding:13px 16px; font-size:0.9rem; outline:none; font-family:inherit; resize:vertical;"></textarea>
                                 </div>
                                 <div class="col-12 mt-2 text-center">
-                                    <button type="submit" class="btn-premium">Submit Request</button>
+                                    <button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button>
+                                </div>
+                                <div id="form-success" style="display:none; text-align:center; padding:20px 0;">
+                                    <div style="width:56px; height:56px; background:rgba(0,174,239,0.1); border:1px solid var(--css-cyan); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">
+                                        <i class="fas fa-check" style="color:var(--css-cyan); font-size:1.4rem;"></i>
+                                    </div>
+                                    <h5 style="color:#fff; font-weight:800; margin-bottom:8px;">Request Submitted</h5>
+                                    <p style="color:rgba(255,255,255,0.5); font-size:0.88rem; margin:0;">Thank you. Our team will get back to you shortly.</p>
                                 </div>
                             </div>
                         </form>
@@ -395,6 +402,37 @@
     document.addEventListener('DOMContentLoaded', function() {
         autocorrectField(document.querySelector('input[name="name"]'));
         autocorrectField(document.getElementById('description-field'));
+    });
+
+    // AJAX form submission - stay on page after submit
+    document.getElementById('consultation-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = this;
+        const btn = document.getElementById('form-submit-btn');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        const data = new FormData(form);
+        data.append('access_key', '9f973c7b-2eea-40c1-8ef0-867f23eec5ce');
+
+        fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+            .then(res => res.json())
+            .then(json => {
+                if (json.success) {
+                    form.reset();
+                    form.querySelector('.row').style.display = 'none';
+                    document.getElementById('form-success').style.display = 'block';
+                } else {
+                    btn.disabled = false;
+                    btn.textContent = 'Submit Request';
+                    alert('Something went wrong. Please try again.');
+                }
+            })
+            .catch(() => {
+                btn.disabled = false;
+                btn.textContent = 'Submit Request';
+                alert('Network error. Please try again.');
+            });
     });
 
     function triggerGlow() {
