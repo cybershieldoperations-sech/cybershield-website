@@ -233,6 +233,7 @@
                         <p style="text-align:center; color:rgba(255,255,255,0.3); font-size:0.82rem; margin-bottom:28px;">Tell us about your requirements and we'll get back to you.</p>
                         <form id="consultation-form">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
+                            <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
                                 <div class="col-6">
                                     <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Full Name</label>
@@ -412,27 +413,33 @@
         btn.disabled = true;
         btn.textContent = 'Sending...';
 
-        const data = new FormData(form);
-        data.append('access_key', '9f973c7b-2eea-40c1-8ef0-867f23eec5ce');
+        const formData = new FormData(form);
+        const object = {};
+        formData.forEach((value, key) => { object[key] = value; });
+        const json = JSON.stringify(object);
 
-        fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-            .then(res => res.json())
-            .then(json => {
-                if (json.success) {
-                    form.reset();
-                    form.querySelector('.row').style.display = 'none';
-                    document.getElementById('form-success').style.display = 'block';
-                } else {
-                    btn.disabled = false;
-                    btn.textContent = 'Submit Request';
-                    alert('Something went wrong. Please try again.');
-                }
-            })
-            .catch(() => {
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: json
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                form.reset();
+                form.querySelector('.row').style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+            } else {
                 btn.disabled = false;
                 btn.textContent = 'Submit Request';
-                alert('Network error. Please try again.');
-            });
+                alert('Something went wrong. Please try again.');
+            }
+        })
+        .catch(() => {
+            btn.disabled = false;
+            btn.textContent = 'Submit Request';
+            alert('Network error. Please try again.');
+        });
     });
 
     function triggerGlow() {
