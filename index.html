@@ -64,21 +64,40 @@
             background: #0f1f36; border: 1px solid rgba(0,174,239,0.15);
             height: 100%; transition: 0.3s; overflow: hidden; border-radius: 14px;
         }
-        .service-img { width: 100%; height: 160px; object-fit: cover; border-radius: 14px 14px 0 0; }
+        .service-card:hover { transform: translateY(-8px); border-color: var(--css-cyan); }
+        .service-img { width: 100%; height: 160px; object-fit: cover; border-radius: 14px 14px 0 0; filter: brightness(0.8); }
         .service-body { padding: 18px 20px 22px; background: #ffffff; border-radius: 0 0 14px 14px; color: #1e293b; }
-        .service-body h5 { font-weight: 800; font-size: 1rem; color: var(--css-navy); }
+        .service-body h5 { font-weight: 800; font-size: 1rem; color: var(--css-navy); margin-bottom: 8px; }
+        .service-body p { font-size: 0.85rem; color: #64748b; margin-bottom: 0; }
+
+        /* Tech Expertise Cards */
+        .tech-card {
+            background: #ffffff; border-radius: 12px; padding: 15px; text-align: center;
+            transition: 0.3s; height: 100px; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; border: 2px solid transparent;
+        }
+        .tech-card img { max-width: 100%; max-height: 40px; object-fit: contain; }
 
         /* Form */
         .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 40px; border-radius: 16px; }
         .form-label-fancy { color: var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block; }
-        .form-control, .form-select { background: #ffffff !important; border: 1px solid #dde3ed; color: #1e293b !important; padding: 12px; }
+        .form-control, .form-select { background: #ffffff !important; border: 1px solid #dde3ed; color: #1e293b !important; padding: 12px; border-radius: 8px; }
         
         /* Contact Section */
         .contact-section { background: #0f172a; padding: 100px 0; border-top: 1px solid rgba(0,174,239,0.1); }
-        .email-display { font-size: clamp(1.2rem, 3vw, 2.2rem); color: var(--css-cyan); font-weight: 800; text-decoration: none; }
+        .contact-icon-box {
+            width: 80px; height: 80px; border-radius: 50%;
+            border: 2px solid var(--css-cyan); display: flex; align-items: center; justify-content: center;
+            background: var(--css-navy); margin: 0 auto 25px;
+        }
+        .contact-icon-box i { font-size: 2.5rem; color: var(--css-cyan); }
+        .email-display { font-size: clamp(1.2rem, 3vw, 2.2rem); color: var(--css-cyan); font-weight: 800; text-decoration: none; transition: 0.3s; }
+        .email-display:hover { color: #fff; }
         
-        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 16px 40px; border-radius: 8px; border: none; text-transform: uppercase; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 16px 40px; border-radius: 8px; border: none; text-transform: uppercase; text-decoration: none; display: inline-block; transition: 0.3s; cursor: pointer; }
         .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,174,239,0.3); }
+
+        footer { background: #050b14; padding: 40px 0; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4); }
 
         @keyframes focus-glow {
             0% { box-shadow: 0 0 0px rgba(0,174,239,0); }
@@ -112,79 +131,148 @@
     </div>
 </nav>
 
-<section class="hero">
-    <div class="container text-center text-lg-start">
-        <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Network Security Consulting</h6>
-        <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
-        <p class="lead opacity-75 mb-5" style="max-width: 700px;">Specialized consulting for firewall optimization and secure branch connectivity.</p>
-        <a href="#contact-info" class="btn btn-premium">For Immediate Support</a>
-    </div>
-</section>
+<main>
+    <section class="hero">
+        <div class="container text-center text-lg-start">
+            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Network Security Consulting</h6>
+            <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
+            <p class="lead opacity-75 mb-5" style="max-width: 700px;">Specialized consulting for firewall optimization, infrastructure security, and secure branch connectivity.</p>
+            <a href="#contact-info" class="btn btn-premium">For Immediate Support</a>
+        </div>
+    </section>
 
-<section id="audit" style="background: #0a192f; padding: 80px 0; scroll-margin-top: 80px;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="info-card">
-                    <h4 class="text-center fw-bold mb-4">Request Security Consultation</h4>
-                    <form id="consultation-form">
-                        <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label-fancy">Full Name</label>
-                                <input type="text" name="name" id="name-field" required class="form-control" placeholder="John Doe">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label-fancy">Work Email</label>
-                                <input type="email" name="email" required class="form-control" placeholder="name@company.com">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label-fancy">Phone Number</label>
-                                <input type="tel" name="phone" required class="form-control" placeholder="+91 XXXXX XXXXX">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label-fancy">Required Service</label>
-                                <select name="service" required class="form-select">
-                                    <option value="" selected disabled>Select a service...</option>
-                                    <option value="Firewall Optimization">Firewall Optimization</option>
-                                    <option value="Cloud Security">Cloud Security (Zscaler/Azure)</option>
-                                    <option value="SOC & SIEM">SOC & SIEM Integration</option>
-                                    <option value="Audit">Network Infrastructure Audit</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label-fancy">Message</label>
-                                <textarea id="description-field" name="message" rows="4" required class="form-control" placeholder="Briefly describe your requirements..."></textarea>
-                            </div>
-                            <div class="col-12 text-center mt-4">
-                                <button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div id="form-success" style="display:none; text-align:center; margin-top:20px;">
-                        <h4 class="text-white">Request Received. We will contact you shortly.</h4>
+    <section id="about" style="padding: 100px 0; background: #0a192f; scroll-margin-top: 80px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; margin-bottom:16px;">About The Firm</p>
+                    <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:20px;">About <span style="color:var(--css-cyan);">CSS Digital Tech</span></h2>
+                    <div style="width:40px; height:3px; background:var(--css-cyan); margin:0 auto 28px;"></div>
+                    <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; line-height:1.9;">
+                        CSS Digital Tech is a specialized network security consulting firm delivering enterprise-grade firewall architecture, secure infrastructure design, and advanced threat protection solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="padding: 100px 0; scroll-margin-top: 80px;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Services</h2>
+                <div style="width: 60px; height: 4px; background: var(--css-cyan); margin: 15px auto;"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=600" alt="Firewall">
+                        <div class="service-body"><h5>Firewall Tuning</h5><p>Policy optimization and rule cleanup.</p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600" alt="SOC">
+                        <div class="service-body"><h5>SOC Monitoring</h5><p>Infrastructure visibility and alerts.</p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600" alt="SIEM">
+                        <div class="service-body"><h5>SIEM Setup</h5><p>Centralized logging for audits.</p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="SD-WAN">
+                        <div class="service-body"><h5>SD-WAN Design</h5><p>Secure branch-to-cloud links.</p></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="contact-info" class="contact-section text-center">
-    <div class="container">
-        <h2 class="fw-bold mb-5">Direct Contact</h2>
-        <div class="mb-4">
-            <a href="mailto:support@cssdigitaltech.com" class="email-display">
-                <i class="fas fa-envelope me-3"></i>support@cssdigitaltech.com
-            </a>
+    <section id="technology" style="padding: 60px 0; background: #071426;">
+        <div class="container text-center">
+            <h5 class="mb-4 opacity-50 fw-bold" style="letter-spacing: 2px;">TECHNOLOGY EXPERTISE</h5>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/cisco.svg" alt="Cisco"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/paloalto.svg" alt="Palo Alto"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/checkpoint.svg" alt="Check Point"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/fortinet.svg" alt="Fortinet"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/zscaler.svg" alt="Zscaler"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/azure.svg" alt="Azure"></div></div>
+            </div>
         </div>
-        <div>
-            <a href="tel:+91XXXXXXXXXX" class="email-display" style="color: #fff;">
-                <i class="fas fa-phone-alt me-3" style="color: var(--css-cyan);"></i>+91 XXXXX XXXXX
-            </a>
+    </section>
+
+    <section id="audit" style="background: #0a192f; padding: 80px 0; scroll-margin-top: 80px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="info-card">
+                        <p style="font-size:0.65rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; text-align:center; margin-bottom:10px;">Get In Touch</p>
+                        <h4 class="text-center fw-bold mb-4">Request Security Consultation</h4>
+                        <form id="consultation-form">
+                            <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label-fancy">Full Name</label>
+                                    <input type="text" name="name" required class="form-control" placeholder="John Doe">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label-fancy">Work Email</label>
+                                    <input type="email" name="email" required class="form-control" placeholder="name@company.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label-fancy">Phone Number</label>
+                                    <input type="tel" name="phone" required class="form-control" placeholder="+91 XXXXX XXXXX">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label-fancy">Required Service</label>
+                                    <select name="service" required class="form-select">
+                                        <option value="" selected disabled>Select a service...</option>
+                                        <option value="Firewall Optimization">Firewall Optimization</option>
+                                        <option value="Cloud Security">Cloud Security (Zscaler/Azure)</option>
+                                        <option value="SOC & SIEM">SOC & SIEM Integration</option>
+                                        <option value="Audit">Network Infrastructure Audit</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label-fancy">Message</label>
+                                    <textarea name="message" rows="4" required class="form-control" placeholder="Describe your security requirements..."></textarea>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="form-success" style="display:none; text-align:center; margin-top:20px;">
+                            <h4 class="text-white">Request Received. We will contact you shortly.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="contact-info" class="contact-section text-center" style="scroll-margin-top: 80px;">
+        <div class="container">
+            <div class="contact-icon-box"><i class="fas fa-envelope-open-text"></i></div>
+            <h2 class="fw-bold mb-3">Direct Contact</h2>
+            <p class="opacity-75 mb-4 mx-auto" style="max-width: 600px;">Reach us directly via our official channels for immediate support.</p>
+            <div class="mb-4">
+                <a href="mailto:support@cssdigitaltech.com" class="email-display">
+                    <i class="fas fa-envelope me-3"></i>support@cssdigitaltech.com
+                </a>
+            </div>
+            <div>
+                <a href="tel:+91XXXXXXXXXX" class="email-display" style="color: #fff;">
+                    <i class="fas fa-phone-alt me-3" style="color: var(--css-cyan);"></i>+91 XXXXX XXXXX
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
 
 <footer>
     <div class="container text-center">
@@ -192,6 +280,7 @@
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     document.getElementById('consultation-form').addEventListener('submit', function(e) {
         e.preventDefault();
