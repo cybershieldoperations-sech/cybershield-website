@@ -21,6 +21,7 @@
 
         body {
             -webkit-user-select: none;
+            -ms-user-select: none;
             user-select: none;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--css-dark);
@@ -89,6 +90,7 @@
         .form-label-fancy { color: var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block; }
         .info-card .form-control, .info-card .form-select { background: #ffffff; border: 1px solid #dde3ed; color: #1e293b; border-radius: 8px; padding: 14px 16px; font-size: 0.9rem; transition: 0.3s; }
         
+        /* Glow Animation */
         @keyframes focus-glow {
             0% { box-shadow: 0 0 0px rgba(0,174,239,0.3); border-color: #dde3ed; }
             50% { box-shadow: 0 0 20px rgba(0,174,239,0.25); border-color: var(--css-cyan); }
@@ -96,10 +98,21 @@
         }
         .glow-active { animation: focus-glow 1.5s ease-in-out 2; }
 
+        /* Contact Visuals */
+        .contact-section { background: #0f172a; padding: 100px 0; border-top: 1px solid rgba(0,174,239,0.1); }
+        .contact-icon-box {
+            width: 80px; height: 80px; border-radius: 50%;
+            border: 2px solid var(--css-cyan); display: flex; align-items: center; justify-content: center;
+            background: var(--css-navy); margin: 0 auto 25px;
+        }
+        .contact-icon-box i { font-size: 2.5rem; color: var(--css-cyan); }
+        .email-display { font-size: clamp(1.2rem, 4vw, 2.2rem); color: var(--css-cyan); font-weight: 800; text-decoration: none; transition: 0.3s; }
+        .email-display:hover { opacity: 0.8; color: #fff; }
+        
         .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 16px 40px; border-radius: 8px; border: none; text-transform: uppercase; cursor: pointer; display: inline-block; text-decoration: none; transition: 0.3s; }
         .btn-premium:hover { background: #008cc1; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,174,239,0.3); }
 
-        footer { background: #050b14; padding: 50px 0 30px; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4); }
+        footer { background: #050b14; padding: 40px 0; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4); }
     </style>
 </head>
 
@@ -195,11 +208,11 @@
                         <form id="consultation-form">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <label class="form-label-fancy">Full Name</label>
                                     <input type="text" name="name" id="name-field" required class="form-control">
                                 </div>
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <label class="form-label-fancy">Work Email</label>
                                     <input type="email" name="email" required class="form-control">
                                 </div>
@@ -213,10 +226,30 @@
                             </div>
                         </form>
                         <div id="form-success" style="display:none; text-align:center; margin-top:20px;">
-                            <h4 style="color:#fff;">Success! We will contact you shortly.</h4>
+                            <h4 style="color:#fff;">Thank you! We will contact you shortly.</h4>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-info" class="contact-section text-center" style="scroll-margin-top: 80px;">
+        <div class="container">
+            <div class="contact-icon-box"><i class="fas fa-envelope-open-text"></i></div>
+            <h2 class="fw-bold mb-3">Direct Contact</h2>
+            <p class="opacity-75 mb-4 mx-auto" style="max-width: 600px;">Reach us directly via our official channels for all security inquiries.</p>
+            
+            <div class="mb-3">
+                <a href="mailto:support@cssdigitaltech.com" class="email-display">
+                    <i class="fas fa-envelope me-2" style="font-size: 1.5rem;"></i>support@cssdigitaltech.com
+                </a>
+            </div>
+
+            <div>
+                <a href="tel:+91XXXXXXXXXX" class="email-display" style="color: #ffffff;">
+                    <i class="fas fa-phone-alt me-2" style="font-size: 1.5rem; color: var(--css-cyan);"></i>+91 XXXXX XXXXX
+                </a>
             </div>
         </div>
     </section>
@@ -224,16 +257,20 @@
 
 <footer>
     <div class="container text-center">
-        <p>© 2026 CSS Digital Tech. All rights reserved.</p>
+        <p class="small opacity-50">© 2026 CSS Digital Tech. All rights reserved.</p>
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
     const typoMap = {
-        "firwall":"firewall", "firewll":"firewall", "secuirty":"security", "infastructure":"infrastructure"
+        "firwall":"firewall", "firewll":"firewall", "secuirty":"security", 
+        "infastructure":"infrastructure", "teh":"the"
     };
 
     function autocorrectField(el) {
+        if(!el) return;
         el.addEventListener('keydown', function(e) {
             if (e.key === ' ' || e.key === 'Enter') {
                 const pos = el.selectionStart;
@@ -278,6 +315,10 @@
             if (data.success) {
                 this.style.display = 'none';
                 document.getElementById('form-success').style.display = 'block';
+            } else {
+                alert('Submission failed. Please try again.');
+                btn.disabled = false;
+                btn.textContent = 'Submit Request';
             }
         });
     });
