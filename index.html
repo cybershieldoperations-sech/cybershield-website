@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CSS DIGITAL TECH | Infrastructure & Security Consulting</title>
 
-    <link rel="icon" type="image/png" href="favicon.png">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -62,6 +60,15 @@
         .hero { padding: 160px 0 120px; background: linear-gradient(135deg, #132a4e 0%, #0a192f 100%); }
         .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 25px; }
 
+        /* Technology Expertise Section */
+        .tech-card {
+            background: #ffffff; border-radius: 12px; padding: 20px; text-align: center;
+            transition: 0.3s; height: 110px; display: flex; align-items: center; 
+            justify-content: center; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .tech-card img { max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: 0.4s; }
+        .tech-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
         /* Services Section */
         .service-card {
             background: #0f1f36; border: 1px solid rgba(0,174,239,0.15);
@@ -76,17 +83,8 @@
         .service-body h5 { color: #0f1f36; font-weight: 800; font-size: 1rem; margin-bottom: 6px; }
         .service-body p { font-size: 0.83rem; color: #64748b; margin-bottom: 0; }
 
-        /* Tech Expertise Section */
-        .tech-card {
-            background: #ffffff; border-radius: 12px; padding: 20px; text-align: center;
-            transition: 0.3s; height: 110px; display: flex; align-items: center; 
-            justify-content: center; border: 1px solid rgba(255,255,255,0.1);
-        }
-        .tech-card img { max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: 0.4s; }
-        .tech-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
-
         /* Form Styling */
-        .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 48px 44px; border-radius: 16px; box-shadow: 0 0 40px rgba(0,174,239,0.12); }
+        .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 48px 44px; border-radius: 16px; }
         .form-label-fancy { color: var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block; }
         .form-control, .form-select {
             background: #ffffff !important; border: 1px solid #dde3ed; color: #1e293b !important;
@@ -128,18 +126,8 @@
         <div class="container text-center text-lg-start">
             <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Network Security Consulting</h6>
             <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
-            <p class="lead opacity-75 mb-5" style="max-width: 700px;">We deliver advanced firewall architecture, zero-trust network security, and scalable infrastructure protection for modern enterprises.</p>
+            <p class="lead opacity-75 mb-5" style="max-width: 700px;">Specialized consulting for firewall optimization, infrastructure security, and secure branch connectivity.</p>
             <a href="#audit" class="btn btn-premium" style="width: auto;">Request Security Consultation</a>
-        </div>
-    </section>
-
-    <section id="about" style="padding: 100px 0; background: #0a192f; scroll-margin-top: 80px;">
-        <div class="container text-center">
-            <h2 class="fw-bold">Securing Your Digital Perimeter</h2>
-            <div style="width: 60px; height: 4px; background: var(--css-cyan); margin: 15px auto;"></div>
-            <p class="lead opacity-75 mx-auto" style="max-width: 800px;"CSS Digital Tech is a network security consulting firm focused on designing and securing enterprise-grade infrastructure. We specialize in firewall architecture, security policy optimization, and scalable network protection.
-
-Our expertise across leading technologies enables organizations to reduce risk, enhance visibility, and operate with confidence in an evolving threat landscape..</p>
         </div>
     </section>
 
@@ -190,28 +178,16 @@ Our expertise across leading technologies enables organizations to reduce risk, 
         </div>
     </section>
 
-    <section id="technology" style="padding: 100px 0; background: #071426; scroll-margin-top: 80px;">
+    <section id="technology" style="padding: 80px 0; background: #071426; scroll-margin-top: 80px;">
         <div class="container text-center">
             <h5 class="mb-5 fw-bold" style="letter-spacing: 4px; color: var(--css-cyan);">TECHNOLOGY EXPERTISE</h5>
             <div class="row g-4 justify-content-center">
-                <div class="col-6 col-md-2">
-                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" alt="Cisco"></div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Palo_Alto_Networks_logo.svg" alt="Palo Alto"></div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Check_Point_logo.svg" alt="Check Point"></div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Fortinet_logo.svg" alt="Fortinet"></div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure"></div>
-                </div>
-                <div class="col-6 col-md-2">
-                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Zscaler_logo.svg" alt="Zscaler"></div>
-                </div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="img/cisco.svg" alt="Cisco"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="img/paloalto.svg" alt="Palo Alto"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="img/checkpoint.svg" alt="Check Point"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="img/fortinet.svg" alt="Fortinet"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="img/zscaler.svg" alt="Zscaler"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="img/azure.svg" alt="Azure"></div></div>
             </div>
         </div>
     </section>
@@ -229,35 +205,35 @@ Our expertise across leading technologies enables organizations to reduce risk, 
                             <div class="row g-4">
                                 <div class="col-md-4">
                                     <label class="form-label-fancy">Full Name</label>
-                                    <input type="text" name="name" required class="form-control" placeholder="Your Name">
+                                    <input type="text" name="name" required class="form-control" placeholder="John Doe">
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label-fancy">Work Email</label>
-                                    <input type="email" name="email" required class="form-control" placeholder="email@company.com">
+                                    <input type="email" name="email" required class="form-control" placeholder="name@company.com">
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label-fancy">Contact Number</label>
-                                    <input type="tel" name="phone" required class="form-control" placeholder="+1 (555) 000-0000">
+                                    <input type="tel" name="phone" required class="form-control" placeholder="+91 00000 00000">
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label-fancy">Service Requirement</label>
+                                    <label class="form-label-fancy">Service Required</label>
                                     <select name="service" required class="form-select">
-                                        <option value="" disabled selected>Select the required service...</option>
-                                        <option value="Firewall Optimization">Firewall Optimization</option>
-                                        <option value="Cloud Security">Cloud Security (Zscaler/Azure)</option>
-                                        <option value="SOC/SIEM Setup">SOC/SIEM Setup</option>
-                                        <option value="Network Infrastructure">Network Infrastructure Audit</option>
+                                        <option value="" disabled selected>Select service...</option>
+                                        <option value="Firewall Tuning">Firewall Tuning & Optimization</option>
+                                        <option value="SOC Monitoring">SOC Monitoring & Alerts</option>
+                                        <option value="SIEM Setup">SIEM & Logging Setup</option>
+                                        <option value="SD-WAN">SD-WAN Design & Rollout</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label-fancy">Description of Requirement</label>
-                                    <textarea name="description" rows="4" required class="form-control" placeholder="Please describe your security needs or infrastructure challenges..."></textarea>
+                                    <textarea name="message" rows="4" required class="form-control" placeholder="Tell us about your infrastructure or security challenges..."></textarea>
                                 </div>
                                 <div class="col-12 text-center">
                                     <button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button>
                                 </div>
                                 <div id="form-success" style="display:none; text-align:center; width: 100%;">
-                                    <h5 class="text-success mt-3"><i class="fas fa-check-circle"></i> Message Sent Successfully! We will contact you shortly.</h5>
+                                    <h5 class="text-success mt-3">Message Sent Successfully!</h5>
                                 </div>
                             </div>
                         </form>
@@ -274,7 +250,6 @@ Our expertise across leading technologies enables organizations to reduce risk, 
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     document.getElementById('consultation-form').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -293,10 +268,6 @@ Our expertise across leading technologies enables organizations to reduce risk, 
                 this.reset();
                 document.getElementById('form-success').style.display = 'block';
                 btn.style.display = 'none';
-            } else {
-                btn.disabled = false;
-                btn.textContent = 'Submit Request';
-                alert('There was an error. Please try again.');
             }
         });
     });
