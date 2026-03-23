@@ -64,8 +64,28 @@
                 url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000') no-repeat center center;
             background-size: cover;
             position: relative;
+            overflow: hidden;
         }
+        
+        /* Floating Data Particles (Decoration) */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.1;
+        }
+
         .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 25px; }
+
+        /* Partner Ticker */
+        .trust-bar { background: #050b14; padding: 25px 0; border-bottom: 1px solid rgba(0,174,239,0.1); }
+        .ticker-item { color: rgba(255,255,255,0.3); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; margin: 0 40px; }
+
+        /* Proof Stats */
+        .stat-box { padding: 40px 20px; border-right: 1px solid rgba(255,255,255,0.05); }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--css-cyan); display: block; }
+        .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; }
 
         /* Service Cards */
         .service-card {
@@ -145,6 +165,36 @@
             <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
             <p class="lead opacity-75 mb-5" style="max-width: 700px;">Specialized consulting for firewall optimization, infrastructure security, and secure branch connectivity.</p>
             <a href="#audit" class="btn btn-premium">Request Security Consultation</a>
+        </div>
+    </section>
+
+    <div class="trust-bar d-none d-md-block">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                <span class="ticker-item"><i class="fas fa-shield-alt me-2"></i>Zscaler</span>
+                <span class="ticker-item"><i class="fab fa-microsoft me-2"></i>Sentinel</span>
+                <span class="ticker-item"><i class="fas fa-server me-2"></i>Fortinet</span>
+                <span class="ticker-item"><i class="fas fa-cloud me-2"></i>Azure SecOps</span>
+            </div>
+        </div>
+    </div>
+
+    <section style="background: #0a192f; border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 stat-box">
+                    <span class="stat-number">18+</span>
+                    <span class="stat-label">Years of Expertise</span>
+                </div>
+                <div class="col-md-4 stat-box">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Firewalls Optimized</span>
+                </div>
+                <div class="col-md-4 stat-box" style="border:none;">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Critical Support</span>
+                </div>
+            </div>
         </div>
     </section>
 
