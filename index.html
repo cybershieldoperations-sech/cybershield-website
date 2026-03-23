@@ -78,6 +78,11 @@
         .form-control, .form-select { background: #fff !important; color: #1e293b !important; border-radius: 8px; padding: 12px; }
         
         .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 15px 30px; border-radius: 8px; border: none; width: 100%; }
+
+        /* List Styling for About Section */
+        .about-list { list-style: none; padding: 0; display: inline-block; text-align: left; margin-top: 20px; }
+        .about-list li { margin-bottom: 10px; color: rgba(255,255,255,0.8); }
+        .about-list li i { color: var(--css-cyan); margin-right: 10px; }
     </style>
 </head>
 
@@ -115,11 +120,25 @@
     <section id="about" style="padding: 100px 0; background: #0a192f; scroll-margin-top: 80px;">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; margin-bottom:16px;">About The Firm</p>
+                <div class="col-lg-9 text-center">
+                    <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; margin-bottom:16px;">Network Security Consulting</p>
                     <h2 style="font-weight:800; margin-bottom:20px;">About <span style="color:var(--css-cyan);">CSS Digital Tech</span></h2>
                     <div style="width:40px; height:3px; background:var(--css-cyan); margin:0 auto 28px;"></div>
-                    <p style="color:rgba(255,255,255,0.6); font-size:1.1rem; line-height:1.9; margin:0;">CSS Digital Tech is a cybersecurity consulting firm specialising in network security, firewall optimisation, and secure infrastructure design. We work with organisations to strengthen their security posture using enterprise-grade technologies and proven methodologies. Our engineers deliver practical, scalable solutions tailored to your specific business needs.</p>
+                    
+                    <p style="color:rgba(255,255,255,0.8); font-size:1.15rem; line-height:1.9; margin-bottom:20px;">
+                        CSS Digital Tech is a premium cybersecurity consulting firm specializing in advanced network security, firewall optimization, and zero-trust infrastructure design. We bridge the gap between complex security requirements and high-performance business operations.
+                    </p>
+                    
+                    <p style="color:rgba(255,255,255,0.6); font-size:1rem; line-height:1.8;">
+                        Our mission is to help organizations strengthen their security posture using enterprise-grade technologies like Zscaler, Palo Alto, and Microsoft Azure. Our engineers deliver practical, scalable solutions tailored to protect your critical data from evolving global threats.
+                    </p>
+
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> Enterprise Firewall Rule-Base Optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Zero-Trust Cloud Architecture (ZIA/ZPA)</li>
+                        <li><i class="fas fa-check-circle"></i> Microsoft Sentinel & SecOps Integration</li>
+                        <li><i class="fas fa-check-circle"></i> Secure SD-WAN & Branch Networking</li>
+                    </ul>
                 </div>
             </div>
         </div>
