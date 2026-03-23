@@ -62,16 +62,7 @@
         .hero { padding: 160px 0 120px; background: linear-gradient(135deg, #132a4e 0%, #0a192f 100%); }
         .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 25px; }
 
-        /* Tech Expertise Section */
-        .tech-card {
-            background: #ffffff; border-radius: 12px; padding: 20px; text-align: center;
-            transition: 0.3s; height: 110px; display: flex; align-items: center; 
-            justify-content: center; border: 1px solid rgba(255,255,255,0.1);
-        }
-        .tech-card img { max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: 0.4s; }
-        .tech-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
-
-        /* Capability Cards */
+        /* Services Section */
         .service-card {
             background: #0f1f36; border: 1px solid rgba(0,174,239,0.15);
             height: 100%; transition: 0.3s; overflow: hidden; border-radius: 14px;
@@ -85,7 +76,16 @@
         .service-body h5 { color: #0f1f36; font-weight: 800; font-size: 1rem; margin-bottom: 6px; }
         .service-body p { font-size: 0.83rem; color: #64748b; margin-bottom: 0; }
 
-        /* Contact Section */
+        /* Tech Expertise Section */
+        .tech-card {
+            background: #ffffff; border-radius: 12px; padding: 20px; text-align: center;
+            transition: 0.3s; height: 110px; display: flex; align-items: center; 
+            justify-content: center; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .tech-card img { max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(100%); transition: 0.4s; }
+        .tech-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
+        /* Form Styling */
         .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 48px 44px; border-radius: 16px; box-shadow: 0 0 40px rgba(0,174,239,0.12); }
         .form-label-fancy { color: var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block; }
         .form-control, .form-select {
@@ -93,7 +93,7 @@
             border-radius: 8px; padding: 13px 16px; font-size: 0.9rem; outline: none;
         }
 
-        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 16px 40px; border-radius: 8px; border: none; text-transform: uppercase; cursor: pointer; display: inline-block; text-decoration: none; transition: 0.3s; }
+        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 16px 40px; border-radius: 8px; border: none; text-transform: uppercase; cursor: pointer; display: inline-block; text-decoration: none; transition: 0.3s; width: 100%; }
         .btn-premium:hover { background: #008cc1; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,174,239,0.3); }
 
         footer { background: #050b14; padding: 50px 0 30px; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4); }
@@ -129,7 +129,54 @@
             <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Network Security Consulting</h6>
             <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
             <p class="lead opacity-75 mb-5" style="max-width: 700px;">Specialized consulting for firewall optimization, infrastructure security, and secure branch connectivity.</p>
-            <a href="#audit" class="btn btn-premium">Request Security Consultation</a>
+            <a href="#audit" class="btn btn-premium" style="width: auto;">Request Security Consultation</a>
+        </div>
+    </section>
+
+    <section id="services" style="padding: 100px 0; scroll-margin-top: 80px;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Services</h2>
+                <div style="width: 60px; height: 4px; background: var(--css-cyan); margin: 15px auto;"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=600" alt="Firewall Tuning">
+                        <div class="service-body">
+                            <h5>Firewall Tuning</h5>
+                            <p>Policy optimization and rule cleanup.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600" alt="SOC Monitoring">
+                        <div class="service-body">
+                            <h5>SOC Monitoring</h5>
+                            <p>Infrastructure visibility and alerts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600" alt="SIEM Setup">
+                        <div class="service-body">
+                            <h5>SIEM Setup</h5>
+                            <p>Centralized logging for audits.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="SD-WAN Design">
+                        <div class="service-body">
+                            <h5>SD-WAN Design</h5>
+                            <p>Secure branch-to-cloud links.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -138,34 +185,22 @@
             <h5 class="mb-5 fw-bold" style="letter-spacing: 4px; color: var(--css-cyan);">TECHNOLOGY EXPERTISE</h5>
             <div class="row g-4 justify-content-center">
                 <div class="col-6 col-md-2">
-                    <div class="tech-card" title="Cisco Systems">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" alt="Cisco">
-                    </div>
+                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" alt="Cisco"></div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="tech-card" title="Palo Alto Networks">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Palo_Alto_Networks_logo.svg" alt="Palo Alto">
-                    </div>
+                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Palo_Alto_Networks_logo.svg" alt="Palo Alto"></div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="tech-card" title="Check Point Software">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Check_Point_logo.svg" alt="Check Point">
-                    </div>
+                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Check_Point_logo.svg" alt="Check Point"></div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="tech-card" title="Fortinet Security">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Fortinet_logo.svg" alt="Fortinet">
-                    </div>
+                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Fortinet_logo.svg" alt="Fortinet"></div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="tech-card" title="Microsoft Azure">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure">
-                    </div>
+                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure"></div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="tech-card" title="Zscaler Cloud Security">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Zscaler_logo.svg" alt="Zscaler">
-                    </div>
+                    <div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Zscaler_logo.svg" alt="Zscaler"></div>
                 </div>
             </div>
         </div>
@@ -195,7 +230,10 @@
                                     <input type="tel" name="phone" required class="form-control" placeholder="+1 (555) 000-0000">
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button type="submit" id="form-submit-btn" class="btn-premium" style="width: 100%;">Submit Request</button>
+                                    <button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button>
+                                </div>
+                                <div id="form-success" style="display:none; text-align:center; width: 100%;">
+                                    <h5 class="text-success mt-3">Message Sent Successfully!</h5>
                                 </div>
                             </div>
                         </form>
@@ -208,7 +246,7 @@
 
 <footer>
     <div class="container text-center">
-        <p class="small mb-0">© 2026 CSS Digital Tech. All rights reserved.</p>
+        <p class="small mb-0 opacity-50">© 2026 CSS Digital Tech. All rights reserved.</p>
     </div>
 </footer>
 
@@ -228,8 +266,8 @@
         .then(data => {
             if (data.success) {
                 this.reset();
-                btn.textContent = 'Sent Successfully!';
-                btn.style.background = '#00ff00';
+                document.getElementById('form-success').style.display = 'block';
+                btn.style.display = 'none';
             }
         });
     });
