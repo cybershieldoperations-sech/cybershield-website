@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CSS DIGITAL TECH | Infrastructure & Security Consulting</title>
 
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -64,35 +66,23 @@
 
         /* Tech Expertise Cards */
         .tech-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            transition: 0.3s;
-            height: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid transparent;
+            background: #ffffff; border-radius: 12px; padding: 15px; text-align: center;
+            transition: 0.3s; height: 100px; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; border: 2px solid transparent;
         }
         .tech-card img { max-width: 100%; max-height: 40px; object-fit: contain; }
 
         /* Capability Cards */
         .service-card {
-            background: #0f1f36;
-            border: 1px solid rgba(0,174,239,0.15);
+            background: #0f1f36; border: 1px solid rgba(0,174,239,0.15);
             height: 100%; transition: 0.3s; overflow: hidden; border-radius: 14px;
         }
         .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(0,174,239,0.2); border-color: rgba(0,174,239,0.4); }
         .service-img {
             width: 100%; height: 160px; object-fit: cover; display: block;
-            border-radius: 14px 14px 0 0;
-            filter: brightness(0.75) saturate(0.8);
-            transition: 0.3s;
+            border-radius: 14px 14px 0 0; filter: brightness(0.75) saturate(0.8); transition: 0.3s;
         }
         .service-card:hover .service-img { filter: brightness(0.9) saturate(1); }
-        .service-icon { font-size: 2rem; color: var(--css-cyan); margin-bottom: 14px; }
         .service-body { padding: 18px 20px 22px; background: #ffffff; border-radius: 0 0 14px 14px; }
         .service-body h5 { color: #0f1f36; font-weight: 800; font-size: 1rem; margin-bottom: 6px; }
         .service-body p { font-size: 0.83rem; color: #64748b; margin-bottom: 0; }
@@ -100,51 +90,25 @@
         /* Form Styling */
         .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 48px 44px; border-radius: 16px; box-shadow: 0 0 40px rgba(0,174,239,0.12); }
         .form-label-fancy { color: var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block; }
-        .info-card .form-control,
-        .info-card .form-select {
-            background: #ffffff;
-            border: 1px solid #dde3ed;
-            color: #1e293b;
-            border-radius: 8px;
-            padding: 14px 16px;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-        .info-card .form-select option:first-child { color: rgba(255,255,255,0.4); }
-        .info-card .form-control::placeholder { color: #94a3b8; }
-        .info-card .form-control:focus,
-        .info-card .form-select:focus {
-            background: #ffffff;
-            border-color: var(--css-cyan);
-            color: #1e293b;
-            box-shadow: 0 0 0 3px rgba(0,174,239,0.15);
-        }
-        .info-card .form-select option { background: #fff; color: #1e293b; }
         
-        /* THE GLOW ANIMATION */
-        @keyframes focus-glow {
-            0% { box-shadow: 0 0 0px rgba(0,174,239,0.3); border-color: rgba(255,255,255,0.08); }
-            50% { box-shadow: 0 0 20px rgba(0,174,239,0.25); border-color: rgba(0,174,239,0.5); }
-            100% { box-shadow: 0 0 0px rgba(0,174,239,0.3); border-color: rgba(255,255,255,0.08); }
-        }
-        .glow-active {
-            animation: focus-glow 1.5s ease-in-out 2; /* Glows twice */
+        .form-control, .form-select {
+            background: #ffffff !important; border: 1px solid #dde3ed; color: #1e293b !important;
+            border-radius: 8px; padding: 13px 16px; font-size: 0.9rem; outline: none; transition: 0.3s;
         }
 
-        /* Footer/Contact Styles */
+        /* Contact Section */
         .contact-section { background: #0f172a; padding: 100px 0; border-top: 1px solid rgba(0,174,239,0.1); }
         .contact-icon-box {
-            width: 80px; height: 80px; border-radius: 50%;
-            border: 2px solid var(--css-cyan); display: flex; align-items: center; justify-content: center;
-            background: var(--css-navy); margin: 0 auto 25px;
+            width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--css-cyan);
+            display: flex; align-items: center; justify-content: center; background: var(--css-navy); margin: 0 auto 25px;
         }
         .contact-icon-box i { font-size: 2.5rem; color: var(--css-cyan); }
         .email-display { font-size: clamp(1.2rem, 4vw, 2.5rem); color: var(--css-cyan); font-weight: 800; text-decoration: none; }
         
-        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 16px 40px; border-radius: 8px; border: none; text-transform: uppercase; cursor: pointer; display: inline-block; text-decoration: none; transition: 0.3s; }
+        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 16px 40px; border-radius: 8px; border: none; text-transform: uppercase; cursor: pointer; display: inline-block; text-decoration: none; transition: 0.3s; width: 100%; }
         .btn-premium:hover { background: #008cc1; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,174,239,0.3); }
 
-        footer { background: #050b14; padding: 40px 0; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4); }
+        footer { background: #050b14; padding: 50px 0 30px; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4); }
     </style>
 </head>
 
@@ -165,7 +129,7 @@
                 <li class="nav-item"><a class="nav-link px-3" href="#about">About Us</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#technology">Expertise</a></li>
-                <li class="nav-item"><a class="nav-link px-3" href="#contact-info">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#audit">Contact Us</a></li>
             </ul>
         </div>
     </div>
@@ -177,7 +141,7 @@
             <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Network Security Consulting</h6>
             <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
             <p class="lead opacity-75 mb-5" style="max-width: 700px;">Specialized consulting for firewall optimization, infrastructure security, and secure branch connectivity.</p>
-            <a href="javascript:void(0)" onclick="triggerGlow()" class="btn btn-premium">Request Security Consultation</a>
+            <a href="#audit" class="btn btn-premium" style="width:auto;">Request Security Consultation</a>
         </div>
     </section>
 
@@ -188,11 +152,7 @@
                     <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; margin-bottom:16px;">About The Firm</p>
                     <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:20px;">About <span style="color:var(--css-cyan);">CSS Digital Tech</span></h2>
                     <div style="width:40px; height:3px; background:var(--css-cyan); margin:0 auto 28px;"></div>
-                    <p style="color:rgba(255,255,255,0.6); font-size:1.1rem; line-height:1.9; margin:0;">CSS Digital Tech is a specialized network security consulting firm delivering enterprise-grade firewall architecture, secure infrastructure design, and advanced threat protection solutions.
-
-With deep expertise in multi-vendor environments including Cisco, Palo Alto, Check Point, Fortinet, and cloud security platforms, we help organizations strengthen their security posture, reduce risk, and ensure business continuity.
-
-Our approach is practical, performance-driven, and aligned with real-world enterprise environments — enabling secure, scalable, and resilient network operations.</p>
+                    <p style="color:rgba(255,255,255,0.6); font-size:1.1rem; line-height:1.9; margin:0;">CSS Digital Tech delivers enterprise-grade firewall architecture and advanced threat protection. We specialize in multi-vendor environments and cloud security platforms to ensure resilient network operations.</p>
                 </div>
             </div>
         </div>
@@ -213,43 +173,33 @@ Our approach is practical, performance-driven, and aligned with real-world enter
         </div>
     </section>
 
-    <section id="technology" style="padding: 60px 0; background: #071426; scroll-margin-top: 120px;">
-        <div class="container text-center">
-            <h5 class="mb-4 opacity-50 fw-bold" style="letter-spacing: 2px;">TECHNOLOGY EXPERTISE</h5>
-            <div class="row g-4 justify-content-center">
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="/images/cisco.svg" alt="Cisco"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="/images/paloalto.svg" alt="Palo Alto Networks"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="/images/checkpoint.svg" alt="Check Point"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="/images/fortinet.svg" alt="Fortinet"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="/images/zscaler.svg" alt="Zscaler"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="/images/azure.svg" alt="Microsoft Azure"></div></div>
-            </div>
-        </div>
-    </section>
-
     <section id="audit" style="background: #0a192f; padding: 80px 0; scroll-margin-top: 80px;">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
-                    <div style="background:#0d1f3c; border:1.5px solid var(--css-cyan); padding:48px 44px; border-radius:16px; box-shadow:0 0 40px rgba(0,174,239,0.12);">
+                <div class="col-lg-10">
+                    <div class="info-card">
                         <p style="font-size:0.65rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; text-align:center; margin-bottom:10px;">Get In Touch</p>
-                        <h4 style="font-weight:800; text-align:center; color:#fff; margin-bottom:8px;">Request Security Consultation</h4>
-                        <p style="text-align:center; color:rgba(255,255,255,0.3); font-size:0.82rem; margin-bottom:28px;">Tell us about your requirements and we'll get back to you.</p>
+                        <h4 style="font-weight:800; text-align:center; color:#fff; margin-bottom:28px;">Request Security Consultation</h4>
+                        
                         <form id="consultation-form">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Full Name</label>
-                                    <input type="text" name="name" required spellcheck="true" autocorrect="on" autocomplete="name" style="width:100%; background:#fff; border:1px solid #dde3ed; color:#1e293b; border-radius:8px; padding:13px 16px; font-size:0.9rem; outline:none; font-family:inherit;">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <label class="form-label-fancy">Full Name</label>
+                                    <input type="text" name="name" required class="form-control" placeholder="John Doe">
                                 </div>
-                                <div class="col-6">
-                                    <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Work Email</label>
-                                    <input type="email" name="email" required spellcheck="false" autocorrect="off" autocomplete="email" style="width:100%; background:#fff; border:1px solid #dde3ed; color:#1e293b; border-radius:8px; padding:13px 16px; font-size:0.9rem; outline:none; font-family:inherit;">
+                                <div class="col-md-4">
+                                    <label class="form-label-fancy">Work Email</label>
+                                    <input type="email" name="email" required class="form-control" placeholder="email@company.com">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label-fancy">Contact Number</label>
+                                    <input type="tel" name="phone" required class="form-control" placeholder="+1 (555) 000-0000">
                                 </div>
                                 <div class="col-12">
-                                    <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Service</label>
-                                    <select name="vertical" required style="width:100%; background:#fff; border:1px solid #dde3ed; color:#1e293b; border-radius:8px; padding:13px 16px; font-size:0.9rem; outline:none; font-family:inherit; appearance:auto;">
-                                        <option disabled selected value="">Select service...</option>
+                                    <label class="form-label-fancy">Service Required</label>
+                                    <select name="service" required class="form-select">
+                                        <option disabled selected value="">Select a service...</option>
                                         <option>Firewall Upgrade</option>
                                         <option>Cloud Migration</option>
                                         <option>SOC Visibility</option>
@@ -257,19 +207,14 @@ Our approach is practical, performance-driven, and aligned with real-world enter
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Message</label>
-                                    <textarea id="description-field" name="message" rows="4" required spellcheck="true" autocorrect="on" placeholder="Describe your security requirements..." style="width:100%; background:#fff; border:1px solid #dde3ed; color:#1e293b; border-radius:8px; padding:13px 16px; font-size:0.9rem; outline:none; font-family:inherit; resize:vertical;"></textarea>
+                                    <label class="form-label-fancy">Message</label>
+                                    <textarea name="message" rows="4" required class="form-control" placeholder="How can we help you?"></textarea>
                                 </div>
-                                <div class="col-12 mt-2 text-center">
+                                <div class="col-12 text-center">
                                     <button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button>
                                 </div>
-                                <div id="form-success" style="display:none; text-align:center; padding:32px 16px;">
-                                    <div style="width:64px; height:64px; background:rgba(0,174,239,0.1); border:1.5px solid var(--css-cyan); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 24px;">
-                                        <i class="fas fa-check" style="color:var(--css-cyan); font-size:1.6rem;"></i>
-                                    </div>
-                                    <h4 style="color:#fff; font-weight:800; margin-bottom:12px;">Thank You for Reaching Out</h4>
-                                    <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; line-height:1.8; max-width:420px; margin:0 auto 8px;">Your consultation request has been received. A member of our security team will review your requirements and contact you within <span style="color:var(--css-cyan); font-weight:700;">1–2 business days.</span></p>
-                                    <p style="color:rgba(255,255,255,0.35); font-size:0.8rem; margin-top:16px;">For urgent matters, reach us directly at <a href="mailto:support@cssdigitaltech.com" style="color:var(--css-cyan); text-decoration:none;">support@cssdigitaltech.com</a></p>
+                                <div id="form-success" style="display:none; text-align:center; width: 100%;">
+                                    <h4 class="text-success mt-3">Message Sent Successfully!</h4>
                                 </div>
                             </div>
                         </form>
@@ -278,21 +223,12 @@ Our approach is practical, performance-driven, and aligned with real-world enter
             </div>
         </div>
     </section>
-
-    <section id="contact-info" class="contact-section text-center" style="scroll-margin-top: 80px;">
-        <div class="container">
-            <div class="contact-icon-box"><i class="fas fa-envelope-open-text"></i></div>
-            <h2 class="fw-bold mb-3">Get In Touch</h2>
-            <p class="opacity-75 mb-4 mx-auto" style="max-width: 600px;">Contact us directly via our official email for all security inquiries.</p>
-            <a href="mailto:support@cssdigitaltech.com" class="email-display">support@cssdigitaltech.com</a>
-        </div>
-    </section>
 </main>
 
-<footer style="background: #050b14; padding: 50px 0 30px; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4);">
+<footer>
     <div class="container">
         <div class="row g-4 mb-4">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="logo-container mb-3">
                     <div class="logo-icon"><i class="fas fa-shield-alt"></i></div>
                     <div class="logo-text">
@@ -300,143 +236,48 @@ Our approach is practical, performance-driven, and aligned with real-world enter
                         <div class="logo-sub">Cybershield Security</div>
                     </div>
                 </div>
-                <p style="font-size:0.85rem; color:rgba(255,255,255,0.4);">Network security consulting for growing organizations.</p>
+                <p>Advanced security consulting for the modern enterprise.</p>
             </div>
-            <div class="col-md-4">
-                <h6 class="fw-bold mb-3" style="color:rgba(255,255,255,0.7); font-size:0.8rem; text-transform:uppercase; letter-spacing:1.5px;">Services</h6>
-                <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem;">
-                    <li class="mb-1"><a href="#services" style="color:rgba(255,255,255,0.4); text-decoration:none;">Firewall Optimization</a></li>
-                    <li class="mb-1"><a href="#services" style="color:rgba(255,255,255,0.4); text-decoration:none;">SD-WAN Architecture</a></li>
-                    <li class="mb-1"><a href="#services" style="color:rgba(255,255,255,0.4); text-decoration:none;">SOC Monitoring</a></li>
-                    <li class="mb-1"><a href="#services" style="color:rgba(255,255,255,0.4); text-decoration:none;">SIEM Setup</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h6 class="fw-bold mb-3" style="color:rgba(255,255,255,0.7); font-size:0.8rem; text-transform:uppercase; letter-spacing:1.5px;">Contact</h6>
-                <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); margin-bottom:6px;"><i class="fas fa-envelope me-2" style="color:var(--css-cyan)"></i>support@cssdigitaltech.com</p>
+            <div class="col-md-6 text-md-end">
+                <h6 class="fw-bold mb-3 text-uppercase">Contact</h6>
+                <p><i class="fas fa-envelope me-2" style="color:var(--css-cyan)"></i>support@cssdigitaltech.com</p>
             </div>
         </div>
         <hr style="border-color:rgba(255,255,255,0.08);">
-        <p class="text-center mb-0 small" style="color:rgba(255,255,255,0.25);">© 2026 CSS Digital Tech. All rights reserved.</p>
+        <p class="text-center mb-0 small">© 2026 CSS Digital Tech. All rights reserved.</p>
     </div>
 </footer>
 
 <script>
-    // Common typo autocorrect dictionary
-    const typoMap = {
-        "teh":"the","hte":"the","thier":"their","recieve":"receive","beleive":"believe",
-        "seperate":"separate","occured":"occurred","untill":"until","accomodate":"accommodate",
-        "adress":"address","begining":"beginning","calender":"calendar","cemetary":"cemetery",
-        "collegue":"colleague","comming":"coming","commitee":"committee","concious":"conscious",
-        "definately":"definitely","embarass":"embarrass","enviroment":"environment",
-        "existance":"existence","experiance":"experience","familar":"familiar","finaly":"finally",
-        "foriegn":"foreign","freind":"friend","goverment":"government","grammer":"grammar",
-        "happend":"happened","harrass":"harass","helo":"hello","i":"I","im":"I'm",
-        "independant":"independent","intresting":"interesting","knowlege":"knowledge",
-        "laguage":"language","liason":"liaison","libary":"library","lisence":"license",
-        "maintainance":"maintenance","managment":"management","medival":"medieval",
-        "millenium":"millennium","mispell":"misspell","nedd":"need","neccessary":"necessary",
-        "occassion":"occasion","occurance":"occurrence","paralel":"parallel","parliment":"parliament",
-        "persistant":"persistent","pharase":"phrase","posession":"possession","prefered":"preferred",
-        "privelege":"privilege","probaly":"probably","proffesional":"professional",
-        "pronounciation":"pronunciation","publically":"publicly","realy":"really",
-        "reccomend":"recommend","relevent":"relevant","religous":"religious","remeber":"remember",
-        "repitition":"repetition","resistence":"resistance","responsability":"responsibility",
-        "rythm":"rhythm","saftey":"safety","secratary":"secretary","sieze":"seize",
-        "similer":"similar","speach":"speech","succesful":"successful","suprise":"surprise",
-        "tendancy":"tendency","tommorow":"tomorrow","tounge":"tongue","truely":"truly",
-        "unfortunatly":"unfortunately","untill":"until","usualy":"usually","vaccum":"vacuum",
-        "visable":"visible","wich":"which","wierd":"weird","writting":"writing","yesturday":"yesterday",
-        // Cybersecurity terms
-        "firwall":"firewall","firewll":"firewall","fiewall":"firewall",
-        "mawlare":"malware","malwre":"malware","malwar":"malware",
-        "ransomwre":"ransomware","ransomwar":"ransomware","ransonware":"ransomware",
-        "phising":"phishing","phshing":"phishing","pishing":"phishing",
-        "encrytion":"encryption","encription":"encryption","encrypion":"encryption",
-        "autentication":"authentication","authentcation":"authentication","aunthentication":"authentication",
-        "vulnerabilty":"vulnerability","vulnerbility":"vulnerability","vulnarability":"vulnerability",
-        "penetartion":"penetration","pentration":"penetration","penetraton":"penetration",
-        "infastructure":"infrastructure","infrastracture":"infrastructure","infrastucture":"infrastructure",
-        "complience":"compliance","complianse":"compliance","complinace":"compliance",
-        "incedent":"incident","insident":"incident","incidant":"incident",
-        "monitering":"monitoring","monitorng":"monitoring","montioring":"monitoring",
-        "configuartion":"configuration","configuraton":"configuration","configration":"configuration",
-        "priviledge":"privilege","privelege":"privilege","privlege":"privilege",
-        "authorizaton":"authorization","authorisaton":"authorisation","autherization":"authorization",
-        "certificat":"certificate","certifcate":"certificate","certifiate":"certificate",
-        "dashbord":"dashboard","dashbaord":"dashboard","dasboard":"dashboard",
-        "bandwith":"bandwidth","bandwidht":"bandwidth","bandwdith":"bandwidth",
-        "protocal":"protocol","protcol":"protocol","protocl":"protocol",
-        "endpoit":"endpoint","endponit":"endpoint","endpoing":"endpoint",
-        "threeat":"threat","thret":"threat","threet":"threat",
-        "detction":"detection","detecton":"detection","detecion":"detection",
-        "responce":"response","respons":"response","reponse":"response",
-        "networck":"network","netwrok":"network","netowrk":"network",
-        "secuirty":"security","securty":"security","secirity":"security",
-        "polcy":"policy","polisy":"policy","policiy":"policy",
-        "acess":"access","acces":"access","accses":"access",
-        "identty":"identity","identiy":"identity","idnetity":"identity",
-        "clouud":"cloud","clod":"cloud","clould":"cloud"
-    };
-
-    function autocorrectField(el) {
-        el.addEventListener('keydown', function(e) {
-            if (e.key === ' ' || e.key === 'Enter') {
-                const pos = el.selectionStart;
-                const text = el.value;
-                // Get the last word typed
-                const before = text.slice(0, pos);
-                const match = before.match(/(\S+)$/);
-                if (!match) return;
-                const word = match[1];
-                const lower = word.toLowerCase();
-                if (typoMap[lower]) {
-                    // Preserve capitalisation if word started with uppercase
-                    let correction = typoMap[lower];
-                    if (word[0] === word[0].toUpperCase() && word[0] !== word[0].toLowerCase()) {
-                        correction = correction.charAt(0).toUpperCase() + correction.slice(1);
-                    }
-                    const start = pos - word.length;
-                    el.value = text.slice(0, start) + correction + text.slice(pos);
-                    el.selectionStart = el.selectionEnd = start + correction.length;
-                }
-            }
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        autocorrectField(document.querySelector('input[name="name"]'));
-        autocorrectField(document.getElementById('description-field'));
-    });
-
-    // AJAX form submission - stay on page after submit
     document.getElementById('consultation-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        const form = this;
         const btn = document.getElementById('form-submit-btn');
         btn.disabled = true;
         btn.textContent = 'Sending...';
 
-        const formData = new FormData(form);
+        const formData = new FormData(this);
         const object = {};
         formData.forEach((value, key) => { object[key] = value; });
-        const json = JSON.stringify(object);
 
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: json
+            body: JSON.stringify(object)
         })
         .then(res => res.json())
         .then(data => {
             if (data.success) {
-                form.reset();
-                form.querySelector('.row').style.display = 'none';
+                this.reset();
                 document.getElementById('form-success').style.display = 'block';
+                btn.style.display = 'none';
             } else {
                 btn.disabled = false;
                 btn.textContent = 'Submit Request';
-                alert('Something went wrong. Please try again.');
+                alert('Submission failed.');
             }
-        })
-        .catch
+        });
+    });
+</script>
+
+</body>
+</html>
