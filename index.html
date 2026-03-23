@@ -15,6 +15,7 @@
             --css-cyan: #00aeef;
             --css-dark: #0a192f;
             --text-white: #ffffff;
+            --success-green: #00ff88;
         }
 
         body {
@@ -55,7 +56,7 @@
         .nav-link { font-weight: 600; color: #fff !important; font-size: 0.85rem; text-transform: uppercase; }
         .nav-link:hover { color: var(--css-cyan) !important; }
 
-        /* Hero Section with Graphic */
+        /* Graphic Hero Section */
         .hero { 
             padding: 160px 0 120px; 
             background: 
@@ -78,10 +79,24 @@
         .service-body h5 { font-weight: 800; font-size: 1rem; color: var(--css-navy); margin-bottom: 8px; }
         .service-body p { font-size: 0.85rem; color: #64748b; margin-bottom: 0; }
 
-        /* Insights Section */
-        .insight-card { background: rgba(255,255,255,0.03); border: 1px dashed rgba(0,174,239,0.3); border-radius: 12px; padding: 25px; transition: 0.3s; }
-        .insight-card:hover { background: rgba(0,174,239,0.05); border-style: solid; }
-        .insight-tag { font-size: 0.65rem; font-weight: 800; color: var(--css-cyan); text-transform: uppercase; letter-spacing: 1px; }
+        /* Enhanced Insights Cards */
+        .insight-card { 
+            background: rgba(255,255,255,0.03); 
+            border: 1px dashed rgba(0,174,239,0.3); 
+            border-radius: 16px; 
+            padding: 30px; 
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .insight-card:hover { 
+            background: rgba(0,174,239,0.07); 
+            border-style: solid; 
+            border-color: var(--css-cyan);
+            transform: translateY(-5px);
+        }
+        .insight-tag { font-size: 0.65rem; font-weight: 800; color: var(--css-cyan); text-transform: uppercase; letter-spacing: 2px; }
+        .insight-card hr { opacity: 0.1; margin: 20px 0; }
 
         /* Form Styling */
         .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 40px; border-radius: 16px; box-shadow: 0 0 40px rgba(0,174,239,0.15); }
@@ -134,27 +149,20 @@
     </section>
 
     <section id="about" style="padding: 100px 0; background: #0a192f; scroll-margin-top: 80px;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; margin-bottom:16px;">About The Firm</p>
-                    <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:20px;">About <span style="color:var(--css-cyan);">CSS Digital Tech</span></h2>
-                    <div style="width:40px; height:3px; background:var(--css-cyan); margin:0 auto 28px;"></div>
-                    <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; line-height:1.9;">
-                        CSS Digital Tech is a specialized network security consulting firm delivering enterprise-grade firewall architecture, secure infrastructure design, and advanced threat protection solutions.
-                    </p>
-                </div>
-            </div>
+        <div class="container text-center">
+            <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; margin-bottom:16px;">About The Firm</p>
+            <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; margin-bottom:20px;">Protecting <span style="color:var(--css-cyan);">Enterprise Integrity</span></h2>
+            <div style="width:40px; height:3px; background:var(--css-cyan); margin:0 auto 28px;"></div>
+            <p class="mx-auto" style="color:rgba(255,255,255,0.8); font-size:1.1rem; line-height:1.9; max-width:800px;">
+                CSS Digital Tech is a specialized network security consulting firm delivering enterprise-grade firewall architecture, secure infrastructure design, and advanced threat protection solutions.
+            </p>
         </div>
     </section>
 
     <section id="services" style="padding: 100px 0; scroll-margin-top: 80px;">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Our Services</h2>
-                <div style="width: 60px; height: 4px; background: var(--css-cyan); margin: 15px auto;"></div>
-            </div>
-            <div class="row g-4">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5">Our Core Expertise</h2>
+            <div class="row g-4 text-start">
                 <div class="col-md-3">
                     <div class="service-card">
                         <img class="service-img" src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=600" alt="Firewall">
@@ -187,40 +195,61 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Security Insights</h2>
-                <p class="opacity-50">Expert advice on modern infrastructure security</p>
+                <p class="opacity-50">Proven strategies and technical excellence from the field.</p>
+                <div style="width: 40px; height: 3px; background: var(--css-cyan); margin: 15px auto;"></div>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="insight-card">
+                    <div class="insight-card h-100">
+                        <div class="mb-3"><i class="fas fa-hospital-user" style="font-size: 2rem; color: var(--css-cyan);"></i></div>
                         <span class="insight-tag">Case Study</span>
-                        <h5 class="mt-2 fw-bold">Firewall Optimization for Healthcare</h5>
-                        <p class="small opacity-75">How we reduced latency by 40% while enhancing HIPAA compliance for a regional clinic.</p>
+                        <h5 class="mt-2 fw-bold text-white">Healthcare Firewall Overhaul</h5>
+                        <p class="small opacity-75 mb-4">Optimizing infrastructure for a multi-specialty clinic to ensure HIPAA compliance and zero-latency data syncing.</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="small fw-bold" style="color: var(--success-green);"><i class="fas fa-check-circle me-1"></i> Audit Passed</span>
+                            <a href="#audit" class="text-decoration-none small fw-bold" style="color: var(--css-cyan);">View Strategy <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
-                    <div class="insight-card">
-                        <span class="insight-tag">Technical Advice</span>
-                        <h5 class="mt-2 fw-bold">Zero Trust with Zscaler</h5>
-                        <p class="small opacity-75">Moving beyond traditional VPNs to a secure, identity-driven access model.</p>
+                    <div class="insight-card h-100">
+                        <div class="mb-3"><i class="fas fa-cloud-shield" style="font-size: 2rem; color: var(--css-cyan);"></i></div>
+                        <span class="insight-tag">Cloud Security</span>
+                        <h5 class="mt-2 fw-bold text-white">Zero Trust Migration</h5>
+                        <p class="small opacity-75 mb-4">Moving distributed workforces from legacy VPNs to Zscaler Private Access (ZPA) for an improved security posture.</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="small fw-bold" style="color: var(--success-green);"><i class="fas fa-bolt me-1"></i> 60% Faster</span>
+                            <a href="#audit" class="text-decoration-none small fw-bold" style="color: var(--css-cyan);">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
-                    <div class="insight-card">
-                        <span class="insight-tag">Business Security</span>
-                        <h5 class="mt-2 fw-bold">Securing MSME Networks</h5>
-                        <p class="small opacity-75">Essential security protocols for small to medium businesses on a budget.</p>
+                    <div class="insight-card h-100">
+                        <div class="mb-3"><i class="fas fa-network-wired" style="font-size: 2rem; color: var(--css-cyan);"></i></div>
+                        <span class="insight-tag">Infrastructure</span>
+                        <h5 class="mt-2 fw-bold text-white">MSME Network Defense</h5>
+                        <p class="small opacity-75 mb-4">Cost-effective security architecture designed for small businesses to prevent ransomware and unauthorized access.</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="small fw-bold" style="color: var(--success-green);"><i class="fas fa-shield-virus me-1"></i> 100% Secure</span>
+                            <a href="#audit" class="text-decoration-none small fw-bold" style="color: var(--css-cyan);">Get Guide <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="audit" style="background: #0a192f; padding: 80px 0; scroll-margin-top: 80px;">
+    <section id="audit" style="background: #0a192f; padding: 100px 0; scroll-margin-top: 80px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="info-card">
-                        <p style="font-size:0.65rem; font-weight:700; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase; text-align:center; margin-bottom:10px;">Security Intake</p>
+                        <p class="text-center mb-2" style="font-size:0.65rem; font-weight:800; letter-spacing:3px; color:var(--css-cyan); text-transform:uppercase;">Security Intake</p>
                         <h4 class="text-center fw-bold mb-4">Request Security Consultation</h4>
                         <form id="consultation-form">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
@@ -268,25 +297,13 @@
     <section id="contact-info" class="contact-section text-center" style="scroll-margin-top: 80px;">
         <div class="container">
             <h2 class="fw-bold mb-5">Direct Contact</h2>
-            <div class="mb-4">
-                <a href="mailto:support@cssdigitaltech.com" class="email-display">
-                    <i class="fas fa-envelope me-3"></i>support@cssdigitaltech.com
-                </a>
-            </div>
-            <div>
-                <a href="tel:+91XXXXXXXXXX" class="email-display" style="color: #fff;">
-                    <i class="fas fa-phone-alt me-3" style="color: var(--css-cyan);"></i>+91 XXXXX XXXXX
-                </a>
-            </div>
+            <div class="mb-4"><a href="mailto:support@cssdigitaltech.com" class="email-display"><i class="fas fa-envelope me-3"></i>support@cssdigitaltech.com</a></div>
+            <div><a href="tel:+91XXXXXXXXXX" class="email-display" style="color: #fff;"><i class="fas fa-phone-alt me-3" style="color: var(--css-cyan);"></i>+91 XXXXX XXXXX</a></div>
         </div>
     </section>
 </main>
 
-<footer>
-    <div class="container text-center">
-        <p class="small opacity-50">© 2026 CSS Digital Tech. All rights reserved.</p>
-    </div>
-</footer>
+<footer><div class="container text-center"><p class="small opacity-50">© 2026 CSS Digital Tech. All rights reserved.</p></div></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
