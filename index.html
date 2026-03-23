@@ -233,7 +233,6 @@
                         <p style="text-align:center; color:rgba(255,255,255,0.3); font-size:0.82rem; margin-bottom:28px;">Tell us about your requirements and we'll get back to you.</p>
                         <form id="consultation-form">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
-                            <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
                                 <div class="col-6">
                                     <label style="color:var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block;">Full Name</label>
@@ -436,29 +435,4 @@
                 alert('Something went wrong. Please try again.');
             }
         })
-        .catch(() => {
-            btn.disabled = false;
-            btn.textContent = 'Submit Request';
-            alert('Network error. Please try again.');
-        });
-    });
-
-    function triggerGlow() {
-        const field = document.getElementById('description-field');
-        
-        // Scroll smoothly to the field
-        field.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-        // Wait a moment for scroll, then add glow
-        setTimeout(() => {
-            field.classList.remove('glow-active');
-            void field.offsetWidth; // Trigger reflow to restart animation
-            field.classList.add('glow-active');
-            field.focus();
-        }, 600);
-    }
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        .catch
