@@ -97,9 +97,11 @@
             background: #0f1f36; border: 1px solid rgba(0,174,239,0.15);
             height: 100%; transition: 0.3s; overflow: hidden; border-radius: 14px;
         }
-        .service-img { width: 100%; height: 160px; object-fit: cover; filter: brightness(0.8); }
-        .service-body { padding: 20px; background: #ffffff; color: #1e293b; }
-        .service-body h5 { font-weight: 800; color: var(--css-navy); }
+        .service-card:hover { transform: translateY(-8px); border-color: var(--css-cyan); }
+        .service-img { width: 100%; height: 160px; object-fit: cover; filter: brightness(0.7); }
+        .service-body { padding: 20px; background: #ffffff; color: #1e293b; min-height: 140px; }
+        .service-body h5 { font-weight: 800; color: var(--css-navy); font-size: 1.1rem; margin-bottom: 10px; }
+        .service-body p { font-size: 0.85rem; line-height: 1.5; margin: 0; }
 
         .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 40px; border-radius: 16px; }
         .form-label-fancy { color: var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block; }
@@ -142,7 +144,7 @@
     <section class="hero">
         <div class="scan-line"></div>
         <div class="container text-center text-lg-start" style="position:relative; z-index:10;">
-            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Network Security & Consulting</h6>
+            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Infrastructure & Security Consulting</h6>
             <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
             <p class="lead opacity-75 mb-5" style="max-width: 700px;">Optimizing enterprise network security with next-gen firewall architecture and cloud-native protection strategies.</p>
             <a href="#audit" class="btn btn-premium">Get Security Audit</a>
@@ -178,32 +180,56 @@
     <section id="services" style="padding: 100px 0;">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="fw-bold">Security Services</h2>
+                <h2 class="fw-bold">Our Core Expertise</h2>
                 <div style="width: 60px; height: 4px; background: var(--css-cyan); margin: 15px auto;"></div>
             </div>
             <div class="row g-4">
                 <div class="col-md-3">
                     <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600" alt="Firewall Tuning">
-                        <div class="service-body"><h5>Firewall Tuning</h5><p>Policy cleanup and rule optimization.</p></div>
+                        <img class="service-img" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600" alt="Firewall">
+                        <div class="service-body"><h5>Firewall Tuning</h5><p>Next-gen policy cleanup, rule optimization, and performance hardening.</p></div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600" alt="Cloud">
-                        <div class="service-body"><h5>Cloud Security</h5><p>Zscaler & Azure SecOps setup.</p></div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600" alt="Monitoring">
-                        <div class="service-body"><h5>SOC Visibility</h5><p>24/7 Security Event monitoring.</p></div>
+                        <img class="service-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600" alt="SIEM">
+                        <div class="service-body"><h5>SIEM & Log Setup</h5><p>Deployment of Microsoft Sentinel and log analytics for real-time threat hunting.</p></div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="service-card">
                         <img class="service-img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="SD-WAN">
-                        <div class="service-body"><h5>SD-WAN Design</h5><p>Secure branch-to-cloud links.</p></div>
+                        <div class="service-body"><h5>SD-WAN Design</h5><p>Secure, agile branch connectivity with centralized management and encryption.</p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600" alt="WAN">
+                        <div class="service-body"><h5>WAN Optimization</h5><p>Traffic acceleration and bandwidth efficiency for distributed enterprise networks.</p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600" alt="Cloud">
+                        <div class="service-body"><h5>Cloud Protection</h5><p>Zscaler (ZIA/ZPA) and Azure SecOps for borderless workforce protection.</p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=600" alt="Audit">
+                        <div class="service-body"><h5>Zero Trust Audit</h5><p>Comprehensive posture assessment based on "never trust, always verify" logic.</p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1510511459019-5dee667ff58b?q=80&w=600" alt="EDR">
+                        <div class="service-body"><h5>EDR & MDR Setup</h5><p>Hardening devices with Microsoft Defender and advanced threat response.</p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=600" alt="Remote">
+                        <div class="service-body"><h5>Secure VPN/ZPA</h5><p>Scalable, high-speed remote access for hybrid work environments.</p></div>
                     </div>
                 </div>
             </div>
@@ -260,11 +286,13 @@
                                     <select name="service" required class="form-control">
                                         <option value="" selected disabled>Select Service...</option>
                                         <option value="Firewall">Firewall Optimization</option>
+                                        <option value="SIEM">SIEM Setup</option>
+                                        <option value="SDWAN">SD-WAN implementation</option>
                                         <option value="Cloud">Cloud Security</option>
-                                        <option value="Audit">Full Audit</option>
+                                        <option value="Audit">Security Audit</option>
                                     </select>
                                 </div>
-                                <div class="col-12"><label class="form-label-fancy">Message</label><textarea name="message" rows="4" required class="form-control" placeholder="Requirement details..."></textarea></div>
+                                <div class="col-12"><label class="form-label-fancy">Message</label><textarea name="message" rows="4" required class="form-control" placeholder="Briefly describe your requirements..."></textarea></div>
                                 <div class="col-12 text-center mt-4"><button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button></div>
                             </div>
                         </form>
