@@ -28,7 +28,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero with Scanning Graphic Background */
+        /* Hero Section with Radar Scan Background */
         .hero { 
             padding: 160px 0 120px; 
             background: linear-gradient(135deg, #132a4e 0%, #0a192f 100%);
@@ -36,7 +36,6 @@
             overflow: hidden;
         }
 
-        /* Grid & Scan Animation */
         .hero::before {
             content: "";
             position: absolute;
@@ -53,7 +52,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, transparent, rgba(0, 174, 239, 0.2), transparent);
+            background: linear-gradient(to right, transparent, rgba(0, 174, 239, 0.15), transparent);
             animation: scan-move 4s linear infinite;
             z-index: 1;
         }
@@ -63,7 +62,7 @@
             100% { left: 100%; }
         }
 
-        /* Branding */
+        /* Logo & Nav */
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
         .logo-icon {
             width: 45px; height: 45px; background: var(--css-navy);
@@ -87,39 +86,33 @@
 
         .navbar { padding: 12px 0; background: var(--css-navy); border-bottom: 3px solid var(--css-cyan); }
         .nav-link { font-weight: 600; color: #fff !important; font-size: 0.85rem; text-transform: uppercase; }
-        .nav-link:hover { color: var(--css-cyan) !important; }
 
-        /* Tech Cards */
+        /* Technology Cards - LOCAL SVG PATHS */
         .tech-card {
             background: #ffffff; border-radius: 12px; padding: 15px; 
             height: 90px; display: flex; align-items: center; justify-content: center;
             transition: 0.3s; border: 2px solid transparent;
         }
-        .tech-card:hover { border-color: var(--css-cyan); transform: translateY(-5px); }
         .tech-card img { max-width: 100%; max-height: 45px; object-fit: contain; }
+        .tech-card:hover { border-color: var(--css-cyan); transform: translateY(-5px); }
 
-        /* Services */
+        /* General Sections */
+        section { scroll-margin-top: 80px; }
         .service-card {
             background: #0f1f36; border: 1px solid rgba(0,174,239,0.15);
             height: 100%; transition: 0.3s; overflow: hidden; border-radius: 14px;
         }
-        .service-card:hover { transform: translateY(-8px); border-color: var(--css-cyan); }
         .service-img { width: 100%; height: 160px; object-fit: cover; filter: brightness(0.7); }
         .service-body { padding: 20px; background: #ffffff; color: #1e293b; }
         .service-body h5 { font-weight: 800; color: var(--css-navy); }
 
-        /* Contact & Forms */
         .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 40px; border-radius: 16px; }
         .form-label-fancy { color: var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block; }
-        .form-control { background: #ffffff !important; border: 1px solid #dde3ed; padding: 12px; border-radius: 8px; }
         
         .contact-section { background: #0f172a; padding: 100px 0; border-top: 1px solid rgba(0,174,239,0.1); }
         .email-display { font-size: clamp(1.2rem, 3vw, 2.2rem); color: var(--css-cyan); font-weight: 800; text-decoration: none; transition: 0.3s; }
-        .email-display:hover { color: #fff; }
-
-        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 16px 40px; border-radius: 8px; border: none; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
-        .btn-premium:hover { box-shadow: 0 10px 20px rgba(0,174,239,0.3); transform: translateY(-2px); }
-
+        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 16px 40px; border-radius: 8px; border: none; text-transform: uppercase; cursor: pointer; display: inline-block; text-decoration: none; }
+        
         footer { background: #050b14; padding: 40px 0; border-top: 2px solid #132a4e; color: rgba(255,255,255,0.4); }
     </style>
 </head>
@@ -158,16 +151,28 @@
         </div>
     </section>
 
+    <section id="about" style="padding: 100px 0; background: #0a192f;">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <p class="form-label-fancy">Firm Profile</p>
+                    <h2 class="fw-bold mb-4">About <span style="color:var(--css-cyan)">CSS Digital Tech</span></h2>
+                    <p class="lead opacity-75">We are specialized network security consultants delivering enterprise-grade firewall architecture and secure cloud infrastructure. Our mission is to harden your perimeter against evolving digital threats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="technology" style="padding: 60px 0; background: #071426;">
         <div class="container text-center">
             <h5 class="mb-4 opacity-50 fw-bold" style="letter-spacing: 2px;">VENDORS & TECHNOLOGY</h5>
             <div class="row g-3 justify-content-center">
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://www.vectorlogo.zone/logos/cisco/cisco-ar21.svg" alt="Cisco"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://www.vectorlogo.zone/logos/paloaltonetworks/paloaltonetworks-ar21.svg" alt="Palo Alto"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Check_Point_logo.svg" alt="Check Point"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://www.vectorlogo.zone/logos/fortinet/fortinet-ar21.svg" alt="Fortinet"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://cdn.worldvectorlogo.com/logos/zscaler.svg" alt="Zscaler"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-ar21.svg" alt="Azure"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/cisco.svg" alt="Cisco"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/paloalto.svg" alt="Palo Alto"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/checkpoint.svg" alt="Check Point"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/fortinet.svg" alt="Fortinet"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/zscaler.svg" alt="Zscaler"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="images/azure.svg" alt="Azure"></div></div>
             </div>
         </div>
     </section>
@@ -216,23 +221,23 @@
                         <form id="consultation-form">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
-                                <div class="col-md-6"><label class="form-label-fancy">Full Name</label><input type="text" name="name" required class="form-control" placeholder="Update Name"></div>
-                                <div class="col-md-6"><label class="form-label-fancy">Work Email</label><input type="email" name="email" required class="form-control" placeholder="Update Email"></div>
+                                <div class="col-md-6"><label class="form-label-fancy">Full Name</label><input type="text" name="name" required class="form-control" placeholder="Your Name"></div>
+                                <div class="col-md-6"><label class="form-label-fancy">Work Email</label><input type="email" name="email" required class="form-control" placeholder="Email Address"></div>
                                 <div class="col-md-6"><label class="form-label-fancy">Phone</label><input type="tel" name="phone" required class="form-control" placeholder="+91 XXXXX XXXXX"></div>
                                 <div class="col-md-6">
                                     <label class="form-label-fancy">Service</label>
-                                    <select name="service" required class="form-select form-control">
-                                        <option value="" selected disabled>Select...</option>
+                                    <select name="service" required class="form-control">
+                                        <option value="" selected disabled>Select Service...</option>
                                         <option value="Firewall">Firewall Optimization</option>
                                         <option value="Cloud">Cloud Security</option>
                                         <option value="Audit">Full Audit</option>
                                     </select>
                                 </div>
-                                <div class="col-12"><label class="form-label-fancy">Message</label><textarea name="message" rows="4" required class="form-control" placeholder="Briefly describe your network..."></textarea></div>
+                                <div class="col-12"><label class="form-label-fancy">Message</label><textarea name="message" rows="4" required class="form-control" placeholder="Requirement details..."></textarea></div>
                                 <div class="col-12 text-center mt-4"><button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button></div>
                             </div>
                         </form>
-                        <div id="form-success" style="display:none; text-align:center; margin-top:20px;"><h4 class="text-white">Inquiry Received.</h4></div>
+                        <div id="form-success" style="display:none; text-align:center; margin-top:20px;"><h4 class="text-white">Inquiry Received Successfully.</h4></div>
                     </div>
                 </div>
             </div>
