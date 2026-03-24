@@ -16,7 +16,6 @@
             --css-dark: #0a192f;
             --css-deep: #060e1a;
             --text-white: #ffffff;
-            --success-green: #00ff88;
         }
 
         body {
@@ -30,8 +29,8 @@
             scroll-behavior: smooth;
         }
 
-        /* Branding & Navigation */
-        .navbar { padding: 15px 0; background: var(--css-navy); border-bottom: 3px solid var(--css-cyan); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        /* Navigation */
+        .navbar { padding: 15px 0; background: var(--css-navy); border-bottom: 3px solid var(--css-cyan); }
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
         .logo-icon {
             width: 45px; height: 45px; background: var(--css-navy);
@@ -52,14 +51,13 @@
         .logo-main { font-size: 1.3rem; font-weight: 800; color: #fff; line-height: 1; }
         .logo-main span { color: var(--css-cyan); }
         .logo-sub { font-size: 0.6rem; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 1.2px; text-transform: uppercase; }
-        .nav-link { font-weight: 700; color: #fff !important; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-link:hover { color: var(--css-cyan) !important; }
+        .nav-link { font-weight: 700; color: #fff !important; font-size: 0.85rem; text-transform: uppercase; }
 
-        /* Hero & Scanning Animation */
+        /* Hero & Scanning Effect */
         .hero { 
             padding: 180px 0 140px; 
             background: linear-gradient(135deg, rgba(19, 42, 78, 0.95) 0%, rgba(10, 25, 47, 0.98) 100%),
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000') no-repeat center center;
+                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1600') no-repeat center center;
             background-size: cover; position: relative; overflow: hidden;
         }
         .hero::after {
@@ -69,44 +67,42 @@
         }
         @keyframes scanning { 0% { top: -100%; } 100% { top: 100%; } }
 
-        /* Sections Styling */
+        /* Tech Badges */
+        .tech-badge {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(0,174,239,0.2);
+            padding: 15px 25px; border-radius: 12px; text-align: center; transition: 0.3s;
+        }
+        .tech-badge i { font-size: 1.5rem; color: var(--css-cyan); margin-bottom: 5px; display: block; }
+        .tech-badge span { font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; }
+
+        /* Section Global */
         section { padding: 100px 0; scroll-margin-top: 80px; }
-        .section-title { font-weight: 800; font-size: 2.5rem; margin-bottom: 20px; }
-        .cyan-line { width: 60px; height: 4px; background: var(--css-cyan); margin: 0 auto 30px; border-radius: 2px; }
+        .section-header { margin-bottom: 60px; text-align: center; }
+        .cyan-divider { width: 50px; height: 3px; background: var(--css-cyan); margin: 15px auto; }
 
         /* Expertise Cards */
         .expertise-card {
             background: rgba(255,255,255,0.03); border: 1px solid rgba(0,174,239,0.1);
             padding: 40px; border-radius: 20px; transition: 0.3s; height: 100%;
         }
-        .expertise-card:hover { border-color: var(--css-cyan); background: rgba(0,174,239,0.05); transform: translateY(-10px); }
-        .expertise-card i { font-size: 3rem; color: var(--css-cyan); margin-bottom: 20px; }
+        .expertise-card:hover { border-color: var(--css-cyan); transform: translateY(-10px); background: rgba(0,174,239,0.05); }
+        .expertise-card i { font-size: 2.5rem; color: var(--css-cyan); margin-bottom: 20px; }
 
-        /* Service Cards */
+        /* Service Cards with Fixed Images */
         .service-card { background: #0f1f36; border-radius: 16px; overflow: hidden; height: 100%; border: 1px solid rgba(255,255,255,0.05); }
-        .service-img { width: 100%; height: 180px; object-fit: cover; filter: grayscale(1) brightness(0.6); transition: 0.5s; }
-        .service-card:hover .service-img { filter: grayscale(0) brightness(1); }
-        .service-body { padding: 25px; background: #fff; color: #333; }
-        .service-body h5 { font-weight: 800; color: var(--css-navy); }
-
-        /* FAQ */
-        .accordion-item { background: transparent; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 15px; border-radius: 10px !important; }
-        .accordion-button { background: transparent !important; color: #fff !important; font-weight: 700; padding: 20px; box-shadow: none !important; }
-        .accordion-button:not(.collapsed) { color: var(--css-cyan) !important; border-bottom: 1px solid rgba(0,174,239,0.2); }
-        .accordion-button::after { filter: invert(1); }
-        .accordion-body { color: rgba(255,255,255,0.7); padding: 20px; }
+        .service-img { width: 100%; height: 200px; object-fit: cover; filter: brightness(0.7); transition: 0.5s; }
+        .service-card:hover .service-img { filter: brightness(1); transform: scale(1.05); }
+        .service-body { padding: 25px; background: #fff; color: #333; position: relative; z-index: 10; }
+        .service-body h5 { font-weight: 800; color: var(--css-navy); margin-bottom: 10px; }
+        .service-body p { font-size: 0.9rem; color: #555; margin-bottom: 0; }
 
         /* Contact & Form */
-        .contact-box { background: var(--css-navy); padding: 40px; border-radius: 20px; border-left: 5px solid var(--css-cyan); }
         .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 40px; border-radius: 20px; }
         .form-control, .form-select { background: #fff !important; border: 1px solid #ced4da; padding: 12px; border-radius: 8px; }
-        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 18px 40px; border-radius: 8px; border: none; text-transform: uppercase; transition: 0.3s; width: 100%; }
+        .btn-premium { background: var(--css-cyan); color: white !important; font-weight: 800; padding: 18px 40px; border-radius: 8px; border: none; text-transform: uppercase; width: 100%; transition: 0.3s; }
         .btn-premium:hover { background: #0096ce; transform: scale(1.02); }
 
-        /* Footer */
-        footer { background: var(--css-deep); padding: 80px 0 30px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .footer-link { color: rgba(255,255,255,0.6); text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
-        .footer-link:hover { color: var(--css-cyan); padding-left: 5px; }
+        footer { background: var(--css-deep); padding: 60px 0 30px; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 
@@ -118,7 +114,7 @@
             <div class="logo-icon"><i class="fas fa-shield-alt"></i><div class="logo-pulse"></div></div>
             <div class="logo-text">
                 <div class="logo-main">CSS <span>DIGITAL</span> TECH</div>
-                <div class="logo-sub">Enterprise Security Systems</div>
+                <div class="logo-sub">Cybershield Security</div>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
@@ -127,7 +123,6 @@
                 <li class="nav-item"><a class="nav-link px-3" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#expertise">Expertise</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link px-3" href="#faq">FAQ</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#contact" style="color:var(--css-cyan) !important;">Contact</a></li>
             </ul>
         </div>
@@ -137,38 +132,41 @@
 <main>
     <section class="hero">
         <div class="container text-center text-lg-start">
-            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:5px; color:var(--css-cyan)">Securing Digital Frontiers</h6>
-            <h1 class="section-title">Bulletproof Firewalls.<br><span style="color:var(--css-cyan)">Optimized Infrastructure.</span></h1>
-            <p class="lead opacity-75 mb-5" style="max-width: 700px;">
-                Specialized security consulting for MSMEs and Educational Institutions. We transform complex network vulnerabilities into hardened digital assets.
-            </p>
-            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
-                <a href="#contact" class="btn btn-premium" style="width: auto;">Free Security Discovery</a>
-            </div>
+            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:5px; color:var(--css-cyan)">Next-Gen Security 2026</h6>
+            <h1 style="font-weight: 800; font-size: clamp(2.5rem, 6vw, 4rem);">Secure Architecture.<br><span style="color:var(--css-cyan)">Veteran Expertise.</span></h1>
+            <p class="lead opacity-75 mb-5" style="max-width: 700px;">Providing enterprise-grade firewall optimization and zero-trust cloud security for MSMEs and Educational Institutions.</p>
+            <a href="#contact" class="btn btn-premium" style="width:auto;">Request Security Audit</a>
         </div>
     </section>
+
+    <div style="background: var(--css-deep); padding: 40px 0; border-bottom: 1px solid rgba(0,174,239,0.1);">
+        <div class="container">
+            <div class="row g-3 justify-content-center">
+                <div class="col-6 col-md-2"><div class="tech-badge"><i class="fas fa-server"></i><span>CISCO</span></div></div>
+                <div class="col-6 col-md-2"><div class="tech-badge"><i class="fas fa-project-diagram"></i><span>PALO ALTO</span></div></div>
+                <div class="col-6 col-md-2"><div class="tech-badge"><i class="fas fa-cloud"></i><span>ZSCALER</span></div></div>
+                <div class="col-6 col-md-2"><div class="tech-badge"><i class="fas fa-shield-virus"></i><span>FORTINET</span></div></div>
+                <div class="col-6 col-md-2"><div class="tech-badge"><i class="fas fa-lock"></i><span>ZERO TRUST</span></div></div>
+            </div>
+        </div>
+    </div>
 
     <section id="about">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <p class="text-uppercase fw-bold mb-2" style="color:var(--css-cyan); letter-spacing:2px;">Our Mission</p>
-                    <h2 class="fw-bold mb-4">Integrity in Every Packet.</h2>
-                    <p class="opacity-75 mb-4">
-                        Founded in 2026, <strong>CSS Digital Tech</strong> was established to bring enterprise-level security to the sectors that need it most but are often underserved: small businesses and educational hubs. 
-                    </p>
-                    <p class="opacity-75 mb-4">
-                        While our firm is new, our foundation is built on <strong>nearly two decades of field-hardened experience</strong> in network security, cloud architecture, and perimeter defense across major multinational environments.
-                    </p>
-                    <div class="d-flex gap-4">
-                        <div><h4 class="fw-bold color-cyan mb-0">19+</h4><small class="opacity-50 text-uppercase">Domain Years</small></div>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Integrity Driven Defense</h2>
+                    <p class="opacity-75 mb-4">CSS Digital Tech was established to bridge the security gap for institutions that demand high-level protection without the enterprise price tag. Our firm focuses on hardening network perimeters and securing student and business data.</p>
+                    <p class="opacity-75 mb-4">While the company is a new venture launched in 2026, it is powered by <strong>19 years of domain experience</strong> in infrastructure security across multinational environments.</p>
+                    <div class="d-flex gap-4 mt-4">
+                        <div><h3 class="fw-bold mb-0" style="color:var(--css-cyan)">19+</h3><small class="text-uppercase opacity-50">Expert Years</small></div>
                         <div style="width:1px; background:rgba(255,255,255,0.1);"></div>
-                        <div><h4 class="fw-bold color-cyan mb-0">24/7</h4><small class="opacity-50 text-uppercase">Advisory</small></div>
+                        <div><h3 class="fw-bold mb-0" style="color:var(--css-cyan)">100%</h3><small class="text-uppercase opacity-50">Focus on Security</small></div>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <div style="padding:40px; border:1px solid var(--css-cyan); border-radius:30px; background: rgba(0,174,239,0.05);">
-                        <i class="fas fa-user-shield" style="font-size: 8rem; color: var(--css-cyan);"></i>
+                    <div style="padding:60px; border:2px dashed var(--css-cyan); border-radius:30px; background:rgba(0,174,239,0.03);">
+                        <i class="fas fa-shield-halved" style="font-size: 8rem; color: var(--css-cyan);"></i>
                     </div>
                 </div>
             </div>
@@ -176,29 +174,31 @@
     </section>
 
     <section id="expertise" style="background: var(--css-deep);">
-        <div class="container text-center">
-            <h2 class="section-title">Core Expertise</h2>
-            <div class="cyan-line"></div>
-            <div class="row g-4 text-start">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="fw-bold">Core Expertise</h2>
+                <div class="cyan-divider"></div>
+            </div>
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="expertise-card">
+                    <div class="expertise-card text-center text-md-start">
                         <i class="fas fa-network-wired"></i>
-                        <h4 class="fw-bold mb-3">Firewall Lifecycle</h4>
-                        <p class="small opacity-75">End-to-end management of Fortinet, Palo Alto, and Cisco firewalls—from initial architecture to granular policy tuning.</p>
+                        <h4 class="fw-bold">Cisco & Palo Alto</h4>
+                        <p class="small opacity-75">Expert deployment and lifecycle management of industry-standard firewalls. We specialize in architecture design and high-availability setups.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="expertise-card">
-                        <i class="fas fa-cloud-lock"></i>
-                        <h4 class="fw-bold mb-3">Cloud Security</h4>
-                        <p class="small opacity-75">Specialists in Zscaler (ZIA/ZPA) and Azure SecOps, ensuring your distributed workforce stays secure anywhere.</p>
+                    <div class="expertise-card text-center text-md-start">
+                        <i class="fas fa-user-lock"></i>
+                        <h4 class="fw-bold">Zscaler ZIA/ZPA</h4>
+                        <p class="small opacity-75">Implementation of Zero Trust Exchange. Secure your internet access and private applications with natively integrated cloud security.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="expertise-card">
-                        <i class="fas fa-microchip"></i>
-                        <h4 class="fw-bold mb-3">Zero Trust</h4>
-                        <p class="small opacity-75">Designing "Never Trust, Always Verify" frameworks to protect sensitive educational and MSME data pools.</p>
+                    <div class="expertise-card text-center text-md-start">
+                        <i class="fas fa-school"></i>
+                        <h4 class="fw-bold">Education Security</h4>
+                        <p class="small opacity-75">Tailored infrastructure security for campuses, ensuring student data privacy and resilient content filtering.</p>
                     </div>
                 </div>
             </div>
@@ -206,59 +206,34 @@
     </section>
 
     <section id="services">
-        <div class="container text-center">
-            <h2 class="section-title">Services</h2>
-            <div class="cyan-line"></div>
-            <div class="row g-4 text-start">
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=600">
-                        <div class="service-body"><h5>Rule Optimization</h5><p class="small">Removing "shadow rules" to boost security performance.</p></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600">
-                        <div class="service-body"><h5>Security Audits</h5><p class="small">Comprehensive vulnerability scanning for school networks.</p></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600">
-                        <div class="service-body"><h5>SIEM Setup</h5><p class="small">Centralized logging and real-time threat alerts.</p></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600">
-                        <div class="service-body"><h5>SD-WAN Design</h5><p class="small">Secure, high-speed branch-to-cloud connectivity.</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" style="background: var(--css-deep);">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Security FAQ</h2>
-                <div class="cyan-line"></div>
+            <div class="section-header">
+                <h2 class="fw-bold">Infrastructure Services</h2>
+                <div class="cyan-divider"></div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion" id="securityAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1">Is this a monthly subscription?</button></h2>
-                            <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#securityAccordion">
-                                <div class="accordion-body">We offer both one-time project-based hardening (firewall cleanup) and recurring managed security advisory services.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">Will security impact our staff's internet speed?</button></h2>
-                            <div id="f2" class="accordion-collapse collapse" data-bs-parent="#securityAccordion">
-                                <div class="accordion-body">Properly tuned security actually <strong>increases</strong> speed by blocking malicious traffic and optimizing bandwidth usage.</div>
-                            </div>
-                        </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600" alt="Hardware Security">
+                        <div class="service-body"><h5>Firewall Tuning</h5><p>Hardening rule-bases and removing legacy security holes.</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600" alt="Cloud Analysis">
+                        <div class="service-body"><h5>Rule Optimization</h5><p>Cleaning up shadow rules to improve network performance.</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600" alt="Security Dashboard">
+                        <div class="service-body"><h5>Network Audits</h5><p>Deep-dive assessments of your perimeter defense health.</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card">
+                        <img class="service-img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="Datacenter">
+                        <div class="service-body"><h5>SD-WAN Design</h5><p>Secure, optimized pathing for branch-to-cloud connectivity.</p></div>
                     </div>
                 </div>
             </div>
@@ -269,15 +244,11 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <h2 class="fw-bold mb-4">Get in Touch</h2>
-                    <p class="opacity-75 mb-5">Have a security concern? Reach out for a confidential discovery call.</p>
-                    <div class="contact-box mb-4">
-                        <h6 class="text-uppercase fw-bold text-cyan" style="color:var(--css-cyan)">Email Address</h6>
+                    <h2 class="fw-bold mb-4">Start the Conversation</h2>
+                    <p class="opacity-75 mb-5">Identify your vulnerabilities before attackers do. Contact us for a technical consultation.</p>
+                    <div style="background: var(--css-navy); padding: 30px; border-radius: 15px; border-left: 4px solid var(--css-cyan);">
+                        <h6 class="text-uppercase fw-bold small mb-1" style="color:var(--css-cyan)">Corporate Email</h6>
                         <p class="mb-0">support@cssdigitaltech.com</p>
-                    </div>
-                    <div class="contact-box">
-                        <h6 class="text-uppercase fw-bold text-cyan" style="color:var(--css-cyan)">Consultation Hours</h6>
-                        <p class="mb-0">Mon - Sat: 09:00 AM - 07:00 PM IST</p>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -285,20 +256,13 @@
                         <form id="consultation-form">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
-                                <div class="col-md-6"><label class="small fw-bold mb-2">Full Name</label><input type="text" name="name" required class="form-control"></div>
-                                <div class="col-md-6"><label class="small fw-bold mb-2">Work Email</label><input type="email" name="email" required class="form-control"></div>
-                                <div class="col-md-12"><label class="small fw-bold mb-2">Organization Sector</label>
-                                    <select name="sector" class="form-select">
-                                        <option value="Education">Educational Institution</option>
-                                        <option value="MSME">Small Business / MSME</option>
-                                        <option value="Healthcare">Healthcare Clinic</option>
-                                    </select>
-                                </div>
-                                <div class="col-12"><label class="small fw-bold mb-2">Requirements</label><textarea name="message" rows="4" required class="form-control" placeholder="Describe your current firewall or network setup..."></textarea></div>
+                                <div class="col-md-6"><label class="small fw-bold mb-1">Full Name</label><input type="text" name="name" required class="form-control"></div>
+                                <div class="col-md-6"><label class="small fw-bold mb-1">Email</label><input type="email" name="email" required class="form-control"></div>
+                                <div class="col-12"><label class="small fw-bold mb-1">Requirement</label><textarea name="message" rows="4" required class="form-control" placeholder="E.g. Palo Alto Rule Cleanup or School Network Audit..."></textarea></div>
                                 <div class="col-12 mt-4"><button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button></div>
                             </div>
                         </form>
-                        <div id="form-success" style="display:none; text-align:center;"><h4 class="text-white mt-4">Inquiry Received. We will contact you soon.</h4></div>
+                        <div id="form-success" style="display:none; text-align:center;"><h4 class="text-white mt-4">Inquiry Received.</h4></div>
                     </div>
                 </div>
             </div>
@@ -307,36 +271,8 @@
 </main>
 
 <footer>
-    <div class="container">
-        <div class="row g-4 mb-5">
-            <div class="col-lg-4">
-                <a class="logo-container mb-4" href="#">
-                    <div class="logo-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div class="logo-main">CSS <span>DIGITAL</span></div>
-                </a>
-                <p class="small opacity-50 pe-lg-5">Specialized infrastructure and network security advisory for growing enterprises and academic hubs.</p>
-            </div>
-            <div class="col-lg-2">
-                <h6 class="fw-bold mb-4">Quick Links</h6>
-                <a href="#about" class="footer-link small">About Us</a>
-                <a href="#expertise" class="footer-link small">Expertise</a>
-                <a href="#services" class="footer-link small">Services</a>
-            </div>
-            <div class="col-lg-3">
-                <h6 class="fw-bold mb-4">Legal</h6>
-                <a href="#" class="footer-link small">Terms of Service</a>
-                <a href="#" class="footer-link small">Privacy Policy</a>
-            </div>
-            <div class="col-lg-3">
-                <h6 class="fw-bold mb-4">Secure Contact</h6>
-                <p class="small opacity-50 mb-1">Email: support@cssdigitaltech.com</p>
-                <p class="small opacity-50">Support: +91 (By Request)</p>
-            </div>
-        </div>
-        <hr style="border-color: rgba(255,255,255,0.05);">
-        <div class="text-center pt-4">
-            <p class="small opacity-50">© 2026 CSS Digital Tech. All rights reserved. | Built with Enterprise-Grade Integrity.</p>
-        </div>
+    <div class="container text-center">
+        <p class="small opacity-50 mb-0">© 2026 CSS Digital Tech. All rights reserved. | Security Excellence.</p>
     </div>
 </footer>
 
