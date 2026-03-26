@@ -28,7 +28,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero Section & Radar Animation */
+        /* Hero & Radar Section */
         .hero { 
             padding: 160px 0 120px; 
             background: linear-gradient(135deg, #132a4e 0%, #0a192f 100%);
@@ -59,7 +59,7 @@
             100% { left: 100%; }
         }
 
-        /* Navigation */
+        /* Nav */
         .navbar { padding: 12px 0; background: var(--css-navy); border-bottom: 3px solid var(--css-cyan); }
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none !important; }
         .logo-icon {
@@ -80,35 +80,34 @@
         .logo-main { font-size: 1.3rem; font-weight: 800; color: #fff; }
         .logo-main span { color: var(--css-cyan); }
         .logo-sub { font-size: 0.6rem; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 1.2px; text-transform: uppercase; }
-        .nav-link { font-weight: 600; color: #fff !important; font-size: 0.85rem; text-transform: uppercase; }
 
-        /* Tech Cards - Using your LOCAL SVG files */
+        /* Tech Cards - CDN FIXED */
         .tech-card {
             background: #ffffff; border-radius: 12px; padding: 15px; 
             height: 90px; display: flex; align-items: center; justify-content: center;
             transition: 0.3s; border: 2px solid transparent;
         }
-        .tech-card img { max-width: 100%; max-height: 45px; object-fit: contain; }
+        .tech-card img { max-width: 85%; max-height: 45px; object-fit: contain; }
         .tech-card:hover { border-color: var(--css-cyan); transform: translateY(-5px); }
 
-        /* Services Section */
+        /* Service Cards */
         .service-card {
             background: #0f1f36; border: 1px solid rgba(0,174,239,0.15);
             height: 100%; transition: 0.3s; overflow: hidden; border-radius: 14px;
         }
         .service-card:hover { transform: translateY(-8px); border-color: var(--css-cyan); }
-        .service-img { width: 100%; height: 160px; object-fit: cover; filter: brightness(0.8); }
+        .service-img { width: 100%; height: 160px; object-fit: cover; filter: brightness(0.7); }
         .service-body { padding: 20px; background: #ffffff; color: #1e293b; min-height: 140px; }
         .service-body h5 { font-weight: 800; color: var(--css-navy); font-size: 1.1rem; margin-bottom: 10px; }
         .service-body p { font-size: 0.85rem; line-height: 1.5; margin: 0; }
 
-        /* Glow Animation for Requirement Redirection */
-        @keyframes glow-pulse {
+        /* Glow Animation */
+        @keyframes focus-glow {
             0% { box-shadow: 0 0 0px var(--css-cyan); border-color: #dee2e6; }
-            50% { box-shadow: 0 0 20px var(--css-cyan); border-color: var(--css-cyan); }
+            50% { box-shadow: 0 0 25px var(--css-cyan); border-color: var(--css-cyan); }
             100% { box-shadow: 0 0 0px var(--css-cyan); border-color: #dee2e6; }
         }
-        .glow-active { animation: glow-pulse 1.5s ease-in-out 2; }
+        .glow-active { animation: focus-glow 1.5s ease-in-out 2; }
 
         .info-card { background: #0d1f3c; border: 1.5px solid var(--css-cyan); padding: 40px; border-radius: 16px; }
         .form-label-fancy { color: var(--css-cyan); font-weight:700; font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; display:block; }
@@ -137,9 +136,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link px-3" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link px-3" href="#industries">Industries</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="javascript:void(0)" onclick="triggerGlow()">Consultation</a></li>
                 <li class="nav-item"><a class="nav-link px-3" href="#contact-info">Contact</a></li>
             </ul>
@@ -151,10 +148,10 @@
     <section class="hero">
         <div class="scan-line"></div>
         <div class="container text-center text-lg-start" style="position:relative; z-index:10;">
-            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Infrastructure & Security Consulting</h6>
+            <h6 class="text-uppercase fw-bold mb-3" style="letter-spacing:4px; color:var(--css-cyan)">Infrastructure & Security</h6>
             <h1>Secure Firewalls.<br><span style="color:var(--css-cyan)">Protected Infrastructure.</span></h1>
-            <p class="lead opacity-75 mb-5" style="max-width: 700px;">Optimizing enterprise network security with next-gen firewall architecture and cloud-native protection strategies.</p>
-            <a href="javascript:void(0)" onclick="triggerGlow()" class="btn btn-premium">Click here for your requirement</a>
+            <p class="lead opacity-75 mb-5" style="max-width: 700px;">Specialized consulting for next-gen firewall architecture and high-performance network hardening.</p>
+            <a href="javascript:void(0)" onclick="triggerGlow()" class="btn btn-premium">Post Your Requirement</a>
         </div>
     </section>
 
@@ -162,11 +159,11 @@
         <div class="container text-center">
             <h5 class="mb-4 opacity-50 fw-bold" style="letter-spacing: 2px;">CORE VENDORS & STACK</h5>
             <div class="row g-3 justify-content-center">
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="cisco.svg" alt="Cisco"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="paloalto.svg" alt="Palo Alto"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="checkpoint.svg" alt="Check Point"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="fortinet.svg" alt="Fortinet"></div></div>
-                <div class="col-6 col-md-2"><div class="tech-card"><img src="azure.svg" alt="Azure"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" alt="Cisco"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://www.vectorlogo.zone/logos/paloaltonetworks/paloaltonetworks-ar21.svg" alt="Palo Alto"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://www.vectorlogo.zone/logos/checkpoint/checkpoint-ar21.svg" alt="Check Point"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://www.vectorlogo.zone/logos/fortinet/fortinet-ar21.svg" alt="Fortinet"></div></div>
+                <div class="col-6 col-md-2"><div class="tech-card"><img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-ar21.svg" alt="Azure"></div></div>
             </div>
         </div>
     </section>
@@ -181,49 +178,25 @@
                 <div class="col-md-3">
                     <div class="service-card">
                         <img class="service-img" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600" alt="Firewall">
-                        <div class="service-body"><h5>Firewall Tuning</h5><p>Next-gen policy cleanup, rule optimization, and performance hardening.</p></div>
+                        <div class="service-body"><h5>Firewall Tuning</h5><p>Next-gen policy cleanup and rule optimization.</p></div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="service-card">
                         <img class="service-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600" alt="SIEM">
-                        <div class="service-body"><h5>SIEM & Log Setup</h5><p>Deployment of Microsoft Sentinel and log analytics for real-time threat hunting.</p></div>
+                        <div class="service-body"><h5>SIEM & Log Setup</h5><p>Real-time threat hunting with Sentinel.</p></div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="SD-WAN">
-                        <div class="service-body"><h5>SD-WAN Design</h5><p>Secure, agile branch connectivity with centralized management and encryption.</p></div>
+                        <img class="service-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600" alt="EDR Security">
+                        <div class="service-body"><h5>EDR & MDR Setup</h5><p>Device hardening and advanced threat response.</p></div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600" alt="WAN">
-                        <div class="service-body"><h5>WAN Optimization</h5><p>Traffic acceleration and bandwidth efficiency for distributed networks.</p></div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600" alt="Cloud">
-                        <div class="service-body"><h5>Cloud Protection</h5><p>Zscaler and Azure SecOps for borderless workforce protection.</p></div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=600" alt="Audit">
-                        <div class="service-body"><h5>Zero Trust Audit</h5><p>Comprehensive posture assessment based on Zero Trust principles.</p></div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=600" alt="EDR">
-                        <div class="service-body"><h5>EDR & MDR Setup</h5><p>Hardening devices with Microsoft Defender and advanced response.</p></div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="service-card">
-                        <img class="service-img" src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=600" alt="Remote Access">
-                        <div class="service-body"><h5>Secure VPN/ZPA</h5><p>Scalable remote access for modern hybrid work environments.</p></div>
+                        <img class="service-img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600" alt="VPN Network Security">
+                        <div class="service-body"><h5>Secure VPN/ZPA</h5><p>Encryption-backed remote access for hybrid work.</p></div>
                     </div>
                 </div>
             </div>
@@ -235,30 +208,20 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="info-card">
-                        <h4 class="text-center fw-bold mb-4">Infrastructure Enhancements</h4>
+                        <h4 class="text-center fw-bold mb-4">Request Security Consultation</h4>
                         <form id="consultation-form">
                             <input type="hidden" name="access_key" value="9f973c7b-2eea-40c1-8ef0-867f23eec5ce">
                             <div class="row g-3">
-                                <div class="col-md-6"><label class="form-label-fancy">Full Name</label><input type="text" name="name" required class="form-control" placeholder="Your Name"></div>
-                                <div class="col-md-6"><label class="form-label-fancy">Work Email</label><input type="email" name="email" required class="form-control" placeholder="Email Address"></div>
+                                <div class="col-md-6"><label class="form-label-fancy">Full Name</label><input type="text" name="name" required class="form-control"></div>
+                                <div class="col-md-6"><label class="form-label-fancy">Work Email</label><input type="email" name="email" required class="form-control"></div>
                                 <div class="col-12">
-                                    <label class="form-label-fancy">Service Enhancement</label>
-                                    <select name="service" required class="form-control">
-                                        <option value="" selected disabled>Select Service...</option>
-                                        <option value="Firewall">Firewall Optimization</option>
-                                        <option value="SIEM">SIEM Setup</option>
-                                        <option value="Cloud">Cloud Security</option>
-                                        <option value="Audit">Security Audit</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label-fancy">Detailed Description</label>
-                                    <textarea id="description-field" name="message" rows="4" required class="form-control" placeholder="Briefly describe your requirements..."></textarea>
+                                    <label class="form-label-fancy">Requirement Description</label>
+                                    <textarea id="description-field" name="message" rows="4" required class="form-control" placeholder="Type your security requirements here..."></textarea>
                                 </div>
                                 <div class="col-12 text-center mt-4"><button type="submit" id="form-submit-btn" class="btn-premium">Submit Request</button></div>
                             </div>
                         </form>
-                        <div id="form-success" style="display:none; text-align:center; margin-top:20px;"><h4 class="text-white">Inquiry Received. We will contact you shortly.</h4></div>
+                        <div id="form-success" style="display:none; text-align:center; margin-top:20px;"><h4 class="text-white">Inquiry Received.</h4></div>
                     </div>
                 </div>
             </div>
@@ -267,9 +230,8 @@
 
     <section id="contact-info" class="contact-section text-center">
         <div class="container">
-            <div style="width:80px; height:80px; border-radius:50%; border:2px solid var(--css-cyan); display:flex; align-items:center; justify-content:center; margin: 0 auto 20px; background:var(--css-navy);"><i class="fas fa-envelope-open-text fa-2x" style="color:var(--css-cyan);"></i></div>
-            <h2 class="fw-bold mb-3">Direct Contact</h2>
-            <div class="mb-4"><a href="mailto:support@cssdigitaltech.com" class="email-display">support@cssdigitaltech.com</a></div>
+            <h2 class="fw-bold mb-3">Get In Touch</h2>
+            <a href="mailto:support@cssdigitaltech.com" class="email-display">support@cssdigitaltech.com</a>
         </div>
     </section>
 </main>
@@ -278,14 +240,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // TRIGGER GLOW AND SCROLL FUNCTION
     function triggerGlow() {
         const field = document.getElementById('description-field');
         field.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
         setTimeout(() => {
             field.classList.remove('glow-active');
-            void field.offsetWidth; // Restart animation
+            void field.offsetWidth;
             field.classList.add('glow-active');
             field.focus();
         }, 600);
